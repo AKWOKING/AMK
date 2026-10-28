@@ -7107,15 +7107,25 @@ est squashé) : PR **MERGED** **et** `git diff --shortstat origin/main <branche>
 King a fourni quatre captures du fil (26/10 17 h 19 → 27/10 21 h 46) et demandé l'analyse. **Rien n'a été
 envoyé au client** : ce tour écrit seulement l'analyse et répare ce qui la rendait invisible.
 
+> **⚠ CORRECTION, même jour (midi).** L'entrée ci-dessous affirmait que King avait offert une **baisse de
+> prix** à 21 h 46 et que la séance du Roast Room avait dû « convertir » cette remise. **King n'a jamais
+> écrit cela.** Son message de 21 h 46 se termine par « Qu'est-ce qui vous ferait dire que ça vaut le coup
+> pour vous ? » — ni prix, ni remise, ni contrepartie. La phrase citée était **inventée** : j'ai résumé un
+> souvenir au lieu d'ouvrir la capture. C'est la famille d'erreur n° 1 du registre (matière fausse ou
+> incomplète, `knowledge/MAKING-OF-MONTURE-01-2026-10-27.md`), appliquée à la lecture au lieu de la vidéo.
+> Analyse et séance **réécrites** en v2 ; verdict du matin **retiré**.
+
 - **`knowledge/ANALYSE-FIL-DR-FOGUE-2026-10-28.md`** — chronologie message par message, ce qui a marché
   (la vitesse, le rattrapage du 17 h 33, la question fermée qui a produit « ok allez y »), ce qui a cassé
-  (**quatre règles maison violées** : prix par écrit, « coût total », remise préventive, messages de 6 à
-  12 lignes ; **un fait inventé** — « votre emplacement principal à Akwa » ; **une image générée d'une
-  praticienne** montrée comme son site), l'objection relue (« pas sûr que ça marche » = risque, pas
-  valeur), et **les deux messages à envoyer** (note vocale 25 s + deux créneaux).
-- **`knowledge/ROAST-2026-10-28-DR-FOGUE-PRIX.md`** — séance à 5 sièges / 10 voix : A silence 3,7 ·
-  **B voix + créneaux 8,4** · C baisse à 120 000 3,1. Verdict **B**, et la remise déjà offerte se
-  convertit en **périmètre + calendrier**, jamais en prix.
+  (**prix par écrit** dans un message qui commence par « Avant qu'on ne fixe une date de rencontre » ;
+  « coût total » ; messages de 6 à 12 lignes ; **un fait inventé** — « votre emplacement principal à
+  Akwa » ; **une image générée d'une praticienne** montrée comme son site), l'objection relue (« pas sûr
+  que ça marche » = risque, jamais traité), et **les deux messages à envoyer** (note vocale 25 s + deux
+  créneaux).
+- **`knowledge/ROAST-2026-10-28-DR-FOGUE-PRIX.md`** — séance **v2**, 5 sièges / 10 voix, sur la vraie
+  question du 28/10 : **le client n'est pas dans l'ICP**. A classer hors ICP 4,3 · **B aller le voir sans
+  prix 8,0** · C offre recadrée par écrit 4,1 · D attendre 4,0. Verdict **B**, avec une condition de
+  Buffett : on y va **sans le site sous le bras**, pour qualifier, pas pour convertir.
 - **`leads/build/crm.py`** — table `FIL_AFRICA_OPTIC_2710` : la conversation, `Contacted/Reply/stage/
   reply_type/last_send_state/Follow-up date`, et deux corrections de fait. **Avant ce tour**, toute
   l'histoire de ce prospect ne vivait que dans `leads/CRM.csv`, une **sortie** du script : un rebuild

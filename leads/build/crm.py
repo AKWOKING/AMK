@@ -2597,13 +2597,21 @@ FIL_AFRICA_OPTIC_2710 = {
             "vous reviens » · 21:08 « vous avez encore besoin des éléments » + « je pense que ses plus "
             "mieux avec mes photos » → 21:37/21:45 il envoie TROIS photos de lui et de son équipe · "
             "27/10 01:57 version avec ses vraies photos · 20:55 « ok allez y » (ACCORD SUR LE PRINCIPE) "
-            "· 21:02 puis 21:29 puis 21:30 « vous êtes situés où » (trois fois) · 21:28 « je vais vous "
-            "rencontrer » · 21:43 prix annoncé par écrit : 150 000 FCFA total · 21:44 « pourquoi donner "
-            "une somme pareil déjà que je suis pas sûr que ça marche » · 21:46 réponse de légitimité + "
-            "« je peux vous baisser le prix si vous m'associez à votre référencement » (REMISE OFFERTE, "
-            "contre PRIX-2026-10-24 §7.4) · depuis : silence. "
+            "· 21:02 puis 21:29 « vous êtes situés où » (DEUX fois : il cherche le lieu de la rencontre) "
+            "· 21:28 « je vais vous "
+            "rencontrer » · 21:43 PRIX ANNONCÉ PAR ÉCRIT, dans un message qui commence par « Avant "
+            "qu'on ne fixe une date de rencontre » : 150 000 FCFA total · 21:44 « pourquoi donner une "
+            "somme pareil déjà que je suis pas sûre que cva marchée » — DEUX objections : le montant, et "
+            "le RISQUE ; la seconde n'a pas été traitée · 21:46 réponse de légitimité, SANS prix et SANS "
+            "contrepartie : « Qu'est-ce qui vous ferait dire que ça vaut le coup pour vous ? » · depuis : "
+            "silence. "
             "PROCHAIN GESTE (28/10) : note vocale 25 s + deux créneaux (ven. Africa Médical, sam. "
-            "Charity). Ne PAS renvoyer de prix par écrit : CLIENT-MESSAGING-RULES §3.",
+            "Charity), puis rencontre de QUALIFICATION (qui décide de l'affichage du site d'Africa "
+            "Médical ?). Ne PAS renvoyer de prix par écrit : CLIENT-MESSAGING-RULES §3. "
+            "⚠ 28/10 : une version antérieure de cette table attribuait à King, à 21:46, une promesse de "
+            "baisse de prix assortie d'une contrepartie de référencement. CETTE PROMESSE N'A JAMAIS ÉTÉ "
+            "ÉCRITE — citation inventée, retirée le 28/10. Le message de 21:46 est cité ci-dessus ; il ne "
+            "contient ni prix, ni remise, ni contrepartie.",
         "Notes_extra":
             "CORRECTION 28/10 — la note antérieure disait que le lien `dr-ophtalmo-preview.vercel.app` "
             "était « l'aperçu d'un AUTRE client » : c'est FAUX, ce client EST le Dr Fogue "
@@ -2612,7 +2620,14 @@ FIL_AFRICA_OPTIC_2710 = {
             "comme « un opticien à qui on a montré l'aperçu de quelqu'un d'autre ». · IDENTITÉ NON "
             "ÉTABLIE : « Africa Optic » (annuaire ONOC, titulaire public MINTEU NZONGA Eric Aimé) ≠ "
             "« Africa Médical » (le cabinet du vendredi) ≠ Dr FOGUE (l'ophtalmologue qui répond). Le "
-            "nom exact du cabinet, demandé le 26/10 17:33, n'a jamais été donné. · Analyse complète : "
+            "nom exact du cabinet, demandé le 26/10 17:33, n'a jamais été donné. · HORS ICP (ruling King "
+            "28/10) : ophtalmologue ITINÉRANT sur quatre lieux qui ne lui appartiennent pas — aucun des "
+            "trois ICP du SOCIAL-ACQUISITION-PLAYBOOK §1.2 ne le décrit (A = opticien gérant ; B = "
+            "cabinet 1-3 praticiens / 5-20 employés ; C = école). Il n'a pas de cabinet à qui vendre un "
+            "site de cabinet, et la grille PRIX-2026-10-24 n'a aucun palier pour une « page de référence "
+            "à quatre entrées ». Question jamais posée : qui décide de l'affichage du site d'Africa "
+            "Médical et de Charity — lui, ou les structures ? (l'ICP B est peut-être derrière cette "
+            "porte). · Analyse complète : "
             "`knowledge/ANALYSE-FIL-DR-FOGUE-2026-10-28.md` + `knowledge/ROAST-2026-10-28-DR-FOGUE-PRIX.md`.",
     },
 }
