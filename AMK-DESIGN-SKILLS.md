@@ -2515,6 +2515,7 @@ everything yourself »).
 | `audit_delivery.py` | la porte de livraison : ce qu'un audit extérieur a vu et que nos portiques ne voyaient pas | §13, §18.4 |
 | `audit_site_amk.py` | les lois de la maison que les autres portiques ne vérifient pas | §4 |
 | `audit_laws.py` | **les six lois de la perception** sur le HTML/CSS servis : amorce d'un rail, voile d'un panneau, forme publicitaire, défauts de formulaire, liaison d'un flux, surcharge de choix — banc de 16 témoins (`--self-test`) | §40 |
+| `audit_seo_local.py` | **l'intention de recherche et le local, site entier** : ville + métier dans titre et H1, réciprocité hreflang, pages orphelines, cannibalisation de titres, NAP identique, `Service`/`Optician`, robots, culs-de-sac — banc de 15 témoins (`--self-test`) | §40, `AMK-SEO-PLAYBOOK.md` §9 |
 | `audit_claims.py` | refuse une publication qui contredit un verrou client | §3.6, §34 |
 | `check_inline_js.py` | chaque `<script>` inline compile (JSON-LD validé à part) | §13 |
 | `render_svg.py`, `raster_svg_path.py` | **regarder** un tracé SVG avant de le livrer | §8 |
@@ -2541,7 +2542,7 @@ dit. **Toute règle ajoutée à ce fichier ajoute son cas au témoin.**
 | 5-6 | copie, images | `audit_claims.py`, `audit_images.py` |
 | 7 | build | — |
 | 8 | mouvement | `design/MOTION.md` §6 ; `audit_reveal.py` |
-| 9 | pré-vol | `shot.py` → `audit_html.py` → `audit_a11y.py` → `audit_page.py` → `audit_hero.py` → `audit_laws.py` → `audit_palette.py --image` → `check_inline_js.py` → `test_audit_*` |
+| 9 | pré-vol | `shot.py` → `audit_html.py` → `audit_a11y.py` → `audit_page.py` → `audit_hero.py` → `audit_laws.py` → `audit_seo.py` → `audit_seo_local.py` → `audit_palette.py --image` → `check_inline_js.py` → `test_audit_*` |
 
 **Deux commandes avant tout, une fois par session** :
 

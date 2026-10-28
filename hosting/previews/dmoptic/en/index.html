@@ -178,7 +178,7 @@ footer.site .logo{height:48px;box-sizing:content-box;border:5px solid #fff;borde
   .btn-night:hover{border-color:#fff}
 }
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.kicker{margin:0;font:500 var(--fs-label)/1.5 var(--f-m);letter-spacing:.14em;text-transform:uppercase;color:var(--brand-2)}
+.kicker{display:block;margin:0;font:500 var(--fs-label)/1.5 var(--f-m);letter-spacing:.14em;text-transform:uppercase;color:var(--brand-2)}
 /* 28/10 : le premier écran mesurait 0 % de bleu de marque (audit_palette.py). Le bouton d'appel, qui
    n'est pas l'action principale, prend la couleur du cabinet ; WhatsApp garde son vert fonctionnel. */
 .btn-brand{border-color:var(--brand);color:var(--brand)}
@@ -468,8 +468,8 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
     <!-- 20/10 (demande client) : la photo du cabinet est le fond du premier écran ; la carte reste la preuve à droite. -->
     <div class="wrap hero-grid">
       <div>
-        <p class="kicker"><span class="fr-only" lang="fr">Opticien optométriste à Douala · inscrit à l'ONOC</span><span class="en-only" lang="en">Optometrist optician in Douala · registered with the ONOC</span></p>
         <h1 id="h-hero">
+          <span class="kicker"><span class="fr-only" lang="fr">Opticien optométriste à Douala · inscrit à l&#8217;ONOC</span><span class="en-only" lang="en">Optometrist optician in Douala · registered with the ONOC</span></span>
           <span class="fr-only" lang="fr">DM OPTIQUE SARL<span class="h-city">DOUALA</span></span>
           <span class="en-only" lang="en">DM OPTIQUE SARL<span class="h-city">DOUALA</span></span>
         </h1>
@@ -888,6 +888,8 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         <ul class="fnav">
           <li><a href="/en/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a></li>
           <li><a href="/en/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a></li>
+          <li><a href="/en/verres-sur-ordonnance/"><span class="fr-only" lang="fr">Verres sur ordonnance</span><span class="en-only" lang="en">Prescription lenses</span></a></li>
+          <li><a href="/en/reparation-et-entretien/"><span class="fr-only" lang="fr">Réparation et entretien</span><span class="en-only" lang="en">Repairs and adjustments</span></a></li>
           <li><a href="/en/le-cabinet/"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a></li>
           <li><a href="/en/contact/"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a></li>
         </ul>
@@ -912,7 +914,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       </div>
     </div>
     <div class="stripbar">
-      <span class="foot-l"><span>© 2026 DM OPTIQUE SARL</span><span class="social"><a href="https://www.facebook.com/profile.php?id=61595694418153" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@dmoptique.bonaberi237" target="_blank" rel="noopener">TikTok</a></span></span>
+      <span class="foot-l"><span>© 2026 DM OPTIQUE SARL</span><span class="social"><a class="flang" href="/" hreflang="fr" lang="fr">Français</a><a href="https://www.facebook.com/profile.php?id=61595694418153" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@dmoptique.bonaberi237" target="_blank" rel="noopener">TikTok</a></span></span>
       
       <a href="#top"><span class="fr-only" lang="fr">Haut de page ↑</span><span class="en-only" lang="en">Back to top ↑</span></a>
     </div>
@@ -1094,8 +1096,11 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
   "identifier":{"@type":"PropertyValue","name":"N° d'inscription à l'Ordre national des opticiens du Cameroun","value":"021/2016"},
   "founder":{"@type":"Person","name":"Domche Noumbi","jobTitle":"Opticien optométriste"},
   "address":{"@type":"PostalAddress","streetAddress":"Ndobo Mayor, Immeuble West Hotel, 1er étage","addressLocality":"Douala","addressRegion":"Littoral","addressCountry":"CM"},
-  "areaServed":{"@type":"City","name":"Douala"},
+  "areaServed":[{"@type":"City","name":"Douala"},{"@type":"AdministrativeArea","name":"Littoral"},{"@type":"Place","name":"Bonabéri, Ndobo Mayor"}],
+  "knowsLanguage":["fr","en"],
   "contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+237656122239","availableLanguage":["fr","en"]}},
+ {"@type":"WebSite","@id":"https://dmoptiquesarl.com/#site","url":"https://dmoptiquesarl.com/en/","name":"DM OPTIQUE SARL — opticien optométriste à Douala",
+  "inLanguage":["fr","en"],"publisher":{"@id":"https://dmoptiquesarl.com/#dmoptic"}},
  {"@type":"FAQPage","@id":"https://dmoptiquesarl.com/#questions","mainEntity":[
   {"@type":"Question","name":"Où se trouve le cabinet, à Douala ?","acceptedAnswer":{"@type":"Answer","text":"Le cabinet est à Bonabéri, dans le quartier Ndobo Mayor : immeuble West Hotel, 1er étage, dernière porte à droite, Douala."}},
   {"@type":"Question","name":"Faut-il une ordonnance pour avoir des lunettes ?","acceptedAnswer":{"@type":"Answer","text":"Pour des verres correcteurs, oui : apportez l'ordonnance de votre ophtalmologue. Pour des lunettes de soleil, un réglage ou une réparation, non."}},

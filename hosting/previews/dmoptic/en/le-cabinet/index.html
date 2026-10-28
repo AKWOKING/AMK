@@ -176,7 +176,7 @@ footer.site .logo{height:48px;box-sizing:content-box;border:5px solid #fff;borde
   .btn-night:hover{border-color:#fff}
 }
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.kicker{margin:0;font:500 var(--fs-label)/1.5 var(--f-m);letter-spacing:.14em;text-transform:uppercase;color:var(--brand-2)}
+.kicker{display:block;margin:0;font:500 var(--fs-label)/1.5 var(--f-m);letter-spacing:.14em;text-transform:uppercase;color:var(--brand-2)}
 /* 28/10 : le premier écran mesurait 0 % de bleu de marque (audit_palette.py). Le bouton d'appel, qui
    n'est pas l'action principale, prend la couleur du cabinet ; WhatsApp garde son vert fonctionnel. */
 .btn-brand{border-color:var(--brand);color:var(--brand)}
@@ -508,13 +508,15 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 .v2-photo{margin:26px 0 0}
 .v2-photo img{display:block;width:100%;height:auto;border-radius:var(--r-lg);border:1px solid var(--line)}
 .v2-photo figcaption{margin-top:10px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
-.v2-steps{counter-reset:v2step;list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
-@media(min-width:760px){.v2-steps{grid-template-columns:1fr 1fr}}
-.v2-steps li{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px}
-/* 28/10 · connectedness : des cartes separees lisaient comme des sujets distincts. Une seule surface,
-   separee par des filets : la liaison dit « et ensuite ». */
-@media(min-width:760px){.v2-steps{gap:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
-  .v2-steps li{background:none;border:0;border-radius:0;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+/* 28/10 · connectedness : des cartes separees lisaient comme des sujets distincts. Une seule
+   surface, separee par des filets : la liaison dit « et ensuite ». La regle vaut a TOUTES les
+   largeurs — en colonne sur telephone, en deux colonnes au-dela de 760 px. */
+.v2-steps{counter-reset:v2step;list-style:none;margin:26px 0 0;padding:0;display:grid;gap:0;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.v2-steps li{background:none;padding:18px;border:0;border-radius:0;border-top:1px solid var(--line)}
+.v2-steps li:first-child{border-top:0}
+@media(min-width:760px){.v2-steps{grid-template-columns:1fr 1fr}
+  .v2-steps li{border-left:1px solid var(--line)}
   .v2-steps li:nth-child(odd){border-left:0}
   .v2-steps li:nth-child(-n+2){border-top:0}}
 .v2-steps .n{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.12em;color:var(--brand)}
@@ -604,6 +606,8 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         <ul class="fnav">
           <li><a href="/en/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a></li>
           <li><a href="/en/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a></li>
+          <li><a href="/en/verres-sur-ordonnance/"><span class="fr-only" lang="fr">Verres sur ordonnance</span><span class="en-only" lang="en">Prescription lenses</span></a></li>
+          <li><a href="/en/reparation-et-entretien/"><span class="fr-only" lang="fr">Réparation et entretien</span><span class="en-only" lang="en">Repairs and adjustments</span></a></li>
           <li><a href="/en/le-cabinet/"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a></li>
           <li><a href="/en/contact/"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a></li>
         </ul>
@@ -628,7 +632,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       </div>
     </div>
     <div class="stripbar">
-      <span class="foot-l"><span>© 2026 DM OPTIQUE SARL</span><span class="social"><a href="https://www.facebook.com/profile.php?id=61595694418153" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@dmoptique.bonaberi237" target="_blank" rel="noopener">TikTok</a></span></span>
+      <span class="foot-l"><span>© 2026 DM OPTIQUE SARL</span><span class="social"><a class="flang" href="/" hreflang="fr" lang="fr">Français</a><a href="https://www.facebook.com/profile.php?id=61595694418153" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@dmoptique.bonaberi237" target="_blank" rel="noopener">TikTok</a></span></span>
       
       <a href="/en/"><span class="fr-only" lang="fr">Haut de page ↑</span><span class="en-only" lang="en">Back to top ↑</span></a>
     </div>

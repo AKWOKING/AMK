@@ -7492,3 +7492,57 @@ le site est bilingue.
 `audit_delivery.py --strict` : **0 P1 · 0 P2 · 1 P3 — VERT** (le P3 est l'image d'aperçu partagée par
 plusieurs pages, connu). `test_dmoptic_page.mjs` : toutes les assertions passent. Capture sur 10 URL
 représentatives : **toutes vertes** (elles étaient rouges pour de faux le matin).
+
+---
+
+## 28 octobre 2026 · tour 222 — les 100 termes SEO, et deux pages qui manquaient
+
+King envoie quatre captures (100 termes SEO, compte `lawrenceaiseo`) et demande : « do research on all
+these terms and add what needs to be added… pour ranker sur *opticians in Douala* et *optometrist in
+Douala* ». Traitement : recherche, puis audit du site contre chaque terme, puis corrections, puis §9 du
+playbook.
+
+**Ce que l'audit a trouvé de vrai (et que personne n'avait vu).**
+
+1. **Le `<h1>` de l'accueil portait la marque, pas le métier.** « DM OPTIQUE SARL · DOUALA ». La cible
+   de King n'était donc dans aucune balise qui classe ; le métier vivait dans un `<p class="kicker">`.
+   Le sourcil est passé **dans** le h1 : la page dit maintenant « Opticien optométriste à Douala ·
+   inscrit à l'ONOC » puis le nom, sans changer un pixel de rendu.
+2. **Les 10 pages anglaises étaient orphelines.** Aucune page ne les liait : les boutons FR/EN sont des
+   `<button>` (bascule DOM), pas des liens. Elles n'existaient que par `hreflang` et le sitemap. Un lien
+   `English` / `Français` est ajouté au pied de page.
+3. **Deux services étaient décrits sans page** : verres sur ordonnance, réparation et entretien. C'est
+   le premier signal on-page local en 2026 (Whitespark), et notre propre audit du 21/10 l'avait déjà
+   écrit. Les deux pages sont écrites avec les faits du client : ordonnance, ce qu'on regarde sur une
+   monture, le repère de l'entrée, aucun prix, aucun délai inventé, aucune marque.
+4. **Le `robots.txt` annonçait 48 pages** alors que la surface est de 20. Réécrit et commenté.
+5. **Le plafond du sitemap était écrit en dur (16)** : il râlait à la première page ajoutée. Il se
+   calcule maintenant sur la surface décidée. Un plafond qu'on corrige à la main ne plafonne rien.
+
+**Ce qui a été refusé, et pourquoi c'est le cœur de la réponse.** Une page par quartier, une page par
+variante de requête, une rallonge de pages de montures pour « couvrir » le catalogue : Google nomme les
+pages ville qui renvoient toutes au même endroit comme du **doorway abuse**, et la production de pages
+en série comme du **scaled content abuse** (« no matter how it's created »). Deux pages ont été
+ajoutées, pas vingt. La surface indexée passe de 16 à 20 URL.
+
+**Ce qui a changé dans la documentation.** `AMK-SEO-PLAYBOOK.md` **§9** : quatre corrections au playbook
+de septembre (dont la proximité, ≈ 55 % du poids local, qui manquait à notre tableau), la fin du rich
+result FAQ (**retiré par Google le 7 mai 2026**, après l'avoir réservé en août 2023 aux sites publics de
+santé), et la règle hreflang (une annotation sans lien retour est **ignorée**). Le détail des 100 termes,
+avec source et statut, est dans `clients/dm-optic/seo/SEO-100-2026-10-28.md`.
+
+**Un nouveau portique, avec son banc.** `tools/qa/audit_seo_local.py` lit le site **entier** (là où
+`audit_seo.py` lit une page à la fois) : cible ville + métier, réciprocité hreflang, orphelines,
+cannibalisation de titres, NAP identique partout, `Optician` complet, `Service`, robots, culs-de-sac.
+**15 témoins, 15 verts.** Et il tourne dans la porte de publication : une page qui redevient orpheline
+bloque l'envoi, au lieu de se découvrir au bout de trois mois.
+
+**IndexNow** : à chaque publication, le workflow prévient Bing, Yandex, Seznam et Naver avec les 20 URL
+du sitemap (clé servie à la racine du domaine). Un échec de cette étape ne retient jamais le site.
+
+**Portes au vert** : `audit_seo` 101 pages · `audit_delivery --strict` 0 P1 / 0 P2 / 1 P3 (le P3 connu
+des images d'aperçu) · `audit_laws` 0 / 0 · `audit_seo_local` 0 faute / 0 avertissement · capture
+`shot.py` sur 5 URL neuves, toutes vertes.
+
+**Ce qui ne se fait pas depuis ce dépôt, et qui pèse plus que lui** : la fiche Google (≈ 32 % du poids
+local), les avis (16–20 %), la proximité (≈ 55 %, contrôle de personne). King, avec le client.

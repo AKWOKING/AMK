@@ -16,7 +16,7 @@ Ce qu'il fait
 1. **`--apply`** : passe les fiches de montures en `noindex,follow` (elles restent en ligne, liées
    depuis les galeries, et restent le lien qu'on envoie sur WhatsApp — elles cessent seulement de
    demander une place dans l'index), puis réécrit `sitemap.xml` avec **les seules pages qui ont du
-   contenu** : 8 françaises + 8 anglaises = **16 URL**.
+   contenu** : 10 françaises + 10 anglaises = **20 URL** (28/10 : deux pages de service ajoutées).
 2. **`--check`** : vérifie l'invariant et échoue s'il est rompu. C'est la porte : une règle sans
    contrôle est un trou. Appelée avant chaque publication (`.github/workflows/deploy-dmoptic.yml`).
 
@@ -57,7 +57,8 @@ SITEMAP = SITE / "sitemap.xml"
 
 ROBOTS = '<meta name="robots" content="noindex,follow">'
 ORDRE_COEUR = ["/", "/montures/", "/montures/femmes/", "/montures/hommes/", "/montures/enfants/",
-               "/examen-de-vue/", "/le-cabinet/", "/contact/"]
+               "/examen-de-vue/", "/verres-sur-ordonnance/", "/reparation-et-entretien/",
+               "/le-cabinet/", "/contact/"]
 
 
 def base() -> str:
@@ -91,7 +92,7 @@ def whitelist() -> set[str]:
 
 
 def coeur() -> list[str]:
-    """Les pages qui ont du contenu : 8 françaises + leurs 8 miroirs anglais."""
+    """Les pages qui ont du contenu : 10 françaises + leurs 10 miroirs anglais."""
     fr = [p for p in ORDRE_COEUR if (SITE / p.strip("/") / "index.html").exists()]
     en = [x for x in ("/en" + p for p in fr) if (SITE / x.strip("/") / "index.html").exists()]
     return fr + en
@@ -214,8 +215,12 @@ def check() -> list[str]:
         pbs.append(f"sitemap : {len(manquantes)} page(s) cœur absente(s) — {sorted(manquantes)[:3]}")
     if en_trop:
         pbs.append(f"sitemap : {len(en_trop)} URL qui ne devraient pas y être — {sorted(en_trop)[:3]}")
-    if len(locs) > 16 + len(garde) * 1:
-        pbs.append(f"sitemap : {len(locs)} URL (plafond décidé : 16 + liste blanche)")
+    # 28/10 : le plafond se calcule sur la surface décidée, il ne s'écrit plus en dur. Un plafond
+    # fixe obligeait à le corriger à chaque page ajoutée — et un plafond qu'on corrige ne plafonne rien.
+    plafond = len(coeur()) + len(garde)
+    if len(locs) > plafond:
+        pbs.append(f"sitemap : {len(locs)} URL (plafond décidé : {plafond} = {len(coeur())} pages de "
+                   f"cœur + {len(garde)} autorisées)")
     return pbs
 
 

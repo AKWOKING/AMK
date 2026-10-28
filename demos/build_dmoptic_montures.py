@@ -253,13 +253,15 @@ V2_CSS = """
 .v2-photo{margin:26px 0 0}
 .v2-photo img{display:block;width:100%;height:auto;border-radius:var(--r-lg);border:1px solid var(--line)}
 .v2-photo figcaption{margin-top:10px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
-.v2-steps{counter-reset:v2step;list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
-@media(min-width:760px){.v2-steps{grid-template-columns:1fr 1fr}}
-.v2-steps li{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px}
-/* 28/10 · connectedness : des cartes separees lisaient comme des sujets distincts. Une seule surface,
-   separee par des filets : la liaison dit « et ensuite ». */
-@media(min-width:760px){.v2-steps{gap:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
-  .v2-steps li{background:none;border:0;border-radius:0;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+/* 28/10 · connectedness : des cartes separees lisaient comme des sujets distincts. Une seule
+   surface, separee par des filets : la liaison dit « et ensuite ». La regle vaut a TOUTES les
+   largeurs — en colonne sur telephone, en deux colonnes au-dela de 760 px. */
+.v2-steps{counter-reset:v2step;list-style:none;margin:26px 0 0;padding:0;display:grid;gap:0;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.v2-steps li{background:none;padding:18px;border:0;border-radius:0;border-top:1px solid var(--line)}
+.v2-steps li:first-child{border-top:0}
+@media(min-width:760px){.v2-steps{grid-template-columns:1fr 1fr}
+  .v2-steps li{border-left:1px solid var(--line)}
   .v2-steps li:nth-child(odd){border-left:0}
   .v2-steps li:nth-child(-n+2){border-top:0}}
 .v2-steps .n{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.12em;color:var(--brand)}
@@ -437,6 +439,11 @@ def to_en(page_html, path, title, desc, base):
             return m.group(0)
         return 'href="/en' + (u if u != "/" else "/") + '"'
     body = re.sub(r'href="([^"]*)"', link, body)
+    # 28/10 · le lien de langue du pied de page est un vrai <a> (les boutons FR/EN n'en sont pas) :
+    # sans lui, les pages anglaises n'étaient atteignables que par hreflang et sitemap — orphelines
+    # pour un crawler. Sur le miroir, il renvoie vers le français, après la réécriture des liens.
+    body = body.replace('<a class="flang" href="/en/" hreflang="en" lang="en">English</a>',
+                        '<a class="flang" href="/" hreflang="fr" lang="fr">Français</a>')
 
     # Boutons WhatsApp : le lien statique (sans JavaScript) part avec le message anglais.
     def wa_link(m):
@@ -698,6 +705,18 @@ class Site:
 def main():
     src = SRC.read_text(encoding="utf-8")
     site = Site(src)
+
+    # 28/10 · une page de service déclare ce qu'elle rend, et qui le rend. Le `provider` pointe vers
+    # l'entité Optician de l'accueil par son @id : Google relie la page à l'établissement, pas à un
+    # texte isolé. Aucun prix, aucune offre — rien à vendre en ligne.
+    def service_ld(path, name, service_type, desc):
+        return {"@type": "Service", "@id": site.abs(path) + "#service", "name": name,
+                "serviceType": service_type, "description": desc, "url": site.abs(path),
+                "provider": {"@id": site.abs("/") + "#dmoptic"},
+                "areaServed": [{"@type": "City", "name": "Douala"},
+                               {"@type": "Place", "name": "Bonabéri, Ndobo Mayor"}],
+                "availableLanguage": ["fr", "en"]}
+
     frames = json.loads(FRAMES.read_text(encoding="utf-8"))
     # Traductions : une entrée par code, ni plus ni moins. Un oubli arrête le build.
     EN.update(json.loads(FRAMES_EN.read_text(encoding="utf-8")))
@@ -938,7 +957,11 @@ def main():
     written.append(site.page(
         "/examen-de-vue/", "Examen de vue à Bonabéri, Douala — DM OPTIQUE SARL",
         "Examen de vue au cabinet DM OPTIQUE SARL à Bonabéri : anamnèse, bilan optique, acuités visuelles et réfraction. Rendez-vous sur WhatsApp.",
-        exam_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Examen de vue", "/examen-de-vue/")])], dock_wa=EXAM_WA,
+        exam_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Examen de vue", "/examen-de-vue/")]),
+                             service_ld("/examen-de-vue/", "Examen de vue",
+                                        "Examen de la vue et réfraction",
+                                        "Anamnèse, bilan optique, acuités visuelles et réfraction au cabinet, à Bonabéri (Douala), par un opticien optométriste inscrit à l'ONOC.")],
+        dock_wa=EXAM_WA,
         en_meta=("Eye examination in Bonaberi, Douala — DM OPTIQUE SARL",
                  "Eye examination at DM OPTIQUE SARL in Bonaberi: history, optical assessment, visual acuity and refraction. Book on WhatsApp.")))
 
@@ -1006,6 +1029,114 @@ def main():
         en_meta=("Contact and address — DM OPTIQUE SARL, Bonaberi",
                  "DM OPTIQUE SARL, West Hotel building, first floor, Ndobo Mayor, Bonaberi, Douala. WhatsApp and phone: +237 656 122 239. Hours Mon-Sat.")))
 
+    # ── Pages de service (28/10) ──────────────────────────────────────────────────────
+    # Pourquoi ces deux pages : le rapport Whitespark 2026 place « une page dédiée par service »
+    # en tête des signaux on-page locaux, et notre propre audit du 21/10 avait déjà écrit que quatre
+    # services étaient décrits sans page. Ce qu'on n'a PAS fait : une page par quartier ni par variante
+    # de requête. Google nomme explicitement les pages ville qui renvoient toutes au même endroit comme
+    # du doorways abuse, et la production de pages à l'échelle comme du scaled content abuse.
+    # Les faits ici sont ceux déjà publiés (ONOC, adresse, horaires, ordonnance, réparation) : rien
+    # d'inventé, aucun délai, aucun prix, aucune marque. À faire valider par le client (a-completer.md #8).
+
+    LENS_WA = ("Bonjour DM OPTIQUE SARL, j'ai une ordonnance et je voudrais des verres correcteurs.",
+               "Hello DM OPTIQUE SARL, I have a prescription and I would like prescription lenses.")
+    REPAIR_WA = ("Bonjour DM OPTIQUE SARL, ma monture a besoin d'une réparation ou d'un réglage.",
+                 "Hello DM OPTIQUE SARL, my frame needs a repair or an adjustment.")
+
+    lens_steps = [
+        ("01", "L'ordonnance", "The prescription",
+         "On lit l'ordonnance de votre ophtalmologue : la correction de chaque œil, l'écart entre les pupilles, la vision de loin et de près.",
+         "We read your ophthalmologist's prescription: the correction for each eye, the distance between your pupils, distance and near vision."),
+        ("02", "La monture", "The frame",
+         "On choisit la monture qui va porter ces verres : la taille du cercle compte autant que la forme. Une monture trop grande décentre le verre.",
+         "We choose the frame that will carry those lenses: the size of the rim matters as much as the shape. A frame that is too big decentres the lens."),
+        ("03", "Le montage et l'ajustement", "Fitting and adjustment",
+         "Le verre est taillé à la forme du cercle, monté, puis la monture est ajustée sur votre visage. On reprend le réglage si quelque chose appuie.",
+         "The lens is cut to the rim, fitted, then the frame is adjusted on your face. We re-adjust if anything presses."),
+    ]
+    lens_steps_html = chr(10).join(
+        f'<li class="rv"><span class="n">{n}</span><h2>{B(fr_t, en_t)}</h2><p>{B(fr_p, en_p)}</p></li>'
+        for n, fr_t, en_t, fr_p, en_p in lens_steps)
+    lens_main = f'''<section class="wrap">
+    {site.crumbs([(B("Accueil", "Home"), "/"), (B("Verres sur ordonnance", "Prescription lenses"), None)])}
+    <h1 class="rv">{B("Verres sur ordonnance à Bonabéri", "Prescription lenses in Bonaberi")}</h1>
+    <p class="lede rv">{B("Un verre correcteur n'est pas un accessoire : c'est la correction écrite par votre ophtalmologue, taillée à la forme de la monture que vous choisissez. Le montage se fait au cabinet, à Douala.", "A corrective lens is not an accessory: it is the correction your ophthalmologist wrote, cut to the shape of the frame you choose. The fitting is done at the practice, in Douala.")}</p>
+    <ol class="v2-steps">
+      {lens_steps_html}
+    </ol>
+    <dl class="v2-facts rv">
+      <div><dt>{B("Ce qu'il faut apporter", "What to bring")}</dt><dd>{B("l'ordonnance de votre ophtalmologue, et vos lunettes actuelles si vous en avez", "your ophthalmologist's prescription, and your current glasses if you have any")}</dd></div>
+      <div><dt>{B("Le délai", "Lead time")}</dt><dd>{B("il dépend du verre commandé : nous vous le donnons au cabinet, sur votre ordonnance, avant toute commande", "it depends on the lens ordered: we tell you at the practice, on your prescription, before anything is ordered")}</dd></div>
+      <div><dt>{B("Où", "Where")}</dt><dd>{B(ADDRESS_FR, ADDRESS_EN)}</dd></div>
+      <div><dt>{B("Horaires", "Hours")}</dt><dd>{B(HOURS_FR, HOURS_EN)}</dd></div>
+    </dl>
+    <div class="actions rv">
+      {wa_btn(LENS_WA[0], LENS_WA[1], "Envoyer mon ordonnance sur WhatsApp", "Send my prescription on WhatsApp")}
+      <a class="btn" href="{TEL}">{B("Appeler le 656 122 239", "Call 656 122 239")}</a>
+    </div>
+    <p class="note">{B("Pas d'ordonnance ? L'examen de la vue se fait au cabinet, le matin, sur rendez-vous.", "No prescription? The eye examination is done at the practice, in the morning, by appointment.")} <a href="/examen-de-vue/">{B("Voir le déroulé de l'examen", "See how the examination works")}</a></p>
+    <p class="note">{B("Vous cherchez d'abord une monture ?", "Looking for a frame first?")} <a href="/montures/">{B("Les montures du cabinet, par catégorie", "The practice's frames, by category")}</a> {B("· Une monture à réparer plutôt ?", "· A frame to repair instead?")} <a href="/reparation-et-entretien/">{B("Réparation et entretien", "Repairs and adjustments")}</a></p>
+  </section>'''
+    written.append(site.page(
+        "/verres-sur-ordonnance/", "Verres sur ordonnance à Bonabéri, Douala — DM OPTIQUE SARL",
+        "Verres correcteurs montés au cabinet DM OPTIQUE SARL à Bonabéri, Douala : lecture de l'ordonnance, choix de la monture, montage et ajustement.",
+        lens_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Verres sur ordonnance", "/verres-sur-ordonnance/")]),
+                             service_ld("/verres-sur-ordonnance/", "Verres sur ordonnance",
+                                        "Montage de verres correcteurs sur ordonnance",
+                                        "Lecture de l'ordonnance, choix de la monture, montage et ajustement des verres correcteurs au cabinet, à Bonabéri (Douala).")],
+        dock_wa=LENS_WA,
+        en_meta=("Prescription lenses in Bonaberi, Douala — DM OPTIQUE SARL",
+                 "Prescription lenses fitted at the DM OPTIQUE SARL practice in Bonaberi, Douala: reading the prescription, choosing the frame, fitting and adjustment.")))
+
+    repair_steps = [
+        ("01", "La photo, d'abord", "A photo first",
+         "Envoyez une photo de la monture sur WhatsApp. La réponse vous dit si c'est réparable, et si le déplacement en vaut la peine.",
+         "Send a photo of the frame on WhatsApp. The answer tells you whether it can be repaired, and whether the trip is worth it."),
+        ("02", "La monture, ensuite", "The frame, then",
+         "Apportez-la au cabinet. On regarde la charnière, les vis, les plaquettes, les branches, et on vous dit ce qui est possible — sans promettre l'impossible.",
+         "Bring it to the practice. We look at the hinge, the screws, the nose pads, the temples, and tell you what is possible — without promising the impossible."),
+        ("03", "Le réglage", "The adjustment",
+         "Une monture qui glisse, qui appuie ou qui penche se régale sur votre visage. C'est souvent ce qui manquait, pas une réparation.",
+         "A frame that slips, presses or sits crooked is adjusted on your face. That is often what was missing, not a repair."),
+    ]
+    repair_steps_html = chr(10).join(
+        f'<li class="rv"><span class="n">{n}</span><h2>{B(fr_t, en_t)}</h2><p>{B(fr_p, en_p)}</p></li>'
+        for n, fr_t, en_t, fr_p, en_p in repair_steps)
+    repair_main = f'''<section class="wrap">
+    {site.crumbs([(B("Accueil", "Home"), "/"), (B("Réparation et entretien", "Repairs and adjustments"), None)])}
+    <h1 class="rv">{B("Réparation et entretien de lunettes à Bonabéri", "Repairs and adjustments in Bonaberi")}</h1>
+    <p class="lede rv">{B("Une vis perdue, une branche tordue, une plaquette usée, une charnière qui force : ça se regarde. Envoyez d'abord une photo — vous saurez si le déplacement sert à quelque chose avant de traverser Douala.", "A lost screw, a bent temple, a worn nose pad, a hinge that grinds: it needs looking at. Send a photo first — you will know whether the trip is worth it before crossing Douala.")}</p>
+    <ol class="v2-steps">
+      {repair_steps_html}
+    </ol>
+    <figure class="v2-photo rv">
+      <img src="/cabinet-enseigne.webp" alt="{esc("Enseigne Consultation au-dessus de l'entrée du cabinet")}" width="1200" height="901" loading="lazy">
+      <figcaption>{B("L'entrée : immeuble West Hotel, 1er étage, dernière porte à droite.", "The entrance: West Hotel building, first floor, last door on the right.")}</figcaption>
+    </figure>
+    <dl class="v2-facts rv">
+      <div><dt>{B("Ce qu'on regarde", "What we look at")}</dt><dd>{B("vis, plaquettes, branches, charnières, monture déformée, verre rayé", "screws, nose pads, temples, hinges, a bent frame, a scratched lens")}</dd></div>
+      <div><dt>{B("À apporter", "Bring")}</dt><dd>{B("la monture, et l'ordonnance si les verres doivent être refaits", "the frame, and the prescription if the lenses have to be remade")}</dd></div>
+      <div><dt>{B("Où", "Where")}</dt><dd>{B(ADDRESS_FR, ADDRESS_EN)}</dd></div>
+      <div><dt>{B("Horaires", "Hours")}</dt><dd>{B(HOURS_FR, HOURS_EN)}</dd></div>
+    </dl>
+    <div class="actions rv">
+      {wa_btn(REPAIR_WA[0], REPAIR_WA[1], "Envoyer une photo sur WhatsApp", "Send a photo on WhatsApp")}
+      <a class="btn" href="{TEL}">{B("Appeler le 656 122 239", "Call 656 122 239")}</a>
+    </div>
+    <p class="note">{B("Une monture cassée n'est pas toujours réparable : une soudure sur certains métaux, ou une charnière intégrée, ne se refait pas. On le dit avant, pas après.", "A broken frame is not always repairable: some metal joints, or an integrated hinge, cannot be redone. We say so before, not after.")}</p>
+    <p class="note">{B("Besoin de verres neufs ?", "Need new lenses?")} <a href="/verres-sur-ordonnance/">{B("Verres sur ordonnance", "Prescription lenses")}</a> {B("· Envie de changer de monture ?", "· Fancy a new frame?")} <a href="/montures/">{B("Nos montures", "Our frames")}</a></p>
+  </section>'''
+    written.append(site.page(
+        "/reparation-et-entretien/", "Réparation et entretien de lunettes à Bonabéri — DM OPTIQUE SARL",
+        "Monture cassée, vis perdue, branches tordues, plaquettes usées : le cabinet à Bonabéri regarde la monture, ou une photo sur WhatsApp avant de vous déplacer.",
+        repair_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Réparation et entretien", "/reparation-et-entretien/")]),
+                               service_ld("/reparation-et-entretien/", "Réparation et entretien de lunettes",
+                                          "Réparation, réglage et entretien de montures",
+                                          "Réparation, réglage et entretien de montures au cabinet, à Bonabéri (Douala) : vis, plaquettes, branches, charnières, monture déformée.")],
+        dock_wa=REPAIR_WA,
+        en_meta=("Repairs and adjustments in Bonaberi, Douala — DM OPTIQUE SARL",
+                 "Broken frame, lost screw, bent temples, worn nose pads: bring it to the practice in Bonaberi, or send a photo on WhatsApp before travelling.")))
+
     # ── Page 404 + en-têtes hôte (préparation Cloudflare, F7) ───────────────────
     notfound_main = f'''<section class="wrap">
     <h1>{B("Page introuvable", "Page not found")}</h1>
@@ -1069,6 +1200,8 @@ def main():
         "/montures/enfants/": ("Montures enfants (10)", "Children's frames (10)"),
         "/montures/hommes/": ("Montures homme (6)", "Men's frames (6)"),
         "/examen-de-vue/": ("Examen de la vue — le déroulé, les horaires, ce qu'il faut apporter", "Eye examination — the steps, hours, what to bring"),
+        "/verres-sur-ordonnance/": ("Verres sur ordonnance — ordonnance, monture, montage, ajustement", "Prescription lenses — prescription, frame, fitting, adjustment"),
+        "/reparation-et-entretien/": ("Réparation et entretien — vis, plaquettes, branches, réglage", "Repairs and adjustments — screws, nose pads, temples, fitting"),
         "/le-cabinet/": ("Le cabinet — l'équipement et l'adresse", "The practice — equipment and address"),
         "/contact/": ("Contact — adresse, horaires, WhatsApp", "Contact — address, hours, WhatsApp"),
     }
@@ -1108,7 +1241,9 @@ def main():
         llms += [f"- [{t}]({site.abs(u)})" for u, t in fiches_en]
     llms_txt = chr(10).join(llms)
     n_links = llms_txt.count("](https://dmoptiquesarl.com")
-    attendu = 48 + len(en_pages)
+    # 28/10 : le total ne s'écrit plus en dur. Chaque page française écrite est listée une fois,
+    # et chaque page anglaise une fois — 48 était un chiffre qui cassait à la première page ajoutée.
+    attendu = len(site.paths) + len(en_pages)
     if n_links != attendu or "+237 656 122 239" not in llms_txt or "FCFA" in llms_txt \
             or any(b in llms_txt for b in ("Ray-Ban", "Oakley", "Gucci", "Essilor", "Zeiss", "NIDEK", "HP")):
         sys.exit(f"llms.txt incohérent : {n_links} liens (attendu {attendu}), verrous à vérifier")
