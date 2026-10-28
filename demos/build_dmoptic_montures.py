@@ -19,7 +19,8 @@ Règles appliquées :
 - **Aucun prix, aucune marque, aucune mesure** (brief §4 ; les mesures ne sont pas fournies → absentes).
 - Filtres = JS progressif + **fragments `#`** (jamais d'URL paramétrée indexable — Google, facettes) ;
   compteurs calculés sur les données, aucune pill à zéro résultat (SPEC §6) ; sans JS, grille complète.
-- Schémas : `BreadcrumbList` partout, `ItemList` sur hub/catégories ; **jamais** `Product`/`Offer`/`price`.
+- Schémas : `BreadcrumbList` partout, `ItemList` sur hub/catégories, `Product` **sans** `Offer` ni prix
+  sur chaque fiche (28/10 : la porte de livraison le demande, le prix reste interdit).
 - Les polices et le logo de la tête de l'accueil sont relatifs (`fonts/…`) : réécrits en absolu
   (`/fonts/…`) pour les pages nichées, sinon elles chargent dans le vide.
 - CTA unique par monture : WhatsApp, message avec le nom injecté (SPEC §0), « DM OPTIQUE SARL »
@@ -107,6 +108,47 @@ HEADERS = """/*
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+
+# CACHE — 23/10 —————————————————————————————————————————————
+# Cloudflare Pages ne lit un splat `*` qu'en **fin** de motif : `/*.webp` ne matcherait rien
+# (leçon de l'audit du 23/10). D'où un bloc par dossier, et un bloc par fichier à la racine.
+# La règle équivalente côté tableau de bord est dans clients/dm-optic/launch/CACHE-2026-10-23.md.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/montures/*
+  Cache-Control: public, max-age=604800
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=604800
+/cabinet-enseigne.webp
+  Cache-Control: public, max-age=604800
+/cabinet-examen.webp
+  Cache-Control: public, max-age=604800
+/cabinet-hero-1080.webp
+  Cache-Control: public, max-age=31536000, immutable
+/cabinet-hero-640.webp
+  Cache-Control: public, max-age=31536000, immutable
+/cabinet-hero.webp
+  Cache-Control: public, max-age=31536000, immutable
+/cabinet-interieur.webp
+  Cache-Control: public, max-age=604800
+/dm-logo.webp
+  Cache-Control: public, max-age=31536000, immutable
+/dmoptic-solaires.webp
+  Cache-Control: public, max-age=604800
+/favicon-192.png
+  Cache-Control: public, max-age=604800
+/favicon-32.png
+  Cache-Control: public, max-age=604800
+/favicon.ico
+  Cache-Control: public, max-age=604800
+/og.jpg
+  Cache-Control: public, max-age=604800
+
+# Pas de bloc pour le HTML : Cloudflare Pages le sert déjà en `max-age=0, must-revalidate`.
+# Le forcer ici demanderait `/*.html`, un motif que l'hôte n'applique pas (splat en fin seulement).
 """
 
 # 22/10 (soir) — PAS de fichier `_redirects`. Cloudflare Workers n'accepte que des chemins RELATIFS
@@ -143,7 +185,7 @@ V2_CSS = """
 .v2-door{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
 .v2-door img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#F6EBE0}
 .v2-door .v2-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px}
-.v2-door h2{margin:0;font-size:1.15rem}
+.v2-door h2{margin:0;font-size:1.05rem}  /* 28/10 : 1,15 rem etait la 7e taille de la page (plafond 6, §5) */
 .v2-door p{margin:0;color:var(--ink-2);font-size:var(--fs-sm)}
 .v2-door .v2-go{font:600 var(--fs-sm)/1 var(--f-b);color:var(--brand)}
 .v2-filters{margin-top:22px}
@@ -159,6 +201,30 @@ V2_CSS = """
 @media(prefers-reduced-motion:reduce){html.js .v2-filters-panel.is-open{animation:none}}
 .v2-toolbar .btn{min-height:48px}
 .v2-group{border:0;margin:16px 0 0;padding:0}
+/* 28/10 · choice overload : la famille repliee. Un depliant natif, aucun JavaScript de plus. */
+.v2-more{margin:16px 0 0}
+.v2-more>summary{display:inline-flex;align-items:center;gap:8px;cursor:pointer;list-style:none;
+  font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+  padding:6px 0;min-height:44px}
+.v2-more>summary::-webkit-details-marker{display:none}
+.v2-more>summary::after{content:"+";font-size:14px;line-height:1}
+.v2-more[open]>summary::after{content:"–"}
+.v2-more>summary:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
+.v2-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* 28/10 · questions : la question en gras, la reponse en dessous. Pas de depliant : un moteur et un
+   assistant lisent le texte tel qu'il est servi, et une reponse repliee n'est pas une reponse citee. */
+.v2-qa{margin:14px 0 30px;padding:0}
+.v2-qa>div{padding:16px 0;border-top:1px solid var(--line)}
+.v2-qa>div:first-child{border-top:0}
+.v2-qa dt{font-weight:700;color:var(--ink);font-size:var(--fs-base);line-height:1.4}
+.v2-qa dd{margin:6px 0 0;color:var(--ink-2);font-size:var(--fs-sm);line-height:1.65;max-width:68ch}
+/* 28/10 · closure : la fiche suivante depasse de 22 % — assez pour que l'oeil complete la serie,
+   assez peu pour que la fiche lue reste entiere. Le defilement est natif, avec accroche. */
+.v2-rail{grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:thin;padding-bottom:8px;margin-right:-16px;padding-right:16px}
+.v2-rail>*{scroll-snap-align:start}
+@media(min-width:780px){.v2-rail{grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;
+  padding-bottom:0;margin-right:0;padding-right:0}}
 .v2-group legend{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:0}
 .v2-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .v2-pill{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 12px;border:1px solid var(--line-strong);border-radius:999px;background:var(--card);color:var(--ink);font:600 var(--fs-sm)/1 var(--f-b);cursor:pointer}
@@ -194,9 +260,17 @@ V2_CSS = """
 .v2-photo{margin:26px 0 0}
 .v2-photo img{display:block;width:100%;height:auto;border-radius:var(--r-lg);border:1px solid var(--line)}
 .v2-photo figcaption{margin-top:10px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
-.v2-steps{counter-reset:v2step;list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
-@media(min-width:760px){.v2-steps{grid-template-columns:1fr 1fr}}
-.v2-steps li{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px}
+/* 28/10 · connectedness : des cartes separees lisaient comme des sujets distincts. Une seule
+   surface, separee par des filets : la liaison dit « et ensuite ». La regle vaut a TOUTES les
+   largeurs — en colonne sur telephone, en deux colonnes au-dela de 760 px. */
+.v2-steps{counter-reset:v2step;list-style:none;margin:26px 0 0;padding:0;display:grid;gap:0;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.v2-steps li{background:none;padding:18px;border:0;border-radius:0;border-top:1px solid var(--line)}
+.v2-steps li:first-child{border-top:0}
+@media(min-width:760px){.v2-steps{grid-template-columns:1fr 1fr}
+  .v2-steps li{border-left:1px solid var(--line)}
+  .v2-steps li:nth-child(odd){border-left:0}
+  .v2-steps li:nth-child(-n+2){border-top:0}}
 .v2-steps .n{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.12em;color:var(--brand)}
 .v2-steps h2{margin:.5rem 0 0;font-size:var(--fs-h3);line-height:1.25}
 .v2-steps p{margin:.45rem 0 0;color:var(--ink-2);font-size:var(--fs-sm)}
@@ -234,7 +308,9 @@ FILTER_JS = """<script>/* Filtres du catalogue v2 : OU dans un groupe, ET entre 
       c.hidden=!ok; if(ok)n++;
     });
     count.textContent=n+(n>1?L(' affichées',' shown'):L(' affichée',' shown'));
-    if(show)show.textContent=L('Tout afficher','Show all');
+    /* 28/10 · Parkinson : ce bouton ne montre pas tout, il ferme le panneau et amene a la grille.
+       Le libelle dit maintenant ce qu'il fait, et cesse d'etre le jumeau d'Effacer. */
+    if(show)show.textContent=L('Voir les montures','See the frames');
     empty.hidden=(n!==0);
     boxes.forEach(function(b){var l=b.closest?b.closest('label'):null; if(l)l.classList.toggle('is-on',b.checked);});
     renderChips(st);
@@ -314,8 +390,13 @@ def set_attr(head, attr, key, val):
     return head.replace("</head>", f'<meta {attr}="{key}" content="{esc(val)}">\n</head>', 1)
 
 
-def to_en(page_html, path, title, desc, base):
-    """Page française → page anglaise. Une seule source de vérité : le contenu n'est pas dupliqué."""
+def to_en(page_html, path, title, desc, base, ld_en=()):
+    """Page française → page anglaise. Une seule source de vérité : le contenu n'est pas dupliqué.
+
+    Sauf le balisage qui porte du TEXTE : une FAQPage française sur une page anglaise dit à un
+    moteur une chose que le visiteur ne peut pas lire. `ld_en` remplace donc ces nœuds par leur
+    version anglaise, avant la réécriture des adresses.
+    """
     fr_url, en_url = base + path, base + en_path(path)
     head, sep, body = page_html.partition("</head>")
     if not sep:
@@ -370,6 +451,11 @@ def to_en(page_html, path, title, desc, base):
             return m.group(0)
         return 'href="/en' + (u if u != "/" else "/") + '"'
     body = re.sub(r'href="([^"]*)"', link, body)
+    # 28/10 · le lien de langue du pied de page est un vrai <a> (les boutons FR/EN n'en sont pas) :
+    # sans lui, les pages anglaises n'étaient atteignables que par hreflang et sitemap — orphelines
+    # pour un crawler. Sur le miroir, il renvoie vers le français, après la réécriture des liens.
+    body = body.replace('<a class="flang" href="/en/" hreflang="en" lang="en">English</a>',
+                        '<a class="flang" href="/" hreflang="fr" lang="fr">Français</a>')
 
     # Boutons WhatsApp : le lien statique (sans JavaScript) part avec le message anglais.
     def wa_link(m):
@@ -394,11 +480,43 @@ def to_en(page_html, path, title, desc, base):
     body = body.replace("Tout afficher", "Show all")
 
     # Données structurées : les adresses de page deviennent anglaises, les fichiers restent à la racine.
+    # Nœuds qui décrivent LA PAGE (et non l'entreprise) : eux seuls changent d'adresse en /en/.
+    # Sans cette liste, l'URL de l'entreprise deviendrait /en/ sur les pages anglaises.
+    PAGE_SCOPED = {"BreadcrumbList", "ListItem", "WebPage", "Service", "FAQPage",
+                   "Question", "Answer", "Product"}
+    by_type = {n.get("@type"): n for n in ld_en}
+
+    def swap_urls(node):
+        """Réécrit base/… → base/en/…, récursivement, dans un nœud de page."""
+        if isinstance(node, dict):
+            return {k: swap_urls(v) for k, v in node.items()}
+        if isinstance(node, list):
+            return [swap_urls(v) for v in node]
+        if isinstance(node, str) and node.startswith(base + "/"):
+            return base + "/en" + node[len(base):]
+        return node
+
     def ld(m):
         block = m.group(0)
-        block = re.sub(r'(")' + re.escape(base) + r'([^"]*/)"',
-                       lambda mm: '"' + base + "/en" + mm.group(2) + '"', block)
+        inner = re.search(r">(\{.*\})</script>", block, re.S)
+        if not inner:
+            return block
+        doc = json.loads(inner.group(1))
+        nodes = doc["@graph"] if "@graph" in doc else [doc]
+        out = []
+        for n in nodes:
+            typ = n.get("@type")
+            n = json.loads(json.dumps(by_type[typ])) if typ in by_type else n
+            out.append(swap_urls(n) if typ in PAGE_SCOPED else n)
+        if out != nodes:
+            doc = dict(doc, **{"@graph": out}) if "@graph" in doc else out[0]
+            block = ('<script type="application/ld+json">'
+                     + json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "</script>")
         return block
+
+    # Les données structurées vivent dans <head> : les traiter aussi dans le corps laissait le
+    # balisage anglais pointer sur les adresses françaises (28/10).
+    head = re.sub(r'<script type="application/ld\+json">.*?</script>', ld, head, flags=re.S)
     body = re.sub(r'<script type="application/ld\+json">.*?</script>', ld, body, flags=re.S)
     return head + "</head>" + body
 
@@ -467,6 +585,7 @@ class Site:
         self.paths = ["/"]
         self.noindex = []        # pages écrites en noindex,follow (26/10) : hors sitemap
         self.pairs = []          # (chemin, titre EN, description EN) — miroir /en/
+        self.ld_en = {}          # chemin → nœuds de schéma anglais (28/10)
 
     @staticmethod
     def _chrome(block):
@@ -514,7 +633,14 @@ class Site:
         set_meta("property", "og:title", title)
         set_meta("property", "og:description", desc)
         if og_image:
-            set_meta("property", "og:image", self.abs(og_image[0]))
+            url_img = self.abs(og_image[0])
+            set_meta("property", "og:image", url_img)
+            # 28/10 : le type suit l'extension. Un og:image en WebP n'est pas garanti dans WhatsApp,
+            # qui est LE canal de ces clients — les fiches repointent donc vers le JPEG 1200×630.
+            if url_img.lower().endswith((".jpg", ".jpeg")):
+                set_meta("property", "og:image:type", "image/jpeg")
+            elif url_img.lower().endswith(".webp"):
+                set_meta("property", "og:image:type", "image/webp")
             set_meta("property", "og:image:alt", og_image[1])
             if og_wh:
                 set_meta("property", "og:image:width", str(og_wh[0]))
@@ -551,7 +677,7 @@ class Site:
         return dock
 
     def page(self, path, title, desc, main_html, ld_graph=None, og_image=None, og_wh=None, extra_script="", dock_wa=None,
-             en_meta=None, indexable=True):
+             en_meta=None, indexable=True, ld_en=None):
         head = self._head(path, title, desc, ld_graph, og_image, og_wh)
         if not indexable:
             # Le miroir anglais est fabriqué à partir de ce fichier : il hérite du noindex, c'est voulu.
@@ -586,6 +712,8 @@ class Site:
         self.paths.append(path)
         if en_meta:
             self.pairs.append((path, en_meta[0], en_meta[1]))
+            if ld_en:
+                self.ld_en[path] = ld_en
         return out
 
     def crumbs(self, items):
@@ -599,6 +727,22 @@ class Site:
             {"@type": "ListItem", "position": i + 1, "name": name, "item": self.abs(url)}
             for i, (name, url) in enumerate(items)]}
 
+    def product_ld(self, f, url, desc):
+        """La fiche monture, déclarée comme un produit — SANS prix et SANS `Offer`.
+
+        Le 22/10, la règle était « jamais Product » : elle datait du temps où l'on craignait qu'un
+        schéma produit ne promette un prix. La porte de livraison (`audit_delivery.py`, D7) demande
+        aujourd'hui le contraire : `name`, `image`, `description`, `sku` — et toujours aucun prix.
+        Ce que Google lit ici, c'est un objet nommé, pas une offre commerciale.
+        """
+        return {"@type": "Product",
+                "name": f["nom"],
+                "url": url,
+                "image": [self.abs(f"/montures/monture-{f['code'].lower()}.jpg")],
+                "description": desc,
+                "sku": f["code"],
+                "category": "Monture de vue"}
+
     def itemlist_ld(self, frames):
         return {"@type": "ItemList", "itemListElement": [
             {"@type": "ListItem", "position": i + 1, "name": f["nom"], "url": self.abs(frame_url(f))}
@@ -608,6 +752,18 @@ class Site:
 def main():
     src = SRC.read_text(encoding="utf-8")
     site = Site(src)
+
+    # 28/10 · une page de service déclare ce qu'elle rend, et qui le rend. Le `provider` pointe vers
+    # l'entité Optician de l'accueil par son @id : Google relie la page à l'établissement, pas à un
+    # texte isolé. Aucun prix, aucune offre — rien à vendre en ligne.
+    def service_ld(path, name, service_type, desc):
+        return {"@type": "Service", "@id": site.abs(path) + "#service", "name": name,
+                "serviceType": service_type, "description": desc, "url": site.abs(path),
+                "provider": {"@id": site.abs("/") + "#dmoptic"},
+                "areaServed": [{"@type": "City", "name": "Douala"},
+                               {"@type": "Place", "name": "Bonabéri, Ndobo Mayor"}],
+                "availableLanguage": ["fr", "en"]}
+
     frames = json.loads(FRAMES.read_text(encoding="utf-8"))
     # Traductions : une entrée par code, ni plus ni moins. Un oubli arrête le build.
     EN.update(json.loads(FRAMES_EN.read_text(encoding="utf-8")))
@@ -681,7 +837,19 @@ def main():
                     f'<label class="v2-pill"><input type="checkbox" data-group="{group_key}" '
                     f'value="{esc(slugify(label))}" data-label="{esc(label)}"> {esc(label)} '
                     f'<span class="v2-n">{n}</span></label>')
-            groups.append(f'''<fieldset class="v2-group">
+            # 28/10 · choice overload : 17 cases d'un coup, c'est la table de confitures. La famille
+            # la plus courte (la forme) reste visible ; la couleur (jusqu'a 11) passe derriere un
+            # depliant natif, avec son compte annonce. Les cases restent dans le DOM : le filtre, le
+            # fragment # et les puces actives continuent de fonctionner a l'identique.
+            if len(pills) > 7:
+                groups.append(f'''<details class="v2-more"><summary>{B(fr_g, en_g)} <span class="v2-n">({len(pills)})</span></summary>
+        <fieldset class="v2-group">
+          <legend class="v2-sr">{B(fr_g, en_g)}</legend>
+          <div class="v2-pills">{chr(10).join(pills)}</div>
+        </fieldset>
+      </details>''')
+            else:
+                groups.append(f'''<fieldset class="v2-group">
         <legend>{B(fr_g, en_g)}</legend>
         <div class="v2-pills">{chr(10).join(pills)}</div>
       </fieldset>''')
@@ -693,10 +861,10 @@ def main():
     <p class="lede">{B("Nos montures, photographiées une par une au cabinet, à essayer sur votre visage. Touchez une fiche pour la voir sous d'autres angles, ou demandez-la directement sur WhatsApp.", "Our frames, photographed one by one at the practice, to try on your face. Open a frame to see other angles, or ask for it directly on WhatsApp.")}</p>
     <form class="v2-filters" role="search">
       <div class="v2-toolbar">
-        <label class="v2-search">{B("Rechercher", "Search")}<input class="v2-q" type="search" name="q" placeholder="Rechercher une monture…" autocomplete="off"></label>
+        <label class="v2-search">{B("Rechercher", "Search")}<input class="v2-q" type="search" name="q" placeholder="Rechercher une monture…" autocomplete="off" enterkeyhint="search" autocapitalize="none" spellcheck="false"></label>
         <p class="v2-count" role="status" aria-live="polite">Nos montures</p>
         <button class="btn v2-filter-toggle" type="button" aria-expanded="false" aria-controls="filtres-{c}">{B("Filtrer", "Filter")}</button>
-        <button class="btn v2-show" type="button">{B("Tout afficher", "Show all")}</button>
+        <button class="btn v2-show" type="button">{B("Voir les montures", "See the frames")}</button>
         <button class="btn v2-reset" type="button">{B("Effacer", "Clear")}</button>
       </div>
       <div class="v2-filters-panel" id="filtres-{c}">
@@ -737,9 +905,12 @@ def main():
             sims = sims[:3]
             sim_block = ""
             if sims:
+                # 28/10 · closure : trois fiches empilees sur telephone = trois ecrans de plus, et
+                # rien ne dit qu'il y en a d'autres. Un rail qui laisse depasser la fiche suivante
+                # (78 %) dit « la serie continue » sans un mot. Grille classique des 780 px.
                 sim_block = f'''<section class="wrap" aria-labelledby="h-sims">
     <h2 id="h-sims" class="rv">{B("Vous aimerez aussi", "You may also like")}</h2>
-    <ul class="v2-grid">
+    <ul class="v2-grid v2-rail">
       {chr(10).join(mini_card(g) for g in sims)}
     </ul>
   </section>'''
@@ -768,15 +939,20 @@ def main():
     </div>
   </section>
   {sim_block}'''
+            fiche_desc = (f"{f['phrase']} Demandez-la sur WhatsApp au 656 122 239 "
+                          f"— référence {f['code']}.")
             written.append(site.page(
                 frame_url(f), f"{f['nom']} — DM OPTIQUE SARL",
                 # La référence en fin de description : sans elle, deux montures de même forme et même
                 # couleur (F10/F11, H01/H02/H05/H08) portaient la MÊME description (audit 21/10).
-                f"{f['phrase']} Demandez-la sur WhatsApp au 656 122 239 — référence {f['code']}.",
+                fiche_desc,
                 fiche_main,
                 ld_graph=[site.crumb_ld([("Accueil", "/"), ("Montures", "/montures/"),
-                                          (fr_l, f"/montures/{c}/"), (f["nom"], frame_url(f))])],
-                og_image=(f["photos"][0], f["nom"]), og_wh=(1600, 1200), dock_wa=(fr_m, en_m),
+                                          (fr_l, f"/montures/{c}/"), (f["nom"], frame_url(f))]),
+                          site.product_ld(f, site.abs(frame_url(f)), fiche_desc)],
+                # 28/10 : l'aperçu de partage pointe le JPEG 1200×630 (WhatsApp), pas la photo WebP.
+                og_image=(f"/montures/monture-{f['code'].lower()}.jpg", f["nom"]), og_wh=(1200, 630),
+                dock_wa=(fr_m, en_m),
                 indexable=(INDEX_FICHES or frame_url(f) in liste_blanche()),
                 en_meta=(f"{tr_en(f, 'nom')} — DM OPTIQUE SARL",
                          f"{tr_en(f, 'phrase')} Ask for it on WhatsApp at 656 122 239 — reference {f['code']}.")))
@@ -824,11 +1000,21 @@ def main():
       <a class="btn" href="{TEL}">{B("Appeler le 656 122 239", "Call 656 122 239")}</a>
     </div>
     <p class="note">{B("Pour des verres correcteurs, apportez l'ordonnance de votre ophtalmologue. Pour des lunettes de soleil, un réglage ou une réparation, non.", "For prescription lenses, bring your ophthalmologist's prescription. For sunglasses, an adjustment or a repair, no.")}</p>
+    <h2 class="rv">{B("Ce que cet examen fait, et ce qu'il ne fait pas", "What this examination does, and what it does not")}</h2>
+    <dl class="v2-facts rv">
+      <div><dt>{B("Il mesure", "It measures")}</dt><dd>{B("ce que chaque œil voit, et la correction que vos verres devront porter. Rien ne touche l'œil.", "what each eye sees, and the correction your lenses will need. Nothing touches the eye.")}</dd></div>
+      <div><dt>{B("Il ne traite pas", "It does not treat")}</dt><dd>{B("une douleur, une maladie de l'œil, une baisse brutale de la vue : c'est l'ophtalmologue, le médecin spécialiste. On vous le dit et on vous oriente.", "pain, eye disease or a sudden loss of sight: that is for the ophthalmologist, the medical specialist. We say so and point you to the right place.")}</dd></div>
+      <div><dt>{B("Quand revenir", "When to come back")}</dt><dd>{B("repère : tous les deux ans pour un adulte sans problème particulier, chaque année pour un enfant. La fréquence qui vous concerne se décide ici.", "guide: every two years for an adult with no particular problem, every year for a child. The schedule that applies to you is decided here.")} <a href="/questions/">{B("Voir les 22 questions", "See the 22 questions")}</a></dd></div>
+    </dl>
   </section>'''
     written.append(site.page(
         "/examen-de-vue/", "Examen de vue à Bonabéri, Douala — DM OPTIQUE SARL",
         "Examen de vue au cabinet DM OPTIQUE SARL à Bonabéri : anamnèse, bilan optique, acuités visuelles et réfraction. Rendez-vous sur WhatsApp.",
-        exam_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Examen de vue", "/examen-de-vue/")])], dock_wa=EXAM_WA,
+        exam_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Examen de vue", "/examen-de-vue/")]),
+                             service_ld("/examen-de-vue/", "Examen de vue",
+                                        "Examen de la vue et réfraction",
+                                        "Anamnèse, bilan optique, acuités visuelles et réfraction au cabinet, à Bonabéri (Douala), par un opticien optométriste inscrit à l'ONOC.")],
+        dock_wa=EXAM_WA,
         en_meta=("Eye examination in Bonaberi, Douala — DM OPTIQUE SARL",
                  "Eye examination at DM OPTIQUE SARL in Bonaberi: history, optical assessment, visual acuity and refraction. Book on WhatsApp.")))
 
@@ -896,6 +1082,265 @@ def main():
         en_meta=("Contact and address — DM OPTIQUE SARL, Bonaberi",
                  "DM OPTIQUE SARL, West Hotel building, first floor, Ndobo Mayor, Bonaberi, Douala. WhatsApp and phone: +237 656 122 239. Hours Mon-Sat.")))
 
+    # ── Pages de service (28/10) ──────────────────────────────────────────────────────
+    # Pourquoi ces deux pages : le rapport Whitespark 2026 place « une page dédiée par service »
+    # en tête des signaux on-page locaux, et notre propre audit du 21/10 avait déjà écrit que quatre
+    # services étaient décrits sans page. Ce qu'on n'a PAS fait : une page par quartier ni par variante
+    # de requête. Google nomme explicitement les pages ville qui renvoient toutes au même endroit comme
+    # du doorways abuse, et la production de pages à l'échelle comme du scaled content abuse.
+    # Les faits ici sont ceux déjà publiés (ONOC, adresse, horaires, ordonnance, réparation) : rien
+    # d'inventé, aucun délai, aucun prix, aucune marque. À faire valider par le client (a-completer.md #8).
+
+    LENS_WA = ("Bonjour DM OPTIQUE SARL, j'ai une ordonnance et je voudrais des verres correcteurs.",
+               "Hello DM OPTIQUE SARL, I have a prescription and I would like prescription lenses.")
+    REPAIR_WA = ("Bonjour DM OPTIQUE SARL, ma monture a besoin d'une réparation ou d'un réglage.",
+                 "Hello DM OPTIQUE SARL, my frame needs a repair or an adjustment.")
+
+    lens_steps = [
+        ("01", "L'ordonnance", "The prescription",
+         "On lit l'ordonnance de votre ophtalmologue : la correction de chaque œil, l'écart entre les pupilles, la vision de loin et de près.",
+         "We read your ophthalmologist's prescription: the correction for each eye, the distance between your pupils, distance and near vision."),
+        ("02", "La monture", "The frame",
+         "On choisit la monture qui va porter ces verres : la taille du cercle compte autant que la forme. Une monture trop grande décentre le verre.",
+         "We choose the frame that will carry those lenses: the size of the rim matters as much as the shape. A frame that is too big decentres the lens."),
+        ("03", "Le montage et l'ajustement", "Fitting and adjustment",
+         "Le verre est taillé à la forme du cercle, monté, puis la monture est ajustée sur votre visage. On reprend le réglage si quelque chose appuie.",
+         "The lens is cut to the rim, fitted, then the frame is adjusted on your face. We re-adjust if anything presses."),
+    ]
+    lens_steps_html = chr(10).join(
+        f'<li class="rv"><span class="n">{n}</span><h2>{B(fr_t, en_t)}</h2><p>{B(fr_p, en_p)}</p></li>'
+        for n, fr_t, en_t, fr_p, en_p in lens_steps)
+    lens_main = f'''<section class="wrap">
+    {site.crumbs([(B("Accueil", "Home"), "/"), (B("Verres sur ordonnance", "Prescription lenses"), None)])}
+    <h1 class="rv">{B("Verres sur ordonnance à Bonabéri", "Prescription lenses in Bonaberi")}</h1>
+    <p class="lede rv">{B("Un verre correcteur n'est pas un accessoire : c'est la correction écrite par votre ophtalmologue, taillée à la forme de la monture que vous choisissez. Le montage se fait au cabinet, à Douala.", "A corrective lens is not an accessory: it is the correction your ophthalmologist wrote, cut to the shape of the frame you choose. The fitting is done at the practice, in Douala.")}</p>
+    <ol class="v2-steps">
+      {lens_steps_html}
+    </ol>
+    <dl class="v2-facts rv">
+      <div><dt>{B("Ce qu'il faut apporter", "What to bring")}</dt><dd>{B("l'ordonnance de votre ophtalmologue, et vos lunettes actuelles si vous en avez", "your ophthalmologist's prescription, and your current glasses if you have any")}</dd></div>
+      <div><dt>{B("Le délai", "Lead time")}</dt><dd>{B("il dépend du verre commandé : nous vous le donnons au cabinet, sur votre ordonnance, avant toute commande", "it depends on the lens ordered: we tell you at the practice, on your prescription, before anything is ordered")}</dd></div>
+      <div><dt>{B("Où", "Where")}</dt><dd>{B(ADDRESS_FR, ADDRESS_EN)}</dd></div>
+      <div><dt>{B("Horaires", "Hours")}</dt><dd>{B(HOURS_FR, HOURS_EN)}</dd></div>
+    </dl>
+    <div class="actions rv">
+      {wa_btn(LENS_WA[0], LENS_WA[1], "Envoyer mon ordonnance sur WhatsApp", "Send my prescription on WhatsApp")}
+      <a class="btn" href="{TEL}">{B("Appeler le 656 122 239", "Call 656 122 239")}</a>
+    </div>
+    <p class="note">{B("Pas d'ordonnance ? L'examen de la vue se fait au cabinet, le matin, sur rendez-vous.", "No prescription? The eye examination is done at the practice, in the morning, by appointment.")} <a href="/examen-de-vue/">{B("Voir le déroulé de l'examen", "See how the examination works")}</a></p>
+    <p class="note">{B("Vous cherchez d'abord une monture ?", "Looking for a frame first?")} <a href="/montures/">{B("Les montures du cabinet, par catégorie", "The practice's frames, by category")}</a> {B("· Une monture à réparer plutôt ?", "· A frame to repair instead?")} <a href="/reparation-et-entretien/">{B("Réparation et entretien", "Repairs and adjustments")}</a></p>
+  </section>'''
+    written.append(site.page(
+        "/verres-sur-ordonnance/", "Verres sur ordonnance à Bonabéri, Douala — DM OPTIQUE SARL",
+        "Verres correcteurs montés au cabinet DM OPTIQUE SARL à Bonabéri, Douala : lecture de l'ordonnance, choix de la monture, montage et ajustement.",
+        lens_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Verres sur ordonnance", "/verres-sur-ordonnance/")]),
+                             service_ld("/verres-sur-ordonnance/", "Verres sur ordonnance",
+                                        "Montage de verres correcteurs sur ordonnance",
+                                        "Lecture de l'ordonnance, choix de la monture, montage et ajustement des verres correcteurs au cabinet, à Bonabéri (Douala).")],
+        dock_wa=LENS_WA,
+        en_meta=("Prescription lenses in Bonaberi, Douala — DM OPTIQUE SARL",
+                 "Prescription lenses fitted at the DM OPTIQUE SARL practice in Bonaberi, Douala: reading the prescription, choosing the frame, fitting and adjustment.")))
+
+    repair_steps = [
+        ("01", "La photo, d'abord", "A photo first",
+         "Envoyez une photo de la monture sur WhatsApp. La réponse vous dit si c'est réparable, et si le déplacement en vaut la peine.",
+         "Send a photo of the frame on WhatsApp. The answer tells you whether it can be repaired, and whether the trip is worth it."),
+        ("02", "La monture, ensuite", "The frame, then",
+         "Apportez-la au cabinet. On regarde la charnière, les vis, les plaquettes, les branches, et on vous dit ce qui est possible — sans promettre l'impossible.",
+         "Bring it to the practice. We look at the hinge, the screws, the nose pads, the temples, and tell you what is possible — without promising the impossible."),
+        ("03", "Le réglage", "The adjustment",
+         "Une monture qui glisse, qui appuie ou qui penche se régale sur votre visage. C'est souvent ce qui manquait, pas une réparation.",
+         "A frame that slips, presses or sits crooked is adjusted on your face. That is often what was missing, not a repair."),
+    ]
+    repair_steps_html = chr(10).join(
+        f'<li class="rv"><span class="n">{n}</span><h2>{B(fr_t, en_t)}</h2><p>{B(fr_p, en_p)}</p></li>'
+        for n, fr_t, en_t, fr_p, en_p in repair_steps)
+    repair_main = f'''<section class="wrap">
+    {site.crumbs([(B("Accueil", "Home"), "/"), (B("Réparation et entretien", "Repairs and adjustments"), None)])}
+    <h1 class="rv">{B("Réparation et entretien de lunettes à Bonabéri", "Repairs and adjustments in Bonaberi")}</h1>
+    <p class="lede rv">{B("Une vis perdue, une branche tordue, une plaquette usée, une charnière qui force : ça se regarde. Envoyez d'abord une photo — vous saurez si le déplacement sert à quelque chose avant de traverser Douala.", "A lost screw, a bent temple, a worn nose pad, a hinge that grinds: it needs looking at. Send a photo first — you will know whether the trip is worth it before crossing Douala.")}</p>
+    <ol class="v2-steps">
+      {repair_steps_html}
+    </ol>
+    <figure class="v2-photo rv">
+      <img src="/cabinet-enseigne.webp" alt="{esc("Enseigne Consultation au-dessus de l'entrée du cabinet")}" width="1200" height="901" loading="lazy">
+      <figcaption>{B("L'entrée : immeuble West Hotel, 1er étage, dernière porte à droite.", "The entrance: West Hotel building, first floor, last door on the right.")}</figcaption>
+    </figure>
+    <dl class="v2-facts rv">
+      <div><dt>{B("Ce qu'on regarde", "What we look at")}</dt><dd>{B("vis, plaquettes, branches, charnières, monture déformée, verre rayé", "screws, nose pads, temples, hinges, a bent frame, a scratched lens")}</dd></div>
+      <div><dt>{B("À apporter", "Bring")}</dt><dd>{B("la monture, et l'ordonnance si les verres doivent être refaits", "the frame, and the prescription if the lenses have to be remade")}</dd></div>
+      <div><dt>{B("Où", "Where")}</dt><dd>{B(ADDRESS_FR, ADDRESS_EN)}</dd></div>
+      <div><dt>{B("Horaires", "Hours")}</dt><dd>{B(HOURS_FR, HOURS_EN)}</dd></div>
+    </dl>
+    <div class="actions rv">
+      {wa_btn(REPAIR_WA[0], REPAIR_WA[1], "Envoyer une photo sur WhatsApp", "Send a photo on WhatsApp")}
+      <a class="btn" href="{TEL}">{B("Appeler le 656 122 239", "Call 656 122 239")}</a>
+    </div>
+    <p class="note">{B("Une monture cassée n'est pas toujours réparable : une soudure sur certains métaux, ou une charnière intégrée, ne se refait pas. On le dit avant, pas après.", "A broken frame is not always repairable: some metal joints, or an integrated hinge, cannot be redone. We say so before, not after.")}</p>
+    <h2 class="rv">{B("Réparer ou remplacer ?", "Repair or replace?")}</h2>
+    <p class="rv">{B("Trois cas, et ils couvrent presque tout. Une vis, une plaquette, un réglage : c'est une réparation, et c'est souvent ce qui manquait. Une monture déformée ou une branche tordue : ça se redresse, tant que le métal n'a pas cassé. Une monture cassée net, ou dont la charnière est arrachée : on regarde, et on vous dit franchement si c'est fini — avant que vous payiez quoi que ce soit.", "Three cases, and they cover almost everything. A screw, a nose pad, an adjustment: that is a repair, and it is often what was missing. A bent frame or a twisted temple: it can be straightened, as long as the metal has not snapped. A frame broken clean through, or with a torn-off hinge: we look, and we tell you plainly if it is finished — before you pay anything.")}</p>
+    <p class="note">{B("Ce que vous pouvez faire vous-même : resserrer une vis avec un tournevis d'horloger. Le reste, non : une branche se tord à froid et casse, la colle ne tient pas une charnière.", "What you can do yourself: tighten a screw with a watchmaker's screwdriver. The rest, no: a temple bent cold snaps, and glue does not hold a hinge.")} <a href="/questions/">{B("Toutes les questions", "All the questions")}</a></p>
+    <p class="note">{B("Besoin de verres neufs ?", "Need new lenses?")} <a href="/verres-sur-ordonnance/">{B("Verres sur ordonnance", "Prescription lenses")}</a> {B("· Envie de changer de monture ?", "· Fancy a new frame?")} <a href="/montures/">{B("Nos montures", "Our frames")}</a></p>
+  </section>'''
+    written.append(site.page(
+        "/reparation-et-entretien/", "Réparation et entretien de lunettes à Bonabéri — DM OPTIQUE SARL",
+        "Monture cassée, vis perdue, branches tordues, plaquettes usées : le cabinet à Bonabéri regarde la monture, ou une photo sur WhatsApp avant de vous déplacer.",
+        repair_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Réparation et entretien", "/reparation-et-entretien/")]),
+                               service_ld("/reparation-et-entretien/", "Réparation et entretien de lunettes",
+                                          "Réparation, réglage et entretien de montures",
+                                          "Réparation, réglage et entretien de montures au cabinet, à Bonabéri (Douala) : vis, plaquettes, branches, charnières, monture déformée.")],
+        dock_wa=REPAIR_WA,
+        en_meta=("Repairs and adjustments in Bonaberi, Douala — DM OPTIQUE SARL",
+                 "Broken frame, lost screw, bent temples, worn nose pads: bring it to the practice in Bonaberi, or send a photo on WhatsApp before travelling.")))
+
+    # ── Les questions (28/10) ───────────────────────────────────────────────────
+    # Pourquoi cette page : les gens ne tapent pas « opticien Bonabéri », ils tapent une QUESTION.
+    # Vingt-deux questions réelles, chacune avec sa réponse en première phrase, pour qu'une phrase
+    # sorte de la page et tienne debout toute seule (c'est ce qu'un moteur cite, et ce qu'un assistant
+    # extrait). Rien d'inventé : ni durée, ni prix, ni marque, ni symptôme. Deux réponses DISENT ce que
+    # le cabinet ne fait pas — c'est le signal de confiance le plus rare dans ce marché.
+    QA = [
+        ("L'examen de la vue", "The eye examination", [
+            ("Faut-il une ordonnance pour faire un examen de la vue ?",
+             "Do I need a prescription to have an eye examination?",
+             "Non. L'examen se fait au cabinet, sans ordonnance, et c'est lui qui détermine la correction. L'ordonnance de votre ophtalmologue n'est nécessaire que pour faire tailler les verres.",
+             "No. The examination is done at the practice, without a prescription, and it is the examination that works out the correction. Your ophthalmologist's prescription is only needed to have the lenses made."),
+            ("Combien de temps prend un examen de la vue ?",
+             "How long does an eye examination take?",
+             "Nous ne publions pas de durée : elle dépend de ce qu'il y a à mesurer. Vous demandez sur WhatsApp, la réponse vous dit combien de temps prévoir.",
+             "We do not publish a duration: it depends on what has to be measured. Ask on WhatsApp, and the answer tells you how much time to allow."),
+            ("Quand faut-il refaire contrôler sa vue ?",
+             "How often should I have my eyes checked?",
+             "Comme repère : tous les deux ans pour un adulte sans problème particulier, chaque année pour un enfant et pour une personne diabétique. Ce sont les intervalles publiés par le Collège des optométristes britannique ; la fréquence qui vous concerne se décide au cabinet, pas sur cette page.",
+             "As a guide: every two years for an adult with no particular problem, every year for a child and for anyone with diabetes. These are the intervals published by the College of Optometrists; the schedule that applies to you is decided at the practice, not on this page."),
+            ("L'examen touche-t-il l'œil ?",
+             "Does the examination touch the eye?",
+             "Non. Ce qui est décrit ici (les questions, les acuités, la réfraction) se mesure sans rien poser sur l'œil. Si un examen plus poussé vous semble nécessaire, on vous le dit et on vous oriente.",
+             "No. What is described here (the questions, visual acuity, refraction) is measured without putting anything on the eye. If a more thorough examination seems necessary, we say so and point you to the right place."),
+            ("L'examen détecte-t-il les maladies de l'œil ?",
+             "Does the examination detect eye disease?",
+             "Non, et c'est important à savoir. Ici, on mesure la vue et on détermine la correction : la loi camerounaise dit que l'opticien-optométriste conçoit l'équipement optique qui compense une anomalie de la vision. Une douleur, une maladie de l'œil ou une baisse brutale : c'est l'ophtalmologue, le médecin spécialiste.",
+             "No, and that matters. Here we measure sight and work out the correction: Cameroonian law says the optometrist optician designs the optical equipment that compensates for a vision defect. Pain, eye disease or a sudden loss of sight: that is for the ophthalmologist, the medical specialist."),
+            ("Faut-il prendre rendez-vous ?",
+             "Do I need an appointment?",
+             "Écrivez sur WhatsApp avant de venir : on vous dit s'il faut un rendez-vous, et quand passer. L'examen de vue se fait le matin, de 8h30 à 13h00.",
+             "Write on WhatsApp before coming: we tell you whether an appointment is needed, and when to come. Eye examinations are in the morning, from 8:30 to 13:00."),
+        ]),
+        ("Les montures et les verres", "Frames and lenses", [
+            ("Comment choisir une monture qui va à mon visage ?",
+             "How do I choose a frame that suits my face?",
+             "On essaie. La forme du visage guide la forme de la monture, la largeur décide de l'appui sur le nez et derrière les oreilles, et une photo ne dit ni l'un ni l'autre. C'est pour ça que le choix se fait au cabinet, devant un miroir.",
+             "You try them on. Face shape guides the shape of the frame, width decides how it sits on the nose and behind the ears, and a photo tells you neither. That is why the choice is made at the practice, in front of a mirror."),
+            ("Mes verres correcteurs peuvent-ils aller dans cette monture ?",
+             "Can my prescription lenses go into this frame?",
+             "Presque toujours, mais la taille du cercle compte : une monture trop grande décentre le verre, et la correction n'est plus la même au centre. On regarde la monture avec votre ordonnance avant de commander.",
+             "Almost always, but the size of the rim matters: a frame that is too big decentres the lens, and the correction is no longer the same at the centre. We look at the frame together with your prescription before ordering."),
+            ("Les lunettes de soleil peuvent-elles être à ma vue ?",
+             "Can sunglasses be made to my prescription?",
+             "Oui. Le verre teinté se monte à votre correction, pour conduire ou travailler dehors. Dites ce que vous faites au soleil : la teinte et la catégorie du verre se choisissent là-dessus.",
+             "Yes. Tinted lenses can be made to your prescription, for driving or working outdoors. Tell us what you do in the sun: the tint and the lens category are chosen from that."),
+            ("Adaptez-vous des lentilles de contact ?",
+             "Do you fit contact lenses?",
+             "Oui, avec un suivi. Apportez votre ordonnance de lentilles si vous en avez une. Ce n'est pas la solution de tout le monde : on vous dit au cabinet si votre correction s'y prête.",
+             "Yes, with follow-up. Bring your contact lens prescription if you have one. It is not right for everyone: we tell you at the practice whether your correction suits it."),
+            ("Quelle est la différence entre un opticien, un optométriste et un ophtalmologue ?",
+             "What is the difference between an optician, an optometrist and an ophthalmologist?",
+             "L'ophtalmologue est le médecin spécialiste de l'œil : il traite les maladies et opère. L'opticien-optométriste mesure la vue et conçoit l'équipement qui la corrige, et c'est le titre que la loi camerounaise donne au diplômé qui a les deux formations, et celui de M. Domche Noumbi, inscrit à l'ONOC sous le numéro 021/2016.",
+             "The ophthalmologist is the medical specialist of the eye: they treat disease and operate. The optometrist optician measures sight and designs the equipment that corrects it, and that is the title Cameroonian law gives to the graduate with both trainings, and the one held by Mr Domche Noumbi, registered with the ONOC under number 021/2016."),
+            ("Est-ce que vous vendez des marques ?",
+             "Do you sell brands?",
+             "Nous ne publions aucune liste de marques : une marque annoncée est une marque qu'il faut avoir. Demandez celle que vous cherchez sur WhatsApp, la réponse vous dit si elle est en boutique.",
+             "We publish no list of brands: an announced brand is a brand you have to stock. Ask about the one you are looking for on WhatsApp, and the answer tells you whether it is in store."),
+        ]),
+        ("La réparation", "Repairs", [
+            ("Ma monture est cassée : est-ce réparable ?",
+             "My frame is broken: can it be repaired?",
+             "Souvent, mais pas toujours : certaines soudures et certaines charnières intégrées ne se refont pas. Envoyez une photo sur WhatsApp : la réponse vous dit si c'est réparable, et si le déplacement en vaut la peine.",
+             "Often, but not always: some metal joints and some integrated hinges cannot be redone. Send a photo on WhatsApp: the answer tells you whether it can be repaired, and whether the trip is worth it."),
+            ("Faut-il réparer ou remplacer ?",
+             "Should I repair or replace?",
+             "Trois cas. La vis, la plaquette, le réglage : c'est une réparation, et elle règle la plupart des problèmes. La monture déformée ou la branche tordue : ça se redresse, tant que le métal n'a pas cassé. La monture cassée net, ou dont la charnière est arrachée : on regarde, et on vous dit franchement si c'est fini.",
+             "Three cases. A screw, a nose pad, an adjustment: that is a repair, and it fixes most problems. A bent frame or twisted temple: it can be straightened, as long as the metal has not snapped. A frame broken clean through, or with a torn-out hinge: we look at it and tell you plainly if it is finished."),
+            ("Puis-je la réparer moi-même ?",
+             "Can I repair it myself?",
+             "Une vis se resserre avec un tournevis d'horloger, et c'est utile à savoir. Le reste, non : une branche se tord à froid et casse, la colle ne tient pas sur une charnière, et une monture forcée se déforme sans revenir. C'est là que le passage au cabinet évite d'aggraver.",
+             "A screw can be tightened with a watchmaker's screwdriver, and that is worth knowing. The rest, no: a temple bent cold snaps, glue does not hold a hinge, and a frame forced back goes out of shape for good. That is where coming to the practice stops it getting worse."),
+        ]),
+        ("Le prix, l'assurance, le paiement", "Price, insurance, payment", [
+            ("Combien coûte une paire de lunettes ?",
+             "How much do a pair of glasses cost?",
+             "Il n'y a pas de prix unique, et nous n'en publions pas : un verre correcteur ne coûte pas la même chose selon la correction, et une monture selon le modèle. Le prix se demande sur WhatsApp, avec votre ordonnance ou la monture qui vous plaît, ou au cabinet.",
+             "There is no single price, and we do not publish one: a corrective lens does not cost the same depending on the correction, and a frame depending on the model. You ask for the price on WhatsApp, with your prescription or the frame you like, or at the practice."),
+            ("Acceptez-vous mon assurance ?",
+             "Do you accept my insurance?",
+             "Nous travaillons avec Belife Insurance, Willis Towers Watson et Groupe Activa, et le dossier de prise en charge se monte avec vous. Ce qui est couvert dépend de votre police, pas de nous : apportez votre carte d'assuré et votre ordonnance.",
+             "We work with Belife Insurance, Willis Towers Watson and Groupe Activa, and the claim file is put together with you. What is covered depends on your policy, not on us: bring your insurance card and your prescription."),
+            ("Et si je n'ai pas d'assurance ?",
+             "What if I have no insurance?",
+             "Vous payez au cabinet, comme tout le monde : espèces, Mobile Money, ou en plusieurs fois. L'absence d'assurance ne change ni l'examen ni le conseil.",
+             "You pay at the practice, like everyone else: cash, Mobile Money, or in instalments. Having no insurance changes neither the examination nor the advice."),
+            ("Peut-on payer en plusieurs fois ?",
+             "Can I pay in instalments?",
+             "Oui, le paiement en plusieurs fois est possible, et la livraison aussi. Les modalités se voient au cabinet, sur le devis, avant la commande.",
+             "Yes, payment in instalments is possible, and so is delivery. The terms are agreed at the practice, on the quote, before the order."),
+        ]),
+        ("Venir au cabinet", "Coming to the practice", [
+            ("Où se trouve le cabinet, exactement ?",
+             "Where exactly is the practice?",
+             "À Bonabéri, quartier Ndobo Mayor, immeuble West Hotel, 1er étage, dernière porte à droite. Le repère est l'enseigne « Consultation » au-dessus de l'entrée.",
+             "In Bonaberi, Ndobo Mayor district, West Hotel building, first floor, last door on the right. The landmark is the “Consultation” sign above the entrance."),
+            ("Quels sont les horaires ?",
+             "What are the opening hours?",
+             "Lundi – Samedi. L'examen de vue se fait de 8h30 à 13h00 ; pour les montures, les verres et la réparation, le cabinet est ouvert de 8h30 à 17h30.",
+             "Monday – Saturday. Eye examinations run from 8:30 to 13:00; for frames, lenses and repairs the practice is open from 8:30 to 17:30."),
+            ("Comment prendre rendez-vous ?",
+             "How do I book?",
+             "Un message sur WhatsApp, avec ce dont vous avez besoin : vue qui a changé, ordonnance à monter, monture à réparer. Le message part déjà écrit, vous pouvez le modifier avant de l'envoyer. Le téléphone reste possible : 656 122 239.",
+             "One WhatsApp message, with what you need: a change in your sight, a prescription to fill, a frame to repair. The message is already written, and you can edit it before sending. The phone still works: 656 122 239."),
+        ]),
+    ]
+
+    def qa_html():
+        parts = []
+        for fr_theme, en_theme, items in QA:
+            parts.append(f'<h2 class="rv">{B(fr_theme, en_theme)}</h2><dl class="v2-qa">')
+            for q_fr, q_en, a_fr, a_en in items:
+                parts.append(f'<div class="rv"><dt>{B(q_fr, q_en)}</dt>'
+                             f'<dd>{B(a_fr, a_en)}</dd></div>')
+            parts.append("</dl>")
+        return chr(10).join(parts)
+
+    qa_ld = {"@type": "FAQPage", "@id": site.abs("/questions/") + "#faq",
+             "mainEntity": [{"@type": "Question", "name": q_fr,
+                             "acceptedAnswer": {"@type": "Answer", "text": a_fr}}
+                            for _, _, items in QA for q_fr, _, a_fr, _ in items]}
+    n_qa = len(qa_ld["mainEntity"])
+    # Le miroir anglais porte le MÊME schéma, dans la langue de sa page : sans ça, /en/questions/
+    # déclare 22 questions françaises, et le texte balisé n'est pas celui que le visiteur lit.
+    qa_ld_en = {"@type": "FAQPage", "@id": site.abs("/questions/") + "#faq",
+                "mainEntity": [{"@type": "Question", "name": q_en,
+                                "acceptedAnswer": {"@type": "Answer", "text": a_en}}
+                               for _, _, items in QA for _, q_en, _, a_en in items]}
+
+    questions_main = f'''<section class="wrap">
+    {site.crumbs([(B("Accueil", "Home"), "/"), (B("Questions", "Questions"), None)])}
+    <h1 class="rv">{B("Les questions qu'on nous pose au cabinet", "The questions we are asked at the practice")}</h1>
+    <p class="lede rv">{B("Vingt-deux questions, et pour chacune la réponse en première phrase. Si la vôtre n'y est pas, écrivez sur WhatsApp : c'est souvent plus rapide qu'un moteur de recherche.", "Twenty-two questions, each answered in its first sentence. If yours is not here, write on WhatsApp: that is often faster than a search engine.")}</p>
+    {qa_html()}
+    <div class="actions rv">
+      {wa_btn(VISIT_WA[0], VISIT_WA[1], "Poser ma question sur WhatsApp", "Ask my question on WhatsApp")}
+      <a class="btn" href="{TEL}">{B("Appeler le 656 122 239", "Call 656 122 239")}</a>
+    </div>
+    <p class="note">{B("Ce que cette page ne dit pas : ni prix, ni délai, ni marque. Non par discrétion, mais parce qu'aucun des trois ne se résume honnêtement en une phrase valable pour tout le monde.", "What this page does not say: no prices, no lead times, no brands. Not out of discretion, but because none of the three can honestly be summed up in one sentence that holds for everyone.")}</p>
+  </section>'''
+    written.append(site.page(
+        "/questions/", "Questions sur l'examen de vue, les montures et la r\u00e9paration \u2014 DM OPTIQUE SARL",
+        "Vingt-deux questions pos\u00e9es au cabinet DM OPTIQUE SARL \u00e0 Bonab\u00e9ri (Douala) : ordonnance, dur\u00e9e, r\u00e9paration, assurances, paiement, adresse.",
+        questions_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Questions", "/questions/")]), qa_ld],
+        dock_wa=VISIT_WA, ld_en=[qa_ld_en],
+        en_meta=("Questions about eye examinations, frames and repairs \u2014 DM OPTIQUE SARL",
+                 "Twenty-two questions asked at the DM OPTIQUE SARL practice in Bonaberi (Douala): prescription, duration, repairs, insurance, payment, address.")))
+
     # ── Page 404 + en-têtes hôte (préparation Cloudflare, F7) ───────────────────
     notfound_main = f'''<section class="wrap">
     <h1>{B("Page introuvable", "Page not found")}</h1>
@@ -933,6 +1378,7 @@ def main():
     (OUTDIR / "_headers").write_text(HEADERS, encoding="utf-8")
 
     # ── Miroir anglais ──────────────────────────────────────────────────────────────────────────
+    en_pages = []                      # (chemin EN, titre anglais) — sert aussi à llms.txt
     for path, en_title, en_desc in site.pairs:
         fr_file = OUTDIR / path.strip("/") / "index.html"
         if not fr_file.exists():
@@ -940,7 +1386,9 @@ def main():
         page_html = fr_file.read_text(encoding="utf-8")
         target = OUTDIR / en_path(path).strip("/") / "index.html"
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(to_en(page_html, path, en_title, en_desc, site.base), encoding="utf-8")
+        target.write_text(to_en(page_html, path, en_title, en_desc, site.base,
+                                site.ld_en.get(path, ())), encoding="utf-8")
+        en_pages.append((en_path(path), en_title))
     if site.base:
         print(f"  miroir /en/ : {len(site.pairs)} pages")
     else:
@@ -957,8 +1405,12 @@ def main():
         "/montures/enfants/": ("Montures enfants (10)", "Children's frames (10)"),
         "/montures/hommes/": ("Montures homme (6)", "Men's frames (6)"),
         "/examen-de-vue/": ("Examen de la vue — le déroulé, les horaires, ce qu'il faut apporter", "Eye examination — the steps, hours, what to bring"),
+        "/verres-sur-ordonnance/": ("Verres sur ordonnance — ordonnance, monture, montage, ajustement", "Prescription lenses — prescription, frame, fitting, adjustment"),
+        "/reparation-et-entretien/": ("Réparation et entretien — vis, plaquettes, branches, réglage", "Repairs and adjustments — screws, nose pads, temples, fitting"),
         "/le-cabinet/": ("Le cabinet — l'équipement et l'adresse", "The practice — equipment and address"),
         "/contact/": ("Contact — adresse, horaires, WhatsApp", "Contact — address, hours, WhatsApp"),
+        "/questions/": ("Questions — 22 réponses sur l'examen, les montures, la réparation, l'assurance et le rendez-vous",
+                        "Questions — 22 answers on the examination, frames, repairs, insurance and booking"),
     }
     llms = ["# DM OPTIQUE SARL", "",
             "> Cabinet d'optique médicale à Bonabéri, Douala (Cameroun), inscrit à l'ONOC. Examen de la vue, verres sur ordonnance, montures femme/homme/enfant, réglage et réparation. Le premier contact passe par WhatsApp : le message arrive déjà écrit.",
@@ -976,16 +1428,32 @@ def main():
     llms += ["", "## Fiches des montures",
              "Chaque monture photographiée au cabinet a sa page ; chaque page existe en français et en anglais.",
              ""] + fiches
+    # 28/10 : le fichier ne listait que le français. Or les 48 pages anglaises existent, et la porte
+    # de livraison (D4) exige que tout ce qui est dans le sitemap soit dans llms.txt. On les liste.
     llms += ["", "## Coordonnées",
              f"- Adresse : {ADDRESS_FR}",
              "- Téléphone et WhatsApp : +237 656 122 239",
              "- Horaires : Lundi–Samedi, 8h30–17h30 · examen de la vue 8h30–13h00",
              "- Langues : français et anglais sur toutes les pages · version anglaise : https://dmoptiquesarl.com/en/", ""]
+    if en_pages:
+        CORE_EN = ["/en/contact/", "/en/examen-de-vue/", "/en/", "/en/le-cabinet/", "/en/montures/"]
+        core = [(u, t) for u, t in en_pages if u in CORE_EN]
+        core.sort(key=lambda x: CORE_EN.index(x[0]))
+        fiches_en = sorted((u, t) for u, t in en_pages if u not in CORE_EN)
+        llms += ["## English pages", "",
+                 'Mirror of the French pages, for agents that read English. Each page declares its '
+                 'alternate in `<link rel="alternate" hreflang="en">`.', "", "### Sections", ""]
+        llms += [f"- [{t}]({site.abs(u)})" for u, t in core]
+        llms += ["", f"### Frame pages ({len(fiches_en)})", ""]
+        llms += [f"- [{t}]({site.abs(u)})" for u, t in fiches_en]
     llms_txt = chr(10).join(llms)
     n_links = llms_txt.count("](https://dmoptiquesarl.com")
-    if n_links != 48 or "+237 656 122 239" not in llms_txt or "FCFA" in llms_txt \
+    # 28/10 : le total ne s'écrit plus en dur. Chaque page française écrite est listée une fois,
+    # et chaque page anglaise une fois — 48 était un chiffre qui cassait à la première page ajoutée.
+    attendu = len(site.paths) + len(en_pages)
+    if n_links != attendu or "+237 656 122 239" not in llms_txt or "FCFA" in llms_txt \
             or any(b in llms_txt for b in ("Ray-Ban", "Oakley", "Gucci", "Essilor", "Zeiss", "NIDEK", "HP")):
-        sys.exit(f"llms.txt incohérent : {n_links} liens (attendu 48), verrous à vérifier")
+        sys.exit(f"llms.txt incohérent : {n_links} liens (attendu {attendu}), verrous à vérifier")
     (OUTDIR / "llms.txt").write_text(llms_txt, encoding="utf-8")
     print(f"  llms.txt : {n_links} liens, {len(llms_txt)} caractères")
 

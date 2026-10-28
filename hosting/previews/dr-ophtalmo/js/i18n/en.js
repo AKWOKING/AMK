@@ -122,6 +122,8 @@ export const en = {
     scheduleDayEmpty: "No consultation announced",
     scheduleNote:
       "Nothing is synced to a calendar: this page is updated by hand, and hours may change from one week to the next.",
+    scheduleNoteWhenBooked:
+      "The days above are updated by hand, so they may change from one week to the next. Free slots, however, are booked in Dr Fogue’s calendar — the button is further down, in the appointment section.",
     scheduleAsOf: "Information reported on {date}.",
     scheduleAction: "Appointment",
     sourceLabel: "Source",
@@ -202,8 +204,31 @@ export const en = {
     disclaimer:
       "A request is not a confirmed appointment. Wait for confirmation from the doctor or the facility before travelling.",
     liveNote: "This site shows no real-time availability: there is no connection to any calendar.",
+    // Three variants, never two at once (js/booking.js, `liveNoteKey`): no
+    // booking page anywhere, this place has one, or another place has one.
+    liveNoteWhenBooked:
+      "This page shows no real-time availability. Free slots appear on Dr Fogue’s booking page, connected to his calendar; the button sits just above the form.",
+    liveNotePartial:
+      "This place does not take online bookings yet: prepare a request below. Online booking exists for the other consultation places, further up the page.",
     reset: "Start again",
     summaryTitle: "Your request",
+  },
+
+  booking: {
+    cta: "Choose a time slot",
+    opensNewTab: "opens in a new tab",
+    note: "You pick a time in Dr Fogue’s calendar: the appointment lands in his calendar straight away and Google sends you the confirmation. If no time suits you, prepare a request below.",
+    or: "Or prepare a request",
+    label: "Online booking",
+    notForPlace:
+      "This place does not offer online booking yet. Prepare a request below: it goes out on WhatsApp, and Dr Fogue replies to fix the time.",
+    // The message leaves from the patient’s own number: the doctor receives it
+    // like any other message, inside the conversation. The site sends nothing.
+    waCta: "Let Dr Fogue know on WhatsApp",
+    waNote:
+      "Optional: this message leaves from your own number, with the place and time you just booked. You can edit it before sending.",
+    waMessage:
+      "Hello {doctor}, I have just booked a slot on your booking page — place: {place}. Could you confirm the appointment is recorded? Thank you.",
   },
 
   wa: {

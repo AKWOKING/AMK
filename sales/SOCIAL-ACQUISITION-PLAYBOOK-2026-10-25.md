@@ -68,6 +68,11 @@ appels — c'est le ruling 142 (`CLIENT-MESSAGING-RULES.md` §13 quinquies), et 
 | **Disqualifiants (un seul suffit)** | Numéro **sans WhatsApp** (ruling 139 : c'est une ligne morte) · pas d'enseigne physique · chaîne dont le siège décide hors Cameroun · site **vivant et complet** de moins de six mois · refuse de donner les accès de la fiche **et** n'a pas de site | Hôpital ou structure publique (marché public, délai incompatible) · exige des allégations médicales · urgence 24/7 non confirmable par une source · budget sous le seuil | Groupe avec webmaster interne · site vivant · hors saison d'admissions (le besoin n'est pas ressenti) |
 | **Où il se trouve** | Facebook (page du cabinet), Google Maps, annuaire de l'Ordre | Facebook, Google Maps, recommandation | Facebook, groupes de parents, panneaux d'entrée |
 
+> **⚠️ La colonne « Qui » ne dit pas qui SIGNERAIT (ruling King 28/10).** Un cabinet d'opticien peut être
+> répondu par un **ophtalmologue itinérant** qui y consulte sans le posséder — cas du Dr Fogue, 26/10 :
+> « je ne suis pas opticien patron ». Trois rôles à écrire avant d'envoyer (**propriétaire / mandaté /
+> sans autorité**) et l'exigence par étape : `sales/QUALIFICATION-2026-10-28.md`.
+
 **Verrou de niche (26/10) — un ICP par mois, pas par semaine.** Le §3.4 alternait A, B, A, C : trois
 acheteurs en quatre semaines, pour une page qui n'a **qu'un client vivant** (DM Optique, opticien), qu'un
 actif montrable dans cette niche et un reel dont l'accroche dit « opticien Akwa ». `knowledge/HIGH-TICKET-2026-10-26.md`

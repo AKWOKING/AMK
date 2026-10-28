@@ -34,6 +34,10 @@ Set VARIANCE / MOTION / DENSITY from the root-law §2 presets (school/clinic con
 ## 4. Family + token sheet
 - Pick a sheet from `design/STYLE-TOKENS.md` by vertical; rotate per the ledger; or pull structure from a bergside family (`design/vendor/bergside-skills/<family>/DESIGN.md` + `design/vendor/registry-digest.json`).
 - Lock: colors (1 accent, tinted neutrals), ONE radius system, type ramp (Outfit house), shadow tint, spacing scale.
+- **Gate (28/10): `python3 tools/qa/audit_palette.py --sheet design/STYLE-TOKENS.md`.** Roles `surface` / `ink` /
+  `brand` must exist; the three canonical contrast pairs must pass AA. Two sheets failed here on 28/10 and were
+  corrected (`#B15F36`, `#398462`). An accent under 3:1 may stay decorative — the primary button then takes
+  `--brand`, never `--accent`.
 - Record the chosen family in the ledger at delivery.
 
 ## 5. IA & copy (bilingual first)
@@ -78,6 +82,10 @@ Set VARIANCE / MOTION / DENSITY from the root-law §2 presets (school/clinic con
 - React/Motion/GSAP only in real app stacks (vendored skills cover them); concepts stay vanilla.
 
 ## 9. Pre-flight + QA (non-negotiable; the page is not done until all pass)
+- **Palette proportion (28/10):** `python3 tools/qa/audit_palette.py --html <page>` on the CSS, then
+  `--image` on **three viewport captures** (top / middle / conversion section) with `--palette "#hex=role,…"`.
+  A 60-30-10 violation is a blocker; a warning is justified in one line in the delivery note. Never measure on a
+  full-page capture — the rule is read per screen, like a film frame. Photos are counted as `autre` on purpose.
 Root-law §13 matrix, mechanically enforced where possible via a QA script + browser check:
 1. `data-en` count == `data-fr` count, zero unpaired; zero EN em-dashes.
 2. Builder runs clean; HTML parses; zero unresolved tokens; base64 images deduped.

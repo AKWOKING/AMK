@@ -174,7 +174,13 @@ Every prospect must clear all three before send:
 3. **Channel availability** — the prospect has a working WhatsApp on the number we hold. If no
    WhatsApp, no wave entry.
 
-A prospect that fails any of the three does not receive a wave message. Log the reason in the CRM
+A prospect that fails any of the three does not receive a wave message.
+
+> **Ajout du 28/10/2026 — la porte ici ne dit pas QUI est l'acheteur.** Elle vérifie la joignabilité, la
+> fraîcheur du CRM et le canal ; elle ne vérifie pas que la personne en face possède l'actif qu'on vend.
+> C'est le trou par lequel est passé le Dr Fogue (ophtalmologue itinérant, ni opticien ni dirigeant).
+> Avant tout prix, devis ou déplacement : `sales/QUALIFICATION-2026-10-28.md` (Q1, trois rôles), et
+> `python3 tools/qa/audit_qualification.py --engaged`. Log the reason in the CRM
 (`excluded_no_wa`, `excluded_dead_lead`, `excluded_already_contacted`) so the list isn't rebuilt with
 the same failures. Règle née le 12/10 : 5 des 7 de la première vague n'auraient pas dû y être.
 Intègre le gate §8c (recoupement CRM) approuvé le 12/10 — aucun futur wave sans lui.

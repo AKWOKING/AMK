@@ -1,0 +1,126 @@
+# Déploiement de DM OPTIQUE (Cloudflare Workers, Worker « dmoptiquesarl »).
+#
+# Pourquoi ce fichier : Workers Builds est lié à **une** branche de production, et cette branche change
+# à chaque nouvelle conversation (`arena/2fffee3b-amk`, puis `arena/29c013f1-amk`, …). Un fichier de
+# workflow, lui, vise un **motif** (`arena/**`) : il n'y a plus de nom de branche à corriger, et le site
+# ne peut plus rester silencieusement en retard.
+#
+# Ordre : la porte de livraison d'abord (`audit_delivery.py --strict`), la publication ensuite. Un site
+# qui a un P1 ou un P2 ne part pas en production.
+#
+# Le jeton ne sert QUE si King a posé les deux secrets (Settings → Secrets and variables → Actions) :
+# `CLOUDFLARE_API_TOKEN` et `CLOUDFLARE_ACCOUNT_ID`. Sans eux, le workflow s'arrête avec un avertissement
+# lisible et laisse Workers Builds faire le travail — il ne casse rien.
+
+name: Déployer DM Optique sur Cloudflare
+
+on:
+  push:
+    branches:
+      - "arena/**"                 # toutes les branches de conversation, présentes et futures
+      - "main"
+    paths:
+      - "hosting/previews/dmoptic/**"
+      - "wrangler.toml"
+      - "tools/qa/audit_delivery.py"
+      - ".github/workflows/deploy-dmoptic.yml"
+  workflow_dispatch: {}             # bouton « Run workflow » pour publier à la demande
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-dmoptic
+  cancel-in-progress: true
+
+jobs:
+  # ── 1 · la porte de livraison, avant tout envoi ─────────────────────────────
+  gate:
+    name: Porte de livraison (--strict)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Le portique se teste lui-même
+        run: python3 tools/qa/test_audit_delivery.py
+
+      - name: Le site livré tient-il debout ? (0 P1, 0 P2)
+        run: |
+          python3 tools/qa/audit_delivery.py hosting/previews/dmoptic \
+            --base https://dmoptiquesarl.com --strict
+
+      # 28/10 · l'intention de recherche et le local, relus à chaque publication : une page orpheline
+      # ou un NAP cassé ne se voit pas sur une capture, et c'est exactement le genre de régression
+      # qu'une reconstruction ramène en silence (le 28/10 : les 10 pages anglaises étaient orphelines).
+      - name: Le portique SEO local se teste lui-même
+        run: python3 tools/qa/audit_seo_local.py --self-test
+
+      - name: La cible et le NAP tiennent-ils ? (0 faute)
+        run: python3 tools/qa/audit_seo_local.py hosting/previews/dmoptic --strict
+
+  # ── 2 · la publication ──────────────────────────────────────────────────────
+  deploy:
+    needs: gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Vérifier le site avant publication
+        run: |
+          set -e
+          test -f hosting/previews/dmoptic/index.html   || { echo "index.html manquant"; exit 1; }
+          test -f hosting/previews/dmoptic/sitemap.xml  || { echo "sitemap.xml manquant"; exit 1; }
+          # Pas de test sur _redirects : ce fichier n'existe plus (Workers n'accepte que des
+          # chemins relatifs, et une redirection d'hôte ne s'y écrit pas — voir wrangler.toml).
+          test -f hosting/previews/dmoptic/_headers     || { echo "_headers manquant"; exit 1; }
+          test -f wrangler.toml                         || { echo "wrangler.toml manquant"; exit 1; }
+          n=$(find hosting/previews/dmoptic -type f | wc -l)
+          echo "fichiers à publier : $n"
+          test "$n" -gt 100 || { echo "seulement $n fichiers : publication bloquée"; exit 1; }
+
+      - name: Les secrets sont-ils posés ?
+        id: creds
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -n "$TOKEN" ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "::warning title=Secrets Cloudflare absents::Ajouter CLOUDFLARE_API_TOKEN et CLOUDFLARE_ACCOUNT_ID (Settings → Secrets and variables → Actions). En attendant, Workers Builds publie la branche arena/29c013f1-amk."
+          fi
+
+      - name: Publier sur Cloudflare
+        if: steps.creds.outputs.ok == 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4.152.0"
+          command: deploy
+
+      # ── IndexNow : Bing, Yandex, Seznam, Naver prévenus du changement ─────────────────────────
+      # Pourquoi : Google découvre par le sitemap, mais Bing/Yandex ne passent pas aussi souvent.
+      # IndexNow est le protocole que ces moteurs lisent pour qu'on leur dise « cette URL a changé ».
+      # Il exige une clé servie à la racine du domaine : hosting/previews/dmoptic/<clé>.txt.
+      # Un échec ici n'empêche jamais la publication (|| true) : le silence d'un moteur n'est pas
+      # une raison de retenir un site déjà en ligne.
+      - name: Prévenir IndexNow (Bing, Yandex, Seznam, Naver)
+        if: steps.creds.outputs.ok == 'true'
+        continue-on-error: true
+        run: |
+          set -u
+          keyfile=$(ls hosting/previews/dmoptic/*.txt 2>/dev/null | head -1 || true)
+          if [ -z "$keyfile" ]; then echo "pas de cle IndexNow : etape ignoree"; exit 0; fi
+          key=$(basename "$keyfile" .txt)
+          # La charge utile est construite par Python qui LIT le sitemap (aucun heredoc dans un
+          # bloc YAML : son contenu serait indente, et Python refuserait l'indentation).
+          python3 -c "import json,re,sys;k=sys.argv[1];u=re.findall(r'<loc>([^<]+)</loc>',open('hosting/previews/dmoptic/sitemap.xml').read());print(json.dumps({'host':'dmoptiquesarl.com','key':k,'keyLocation':'https://dmoptiquesarl.com/'+k+'.txt','urlList':u}))" "$key" > /tmp/indexnow.json
+          echo "IndexNow : $(python3 -c "import json;print(len(json.load(open('/tmp/indexnow.json'))['urlList']))") URL"
+          curl -sS -m 20 -o /tmp/indexnow.txt -w "HTTP %{http_code}\n" \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data-binary @/tmp/indexnow.json https://api.indexnow.org/indexnow || true
+          head -c 300 /tmp/indexnow.txt || true

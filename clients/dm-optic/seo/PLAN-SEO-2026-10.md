@@ -65,3 +65,42 @@ Sources primaires lues : *Tips to improve your local ranking on Google* (Busines
 Restent côté King/client : vérification Search Console + fiche Google (code sur le téléphone du
 cabinet), soumission du sitemap, confirmation que le domaine répond. Les points 2, 5 et 7 du
 tableau §1 se ferment à ce moment-là, pas avant.
+
+---
+
+## 5 · Les 22 questions (28/10/2026) : la page qui répond sans qu'on soit là
+
+**La page** : `https://dmoptiquesarl.com/questions/` et son miroir `/en/questions/`. Vingt-deux
+questions réelles, ramenées du « what do people actually ask » plutôt que des mots-clés, réparties en
+cinq thèmes : l'examen de la vue, les montures et les verres, la réparation, le prix, l'assurance et le
+paiement, venir au cabinet. Chaque réponse commence par l'information, pas par le contexte.
+
+**Pourquoi une page et pas un accordéon sur l'accueil.** Une réponse repliée n'est pas citée, et le
+`FAQPage` de l'accueil ne parlait que de six choses. La page devient la surface qui porte les questions,
+l'accueil garde trois réponses courtes et le lien. Un seul `FAQPage` par langue, avec **22 `mainEntity`**
+qui correspondent mot pour mot au texte visible (vérifié par `tools/qa/audit_seo_local.py` et par
+`tools/qa/test_dmoptic_page.mjs`).
+
+**Ce que la page ne dit pas, et c'est volontaire** : aucun prix, aucune marque, aucun délai chiffré,
+aucun avis, aucun symptôme nommé, aucune promesse de résultat. Deux réponses disent même ce que le
+cabinet **ne fait pas** (l'examen ne détecte pas les maladies de l'œil ; l'ordonnance ne vient pas de
+l'examen) parce que c'est le signal de confiance le plus rare dans ce marché, et le plus cité.
+
+**Les trois réponses qui viennent d'une source, pas de nous** :
+- la fréquence des contrôles (deux ans pour un adulte sans problème, chaque année pour un enfant ou une
+  personne diabétique) est attribuée au *College of Optometrists* et renvoyée au cabinet pour le cas
+  particulier ;
+- la différence opticien / optométriste / ophtalmologue reprend le titre légal et l'inscription à l'ONOC
+  (**n° 021/2016**) ;
+- les horaires et l'itinéraire reprennent la fiche du cabinet (Ndobo Mayor, immeuble West Hotel,
+  1er étage, dernière porte à droite).
+
+**Ce que ça règle, et ce que ça ne règle pas.** Ça donne à Google et aux assistants une phrase
+autonome, datée, vérifiable, à citer : c'est de la pertinence et de la prominence, les deux seuls
+leviers que le site contrôle. Ça ne touche pas la proximité (≈ 55 % du poids local), ni les avis
+(16–20 %), ni la fiche Google (≈ 32 %). **Aucune position n'est promise, ni par le site, ni par nous.**
+Le `FAQPage` reste pour les moteurs de réponse : Google ne l'affiche plus en accordéon depuis le
+7 mai 2026.
+
+**À relire par le client** (une ligne dans `a-completer.md`) : la fréquence des contrôles, les trois
+assurances nommées (Belife, Willis Towers Watson, Groupe Activa) et la phrase sur les lentilles.

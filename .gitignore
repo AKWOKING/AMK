@@ -103,3 +103,17 @@ graphify-out/
 clients/dm-optic/photoshoot/*/PXL_*.jpg
 !clients/dm-optic/photoshoot/others/PXL_20261016_131635710.MP.jpg
 !clients/dm-optic/photoshoot/others/PXL_20261016_132758528.MP.jpg
+
+# ── DM OPTIQUE · ÉPISODE 1 DE LA SÉRIE « LA MONTURE CHERCHE SON NOM » (27/10/2026) — exception explicite.
+#    Motif : King a demandé quelle série peut se produire **sans le docteur et sans visage** ; la réponse
+#    est un livrable, pas une intention. Le fichier doit être atteignable par un LIEN, pas par un chemin
+#    dans /tmp qui redémarre (même ruling que le brag du 26/10 et EP01). Entrent : le master muet de
+#    14,2 s (1,4 Mo) et sa couverture. Le rendu se refait en 45 s : `tools/record/make_dmoptic_monture.py`.
+!clients/dm-optic/content/month1/w3/assets/monture-01-h08.mp4
+!clients/dm-optic/content/month1/w3/assets/monture-01-cover.jpg
+
+# ── DM OPTIQUE · ÉPISODE 1, VERSION PARLÉE (27/10/2026) — exception explicite.
+#    Motif : King a demandé « add voice ». Le film parlé est le livrable ; il se regarde par un lien.
+#    19,87 s (2,4 Mo), la même image que le master muet, la voix par-dessus. Le master muet reste au
+#    dépôt : ce sont deux fichiers distincts, deux publications possibles, jamais un remplacement.
+!clients/dm-optic/content/month1/w3/assets/monture-01-h08-voix.mp4

@@ -802,3 +802,36 @@ plus une seule absolution, et les trente messages ont été régénérés.
 **La leçon transférable** : quand une phrase « adoucit » sans nommer, elle ne protège pas le prospect —
 elle protège celui qui écrit. Le test est toujours le même : *à la place du prospect, qu'est-ce que
 j'apprends sur ce qui me manque ?* Si la réponse est « rien », la phrase est du remplissage.
+
+## 34 · 27/10/2026 (18 h) — 21 rendus pour un film de 29 s : trois causes, pas vingt et une
+
+La série « la monture cherche son nom » est publiée (Facebook et TikTok, 17 h 48). Le registre complet est
+dans `knowledge/MAKING-OF-MONTURE-01-2026-10-27.md`. Ce qui se transfère n'est pas le récit, c'est le
+**comptage** : sur **21 rendus**, **17** étaient des corrections, et elles viennent de **trois** causes.
+
+1. **Les durées qu'on n'avait pas mesurées.** Durées de repli périmées dans la version muette (une image
+   tenait 3,2 s), cache de clips qui datait d'un autre texte, respirations d'une seconde chez une voix plus
+   lente (33 s au lieu de 29), `ease` pur qui arrête un défilement en fin de plan. **Une durée se mesure
+   sur le fichier, jamais sur l'intention.** Et la version muette est un montage : elle a les durées de la
+   voix, pas des valeurs par défaut.
+2. **Le texte posé sur de l'interface claire.** Un bandeau blanc translucide sur une page blanche ne se lit
+   pas ; sur le bouton vert d'une fiche, il se lit encore moins. Un plan qui porte du texte doit être
+   **choisi pour le texte** — d'où la fiche « posée dans le cadre », sur le marine. Règle : **le texte ne
+   marche jamais sur un bouton.**
+3. **La matière qu'on n'avait pas vérifiée.** Une capture pleine page de Chromium contient parfois un
+   **raccord** (le haut de la page réimprimé : 8 190 px sur le catalogue, 2 225 px sur la fiche). Le plan
+   montre alors une page qui bégaie, et personne ne le voit en survolant le fichier. Autre cas : le
+   compteur « 6 affichées » d'une page de recherche pris pour un total — le site en publie **40**.
+
+**Les autres erreurs, plus chères en confiance qu'en machine** : un chiffre faux (« 65 montures » au lieu de
+40, le nombre de photos du dossier), un CTA qui demande un abonnement au lieu de promettre une date, une
+exception d'image générée pratiquée sans être écrite, et un helper inexistant appelé dans le moteur.
+
+**Ce qui protège, et qu'il faut garder** : les portes. Deux ont été **complétées** pendant la série, jamais
+désarmées — `audit_video_motion --calme` (la règle devient une règle de **tenue** : aucune image plus de
+2,6 s sans changement) et `trim_seam()` (le raccord de capture est détecté et **imprimé** à chaque rendu).
+Une porte qu'on contourne n'existe plus ; une porte qu'on complète, en écrivant pourquoi, protège encore.
+
+**La règle opérationnelle qui sort de là** : avant un rendu, **30 secondes** de relecture — les chiffres
+comptés, le raccord imprimé, aucun texte sur un bouton, les durées du fichier muet égales à celles de la
+voix. Ces quatre vérifications auraient supprimé **17 des 21 rendus**.

@@ -18,7 +18,6 @@
      est un lien mort, et un lien mort coûte plus qu'une heure d'attente. -->
 <meta property="og:url" content="https://dmoptiquesarl.com/en/">
 <meta property="og:image" content="https://dmoptiquesarl.com/og.jpg">
-<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="DM OPTIQUE SARL — cabinet d'optique médicale à Douala, inscrit à l'ONOC.">
 <meta name="twitter:card" content="summary_large_image">
@@ -48,6 +47,13 @@
     font-weight:600;font-size:var(--fs-base)}
   .mnav-panel a+a{border-top:1px solid var(--line-2)}
   .mnav-panel a:focus-visible{outline:3px solid var(--brand);outline-offset:-3px}
+  /* 28/10 · figure-ground : le panneau s'ouvrait sur une page restée à son contraste maximum.
+     L'œil ne savait pas quel plan était devant. Un voile plein écran, et le panneau devient
+     franchement la figure. Le bouton reste cliquable au-dessus (z-index 41). */
+  .mnav[open]::after{content:"";position:fixed;inset:0;z-index:39;background:rgba(10,18,32,.45);
+    backdrop-filter:blur(2px);animation:mnav-veil .18s var(--ease) both}
+  .mnav[open]>summary{position:relative;z-index:41}
+  @keyframes mnav-veil{from{opacity:0}to{opacity:1}}
 }
 /* 23/10 — en-tête mobile : la marque ne pousse plus le menu hors de l'écran */
 @media (max-width:430px){
@@ -66,6 +72,9 @@
 h.setAttribute("data-lang","en");try{localStorage.setItem("dmoptic-lang","en")}catch(e){}}catch(e){}})();</script>
 <style>
 :root{
+  /* 28/10 : la bande sombre passe du quasi-noir au bleu du cabinet. Mesure audit_palette avant :
+     bleu de marque 0,07 % de la page — la couleur du cabinet était invisible à l'échelle du
+     document. La bande portait 19 % de la surface : c'est elle qui donne au bleu son territoire.
   /* ── LA COULEUR : « papier froid, encre marine, un braise » ────────────────────────────────────────
      Aucun ambre (Cavisa), aucun vert (Cristallin), aucune crème (L'Opticien), aucun pétrole (Univers).
      Le bleu est la couleur du cabinet — celle du cachet de l'Ordre ; la braise n'apparaît qu'une fois,
@@ -74,7 +83,7 @@ h.setAttribute("data-lang","en");try{localStorage.setItem("dmoptic-lang","en")}c
   --ink:#0C1524; --ink-2:#43506A; --ink-3:#46536A;
   --line:#D6DDE7; --line-2:#E6EBF2; --line-strong:#B9C4D4;
   --brand:#1A3F86; --brand-2:#14336C; --brand-tint:#E4EAF6;
-  --night:#0A1220; --night-2:#101B2E; --night-line:rgba(255,255,255,.14);
+  --night:#0B2450; --night-2:#0E2C60; --night-line:rgba(255,255,255,.14);
   --on-night:#E9EEF7; --on-night-2:#A9B8CF;
   --ember:#E0703A; --ember-2:#F09160;
   --wa:#0B7A3E; --wa-2:#096232;
@@ -85,16 +94,19 @@ h.setAttribute("data-lang","en");try{localStorage.setItem("dmoptic-lang","en")}c
   --fs-h1:clamp(2rem,8vw,3.25rem);
   --fs-h2:clamp(1.55rem,5.4vw,2.3rem);
   --fs-h3:clamp(1.05rem,3.4vw,1.2rem);
-  --fs-lead:clamp(1.05rem,2.9vw,1.18rem);
-  --fs-base:1.0625rem; --fs-sm:1rem; --fs-xs:.875rem; --fs-label:.8125rem;
+  --fs-lead:1.0625rem;
+  --fs-base:1.0625rem; --fs-sm:.9375rem; --fs-xs:.8125rem; --fs-label:.8125rem;
   --ease:cubic-bezier(.23,1,.32,1);
   --shadow:0 14px 34px rgba(12,21,36,.10);
   --shadow-2:0 22px 54px rgba(12,21,36,.16);
 }
 @media (min-width:780px){ :root{--fs-base:1.0625rem;--gut:28px;} }
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-bottom:96px}
-body{margin:0;background:var(--paper);color:var(--ink);
+/* 28/10, Hallmark (règle 34) : `clip` et pas `hidden` — `hidden` ferait de <html> un conteneur
+   de défilement et casserait le `position:sticky`. Le cercle décoratif du premier écran sort du
+   cadre par construction : c'est lui qu'on empêche de pousser la page de côté sur un téléphone. */
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-bottom:96px;overflow-x:clip}
+body{margin:0;overflow-x:clip;background:var(--paper);color:var(--ink);
   font:var(--fs-base)/1.62 var(--f-b);font-variant-numeric:tabular-nums;
   padding-bottom:84px}                       /* la place de la barre du bas, sur téléphone (§24) */
 @media (min-width:900px){ body{padding-bottom:0} }
@@ -139,11 +151,6 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .logo{display:inline-block;flex:none;aspect-ratio:171/160;background:var(--logo) center/contain no-repeat;mix-blend-mode:multiply}
 .brand .logo{height:40px;max-width:190px}
 .idtop .logo{height:64px;max-width:200px}
-.psrc{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:14px;padding:0 14px;border:1px solid rgba(169,184,207,.42);border-radius:999px;color:var(--on-night-2);font-size:13px;line-height:1.2;text-decoration:none;box-sizing:border-box;transition:color .18s ease,border-color .18s ease}
-.psrc:hover,.psrc:focus-visible{color:var(--ember-2);border-color:var(--ember-2);background:rgba(240,145,96,.08)}
-.psrc:focus-visible{outline:2px solid var(--ember-2);outline-offset:2px}
-.psrc svg{display:block;width:14px;height:14px;flex:0 0 auto;fill:var(--ember-2)}
-@media (prefers-reduced-motion:reduce){.psrc{transition:none}}
 footer.site .logo{height:48px;box-sizing:content-box;border:5px solid #fff;border-radius:10px;background-color:#fff;background-origin:content-box;mix-blend-mode:normal}
 .nav{display:none}
 @media (min-width:980px){
@@ -163,7 +170,7 @@ footer.site .logo{height:48px;box-sizing:content-box;border:5px solid #fff;borde
 /* ── LES BOUTONS — un seul bouton principal par écran (§19.1) ─────────────────────────────────────── */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 20px;
   border-radius:var(--r);border:1px solid var(--line-strong);background:var(--card);color:var(--ink);
-  font-family:var(--f-b);font-weight:600;font-size:1rem;text-decoration:none;cursor:pointer;
+  font-family:var(--f-b);font-weight:600;font-size:var(--fs-sm);text-decoration:none;cursor:pointer;
   transition:background-color .18s var(--ease),color .18s var(--ease),border-color .18s var(--ease),transform .13s var(--ease)}
 .btn:active{transform:scale(.98)}
 .btn svg{width:19px;height:19px;flex:none;fill:currentColor}
@@ -174,7 +181,11 @@ footer.site .logo{height:48px;box-sizing:content-box;border:5px solid #fff;borde
   .btn-night:hover{border-color:#fff}
 }
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.kicker{margin:0;font:500 var(--fs-label)/1.5 var(--f-m);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.kicker{display:block;margin:0;font:500 var(--fs-label)/1.5 var(--f-m);letter-spacing:.14em;text-transform:uppercase;color:var(--brand-2)}
+/* 28/10 : le premier écran mesurait 0 % de bleu de marque (audit_palette.py). Le bouton d'appel, qui
+   n'est pas l'action principale, prend la couleur du cabinet ; WhatsApp garde son vert fonctionnel. */
+.btn-brand{border-color:var(--brand);color:var(--brand)}
+@media (hover:hover) and (pointer:fine){ .btn-brand:hover{background:var(--brand-tint);border-color:var(--brand)} }
 .lede{font-size:var(--fs-lead);color:var(--ink-2);max-width:56ch;margin-top:16px}
 .chip{display:inline-block;font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.08em;text-transform:uppercase;
   color:var(--ink-2);background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:8px 12px}
@@ -204,14 +215,14 @@ html.js .wash{animation:drift 2.8s var(--ease) 1 both}
   100%{transform:translate3d(-1%,3%,0) scale(1.04)}
 }
 /* 24/10 (demande client, relayée par King) : l'anneau de verre du premier écran revient.
-   Retiré le 11/10 par un ruling client (son logo à la place) ; le logo a quitté le hero le 20/10.
-   Le CSS était resté sans élément : on remet l'élément, pas une nouvelle pièce. */
+   Il avait disparu le 11/10 avec le correctif « cercle-logo » (commit ffe789b) — le CSS
+   était resté, l'élément non. Géométrie et couleurs d'origine ; rien d'autre n'a bougé. */
 .lensring{position:absolute;z-index:0;left:50%;top:50%;translate:-50% -50%;width:min(470px,calc(100% + 120px));aspect-ratio:1;height:auto;pointer-events:none}
 html.js .lensring{animation:spin 24s linear infinite}
 /* 20/10 (demande client relayée par King) : la photo réelle du cabinet
    (clients/dm-optic/photoshoot/others/PXL_20261016_131635710.MP.jpg) devient le fond du
    premier écran (.hero-bg) ; le voile clair (.hero-scrim) ne sert qu'à la lisibilité. */
-.h-city{display:block;margin-top:.35em;font-size:.5em;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
+.h-city{display:block;margin-top:.35em;font-size:var(--fs-h3);font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (min-width:600px){ .lensring{width:440px} }
 /* 24/10 (soir, decision « brainstorming ») : le cercle s'ancre sur le coin haut-droit de la
@@ -225,13 +236,9 @@ html.js .lensring{animation:spin 24s linear infinite}
 @media (min-width:980px){ .hero-grid{grid-template-columns:1.02fr .98fr;gap:54px;align-items:start} }
 .hero h1{margin-top:18px}
 .hero .hl{color:var(--brand)}
-.facts{display:grid;gap:0;margin-top:30px;border-top:1px solid var(--line)}
-.facts div{display:flex;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
-.facts dt{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
-.facts dd{margin:0;font-weight:600;font-size:var(--fs-sm);text-align:right}
 
 /* ── LA CARTE : la preuve du cabinet (registre de l'Ordre), à côté de l'affirmation qu'elle prouve ── */
-.idcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);
+.idcard{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--brand);border-radius:var(--r-lg);box-shadow:var(--shadow);
   padding:22px;position:relative;overflow:hidden;
   transition:box-shadow .28s var(--ease)}
 @media (hover:hover) and (pointer:fine){ .idcard:hover{box-shadow:var(--shadow-2)} }
@@ -282,10 +289,16 @@ figure.band-fig figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);
 html.js .band::before{animation:drift 2.8s var(--ease) 1 both}
 .band .wrap{position:relative;z-index:1}
 .steps{display:grid;gap:16px;margin-top:34px}
-@media (min-width:780px){ .steps{grid-template-columns:repeat(3,1fr);gap:22px} }
+@media (min-width:780px){ .steps{grid-template-columns:repeat(3,1fr);gap:0;background:var(--night-2);
+  border:1px solid var(--night-line);border-radius:var(--r-lg);overflow:hidden} }
 .step{background:var(--night-2);border:1px solid var(--night-line);border-radius:var(--r-lg);padding:22px}
+/* 28/10 · connectedness : trois cartes espacées lisaient comme trois choses, pas comme un parcours.
+   Sur grand écran elles forment une seule surface, séparées par un filet — la liaison dit « étape
+   suivante », pas « autre sujet ». Mobile : les cartes restent empilées (le filet vertical suffit). */
+@media (min-width:780px){ .step{background:none;border:0;border-radius:0;border-left:1px solid var(--night-line);padding:26px 24px}
+  .step:first-child{border-left:0} }
 .step .n{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.14em;color:var(--ember-2)}
-.step h3{margin-top:12px;font-size:1.1rem}
+.step h3{margin-top:12px;font-size:var(--fs-h3)}
 .step p{margin:.5rem 0 0;color:var(--on-night-2);font-size:var(--fs-sm)}
 .band .actions{margin-top:30px}
 .band .note{color:var(--on-night-2)}
@@ -294,7 +307,7 @@ html.js .band::before{animation:drift 2.8s var(--ease) 1 both}
    Deux montures réelles du catalogue (vue, enfants) ; une seule photo d'illustration restante (soleil), et
    aucune marque, aucun prix : la vitrine dit ce qu'on vient essayer, pas ce qui est en stock. */
 .grid3{display:grid;gap:16px;margin-top:30px}
-@media (min-width:780px){ .grid3{grid-template-columns:repeat(3,1fr);gap:22px} }
+@media (min-width:780px){ .grid3{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr) minmax(0,1fr);gap:22px} }
 .frame{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column}
 .frame img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-bottom:1px solid var(--line)}
 .frame img.img-real,figure.band-fig img.img-real{object-fit:contain;background:#F6EBE0}
@@ -302,11 +315,11 @@ html.js .band::before{animation:drift 2.8s var(--ease) 1 both}
 .frame h3{margin:0}
 .frame p{margin:0;color:var(--ink-2);font-size:var(--fs-sm)}
 .frame .ask{margin-top:auto;padding-top:10px;border-top:1px solid var(--line-2);font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
-.frame .cta{margin-top:14px;min-height:50px;width:100%;font-size:.94rem;padding:0 14px;gap:8px;text-wrap:balance;text-align:center}
+.frame .cta{margin-top:14px;min-height:50px;width:100%;font-size:var(--fs-sm);padding:0 14px;gap:8px;text-wrap:balance;text-align:center}
 .advice{display:grid;gap:16px;margin-top:30px}
 @media (min-width:780px){ .advice{grid-template-columns:repeat(3,1fr);gap:22px} }
 .advice>div{padding-left:14px;border-left:2px solid var(--ember)}
-.advice h3{margin:0;font-size:1rem}
+.advice h3{margin:0;font-size:var(--fs-base)}
 .advice p{margin:.45rem 0 0;color:var(--ink-2);font-size:var(--fs-sm)}
 figure.bandfig{margin:30px 0 0}
 figure.bandfig img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--night-line)}
@@ -324,7 +337,7 @@ figure.fig-43 figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);co
 .faq{margin-top:28px;border-top:1px solid var(--line)}
 .faq details{border-bottom:1px solid var(--line)}
 .faq summary{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
-  padding:18px 0;cursor:pointer;list-style:none;font-family:var(--f-d);font-weight:700;font-size:1.02rem}
+  padding:18px 0;cursor:pointer;list-style:none;font-family:var(--f-d);font-weight:700;font-size:var(--fs-base)}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary .chev{margin-top:3px;flex:none;width:18px;height:18px;transition:transform .22s var(--ease)}
 .faq details[open] summary .chev{transform:rotate(180deg)}
@@ -349,7 +362,17 @@ figure.fig-43 figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);co
 footer.site{background:var(--night);color:var(--on-night);padding:52px 0 0;margin-top:8px}
 footer.site a{color:var(--on-night)}
 .fgrid{display:grid;gap:30px}
-@media (min-width:860px){ .fgrid{grid-template-columns:1.35fr 1fr 1fr 1.1fr;gap:34px} }
+@media (min-width:860px){ .fgrid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:34px} }
+/* 28/10 · banner blindness : la pastille bordée, arrondie, avec son icône, avait exactement la forme
+   d'un widget publicitaire — et l'œil saute les widgets. Même information, même place, autre forme :
+   un lien de texte dans le pied de page, souligné au survol. */
+.psrc{display:inline-flex;align-items:baseline;gap:6px;margin-top:12px;color:var(--on-night-2);
+  font-size:13px;line-height:1.4;text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:3px;text-decoration-color:rgba(169,184,207,.5);transition:color .18s ease}
+.psrc:hover,.psrc:focus-visible{color:var(--ember-2);text-decoration-color:currentColor}
+.psrc:focus-visible{outline:2px solid var(--ember-2);outline-offset:3px;border-radius:4px}
+.psrc svg{display:block;width:12px;height:12px;flex:0 0 auto;fill:currentColor;translate:0 1px}
+@media (prefers-reduced-motion:reduce){.psrc{transition:none}}
 footer.site .brand{color:#fff}
 footer.site .brand .thin{color:rgba(255,255,255,.82)}
 footer.site .brand .mark .o{stroke:#fff}
@@ -377,25 +400,27 @@ footer.site p{color:var(--on-night-2);font-size:var(--fs-sm)}
 @media (min-width:900px){ .dock{display:none} }
 
 /* ── LE MOUVEMENT : une entrée par écran, deux dégradés lents, et le droit de ne rien voir ────────── */
-html.js .rv{opacity:0;transform:translateY(8px);transition:opacity .38s var(--ease),transform .38s var(--ease)}
+html.js .rv:not(.in){opacity:0;transform:translateY(8px);transition:opacity .38s var(--ease),transform .38s var(--ease)}
 html.js .rv.in{opacity:1;transform:none}
 html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s .3s var(--ease) forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
+/* §13 : sans JavaScript d'exécution (scripting:none), la révélation n'a aucun sens — on affiche. */
+@media (scripting:none){ html.js .rv,html.js .rv:not(.in){opacity:1;transform:none;transition:none} }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  html.js .rv{opacity:1;transform:none;transition:none}
+  html.js .rv,html.js .rv:not(.in){opacity:1;transform:none;transition:none}
   html.js .glint{animation:none;stroke-dasharray:none;stroke-dashoffset:0}
-  html.js .wash,html.js .lensring,html.js .band::before{animation:none}
+  html.js .wash,html.js .lensring,html.js .band::before,.mnav[open]::after{animation:none}
   *{transition-duration:.01ms !important}
 }
 </style>
-<link rel="alternate" hreflang="fr" href="https://dmoptiquesarl.com/">
-<link rel="alternate" hreflang="en" href="https://dmoptiquesarl.com/en/">
-<link rel="alternate" hreflang="x-default" href="https://dmoptiquesarl.com/">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" hreflang="fr" href="https://dmoptiquesarl.com/">
+<link rel="alternate" hreflang="en" href="https://dmoptiquesarl.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://dmoptiquesarl.com/">
 </head>
 <body>
 <a class="skiplink" href="#main"><span class="fr-only" lang="fr">Aller au contenu</span><span class="en-only" lang="en">Skip to content</span></a>
@@ -411,7 +436,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       <a href="/en/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a>
       <a href="/en/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a>
       <a href="/en/le-cabinet/"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a>
-      <a href="#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
+      <a href="/en/questions/"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
       <a href="/en/contact/"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a>
     </nav>
     <div class="langbox" role="group" aria-label="Langue / Language">
@@ -424,11 +449,11 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         <a href="/en/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a>
       <a href="/en/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a>
       <a href="/en/le-cabinet/"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a>
-      <a href="#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
+      <a href="/en/questions/"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
       <a href="/en/contact/"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a>
       </nav>
     </details>
-    </div>
+  </div>
 </header>
 
 <main id="main">
@@ -446,8 +471,8 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
     <!-- 20/10 (demande client) : la photo du cabinet est le fond du premier écran ; la carte reste la preuve à droite. -->
     <div class="wrap hero-grid">
       <div>
-        <p class="kicker"><span class="fr-only" lang="fr">Opticien optométriste à Douala · inscrit à l'ONOC</span><span class="en-only" lang="en">Optometrist optician in Douala · registered with the ONOC</span></p>
         <h1 id="h-hero">
+          <span class="kicker"><span class="fr-only" lang="fr">Opticien optométriste à Douala · inscrit à l&#8217;ONOC</span><span class="en-only" lang="en">Optometrist optician in Douala · registered with the ONOC</span></span>
           <span class="fr-only" lang="fr">DM OPTIQUE SARL<span class="h-city">DOUALA</span></span>
           <span class="en-only" lang="en">DM OPTIQUE SARL<span class="h-city">DOUALA</span></span>
         </h1>
@@ -460,25 +485,11 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
             <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
           </a>
-          <a class="btn" href="tel:+237656122239">
+          <a class="btn btn-brand" href="tel:+237656122239">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3h2.7l1.6 4-2 1.4a12 12 0 0 0 6.7 6.7l1.4-2 4 1.6v2.7c0 1-.8 1.8-1.9 1.7C11.5 19.2 4.8 12.5 4.9 4.9 4.9 3.9 5.6 3 6.6 3z"/></svg>
             <span class="fr-only" lang="fr">Appeler le 656 122 239</span><span class="en-only" lang="en">Call 656 122 239</span>
           </a>
         </div>
-        <dl class="facts rv">
-                    <div>
-            <dt><span class="fr-only" lang="fr">Où</span><span class="en-only" lang="en">Where</span></dt>
-            <dd><span class="fr-only" lang="fr">Bonabéri, Ndobo Mayor</span><span class="en-only" lang="en">Bonaberi, Ndobo Mayor</span></dd>
-          </div>
-          <div>
-            <dt><span class="fr-only" lang="fr">Sur WhatsApp</span><span class="en-only" lang="en">On WhatsApp</span></dt>
-            <dd>656 122 239</dd>
-          </div>
-          <div>
-            <dt><span class="fr-only" lang="fr">Opticien optométriste</span><span class="en-only" lang="en">Optometrist optician</span></dt>
-            <dd><span class="fr-only" lang="fr">à l'ONOC</span><span class="en-only" lang="en">with the ONOC</span></dd>
-          </div>
-        </dl>
       </div>
 
       <figure class="idwrap rv">
@@ -771,38 +782,24 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         <span class="fr-only" lang="fr">Les questions qu'on nous pose.</span>
         <span class="en-only" lang="en">The questions we are asked.</span>
       </h2>
+      <!-- 28/10 : l'accueil ne duplique plus les réponses. Deux pages qui répondent à la même
+           question se cannibalisent, et deux FAQPage qui se répètent se contredisent. Ici : trois
+           réponses courtes, et la page qui les porte toutes. -->
       <div class="faq rv">
         <details>
-          <summary><span><span class="fr-only" lang="fr">Où se trouve le cabinet, à Douala&nbsp;?</span><span class="en-only" lang="en">Where is the practice in Douala?</span></span>
-            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-          <p><span class="fr-only" lang="fr">Le cabinet est à Bonabéri, dans le quartier Ndobo Mayor&nbsp;: immeuble West Hotel, 1er étage, dernière porte à droite, Douala.</span><span class="en-only" lang="en">The practice is in Bonaberi, Ndobo Mayor: the West Hotel building, first floor, last door on the right, Douala.</span></p>
+          <summary><span><span class="fr-only" lang="fr">Faut-il une ordonnance pour avoir des lunettes&nbsp;?</span><span class="en-only" lang="en">Do I need a prescription to get glasses?</span></span></summary>
+          <p><span class="fr-only" lang="fr">Non pour des lunettes de soleil, un réglage ou une réparation. Oui pour des verres correcteurs : l'ordonnance de votre ophtalmologue dit la correction.</span><span class="en-only" lang="en">No for sunglasses, an adjustment or a repair. Yes for prescription lenses: your ophthalmologist's prescription states the correction.</span></p>
         </details>
         <details>
-          <summary><span><span class="fr-only" lang="fr">Faut-il une ordonnance pour avoir des lunettes&nbsp;?</span><span class="en-only" lang="en">Do I need a prescription to get glasses?</span></span>
-            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-          <p><span class="fr-only" lang="fr">Pour des verres correcteurs, oui&nbsp;: apportez l'ordonnance de votre ophtalmologue. Pour des lunettes de soleil, un réglage ou une réparation, non.</span><span class="en-only" lang="en">For prescription lenses, yes: bring your ophthalmologist's prescription. For sunglasses, an adjustment or a repair, no.</span></p>
+          <summary><span><span class="fr-only" lang="fr">Ma monture est cassée : est-ce réparable&nbsp;?</span><span class="en-only" lang="en">My frame is broken: can it be repaired?</span></span></summary>
+          <p><span class="fr-only" lang="fr">Souvent, pas toujours. Envoyez une photo sur WhatsApp : la réponse vous dit si c'est réparable avant que vous traversiez Douala.</span><span class="en-only" lang="en">Often, not always. Send a photo on WhatsApp: the answer says whether it can be repaired before you cross Douala.</span></p>
         </details>
         <details>
-          <summary><span><span class="fr-only" lang="fr">Ma monture est cassée&nbsp;: est-ce réparable&nbsp;?</span><span class="en-only" lang="en">My frames are broken: can they be repaired?</span></span>
-            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-          <p><span class="fr-only" lang="fr">Envoyez une photo de la monture sur WhatsApp. La réponse vous dit si c'est réparable, et si le déplacement en vaut la peine.</span><span class="en-only" lang="en">Send a photo of the frames on WhatsApp. The answer tells you whether they can be repaired, and whether the trip is worth it.</span></p>
-        </details>
-        <details>
-          <summary><span><span class="fr-only" lang="fr">Quels sont les horaires d'ouverture&nbsp;?</span><span class="en-only" lang="en">What are the opening hours?</span></span>
-            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-          <p><span class="fr-only" lang="fr">Lundi – Samedi. L'examen de vue se fait de 8h30 à 13h00 ; pour tous les autres besoins, le cabinet est ouvert de 8h30 à 17h30. Écrivez sur WhatsApp pour confirmer le jour qui vous arrange.</span><span class="en-only" lang="en">Monday – Saturday. Eye exams run from 8:30 to 13:00; for all other needs, the practice is open from 8:30 to 17:30. Write on WhatsApp to confirm the day that suits you.</span></p>
-        </details>
-        <details>
-          <summary><span><span class="fr-only" lang="fr">Combien coûte une paire de lunettes&nbsp;?</span><span class="en-only" lang="en">How much do a pair of glasses cost?</span></span>
-            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-          <p><span class="fr-only" lang="fr">Le prix dépend de vos verres et de la monture que vous choisissez. Posez la question sur WhatsApp en décrivant votre besoin&nbsp;: c'est la réponse la plus utile.</span><span class="en-only" lang="en">The price depends on your lenses and the frame you choose. Ask on WhatsApp and describe what you need: that is the most useful answer.</span></p>
-        </details>
-              <details>
-          <summary><span><span class="fr-only" lang="fr">Peut-on essayer plusieurs montures avant de choisir&nbsp;?</span><span class="en-only" lang="en">Can I try several frames before choosing?</span></span>
-            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-          <p><span class="fr-only" lang="fr">Oui, et c'est même la seule bonne façon de choisir&nbsp;: vous les essayez au cabinet, devant un miroir, et vous demandez à voir les formes qui vont à votre visage.</span><span class="en-only" lang="en">Yes, and it is the only good way to choose: you try them on at the practice, in front of a mirror, and ask to see the shapes that suit your face.</span></p>
+          <summary><span><span class="fr-only" lang="fr">Combien de temps prend un examen de la vue&nbsp;?</span><span class="en-only" lang="en">How long does an eye examination take?</span></span></summary>
+          <p><span class="fr-only" lang="fr">Nous ne publions pas de durée : elle dépend de ce qu'il y a à mesurer. Demandez sur WhatsApp, la réponse dit combien de temps prévoir.</span><span class="en-only" lang="en">We do not publish a duration: it depends on what has to be measured. Ask on WhatsApp, and the answer says how much time to allow.</span></p>
         </details>
       </div>
+      <div class="actions rv"><a class="btn" href="/en/questions/"><span class="fr-only" lang="fr">Toutes les questions (22)</span><span class="en-only" lang="en">All 22 questions</span></a></div>
     </div>
   </section>
 
@@ -818,7 +815,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
           <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
         </a>
-        <a class="btn" href="tel:+237656122239">
+        <a class="btn btn-brand" href="tel:+237656122239">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3h2.7l1.6 4-2 1.4a12 12 0 0 0 6.7 6.7l1.4-2 4 1.6v2.7c0 1-.8 1.8-1.9 1.7C11.5 19.2 4.8 12.5 4.9 4.9 4.9 3.9 5.6 3 6.6 3z"/></svg>
           <span class="fr-only" lang="fr">Appeler</span><span class="en-only" lang="en">Call</span>
         </a>
@@ -874,13 +871,14 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
           <span class="logo" aria-hidden="true"></span>
         </a>
         <p><span class="fr-only" lang="fr">Cabinet d'optique médicale à Douala. Opticien optométriste inscrit à l'ONOC.</span><span class="en-only" lang="en">Optical practice in Douala. Optometrist optician registered with the ONOC.</span></p>
-        <a class="psrc" href="https://www.google.com/preferences/source?q=dmoptiquesarl.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.4l-5.8 3.06 1.11-6.46-4.7-4.58 6.49-.94z"/></svg><span class="fr-only" lang="fr">Ajouter DM OPTIQUE comme source préférée sur Google</span><span class="en-only" lang="en">Add DM OPTIQUE as a preferred source on Google</span></a>
       </div>
       <div>
         <h2><span class="fr-only" lang="fr">La page</span><span class="en-only" lang="en">This page</span></h2>
         <ul class="fnav">
           <li><a href="/en/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a></li>
           <li><a href="/en/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a></li>
+          <li><a href="/en/verres-sur-ordonnance/"><span class="fr-only" lang="fr">Verres sur ordonnance</span><span class="en-only" lang="en">Prescription lenses</span></a></li>
+          <li><a href="/en/reparation-et-entretien/"><span class="fr-only" lang="fr">Réparation et entretien</span><span class="en-only" lang="en">Repairs and adjustments</span></a></li>
           <li><a href="/en/le-cabinet/"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a></li>
           <li><a href="/en/contact/"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a></li>
         </ul>
@@ -905,11 +903,12 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       </div>
     </div>
     <div class="stripbar">
-      <span class="foot-l"><span>© 2026 DM OPTIQUE SARL</span><span class="social"><a href="https://www.facebook.com/profile.php?id=61595694418153" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@dmoptique.bonaberi237" target="_blank" rel="noopener">TikTok</a></span></span>
+      <span class="foot-l"><span>© 2026 DM OPTIQUE SARL</span><span class="social"><a class="flang" href="/" hreflang="fr" lang="fr">Français</a><a href="https://www.facebook.com/profile.php?id=61595694418153" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@dmoptique.bonaberi237" target="_blank" rel="noopener">TikTok</a></span></span>
       
       <a href="#top"><span class="fr-only" lang="fr">Haut de page ↑</span><span class="en-only" lang="en">Back to top ↑</span></a>
     </div>
   </div>
+        <a class="psrc" href="https://www.google.com/preferences/source?q=dmoptiquesarl.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.4l-5.8 3.06 1.11-6.46-4.7-4.58 6.49-.94z"/></svg><span class="fr-only" lang="fr">Ajouter DM OPTIQUE comme source préférée sur Google</span><span class="en-only" lang="en">Add DM OPTIQUE as a preferred source on Google</span></a>
 </footer>
 
 <div class="dock">
@@ -1062,33 +1061,20 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 (function(){try{
   var els=[].slice.call(document.querySelectorAll('.rv'));
   var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function showAll(){els.forEach(function(e){e.classList.add('in')});}
-  if(rm||!('IntersectionObserver' in window)){showAll();return;}
+  function revealAll(){els.forEach(function(e){e.classList.add('in')});}
+  if(rm||!('IntersectionObserver' in window)){revealAll();return;}
   var io=new IntersectionObserver(function(en){
     en.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);} });
   },{rootMargin:'0px 0px -6% 0px',threshold:.08});
   els.forEach(function(e){io.observe(e)});
-  /* 23/10 — carrousel : les cartes hors écran ne restent plus invisibles
-     Un `.rv` placé dans un conteneur qui défile horizontalement n'entre jamais dans le champ de
-     l'observateur (il est hors écran à droite) : il restait donc à opacity:0. On observe le
-     conteneur, et quand il devient visible toutes ses cartes s'affichent. */
-  var strips=[].slice.call(document.querySelectorAll('.rv')).filter(function(e){
-    var n=e.parentElement; while(n&&n!==document.body){var cs=getComputedStyle(n);
-      if(/auto|scroll/.test(cs.overflowX)) return true; n=n.parentElement;} return false;});
-  if(strips.length){var io2=new IntersectionObserver(function(en){
-      en.forEach(function(e){ if(e.isIntersecting){
-        [].slice.call(e.target.querySelectorAll('.rv')).forEach(function(c){c.classList.add('in')});
-        e.target.classList.add('in'); io2.unobserve(e.target);} });},{threshold:.05});
-    var boxes=new Set(); strips.forEach(function(e){var n=e.parentElement;
-      while(n&&n!==document.body){var cs=getComputedStyle(n);
-        if(/auto|scroll/.test(cs.overflowX)){boxes.add(n);break;} n=n.parentElement;}});
-    boxes.forEach(function(b){io2.observe(b)});}
+  // filet : si l'observateur ne coche jamais (onglet en arrière-plan, moteur capricieux), on affiche.
+  setTimeout(revealAll,2500);
 }catch(e){ var all=document.querySelectorAll('.rv'); for(var i=0;i<all.length;i++){all[i].classList.add('in');} }})();
 </script>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
- {"@type":"Optician","@id":"https://dmoptiquesarl.com/#dmoptic","name":"DM OPTIQUE SARL","alternateName":"DM OPTIQUE","url":"https://dmoptiquesarl.com/en/",
+ {"@type":"Optician","@id":"https://dmoptiquesarl.com/#dmoptic","name":"DM OPTIQUE SARL","alternateName":"DM OPTIQUE","url":"https://dmoptiquesarl.com/",
   "description":"Cabinet d'optique médicale à Douala : examen de la vue, verres sur ordonnance, montures, réparation et entretien. Opticien optométriste, inscrit à l'ONOC. Lundi – Samedi : examen de la vue 8h30–13h00, autres besoins 8h30–17h30.",
   "telephone":"+237656122239","currenciesAccepted":"XAF",
   "image":"https://dmoptiquesarl.com/cabinet-hero-1080.webp","logo":"https://dmoptiquesarl.com/dm-logo.webp",
@@ -1099,16 +1085,11 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
   "identifier":{"@type":"PropertyValue","name":"N° d'inscription à l'Ordre national des opticiens du Cameroun","value":"021/2016"},
   "founder":{"@type":"Person","name":"Domche Noumbi","jobTitle":"Opticien optométriste"},
   "address":{"@type":"PostalAddress","streetAddress":"Ndobo Mayor, Immeuble West Hotel, 1er étage","addressLocality":"Douala","addressRegion":"Littoral","addressCountry":"CM"},
-  "areaServed":{"@type":"City","name":"Douala"},
+  "areaServed":[{"@type":"City","name":"Douala"},{"@type":"AdministrativeArea","name":"Littoral"},{"@type":"Place","name":"Bonabéri, Ndobo Mayor"}],
+  "knowsLanguage":["fr","en"],
   "contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+237656122239","availableLanguage":["fr","en"]}},
- {"@type":"FAQPage","@id":"https://dmoptiquesarl.com/#questions","mainEntity":[
-  {"@type":"Question","name":"Où se trouve le cabinet, à Douala ?","acceptedAnswer":{"@type":"Answer","text":"Le cabinet est à Bonabéri, dans le quartier Ndobo Mayor : immeuble West Hotel, 1er étage, dernière porte à droite, Douala."}},
-  {"@type":"Question","name":"Faut-il une ordonnance pour avoir des lunettes ?","acceptedAnswer":{"@type":"Answer","text":"Pour des verres correcteurs, oui : apportez l'ordonnance de votre ophtalmologue. Pour des lunettes de soleil, un réglage ou une réparation, non."}},
-  {"@type":"Question","name":"Ma monture est cassée : est-ce réparable ?","acceptedAnswer":{"@type":"Answer","text":"Envoyez une photo de la monture sur WhatsApp. La réponse vous dit si c'est réparable, et si le déplacement en vaut la peine."}},
-  {"@type":"Question","name":"Quels sont les horaires d'ouverture ?","acceptedAnswer":{"@type":"Answer","text":"Lundi – Samedi. L'examen de vue se fait de 8h30 à 13h00 ; pour tous les autres besoins, le cabinet est ouvert de 8h30 à 17h30. Écrivez sur WhatsApp pour confirmer le jour qui vous arrange."}},
-    {"@type":"Question","name":"Combien coûte une paire de lunettes ?","acceptedAnswer":{"@type":"Answer","text":"Le prix dépend de vos verres et de la monture que vous choisissez. Posez la question sur WhatsApp en décrivant votre besoin : c'est la réponse la plus utile."}},
-  {"@type":"Question","name":"Peut-on essayer plusieurs montures avant de choisir ?","acceptedAnswer":{"@type":"Answer","text":"Oui, et c'est même la seule bonne façon de choisir : vous les essayez au cabinet, devant un miroir, et vous demandez à voir les formes qui vont à votre visage."}}]}
-]}
+ {"@type":"WebSite","@id":"https://dmoptiquesarl.com/#site","url":"https://dmoptiquesarl.com/","name":"DM OPTIQUE SARL — opticien optométriste à Douala",
+  "inLanguage":["fr","en"],"publisher":{"@id":"https://dmoptiquesarl.com/#dmoptic"}}]}
 </script>
 <script>
 /* 23/10 — confort du menu mobile (le <details> marche déjà sans ce script) */

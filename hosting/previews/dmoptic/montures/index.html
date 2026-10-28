@@ -16,7 +16,6 @@
      est un lien mort, et un lien mort coûte plus qu'une heure d'attente. -->
 <meta property="og:url" content="https://dmoptiquesarl.com/montures/">
 <meta property="og:image" content="https://dmoptiquesarl.com/og.jpg">
-<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="DM OPTIQUE SARL — cabinet d'optique médicale à Douala, inscrit à l'ONOC.">
 <meta name="twitter:card" content="summary_large_image">
@@ -46,6 +45,13 @@
     font-weight:600;font-size:var(--fs-base)}
   .mnav-panel a+a{border-top:1px solid var(--line-2)}
   .mnav-panel a:focus-visible{outline:3px solid var(--brand);outline-offset:-3px}
+  /* 28/10 · figure-ground : le panneau s'ouvrait sur une page restée à son contraste maximum.
+     L'œil ne savait pas quel plan était devant. Un voile plein écran, et le panneau devient
+     franchement la figure. Le bouton reste cliquable au-dessus (z-index 41). */
+  .mnav[open]::after{content:"";position:fixed;inset:0;z-index:39;background:rgba(10,18,32,.45);
+    backdrop-filter:blur(2px);animation:mnav-veil .18s var(--ease) both}
+  .mnav[open]>summary{position:relative;z-index:41}
+  @keyframes mnav-veil{from{opacity:0}to{opacity:1}}
 }
 /* 23/10 — en-tête mobile : la marque ne pousse plus le menu hors de l'écran */
 @media (max-width:430px){
@@ -64,6 +70,9 @@
 var l=localStorage.getItem("dmoptic-lang");if(l==="en"||l==="fr")h.setAttribute("data-lang",l);}catch(e){}})();</script>
 <style>
 :root{
+  /* 28/10 : la bande sombre passe du quasi-noir au bleu du cabinet. Mesure audit_palette avant :
+     bleu de marque 0,07 % de la page — la couleur du cabinet était invisible à l'échelle du
+     document. La bande portait 19 % de la surface : c'est elle qui donne au bleu son territoire.
   /* ── LA COULEUR : « papier froid, encre marine, un braise » ────────────────────────────────────────
      Aucun ambre (Cavisa), aucun vert (Cristallin), aucune crème (L'Opticien), aucun pétrole (Univers).
      Le bleu est la couleur du cabinet — celle du cachet de l'Ordre ; la braise n'apparaît qu'une fois,
@@ -72,7 +81,7 @@ var l=localStorage.getItem("dmoptic-lang");if(l==="en"||l==="fr")h.setAttribute(
   --ink:#0C1524; --ink-2:#43506A; --ink-3:#46536A;
   --line:#D6DDE7; --line-2:#E6EBF2; --line-strong:#B9C4D4;
   --brand:#1A3F86; --brand-2:#14336C; --brand-tint:#E4EAF6;
-  --night:#0A1220; --night-2:#101B2E; --night-line:rgba(255,255,255,.14);
+  --night:#0B2450; --night-2:#0E2C60; --night-line:rgba(255,255,255,.14);
   --on-night:#E9EEF7; --on-night-2:#A9B8CF;
   --ember:#E0703A; --ember-2:#F09160;
   --wa:#0B7A3E; --wa-2:#096232;
@@ -83,16 +92,19 @@ var l=localStorage.getItem("dmoptic-lang");if(l==="en"||l==="fr")h.setAttribute(
   --fs-h1:clamp(2rem,8vw,3.25rem);
   --fs-h2:clamp(1.55rem,5.4vw,2.3rem);
   --fs-h3:clamp(1.05rem,3.4vw,1.2rem);
-  --fs-lead:clamp(1.05rem,2.9vw,1.18rem);
-  --fs-base:1.0625rem; --fs-sm:1rem; --fs-xs:.875rem; --fs-label:.8125rem;
+  --fs-lead:1.0625rem;
+  --fs-base:1.0625rem; --fs-sm:.9375rem; --fs-xs:.8125rem; --fs-label:.8125rem;
   --ease:cubic-bezier(.23,1,.32,1);
   --shadow:0 14px 34px rgba(12,21,36,.10);
   --shadow-2:0 22px 54px rgba(12,21,36,.16);
 }
 @media (min-width:780px){ :root{--fs-base:1.0625rem;--gut:28px;} }
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-bottom:96px}
-body{margin:0;background:var(--paper);color:var(--ink);
+/* 28/10, Hallmark (règle 34) : `clip` et pas `hidden` — `hidden` ferait de <html> un conteneur
+   de défilement et casserait le `position:sticky`. Le cercle décoratif du premier écran sort du
+   cadre par construction : c'est lui qu'on empêche de pousser la page de côté sur un téléphone. */
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-bottom:96px;overflow-x:clip}
+body{margin:0;overflow-x:clip;background:var(--paper);color:var(--ink);
   font:var(--fs-base)/1.62 var(--f-b);font-variant-numeric:tabular-nums;
   padding-bottom:84px}                       /* la place de la barre du bas, sur téléphone (§24) */
 @media (min-width:900px){ body{padding-bottom:0} }
@@ -137,11 +149,6 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .logo{display:inline-block;flex:none;aspect-ratio:171/160;background:var(--logo) center/contain no-repeat;mix-blend-mode:multiply}
 .brand .logo{height:40px;max-width:190px}
 .idtop .logo{height:64px;max-width:200px}
-.psrc{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:14px;padding:0 14px;border:1px solid rgba(169,184,207,.42);border-radius:999px;color:var(--on-night-2);font-size:13px;line-height:1.2;text-decoration:none;box-sizing:border-box;transition:color .18s ease,border-color .18s ease}
-.psrc:hover,.psrc:focus-visible{color:var(--ember-2);border-color:var(--ember-2);background:rgba(240,145,96,.08)}
-.psrc:focus-visible{outline:2px solid var(--ember-2);outline-offset:2px}
-.psrc svg{display:block;width:14px;height:14px;flex:0 0 auto;fill:var(--ember-2)}
-@media (prefers-reduced-motion:reduce){.psrc{transition:none}}
 footer.site .logo{height:48px;box-sizing:content-box;border:5px solid #fff;border-radius:10px;background-color:#fff;background-origin:content-box;mix-blend-mode:normal}
 .nav{display:none}
 @media (min-width:980px){
@@ -161,7 +168,7 @@ footer.site .logo{height:48px;box-sizing:content-box;border:5px solid #fff;borde
 /* ── LES BOUTONS — un seul bouton principal par écran (§19.1) ─────────────────────────────────────── */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 20px;
   border-radius:var(--r);border:1px solid var(--line-strong);background:var(--card);color:var(--ink);
-  font-family:var(--f-b);font-weight:600;font-size:1rem;text-decoration:none;cursor:pointer;
+  font-family:var(--f-b);font-weight:600;font-size:var(--fs-sm);text-decoration:none;cursor:pointer;
   transition:background-color .18s var(--ease),color .18s var(--ease),border-color .18s var(--ease),transform .13s var(--ease)}
 .btn:active{transform:scale(.98)}
 .btn svg{width:19px;height:19px;flex:none;fill:currentColor}
@@ -172,7 +179,11 @@ footer.site .logo{height:48px;box-sizing:content-box;border:5px solid #fff;borde
   .btn-night:hover{border-color:#fff}
 }
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.kicker{margin:0;font:500 var(--fs-label)/1.5 var(--f-m);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.kicker{display:block;margin:0;font:500 var(--fs-label)/1.5 var(--f-m);letter-spacing:.14em;text-transform:uppercase;color:var(--brand-2)}
+/* 28/10 : le premier écran mesurait 0 % de bleu de marque (audit_palette.py). Le bouton d'appel, qui
+   n'est pas l'action principale, prend la couleur du cabinet ; WhatsApp garde son vert fonctionnel. */
+.btn-brand{border-color:var(--brand);color:var(--brand)}
+@media (hover:hover) and (pointer:fine){ .btn-brand:hover{background:var(--brand-tint);border-color:var(--brand)} }
 .lede{font-size:var(--fs-lead);color:var(--ink-2);max-width:56ch;margin-top:16px}
 .chip{display:inline-block;font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.08em;text-transform:uppercase;
   color:var(--ink-2);background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:8px 12px}
@@ -187,9 +198,9 @@ footer.site .logo{height:48px;box-sizing:content-box;border:5px solid #fff;borde
 @media (min-width:780px){ .hero{padding-top:72px} }
 .hero-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:38% 50%;pointer-events:none}
 .hero-scrim{position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:linear-gradient(90deg,rgba(238,241,245,.92) 0%,rgba(238,241,245,.80) 44%,rgba(238,241,245,.34) 76%,rgba(238,241,245,.16) 100%),
-             linear-gradient(180deg,rgba(238,241,245,.16),rgba(238,241,245,.48))}
-@media (max-width:779px){ .hero-scrim{background:linear-gradient(180deg,rgba(238,241,245,.92) 0%,rgba(238,241,245,.78) 58%,rgba(238,241,245,.90) 100%)} }
+  background:linear-gradient(90deg,rgba(238,241,245,.94) 0%,rgba(238,241,245,.86) 40%,rgba(238,241,245,.30) 58%,rgba(238,241,245,.08) 78%,rgba(238,241,245,.04) 100%),
+             linear-gradient(180deg,rgba(238,241,245,.14),rgba(238,241,245,.44))}
+@media (max-width:779px){ .hero-scrim{background:linear-gradient(180deg,rgba(238,241,245,.90) 0%,rgba(238,241,245,.76) 52%,rgba(238,241,245,.88) 100%)} }
 .wash{position:absolute;z-index:0;inset:-28% -18% auto -18%;height:150%;pointer-events:none;
   background:
     radial-gradient(34% 40% at 24% 30%, rgba(26,63,134,.20), rgba(26,63,134,0) 70%),
@@ -201,25 +212,31 @@ html.js .wash{animation:drift 2.8s var(--ease) 1 both}
   50%{transform:translate3d(3%,2.5%,0) scale(1.09)}
   100%{transform:translate3d(-1%,3%,0) scale(1.04)}
 }
-.lensring{position:absolute;z-index:0;right:-88px;top:34px;width:290px;height:290px;pointer-events:none}
+/* 24/10 (demande client, relayée par King) : l'anneau de verre du premier écran revient.
+   Il avait disparu le 11/10 avec le correctif « cercle-logo » (commit ffe789b) — le CSS
+   était resté, l'élément non. Géométrie et couleurs d'origine ; rien d'autre n'a bougé. */
+.lensring{position:absolute;z-index:0;left:50%;top:50%;translate:-50% -50%;width:min(470px,calc(100% + 120px));aspect-ratio:1;height:auto;pointer-events:none}
 html.js .lensring{animation:spin 24s linear infinite}
 /* 20/10 (demande client relayée par King) : la photo réelle du cabinet
    (clients/dm-optic/photoshoot/others/PXL_20261016_131635710.MP.jpg) devient le fond du
    premier écran (.hero-bg) ; le voile clair (.hero-scrim) ne sert qu'à la lisibilité. */
-.h-city{display:block;margin-top:.35em;font-size:.5em;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
+.h-city{display:block;margin-top:.35em;font-size:var(--fs-h3);font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
 @keyframes spin{to{transform:rotate(360deg)}}
-@media (min-width:780px){ .lensring{right:-60px;top:20px;width:380px;height:380px} }
+@media (min-width:600px){ .lensring{width:440px} }
+/* 24/10 (soir, decision « brainstorming ») : le cercle s'ancre sur le coin haut-droit de la
+   carte au lieu d'etre centre dessous. Mesure : l'encre visible passe de 55 % a 79 % a 1440,
+   et 0 % de collision avec le titre, le chapeau, les lignes et les boutons. La carte reste
+   opaque : c'est elle qui porte les faits (titulaire, adresse, horaires).
+   Note de conception : docs/superpowers/specs/2026-10-24-cercle-placement-design.md */
+@media (min-width:1024px){ .lensring{width:620px;left:auto;right:-34%;top:-16%;translate:0 0} }
+@media (min-width:1200px){ .lensring{width:700px} }
 .hero-grid{position:relative;z-index:1;display:grid;gap:34px}
 @media (min-width:980px){ .hero-grid{grid-template-columns:1.02fr .98fr;gap:54px;align-items:start} }
 .hero h1{margin-top:18px}
 .hero .hl{color:var(--brand)}
-.facts{display:grid;gap:0;margin-top:30px;border-top:1px solid var(--line)}
-.facts div{display:flex;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
-.facts dt{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
-.facts dd{margin:0;font-weight:600;font-size:var(--fs-sm);text-align:right}
 
 /* ── LA CARTE : la preuve du cabinet (registre de l'Ordre), à côté de l'affirmation qu'elle prouve ── */
-.idcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);
+.idcard{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--brand);border-radius:var(--r-lg);box-shadow:var(--shadow);
   padding:22px;position:relative;overflow:hidden;
   transition:box-shadow .28s var(--ease)}
 @media (hover:hover) and (pointer:fine){ .idcard:hover{box-shadow:var(--shadow-2)} }
@@ -235,7 +252,7 @@ html.js .lensring{animation:spin 24s linear infinite}
 .idrows dt{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .idrows dd{margin:0;font:500 var(--fs-sm)/1.5 var(--f-m);text-align:right;color:var(--ink)}
 .idfoot{margin-top:16px;font-size:var(--fs-xs);color:var(--ink-3)}
-.idwrap{margin:0}
+.idwrap{position:relative;margin:0}
 .idwrap figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
 
 /* ── LES ACTES : six cartes en bande glissante sur téléphone, trois colonnes sur ordinateur ──────── */
@@ -270,10 +287,16 @@ figure.band-fig figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);
 html.js .band::before{animation:drift 2.8s var(--ease) 1 both}
 .band .wrap{position:relative;z-index:1}
 .steps{display:grid;gap:16px;margin-top:34px}
-@media (min-width:780px){ .steps{grid-template-columns:repeat(3,1fr);gap:22px} }
+@media (min-width:780px){ .steps{grid-template-columns:repeat(3,1fr);gap:0;background:var(--night-2);
+  border:1px solid var(--night-line);border-radius:var(--r-lg);overflow:hidden} }
 .step{background:var(--night-2);border:1px solid var(--night-line);border-radius:var(--r-lg);padding:22px}
+/* 28/10 · connectedness : trois cartes espacées lisaient comme trois choses, pas comme un parcours.
+   Sur grand écran elles forment une seule surface, séparées par un filet — la liaison dit « étape
+   suivante », pas « autre sujet ». Mobile : les cartes restent empilées (le filet vertical suffit). */
+@media (min-width:780px){ .step{background:none;border:0;border-radius:0;border-left:1px solid var(--night-line);padding:26px 24px}
+  .step:first-child{border-left:0} }
 .step .n{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.14em;color:var(--ember-2)}
-.step h3{margin-top:12px;font-size:1.1rem}
+.step h3{margin-top:12px;font-size:var(--fs-h3)}
 .step p{margin:.5rem 0 0;color:var(--on-night-2);font-size:var(--fs-sm)}
 .band .actions{margin-top:30px}
 .band .note{color:var(--on-night-2)}
@@ -282,7 +305,7 @@ html.js .band::before{animation:drift 2.8s var(--ease) 1 both}
    Deux montures réelles du catalogue (vue, enfants) ; une seule photo d'illustration restante (soleil), et
    aucune marque, aucun prix : la vitrine dit ce qu'on vient essayer, pas ce qui est en stock. */
 .grid3{display:grid;gap:16px;margin-top:30px}
-@media (min-width:780px){ .grid3{grid-template-columns:repeat(3,1fr);gap:22px} }
+@media (min-width:780px){ .grid3{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr) minmax(0,1fr);gap:22px} }
 .frame{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column}
 .frame img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-bottom:1px solid var(--line)}
 .frame img.img-real,figure.band-fig img.img-real{object-fit:contain;background:#F6EBE0}
@@ -290,11 +313,11 @@ html.js .band::before{animation:drift 2.8s var(--ease) 1 both}
 .frame h3{margin:0}
 .frame p{margin:0;color:var(--ink-2);font-size:var(--fs-sm)}
 .frame .ask{margin-top:auto;padding-top:10px;border-top:1px solid var(--line-2);font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
-.frame .cta{margin-top:14px;min-height:50px;width:100%;font-size:.94rem;padding:0 14px;gap:8px;text-wrap:balance;text-align:center}
+.frame .cta{margin-top:14px;min-height:50px;width:100%;font-size:var(--fs-sm);padding:0 14px;gap:8px;text-wrap:balance;text-align:center}
 .advice{display:grid;gap:16px;margin-top:30px}
 @media (min-width:780px){ .advice{grid-template-columns:repeat(3,1fr);gap:22px} }
 .advice>div{padding-left:14px;border-left:2px solid var(--ember)}
-.advice h3{margin:0;font-size:1rem}
+.advice h3{margin:0;font-size:var(--fs-base)}
 .advice p{margin:.45rem 0 0;color:var(--ink-2);font-size:var(--fs-sm)}
 figure.bandfig{margin:30px 0 0}
 figure.bandfig img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--night-line)}
@@ -312,7 +335,7 @@ figure.fig-43 figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);co
 .faq{margin-top:28px;border-top:1px solid var(--line)}
 .faq details{border-bottom:1px solid var(--line)}
 .faq summary{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
-  padding:18px 0;cursor:pointer;list-style:none;font-family:var(--f-d);font-weight:700;font-size:1.02rem}
+  padding:18px 0;cursor:pointer;list-style:none;font-family:var(--f-d);font-weight:700;font-size:var(--fs-base)}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary .chev{margin-top:3px;flex:none;width:18px;height:18px;transition:transform .22s var(--ease)}
 .faq details[open] summary .chev{transform:rotate(180deg)}
@@ -337,7 +360,17 @@ figure.fig-43 figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);co
 footer.site{background:var(--night);color:var(--on-night);padding:52px 0 0;margin-top:8px}
 footer.site a{color:var(--on-night)}
 .fgrid{display:grid;gap:30px}
-@media (min-width:860px){ .fgrid{grid-template-columns:1.35fr 1fr 1fr 1.1fr;gap:34px} }
+@media (min-width:860px){ .fgrid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:34px} }
+/* 28/10 · banner blindness : la pastille bordée, arrondie, avec son icône, avait exactement la forme
+   d'un widget publicitaire — et l'œil saute les widgets. Même information, même place, autre forme :
+   un lien de texte dans le pied de page, souligné au survol. */
+.psrc{display:inline-flex;align-items:baseline;gap:6px;margin-top:12px;color:var(--on-night-2);
+  font-size:13px;line-height:1.4;text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:3px;text-decoration-color:rgba(169,184,207,.5);transition:color .18s ease}
+.psrc:hover,.psrc:focus-visible{color:var(--ember-2);text-decoration-color:currentColor}
+.psrc:focus-visible{outline:2px solid var(--ember-2);outline-offset:3px;border-radius:4px}
+.psrc svg{display:block;width:12px;height:12px;flex:0 0 auto;fill:currentColor;translate:0 1px}
+@media (prefers-reduced-motion:reduce){.psrc{transition:none}}
 footer.site .brand{color:#fff}
 footer.site .brand .thin{color:rgba(255,255,255,.82)}
 footer.site .brand .mark .o{stroke:#fff}
@@ -365,18 +398,24 @@ footer.site p{color:var(--on-night-2);font-size:var(--fs-sm)}
 @media (min-width:900px){ .dock{display:none} }
 
 /* ── LE MOUVEMENT : une entrée par écran, deux dégradés lents, et le droit de ne rien voir ────────── */
-html.js .rv{opacity:0;transform:translateY(8px);transition:opacity .38s var(--ease),transform .38s var(--ease)}
+html.js .rv:not(.in){opacity:0;transform:translateY(8px);transition:opacity .38s var(--ease),transform .38s var(--ease)}
 html.js .rv.in{opacity:1;transform:none}
 html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s .3s var(--ease) forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
+/* §13 : sans JavaScript d'exécution (scripting:none), la révélation n'a aucun sens — on affiche. */
+@media (scripting:none){ html.js .rv,html.js .rv:not(.in){opacity:1;transform:none;transition:none} }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  html.js .rv{opacity:1;transform:none;transition:none}
+  html.js .rv,html.js .rv:not(.in){opacity:1;transform:none;transition:none}
   html.js .glint{animation:none;stroke-dasharray:none;stroke-dashoffset:0}
-  html.js .wash,html.js .lensring,html.js .band::before{animation:none}
+  html.js .wash,html.js .lensring,html.js .band::before,.mnav[open]::after{animation:none}
   *{transition-duration:.01ms !important}
 }
 </style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="alternate" hreflang="fr" href="https://dmoptiquesarl.com/montures/">
 <link rel="alternate" hreflang="en" href="https://dmoptiquesarl.com/en/montures/">
 <link rel="alternate" hreflang="x-default" href="https://dmoptiquesarl.com/montures/">
@@ -407,7 +446,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 .v2-door{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
 .v2-door img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#F6EBE0}
 .v2-door .v2-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px}
-.v2-door h2{margin:0;font-size:1.15rem}
+.v2-door h2{margin:0;font-size:1.05rem}  /* 28/10 : 1,15 rem etait la 7e taille de la page (plafond 6, §5) */
 .v2-door p{margin:0;color:var(--ink-2);font-size:var(--fs-sm)}
 .v2-door .v2-go{font:600 var(--fs-sm)/1 var(--f-b);color:var(--brand)}
 .v2-filters{margin-top:22px}
@@ -423,6 +462,30 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 @media(prefers-reduced-motion:reduce){html.js .v2-filters-panel.is-open{animation:none}}
 .v2-toolbar .btn{min-height:48px}
 .v2-group{border:0;margin:16px 0 0;padding:0}
+/* 28/10 · choice overload : la famille repliee. Un depliant natif, aucun JavaScript de plus. */
+.v2-more{margin:16px 0 0}
+.v2-more>summary{display:inline-flex;align-items:center;gap:8px;cursor:pointer;list-style:none;
+  font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+  padding:6px 0;min-height:44px}
+.v2-more>summary::-webkit-details-marker{display:none}
+.v2-more>summary::after{content:"+";font-size:14px;line-height:1}
+.v2-more[open]>summary::after{content:"–"}
+.v2-more>summary:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
+.v2-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* 28/10 · questions : la question en gras, la reponse en dessous. Pas de depliant : un moteur et un
+   assistant lisent le texte tel qu'il est servi, et une reponse repliee n'est pas une reponse citee. */
+.v2-qa{margin:14px 0 30px;padding:0}
+.v2-qa>div{padding:16px 0;border-top:1px solid var(--line)}
+.v2-qa>div:first-child{border-top:0}
+.v2-qa dt{font-weight:700;color:var(--ink);font-size:var(--fs-base);line-height:1.4}
+.v2-qa dd{margin:6px 0 0;color:var(--ink-2);font-size:var(--fs-sm);line-height:1.65;max-width:68ch}
+/* 28/10 · closure : la fiche suivante depasse de 22 % — assez pour que l'oeil complete la serie,
+   assez peu pour que la fiche lue reste entiere. Le defilement est natif, avec accroche. */
+.v2-rail{grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:thin;padding-bottom:8px;margin-right:-16px;padding-right:16px}
+.v2-rail>*{scroll-snap-align:start}
+@media(min-width:780px){.v2-rail{grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;
+  padding-bottom:0;margin-right:0;padding-right:0}}
 .v2-group legend{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:0}
 .v2-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .v2-pill{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 12px;border:1px solid var(--line-strong);border-radius:999px;background:var(--card);color:var(--ink);font:600 var(--fs-sm)/1 var(--f-b);cursor:pointer}
@@ -458,18 +521,22 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 .v2-photo{margin:26px 0 0}
 .v2-photo img{display:block;width:100%;height:auto;border-radius:var(--r-lg);border:1px solid var(--line)}
 .v2-photo figcaption{margin-top:10px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
-.v2-steps{counter-reset:v2step;list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
-@media(min-width:760px){.v2-steps{grid-template-columns:1fr 1fr}}
-.v2-steps li{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px}
+/* 28/10 · connectedness : des cartes separees lisaient comme des sujets distincts. Une seule
+   surface, separee par des filets : la liaison dit « et ensuite ». La regle vaut a TOUTES les
+   largeurs — en colonne sur telephone, en deux colonnes au-dela de 760 px. */
+.v2-steps{counter-reset:v2step;list-style:none;margin:26px 0 0;padding:0;display:grid;gap:0;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.v2-steps li{background:none;padding:18px;border:0;border-radius:0;border-top:1px solid var(--line)}
+.v2-steps li:first-child{border-top:0}
+@media(min-width:760px){.v2-steps{grid-template-columns:1fr 1fr}
+  .v2-steps li{border-left:1px solid var(--line)}
+  .v2-steps li:nth-child(odd){border-left:0}
+  .v2-steps li:nth-child(-n+2){border-top:0}}
 .v2-steps .n{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.12em;color:var(--brand)}
 .v2-steps h2{margin:.5rem 0 0;font-size:var(--fs-h3);line-height:1.25}
 .v2-steps p{margin:.45rem 0 0;color:var(--ink-2);font-size:var(--fs-sm)}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://dmoptiquesarl.com/"}, {"@type": "ListItem", "position": 2, "name": "Montures", "item": "https://dmoptiquesarl.com/montures/"}]}, {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "F01 · Ovale dorée", "url": "https://dmoptiquesarl.com/montures/femmes/f01-ovale-doree/"}, {"@type": "ListItem", "position": 2, "name": "F04 · Papillon rose", "url": "https://dmoptiquesarl.com/montures/femmes/f04-papillon-rose/"}, {"@type": "ListItem", "position": 3, "name": "F06 · Papillon transparente", "url": "https://dmoptiquesarl.com/montures/femmes/f06-papillon-transparente/"}, {"@type": "ListItem", "position": 4, "name": "F08 · Hexagonale écaille", "url": "https://dmoptiquesarl.com/montures/femmes/f08-hexagonale-ecaille/"}, {"@type": "ListItem", "position": 5, "name": "F09 · Hexagonale écaille claire", "url": "https://dmoptiquesarl.com/montures/femmes/f09-hexagonale-ecaille-claire/"}, {"@type": "ListItem", "position": 6, "name": "F10 · Hexagonale argentée", "url": "https://dmoptiquesarl.com/montures/femmes/f10-hexagonale-argentee/"}, {"@type": "ListItem", "position": 7, "name": "F11 · Hexagonale argentée", "url": "https://dmoptiquesarl.com/montures/femmes/f11-hexagonale-argentee/"}, {"@type": "ListItem", "position": 8, "name": "F13 · Hexagonale argentée et rose", "url": "https://dmoptiquesarl.com/montures/femmes/f13-hexagonale-argentee-et-rose/"}, {"@type": "ListItem", "position": 9, "name": "F14 · Papillon rose translucide", "url": "https://dmoptiquesarl.com/montures/femmes/f14-papillon-rose-translucide/"}, {"@type": "ListItem", "position": 10, "name": "F17 · Papillon bordeaux", "url": "https://dmoptiquesarl.com/montures/femmes/f17-papillon-bordeaux/"}, {"@type": "ListItem", "position": 11, "name": "F19 · Papillon écaille", "url": "https://dmoptiquesarl.com/montures/femmes/f19-papillon-ecaille/"}, {"@type": "ListItem", "position": 12, "name": "F21 · Carrée noire", "url": "https://dmoptiquesarl.com/montures/femmes/f21-carree-noire/"}, {"@type": "ListItem", "position": 13, "name": "F24 · Carrée écaille", "url": "https://dmoptiquesarl.com/montures/femmes/f24-carree-ecaille/"}, {"@type": "ListItem", "position": 14, "name": "F25 · Papillon écaille translucide", "url": "https://dmoptiquesarl.com/montures/femmes/f25-papillon-ecaille-translucide/"}, {"@type": "ListItem", "position": 15, "name": "F26 · Ronde bleue multicolore", "url": "https://dmoptiquesarl.com/montures/femmes/f26-ronde-bleue-multicolore/"}, {"@type": "ListItem", "position": 16, "name": "F27 · Hexagonale bleu marine", "url": "https://dmoptiquesarl.com/montures/femmes/f27-hexagonale-bleu-marine/"}, {"@type": "ListItem", "position": 17, "name": "F29 · Hexagonale grise", "url": "https://dmoptiquesarl.com/montures/femmes/f29-hexagonale-grise/"}, {"@type": "ListItem", "position": 18, "name": "F34 · Ovale argentée", "url": "https://dmoptiquesarl.com/montures/femmes/f34-ovale-argentee/"}, {"@type": "ListItem", "position": 19, "name": "F38 · Rectangulaire noire", "url": "https://dmoptiquesarl.com/montures/femmes/f38-rectangulaire-noire/"}, {"@type": "ListItem", "position": 20, "name": "F40 · Carrée rouge et écaille", "url": "https://dmoptiquesarl.com/montures/femmes/f40-carree-rouge-et-ecaille/"}, {"@type": "ListItem", "position": 21, "name": "F57 · Papillon noire et dorée", "url": "https://dmoptiquesarl.com/montures/femmes/f57-papillon-noire-et-doree/"}, {"@type": "ListItem", "position": 22, "name": "F59 · Carrée corail et écaille", "url": "https://dmoptiquesarl.com/montures/femmes/f59-carree-corail-et-ecaille/"}, {"@type": "ListItem", "position": 23, "name": "F60 · Carrée grise", "url": "https://dmoptiquesarl.com/montures/femmes/f60-carree-grise/"}, {"@type": "ListItem", "position": 24, "name": "F61 · Carrée noire et écaille", "url": "https://dmoptiquesarl.com/montures/femmes/f61-carree-noire-et-ecaille/"}, {"@type": "ListItem", "position": 25, "name": "E07 · Ovale noire et rouge", "url": "https://dmoptiquesarl.com/montures/enfants/e07-ovale-noire-et-rouge/"}, {"@type": "ListItem", "position": 26, "name": "E13 · Ronde noire et rouge", "url": "https://dmoptiquesarl.com/montures/enfants/e13-ronde-noire-et-rouge/"}, {"@type": "ListItem", "position": 27, "name": "E14 · Ovale violet", "url": "https://dmoptiquesarl.com/montures/enfants/e14-ovale-violet/"}, {"@type": "ListItem", "position": 28, "name": "E15 · Ovale violette", "url": "https://dmoptiquesarl.com/montures/enfants/e15-ovale-violette/"}, {"@type": "ListItem", "position": 29, "name": "E16 · Carrée bleue", "url": "https://dmoptiquesarl.com/montures/enfants/e16-carree-bleue/"}, {"@type": "ListItem", "position": 30, "name": "E17 · Rectangulaire transparente", "url": "https://dmoptiquesarl.com/montures/enfants/e17-rectangulaire-transparente/"}, {"@type": "ListItem", "position": 31, "name": "E18 · Rectangulaire noire et rouge", "url": "https://dmoptiquesarl.com/montures/enfants/e18-rectangulaire-noire-et-rouge/"}, {"@type": "ListItem", "position": 32, "name": "E19 · Ovale bordeaux", "url": "https://dmoptiquesarl.com/montures/enfants/e19-ovale-bordeaux/"}, {"@type": "ListItem", "position": 33, "name": "E22 · Carrée écaille", "url": "https://dmoptiquesarl.com/montures/enfants/e22-carree-ecaille/"}, {"@type": "ListItem", "position": 34, "name": "E27 · Ovale translucide", "url": "https://dmoptiquesarl.com/montures/enfants/e27-ovale-translucide/"}, {"@type": "ListItem", "position": 35, "name": "H01 · Double pont noir et doré", "url": "https://dmoptiquesarl.com/montures/hommes/h01-double-pont-noir-et-dore/"}, {"@type": "ListItem", "position": 36, "name": "H02 · Double pont rectangulaire noir", "url": "https://dmoptiquesarl.com/montures/hommes/h02-double-pont-rectangulaire-noir/"}, {"@type": "ListItem", "position": 37, "name": "H04 · Double pont doré", "url": "https://dmoptiquesarl.com/montures/hommes/h04-double-pont-dore/"}, {"@type": "ListItem", "position": 38, "name": "H05 · Double pont carré noir et doré", "url": "https://dmoptiquesarl.com/montures/hommes/h05-double-pont-carre-noir-et-dore/"}, {"@type": "ListItem", "position": 39, "name": "H07 · Double pont gris", "url": "https://dmoptiquesarl.com/montures/hommes/h07-double-pont-gris/"}, {"@type": "ListItem", "position": 40, "name": "H08 · Double pont aviateur noir et doré", "url": "https://dmoptiquesarl.com/montures/hommes/h08-double-pont-aviateur-noir-et-dore/"}]}]}</script>
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
-<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 <a class="skiplink" href="#main"><span class="fr-only" lang="fr">Aller au contenu</span><span class="en-only" lang="en">Skip to content</span></a>
@@ -485,7 +552,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       <a href="/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a>
       <a href="/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a>
       <a href="/le-cabinet/"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a>
-      <a href="/#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
+      <a href="/questions/"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
       <a href="/contact/"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a>
     </nav>
     <div class="langbox" role="group" aria-label="Langue / Language">
@@ -498,11 +565,11 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         <a href="/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a>
       <a href="/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a>
       <a href="/le-cabinet/"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a>
-      <a href="/#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
+      <a href="/questions/"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
       <a href="/contact/"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a>
       </nav>
     </details>
-    </div>
+  </div>
 </header>
 
 <main id="main" class="v2-main">
@@ -642,13 +709,14 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
           <span class="logo" aria-hidden="true"></span>
         </a>
         <p><span class="fr-only" lang="fr">Cabinet d'optique médicale à Douala. Opticien optométriste inscrit à l'ONOC.</span><span class="en-only" lang="en">Optical practice in Douala. Optometrist optician registered with the ONOC.</span></p>
-        <a class="psrc" href="https://www.google.com/preferences/source?q=dmoptiquesarl.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.4l-5.8 3.06 1.11-6.46-4.7-4.58 6.49-.94z"/></svg><span class="fr-only" lang="fr">Ajouter DM OPTIQUE comme source préférée sur Google</span><span class="en-only" lang="en">Add DM OPTIQUE as a preferred source on Google</span></a>
       </div>
       <div>
         <h2><span class="fr-only" lang="fr">La page</span><span class="en-only" lang="en">This page</span></h2>
         <ul class="fnav">
           <li><a href="/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a></li>
           <li><a href="/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a></li>
+          <li><a href="/verres-sur-ordonnance/"><span class="fr-only" lang="fr">Verres sur ordonnance</span><span class="en-only" lang="en">Prescription lenses</span></a></li>
+          <li><a href="/reparation-et-entretien/"><span class="fr-only" lang="fr">Réparation et entretien</span><span class="en-only" lang="en">Repairs and adjustments</span></a></li>
           <li><a href="/le-cabinet/"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a></li>
           <li><a href="/contact/"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a></li>
         </ul>
@@ -673,11 +741,12 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       </div>
     </div>
     <div class="stripbar">
-      <span class="foot-l"><span>© 2026 DM OPTIQUE SARL</span><span class="social"><a href="https://www.facebook.com/profile.php?id=61595694418153" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@dmoptique.bonaberi237" target="_blank" rel="noopener">TikTok</a></span></span>
+      <span class="foot-l"><span>© 2026 DM OPTIQUE SARL</span><span class="social"><a class="flang" href="/en/" hreflang="en" lang="en">English</a><a href="https://www.facebook.com/profile.php?id=61595694418153" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@dmoptique.bonaberi237" target="_blank" rel="noopener">TikTok</a></span></span>
       
       <a href="/"><span class="fr-only" lang="fr">Haut de page ↑</span><span class="en-only" lang="en">Back to top ↑</span></a>
     </div>
   </div>
+        <a class="psrc" href="https://www.google.com/preferences/source?q=dmoptiquesarl.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.4l-5.8 3.06 1.11-6.46-4.7-4.58 6.49-.94z"/></svg><span class="fr-only" lang="fr">Ajouter DM OPTIQUE comme source préférée sur Google</span><span class="en-only" lang="en">Add DM OPTIQUE as a preferred source on Google</span></a>
 </footer>
 <div class="dock">
   <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIQUE SARL, je cherche une monture. Quelles montures avez-vous disponibles ?" data-en="Hello DM OPTIQUE SARL, I am looking for a frame. Which frames do you have available?" href="https://wa.me/237656122239?text=Bonjour%20DM%20OPTIQUE%20SARL%2C%20je%20cherche%20une%20monture.%20Quelles%20montures%20avez-vous%20disponibles%20%3F">
@@ -827,40 +896,16 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 (function(){try{
   var els=[].slice.call(document.querySelectorAll('.rv'));
   var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function showAll(){els.forEach(function(e){e.classList.add('in')});}
-  if(rm||!('IntersectionObserver' in window)){showAll();return;}
+  function revealAll(){els.forEach(function(e){e.classList.add('in')});}
+  if(rm||!('IntersectionObserver' in window)){revealAll();return;}
   var io=new IntersectionObserver(function(en){
     en.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);} });
   },{rootMargin:'0px 0px -6% 0px',threshold:.08});
   els.forEach(function(e){io.observe(e)});
-  /* 23/10 — carrousel : les cartes hors écran ne restent plus invisibles
-     Un `.rv` placé dans un conteneur qui défile horizontalement n'entre jamais dans le champ de
-     l'observateur (il est hors écran à droite) : il restait donc à opacity:0. On observe le
-     conteneur, et quand il devient visible toutes ses cartes s'affichent. */
-  var strips=[].slice.call(document.querySelectorAll('.rv')).filter(function(e){
-    var n=e.parentElement; while(n&&n!==document.body){var cs=getComputedStyle(n);
-      if(/auto|scroll/.test(cs.overflowX)) return true; n=n.parentElement;} return false;});
-  if(strips.length){var io2=new IntersectionObserver(function(en){
-      en.forEach(function(e){ if(e.isIntersecting){
-        [].slice.call(e.target.querySelectorAll('.rv')).forEach(function(c){c.classList.add('in')});
-        e.target.classList.add('in'); io2.unobserve(e.target);} });},{threshold:.05});
-    var boxes=new Set(); strips.forEach(function(e){var n=e.parentElement;
-      while(n&&n!==document.body){var cs=getComputedStyle(n);
-        if(/auto|scroll/.test(cs.overflowX)){boxes.add(n);break;} n=n.parentElement;}});
-    boxes.forEach(function(b){io2.observe(b)});}
+  // filet : si l'observateur ne coche jamais (onglet en arrière-plan, moteur capricieux), on affiche.
+  setTimeout(revealAll,2500);
 }catch(e){ var all=document.querySelectorAll('.rv'); for(var i=0;i<all.length;i++){all[i].classList.add('in');} }})();
 </script>
 
-<script>
-/* 23/10 — confort du menu mobile (le <details> marche déjà sans ce script) */
-(function(){
-  var d=document.querySelector('.mnav'); if(!d) return;
-  function close(focus){ if(!d.open) return; d.open=false; if(focus) d.querySelector('summary').focus(); }
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(true); });
-  document.addEventListener('click',function(e){ if(d.open && !d.contains(e.target)) close(false); });
-  d.addEventListener('click',function(e){ var a=e.target.closest && e.target.closest('a'); if(a) close(false); });
-  window.addEventListener('resize',function(){ if(window.innerWidth>=980) close(false); });
-})();
-</script>
 </body>
 </html>

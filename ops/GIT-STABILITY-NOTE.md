@@ -119,3 +119,49 @@ c'est la taille de l'arbre, pas celle de l'historique, qui décide de la vitesse
 Donc **pas de réécriture**, et à la place un garde-fou qui empêche le retour du gras : la règle 14
 (`poids-raisonnable`, souple) mesure le poids à chaque tour. Si un jour c'est le **clone complet** qui
 gêne, le remède est un `git clone --depth 1` documenté, pas un `filter-repo`.
+
+## 27/10/2026 (soir) — nettoyage des branches : 44 supprimées, 3 gardées, et pourquoi
+
+> King : *« clean the old/discard/delete the branches that are no longer in use »*.
+
+**Le critère qui a servi — et celui qui ne sert pas.** `git branch -r --merged origin/main` renvoie
+**0 branche sur 47** alors que **76 PR y sont fusionnées** : l'historique est squashé à chaque fusion, donc
+aucune branche n'est « ancêtre » de `main`. `merge-base --is-ancestor` est donc **inutilisable ici**.
+Le critère retenu est la **vérité de contenu**, pas la généalogie :
+
+1. `gh pr list --state all` → l'état de la PR (MERGED / OPEN) ;
+2. `git diff --shortstat origin/main origin/<branche>` → ce que la branche porte **encore** que `main` n'a pas.
+
+Une branche se supprime si sa PR est **MERGED** et que son contenu est **déjà dans `main`**. Une branche
+dont la PR est **OPEN** garde son contenu, donc reste.
+
+**Ce qui a été supprimé — 44 branches `origin/arena/*` sur 47.** Toutes avaient une **PR fusionnée**
+(donc leur contenu est dans `main`) ; **aucune branche à PR ouverte n'a été touchée**. Le nombre de PR
+couvertes est supérieur au nombre de branches (**76**, de #1 à #83) parce que **les mêmes noms de branche
+ont servi plusieurs fois** au fil des tours. Commande, une par branche :
+
+```bash
+gh api -X DELETE repos/AKWOKING/AMK/git/refs/heads/arena/<id>-amk
+```
+
+**Ce qui a été gardé, et pourquoi :**
+
+| Branche | PR | Ce qu'elle porte encore |
+|---|---|---|
+| `arena/d9c51fc4-amk` | **#84 OPEN** | la branche de travail de la session : l'épisode publié, tout l'outillage, le registre des 21 erreurs |
+| `arena/ecb2ac1c-amk` | **#78 OPEN** | `sales/LOT-2026-10-27.md` (la liste des quinze cabinets) · `sales/ENVOI-VOLUME-2026-10-27.md` · `sales/Activity-Log.md` · `ops/REPO-MAP.md` — **travail de vente non fusionné** |
+| `arena/fc8110b1-amk` | **#40 OPEN** | état du dépôt au 24/10 : 480 fichiers, −30 858 lignes vs `main` — c'est une **photo d'archive**, pas un ajout |
+
+⚠ **#84 porte un titre périmé** (« réservation en ligne prête et éteinte ») : la branche contient aussi
+toute la production vidéo du 27/10. Ne pas la juger sur son titre.
+
+**Effet de bord à connaître** : `git reset --hard origin/arena/d9c51fc4-amk` **puis** `git fetch --prune`
+supprime les `refs/remotes/origin/arena/*` des branches effacées, parce que `remote.origin.fetch` est
+réglé sur cette seule branche. Pour les voir, il faut le miroir complet (~2 min) :
+
+```bash
+git fetch origin '+refs/heads/*:refs/remotes/origin/*'
+```
+
+Ce n'est pas une perte : une branche supprimée reste accessible par le **SHA** de son dernier commit
+(en local tant que le clone superficiel le contient, et côté GitHub via la PR fusionnée).

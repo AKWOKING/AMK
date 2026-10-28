@@ -2,6 +2,8 @@
 
 _Consolidated from three MIT-licensed agent skill libraries: `bergside/awesome-design-skills` (TypeUI, 67 design-system families), `Leonxlnx/taste-skill` (anti-slop frontend), and `emilkowalski/skills` (animation/design engineering). Vendored sources live in `design/vendor/` (full family token sheets: `design/vendor/bergside-skills/<family>/`, digest `design/vendor/registry-digest.json`; motion skills: `design/vendor/emil/skills/`; taste skills: `design/vendor/taste/skills/`)._
 
+**Where everything lives:** **§39 is the index** — the four layers (law / craft / floor / tokens), the 67 vendored families, the 49 instruments of `tools/qa/` and the rule each one serves, the build chain command by command, and the six things no tool can measure. Read it once; come back to it every time you cannot remember which script checks what.
+
 **How to use:** the build pipeline is `design/WORKFLOW.md` (9 stages). Before building, read §1-§2 below (infer the brief, set dials), lock a token sheet from `design/STYLE-TOKENS.md`, build against §4-§11, run the motion pass (`design/MOTION.md`), run §13 before delivery. For image/comps work, also read §15. This library is an overlay on top of the AMK standing standards (single-file HTML, EN|FR, base64, Concept Production Standard, nameless-template rule, no fabricated facts).
 
 ---
@@ -173,6 +175,7 @@ When the client provides an explicit visual reference (screenshot/Dribbble), the
 - Text on accent: WCAG AA 4.5:1 (3:1 for large text). Audit every CTA.
 - Shadows tinted to background hue. Consistent light direction across all shadows.
 - **60-30-10 balance:** ~60% neutral surfaces, ~30% brand colour, ~10% accent. The accent is the rarest colour on the page; CTAs and key numbers own the 10%. If the accent is everywhere, nothing is emphasised.
+  **Measured since 28/10, not recited:** `python3 tools/qa/audit_palette.py --sheet|--html|--image`. Bands: dominant 45–85% (only *too little* is a fail), secondary 5–40%, accent 0.7–15% (too much is a fail). Measure **per viewport**, never on the full-page scroll — a 1440×8000 capture dilutes the accent in empty space. The accent never carries running text: it owns the button, the link, the key number. Full analysis: `knowledge/COULEUR-60-30-10-2026-10-28.md`.
 - **Tinted neutrals are derived, not picked:** background tints = the brand/accent hue with saturation and brightness reduced (a contextual tint, never accidental grey).
 - **Contrast is checked, not felt:** run every brand/background pair through a contrast checker (Coolors Contrast Checker or equivalent) before shipping: 4.5:1 body, 3:1 large (the §13 promise, verified).
 - Skip colour-psychology folklore: legibility first, one personality accent second.
@@ -391,6 +394,9 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 - [ ] Heading ≤ 2 lines desktop; nav 1 line ≤ 80px; hero CTAs visible at 800px height
 - [ ] CTA contrast AA; no wrapped CTA labels; one label per intent
 - [ ] Eyebrow count ≤ ceil(sections/3) (unless reference-driven)
+- [ ] **Type scale ≤ 6 distinct sizes at 1440px** — `shot.py` counts them and names the selector (§5)
+- [ ] **First screen ≤ 6 text blocks** (sourcil, titre, ville/chapeau, sous-texte, boutons, la carte) — `shot.py` (§7)
+- [ ] **60-30-10 measured, not recited** — `audit_palette.py --sheet` at stage 4, `--image` on three viewport captures at stage 9 (§6.1)
 - [ ] No 3+ consecutive same layout families; no zigzag ×3
 - [ ] Em-dash scan: zero in EN strings (hyphen ok); FR permitted
 - [ ] No filler verbs, no fake names, no unlabeled fake numbers
@@ -2446,3 +2452,276 @@ Ce qu'on en garde, en trois lignes :
 posés sur une **image de fond** (`.adband` : photo + voile sombre). Le calcul ne voit pas l'image ; le
 texte est lisible. Ces findings se **nomment** dans le rapport au lieu d'être « corrigés » à l'aveugle —
 changer la couleur d'un texte lisible casserait la page pour satisfaire un outil.
+
+---
+
+## §39 L'INDEX — où vit chaque document, et quel outil vérifie chaque règle (28 Oct 2026)
+
+_Cette bibliothèque a grossi par lots : §1-§24 en septembre, §25-§37 en trois nuits, §38 en octobre. Les
+règles ont poussé plus vite que les instruments, et les instruments plus vite que la mémoire de qui les a
+écrits. Ce § est le seul endroit qui répond à « **où est-ce écrit, et qu'est-ce qui le vérifie ?** ».
+Rien ici n'ajoute une règle : tout ici range._
+
+### 39.1 Les quatre couches, de la loi au pixel
+
+| Couche | Fichier | Ce qu'on y trouve | Quand on l'ouvre |
+|---|---|---|---|
+| **La loi** | `AMK-DESIGN-SKILLS.md` (ce fichier) | les interdits, les seuils, les portes. En cas de désaccord, **c'est ce fichier qui tranche** | avant chaque build, §1 → §39 |
+| **Le métier** | `design/WORKFLOW.md` | les 9 étapes, de la recherche au pré-vol | étape par étape |
+| **Le plancher** | `design/CRAFT-FLOOR.md` | contraste, ombres, échelle, motion : ce qui ne se discute pas | avant de livrer |
+| **La matière** | `design/STYLE-TOKENS.md` | sept planches `:root` (A-G) + le registre de rotation | à l'étape 4 |
+
+Les trois autres pièces de la maison :
+
+- **`design/MOTION.md`** — jetons de mouvement, durées, les quatre questions avant d'animer, le tableau
+  avant/après. Un mouvement qui ne passe pas ces quatre questions ne s'écrit pas.
+- **`design/LESSONS.md`** — les corrections de craft déjà payées, une par ligne. À relire après une
+  critique client, jamais avant.
+- **`design/README.md`** — la carte du dossier : playbooks, bibliothèques vendoriées, procédure de mise à
+  jour. **C'est le seul index qui existait avant ce §**, et il ne parle que de `design/`.
+
+### 39.2 Les bibliothèques vendoriées (`design/vendor/`, MIT)
+
+| Dossier | Contenu | Notre usage |
+|---|---|---|
+| `bergside-skills/` | **67 familles** de design system (`<famille>/SKILL.md` + `DESIGN.md`), digest machine dans `registry-digest.json` (67 jeux de jetons analysés) | à l'étape 3b pour explorer des directions ; §14 les résume en une ligne chacune |
+| `emil/skills/` | Emil Kowalski : `emil-design-eng`, `animate`, `review-animations`, `find-animation-opportunities`, `apple-design`, `pick-ui-library` | §9 et `design/MOTION.md` en dérivent |
+| `taste/skills/` | Leonxlnx : `taste-skill` (l'anti-slop d'origine), `redesign-skill`, `brandkit`, `imagegen-frontend-web` | §3 et §12 en dérivent |
+
+### 39.2 bis Hallmark — installée par CLI, pas vendoriée (28/10)
+
+`nutlope/hallmark` (MIT, **v2.0.0**) : un **plancher de 16 règles** et un linter, `sloplint.mjs`. Elle
+s'installe et se met à jour toute seule, donc on ne la copie pas : `design/HALLMARK.md` garde la
+commande d'installation, la version, le verdict rendu sur le site DM OPTIQUE (deux fautes corrigées,
+zéro pixel changé), et **la liste des écarts écartés avec leur raison**. À relire avant de citer
+Hallmark comme une autorité : sur un design approuvé, c'est `audit`, jamais `redesign`.
+
+**Règle de lecture** : une bibliothèque vendoriée **n'a jamais raison contre ce fichier**. Elle propose une
+direction ; §3 et §6 disent si elle a le droit d'exister chez nous. §4.4 (Reference-Override) est la seule
+exception, et elle vient du **client**, pas d'un dépôt.
+
+### 39.3 Les instruments — ce que chacun a le droit de dire
+
+`tools/qa/` contient **49 scripts**. Les voici rangés par ce qu'ils mesurent, avec la règle qu'ils servent.
+Un outil qui ne sert aucune règle n'a pas à exister ; une règle sans outil est un conseil (§3.8, « QA
+everything yourself »).
+
+**Le rendu (nécessite `bash tools/video/install.sh`)**
+
+| Script | Mesure | Règle |
+|---|---|---|
+| `shot.py` → `shot.mjs` | débordement, texte coupé, images cassées, contraste, focus visible, console, blocs restés invisibles + **les règles §13** : bilinguisme, 6 tailles max, blocs du premier écran, hauteur de nav, sourcils, liens morts, `alt`, JSON-LD, `transition:all`, `prefers-reduced-motion`, `:focus-visible` | §7, §13, §24 |
+| `audit_html.py` | contraste AA sur **chaque passage de texte**, en desktop **et** mobile ; exporte `lum`/`ratio` aux autres outils | §6.1, §27 |
+| `audit_a11y.py` | WCAG 2.2 niveau A/AA, critère par critère | §27, §28 |
+| `autofix_contrast.py` | propose (et avec `--write`, applique) les corrections de contraste **scopées** | §6.1 |
+| `audit_palette.py` | **60-30-10** : `--sheet` (jetons), `--html` (CSS peint), `--image` (pixels). PNG décodé sans dépendance | §6.1 |
+| `audit_page.py` | hiérarchie, échelle de type, densité, ce qui se passe après le clic | §5, §7, §11 |
+| `audit_hero.py` | premier écran : h1 visible, porté par le texte, accordéons natifs | §26, §29 |
+| `audit_reveal.py` | le bug des 142 blocs : règle de base, état révélé, filet, `scripting:none` | §13 |
+| `audit_images.py` | photographies livrées : poids, dimensions, sens unique | §25, §32 |
+| `audit_seo.py` / `audit_aeo.py` | référencement statique, mobile-first / ce qu'une machine peut citer | §31 |
+| `audit_delivery.py` | la porte de livraison : ce qu'un audit extérieur a vu et que nos portiques ne voyaient pas | §13, §18.4 |
+| `audit_site_amk.py` | les lois de la maison que les autres portiques ne vérifient pas | §4 |
+| `audit_laws.py` | **les six lois de la perception** sur le HTML/CSS servis : amorce d'un rail, voile d'un panneau, forme publicitaire, défauts de formulaire, liaison d'un flux, surcharge de choix — banc de 16 témoins (`--self-test`) | §40 |
+| `audit_seo_local.py` | **l'intention de recherche et le local, site entier** : ville + métier dans titre et H1, réciprocité hreflang, pages orphelines, cannibalisation de titres, NAP identique, `Service`/`Optician`, robots, culs-de-sac — banc de 15 témoins (`--self-test`) | §40, `AMK-SEO-PLAYBOOK.md` §9 |
+| `audit_claims.py` | refuse une publication qui contredit un verrou client | §3.6, §34 |
+| `check_inline_js.py` | chaque `<script>` inline compile (JSON-LD validé à part) | §13 |
+| `render_svg.py`, `raster_svg_path.py` | **regarder** un tracé SVG avant de le livrer | §8 |
+| `check_sms.py` | segments réels d'un SMS | §20, §35 |
+
+**Le contenu et le commercial** (hors design, listés pour que personne ne les cherche ailleurs) :
+`audit_hook.py` §13 accroche · `audit_ideas.py` · `audit_story.py` · `audit_reel.py` · `audit_trust.py` ·
+`audit_funnel.py` · `audit_publication.py` · `audit_platform.py` · `audit_post_dm.py` ·
+`audit_outreach.py` · `audit_qualification.py` · `audit_deplacement.py` · `audit_video_motion.py` ·
+`audit_render_freshness.py`.
+
+**Les témoins** — `test_audit_*.py` et `test_*.mjs` (25 fichiers). Un portique sans témoin est un portique
+dont on ne sait pas s'il mord : chaque `test_audit_X.py` casse `X` une règle à la fois et vérifie qu'il le
+dit. **Toute règle ajoutée à ce fichier ajoute son cas au témoin.**
+
+### 39.4 La chaîne, dans l'ordre, avec la commande
+
+| Étape (§) | Geste | Commande |
+|---|---|---|
+| 1 | pré-vol documentaire | `bash tools/graphify/preflight.sh "<mots du brief>"` |
+| 2-3 | Design Read, dials | aucun outil : trois phrases écrites dans le dossier client |
+| 3b | explorer trois directions | `design/vendor/bergside-skills/` + §19.3 |
+| 4 | jetons | `python3 tools/qa/audit_palette.py --sheet design/STYLE-TOKENS.md` |
+| 5-6 | copie, images | `audit_claims.py`, `audit_images.py` |
+| 7 | build | — |
+| 8 | mouvement | `design/MOTION.md` §6 ; `audit_reveal.py` |
+| 9 | pré-vol | `shot.py` → `audit_html.py` → `audit_a11y.py` → `audit_page.py` → `audit_hero.py` → `audit_laws.py` → `audit_seo.py` → `audit_seo_local.py` → `audit_palette.py --image` → `check_inline_js.py` → `test_audit_*` |
+
+**Deux commandes avant tout, une fois par session** :
+
+```bash
+bash tools/video/install.sh     # Chromium embarqué (@sparticuz) + libnspr/libnss + polices, ~70 Mo dans /tmp
+pip install --break-system-packages --user playwright pillow numpy   # le reste de la boîte à outils
+```
+
+Sans le premier, `shot.py` refuse de tourner et six portiques se taisent. **Un portique muet ne vaut pas
+un portique vert** : quand un outil ne peut pas tourner, on l'écrit dans le rapport (§13).
+
+### 39.5 Ce qu'aucun instrument ne mesure
+
+1. **Le goût.** Un contraste à 7:1 peut être laid, une palette à 60-30-10 peut être morte.
+2. **La hiérarchie réelle** : `shot.py` compte les blocs du premier écran, il ne sait pas lequel est le
+   plus important.
+3. **Le sens d'une photographie** (§25) : un outil mesure son poids, pas ce qu'elle raconte.
+4. **La direction du regard** (§29.4) : trois personnes, trois avis, et c'est le client qui tranche.
+5. **L'ordre de tabulation réel** et le rendu à 200 % de zoom : `tools/qa/PROTOCOLE-LECTEUR-ECRAN.md`,
+   à la main, cinq minutes.
+6. **La vérité d'une affirmation** (§34) : le seul instrument est la source du client, et elle est datée.
+
+### 39.6 Les dossiers voisins, pour ne pas les confondre avec le design
+
+| Dossier | Contenu | Ne pas y chercher |
+|---|---|---|
+| `knowledge/` | les dossiers de fond (60-30-10, hook, humanizer, lead magnets, export) | des règles de design : elles sont ici |
+| `research/` | les sources : `YouTube-Lessons.md` (les 38 lots), audits Google/IG, AEO, accessibilité | des décisions : elles remontent ici après arbitrage |
+| `brand/` | le kit AMK : logos, `AMK-Logo-Kit.html`, présence, assets Facebook | la palette client |
+| `clients/<client>/` | briefs, audits, direction de marque, contenus, sites | nos règles maison |
+| `demos/` + `hosting/previews/` | les pages construites et leurs constructeurs | des sources : éditer le gabarit, jamais la page construite (§2.6 de l'audit DM OPTIQUE) |
+| `sales/`, `leads/` | pipeline, messages, plan d'export | du design |
+
+**Le seul document client qui doive être lu avant un build** : `clients/<client>/site/SPEC-PAGES-v1.md` et
+la direction de marque. Tout le reste est du contexte.
+
+---
+
+**Règle de tenue de cet index** : quand un portique est ajouté, renommé ou retiré, **ce § change dans le
+même commit**. Un index qui ment est pire que pas d'index — c'est le même défaut qu'une capture Instagram
+recopiée sans être mesurée.
+
+---
+
+## §40 SIX LOIS DE LA PERCEPTION, ET LA PAGE QUI LES ENFREIGNAIT TOUTES (28 Oct 2026, tour 221)
+
+Le 28 octobre, King a posé six lois et demandé de les **chercher, les apprendre, les écrire ici, auditer
+le site, corriger, puis publier**. Ce paragraphe est la partie « les écrire ici ». Il ne remplace pas §39 :
+§39 dit **où vit chaque chose**, §40 dit **ce que six lois de la perception exigent d'une page** et
+comment on le vérifie sans regarder.
+
+### 40.1 Pourquoi ces six-là, et pas trente
+
+Les six lois décrivent ce que l'œil fait **avant** de lire. Elles ne parlent ni de goût, ni de marque, ni
+de copy : elles décrivent des faits de perception, ce qui les rend **mesurables sur le HTML et le CSS
+servis**. C'est la seule catégorie de règle qu'un portique peut tenir tout seul, sans jugement.
+
+| # | Loi | Ce qu'elle dit | Ce qu'elle interdit chez nous |
+|---|---|---|---|
+| 01 | **Closure** (Gestalt) | le cerveau complète une forme incomplète | un rail horizontal dont rien ne dépasse : l'œil croit la série finie |
+| 02 | **Figure-ground** | ce qui est au premier plan doit **soustraire** le fond | un panneau qui s'ouvre sur une page intacte, sans voile |
+| 03 | **Banner blindness** | l'œil saute ce qui a la forme d'une publicité | une pastille, un encart, un « sponsored » qui porte une action utile |
+| 04 | **Parkinson** | une tâche prend tout le temps qu'on lui donne | un formulaire qui redemande ce qu'on sait déjà, ou un bouton au libellé flou |
+| 05 | **Connectedness** | le lien **uniforme** (même surface) bat la proximité et la ressemblance | des étapes posées en cartes séparées : trois sujets, pas un parcours |
+| 06 | **Choice overload** | au-delà d'un seuil, plus d'options = moins de décisions | 17 cases de filtre ouvertes d'emblée, un catalogue déversé sans entrée |
+
+### 40.2 Les six lois, avec leur source et leur chiffre
+
+**01 · Closure — laisser la carte suivante dépasser.** La loi de fermeture (Wertheimer, école de la
+Gestalt) veut que le cerveau complète une forme interrompue ; le motif canonique en interface est le
+**défilement horizontal dont la carte suivante est partiellement visible** (≈ 30 %). Source :
+`medium.com/design-bootcamp/gestalt-laws`, `atlantis-press.com/article/125976903.pdf`, `thestory.is`.
+Chez nous : le rail « Vous aimerez aussi » des 40 fiches montrait **trois cartes empilées** sur téléphone,
+donc trois écrans de plus et rien qui dise « la série continue ». Corrigé en `.v2-rail` :
+`grid-auto-columns:78%`, amorce **22 %**, accroche `scroll-snap`, grille classique au-delà de 780 px.
+Mesure de la capture : conteneur 366 px de large, contenu 867 px, carte **273 px** (75 % de la largeur
+utile) — la fiche suivante entre franchement dans le cadre.
+
+**02 · Figure-ground — assombrir l'arrière.** Le voile (« scrim ») **réduit la présence du fond** ; les
+trois outils sont le contraste, l'ombre et le voile. Repère de la recherche : un premier plan à **17,4:1**
+qui tombe à **2,5:1** au moment où le fond recule. Sources : `uxbyexample.co.uk/entries/figure-ground/`,
+`nielsenphd.substack.com/p/gestalt-principles`, `owl-listener/law-of-figure-ground`,
+`scienceinsights.org`. Chez nous : le tiroir mobile `.mnav` s'ouvrait **sur une page intacte** ; ajout de
+`.mnav[open]::after` — `rgba(10,18,32,.45)` + `backdrop-filter:blur(2px)`, `z-index` 39, le bouton reste
+cliquable au-dessus (`z-index` 41), animation de 180 ms **coupée** par `prefers-reduced-motion`.
+
+**03 · Banner blindness — ne pas ressembler à une pub.** Benway & Lane (1998, Rice University) ont nommé
+le phénomène ; le CTR bannière est passé de **44 % en 1994 à 0,05 %** ; l'eye-tracking de NN/g répète
+depuis 1997 que **« users almost never look at anything that looks like an ad »**. Sources :
+`bannersnack.com`, NN/g via `digia.tech`, `leadalchemists.com`. Chez nous : la source d'une fiche
+(`a.psrc`) était devenue une **pastille bordée avec icône**, exactement la forme qu'on saute ; elle est
+redevenue un **lien de texte souligné** (filet à 1 px, `text-decoration-thickness`).
+
+**04 · Parkinson — remplir ce qu'on sait déjà.** Parkinson (1955) : « le travail s'étale jusqu'à remplir
+le temps disponible ». Sur le web : `lawsofux.com/parkinsons-law/`. Zuko a mesuré **215 formulaires** :
+**71 %** d'achèvement quand le formulaire peut se remplir seul, contre **59 %** ; l'autofill fait chuter
+l'abandon de **75 %**. Un formulaire de 1-3 champs convertit à **41 %**, 4-6 à **51 %**, 7+ à **31 %**
+(`kirro.io/form-design`, `newsletter.uxuniversity.io`). Chez nous : le panneau de filtres avait **trois
+boutons** dont deux au libellé interchangeable (« Tout afficher » / « Effacer ») ; le premier est devenu
+**« Voir les montures » / « See the frames »** — le libellé dit ce qu'il fait. Le champ de recherche porte
+`enterkeyhint="search"`, `autocapitalize="none"`, `spellcheck="false"` : la touche du clavier mobile dit
+« rechercher » au lieu de « retour ».
+
+**05 · Connectedness — une seule surface pour un parcours.** La **connexion uniforme** (éléments réunis
+par une même surface, un même cadre) bat la proximité et la ressemblance : c'est le résultat le plus
+robuste de la Gestalt appliquée à l'interface. Sources : `toptal.com/designers/ui/gestalt-principles-of-design`,
+`reallygooddesigns.com`, `kittl.com`, `designyourway.net`. Chez nous : les trois étapes du parcours
+(`.steps`, accueil) et les étapes des 47 sous-pages étaient **trois cartes séparées** — trois sujets.
+Une seule surface, séparée par des **filets de 1 px** : la liaison dit « et ensuite ».
+
+**06 · Choice overload — moins d'options d'emblée.** Iyengar & Lepper (2000) : **24 confitures** font
+s'arrêter **60 %** des visiteurs et **3 %** achètent ; **6 confitures** font s'arrêter **40 %** et **30 %**
+achètent. Sur les 401(k) : **−2 points de participation par 10 fonds** offerts. La critique compte :
+Scheibehenne, Greifeneder & Todd (2010), **50 études**, effet moyen **≈ 0** — la surcharge n'existe que
+sous quatre conditions (pas de préférence claire, options difficiles à comparer, pas d'expertise, coût de
+recherche élevé). Sources : `onegoodthing.space`, `yukaichou.com`, `wisechecker.com`. Chez nous : le
+panneau de filtres ouvrait **17 cases** (6 formes + 11 couleurs) d'un coup. La famille la plus courte
+(la forme) reste visible ; la couleur passe derrière un `<details>` natif qui **annonce son compte**
+(« Couleur (11) »). Les cases restent dans le DOM : le filtre, le fragment `#` et les puces actives
+continuent de fonctionner à l'identique, sans une ligne de JavaScript de plus.
+
+### 40.3 Le portique : `tools/qa/audit_laws.py`
+
+```bash
+python3 tools/qa/audit_laws.py --self-test                      # 16/16
+python3 tools/qa/audit_laws.py --dir hosting/previews/dmoptic    # 0 faute · 0 avertissement
+python3 tools/qa/audit_laws.py --only closure,figure <page.html>  # une loi à la fois
+```
+
+Il lit le HTML **et** le CSS **servis** (jamais le gabarit), et il rend trois choses : des **fautes**
+(la loi est enfreinte), des **avertissements** (la loi est probablement enfreinte, un humain tranche), des
+**notes** (ce qu'il a mesuré, et pourquoi la loi ne s'applique pas). Un `return` précoce doit dire
+« non applicable » — jamais se taire.
+
+### 40.4 Les quatre pièges que le portique a tendus le jour de sa naissance
+
+Un portique neuf ment trois fois avant de dire vrai. Les quatre erreurs sont écrites ici parce qu'elles
+se reproduiront :
+
+1. **L'alpha lu au mauvais endroit.** `rgba?\([^)]*?,\s*(\.?\d+)\)` rend **18** pour `rgba(10,18,32,.55)` :
+   il prend le deuxième composant. Il faut parser les **quatre** composants et lire le quatrième. Conséquence
+   évitée : tous les voiles jugés transparents, donc zéro faute détectée sur un site qui en avait deux.
+2. **Le voile de photo pris pour un voile de panneau.** Un `linear-gradient` sur une photographie n'est pas
+   une soustraction du fond : c'est du décor. Seul un voile d'**état** (`.is-open`, `[open]`, `:target`,
+   `scrim|veil|overlay`) compte.
+3. **« Loi non applicable » confondu avec « loi respectée ».** Le premier jet de la loi 05 renvoyait une
+   note « aucun groupe d'étapes déclaré » sur une page cassée. Chaque `return` précoce a désormais son
+   témoin dans le banc.
+4. **Le contrôle caché compté comme visible.** Un `<details>` fermé est **déjà** une réponse à la surcharge :
+   le compter comme une case visible punissait la correction. Le portique sépare « visibles » et
+   « repliés », et le dit.
+
+À quoi s'ajoutent deux corrections du **même jour dans `shot.mjs`**, trouvées en auditant :
+les blocs du premier écran comptaient (a) le contenu **sous la ligne de flottaison** — une galerie de 24
+fiches annonçait « 150 blocs » — et (b) **chaque phrase deux fois**, le site étant bilingue (`button > span.fr-only`).
+Un tiroir fermé n'est pas un débordement : ses liens attendent hors cadre. Et une 7ᵉ taille de texte
+(1,15 rem, porte du catalogue) est retombée sur l'échelle : **plafond 6** (§5).
+
+### 40.5 Ce que ces six lois ne mesurent pas
+
+Elles décrivent la **perception**, pas le **sens**. Un rail à 22 % d'amorce peut être laid ; un voile à
+45 % peut noircir une photo qu'on voulait montrer ; replier onze couleurs peut cacher celle que le client
+cherchait. Le portique dit « la forme est là », jamais « c'est beau ». Le dernier mot reste une capture
+regardée — `shot.py` — et un œil humain, le jour où King ouvre la page sur son téléphone en plein soleil
+(§24.3.5).
+
+### 40.6 Sources
+
+- Gestalt / closure : `medium.com/design-bootcamp/gestalt-laws` · `atlantis-press.com/article/125976903.pdf` · `thestory.is`
+- Figure-ground : `uxbyexample.co.uk/entries/figure-ground/` · `nielsenphd.substack.com/p/gestalt-principles` · `owl-listener/law-of-figure-ground` · `scienceinsights.org`
+- Banner blindness : `bannersnack.com` (Benway & Lane 1998) · NN/g via `digia.tech` · `leadalchemists.com`
+- Parkinson : `lawsofux.com/parkinsons-law/` · `kirro.io/form-design` (Zuko, 215 formulaires) · `newsletter.uxuniversity.io`
+- Connectedness : `toptal.com/designers/ui/gestalt-principles-of-design` · `reallygooddesigns.com` · `kittl.com` · `designyourway.net`
+- Choice overload : Iyengar & Lepper 2000 via `onegoodthing.space` et `yukaichou.com` · Scheibehenne 2010 · `wisechecker.com`

@@ -6938,3 +6938,736 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
   **② « Docteur »** : Africa Optic est un opticien du tableau de l'Ordre (titulaire MINTEU NZONGA Eric Aimé).
   L'appeler « Docteur » flatte peut-être juste, mais s'il ne l'est pas, la première phrase du premier message
   devient une erreur qu'il voit. À trancher par King avant le message suivant.
+
+## 27/10/2026 (soir) · DM Optique — l'accroche d'abord, et la porte qui la vérifie
+
+- 27/10/2026 · **Demande de King** : « aujourd'hui c'est le 27/10, on pense à ce qu'on publie sur les pages
+  sociales de DM Optique (TikTok et Facebook), relis tous les documents liés », avec un texte sur les
+  **trois composantes de l'accroche** (texte à l'écran > visuel > parlé) et sur le tunnel
+  vidéo → contact. Livré : `knowledge/HOOK-FIRST-2026-10-27.md` (doctrine), `tools/qa/audit_post_dm.py`
+  + `test_audit_post_dm.py` (**26/26**) — la porte du **kit client**, et
+  `clients/dm-optic/content/month1/w3/KIT-27-10-HOOK.md` — la pièce du soir.
+- 27/10/2026 · **La pièce du 22/10 ne change pas** (décision de King : « okay to post tiktok-01-v2 on
+  tuesday »). Ce qui change est l'**accroche** : carton de 3 s « 20 SECONDES / À 6 MÈTRES » (avec
+  « 8 heures à 40 cm » en gris au-dessus), une phrase d'accroche à dire par-dessus si l'enregistrement est
+  possible, une ligne de partage à la fin, et **deux liens `wa.me` préremplis différents** — un par
+  plateforme. Aucune pièce publiée avant aujourd'hui ne permettait de savoir d'où venait une conversation.
+- 27/10/2026 · **Trois accroches écrites, deux écartées** (première application de la règle du 25/10) :
+  la voix existante — « Vingt minutes d'écran. Puis vingt secondes. À six mètres. » — **échoue** à
+  `audit_hook` (0 mot de puissance sur 4) ; c'est le diagnostic exact de la sortie massive à **0:02** du
+  23/10. Les deux accroches retenues (une à l'écran, une prononcée) passent **4/4**.
+- 27/10/2026 · **Ce qui n'est pas vérifié, et qui se dit** : le master `tiktok-01-v2.mp4` **n'existe pas
+  dans l'environnement** (`*.mp4` ignoré) — les 23,00 s / 4,3 Mo sont ceux du contrôle du 22/10. Les
+  horaires 8h30–13h00 viennent du dépôt, aucune confirmation écrite du cabinet. **Rien n'est publié.**
+- 27/10/2026 · **Intégré au graphe** : `build_full_graph.py` rejoué (13 696 nœuds), `ops/REPO-MAP.md`
+  réécrit ; doctrine routée depuis `PRE-FLIGHT.md` §1g ; la ligne fausse « visuel > écrit > parlé » de
+  `ANALYSE-POST-1` **corrigée et datée** (c'est « écrit > visuel > parlé »).
+
+## 27/10/2026 (soir, 2) · DM Optique — un troisième post retrouvé, et deux séries pour les abonnés
+
+- 27/10/2026 · **Quatre captures TikTok Studio** envoyées par King : elles révèlent un **troisième post** du
+  22/10 — **31,02 s, publié à 14:36**, 90 vues, 8 likes, 1 commentaire, **1 partage**, 7,0 s de lecture
+  moyenne, **22 %** de rétention, **arrêt à 0:01**, **0 abonné**, **100 % de non-abonnés**, 94 % de
+  nouveaux spectateurs. Le relevé du 23/10 ne parlait que du fichier de 18 s (16:17) : le ⚠️ « les deux
+  relevés ne parlent pas du même fichier » est **résolu** — c'étaient **deux posts**, plus un troisième sur
+  Facebook à 15:24. Trois envois du même film en deux heures. Détail et corrections datées :
+  `clients/dm-optic/content/month1/w2/ANALYSE-POST-1-2026-10-23.md` **§7**.
+- 27/10/2026 · **Trois corrections, faites le jour même** : ① « 0 partage sur les deux réseaux » était
+  **faux** (1 partage sur le post de 31 s) ; ② la falaise est à **0:01**, pas 0:02 ; ③ le temps total de
+  lecture (13 min 05 s) ne se réconcilie pas avec la moyenne annoncée (7,0 s) — **laissé non résolu**, sans
+  explication inventée.
+- 27/10/2026 · **La leçon reçue est rangée** : `knowledge/LEAD-MAGNETS-2026-10-27.md` — flux d'activation,
+  les sept types d'aimants, la page, et la seule mesure qui compte (**conversions par vue**). Chez DM, l'
+  aimant est **une monture** (photo envoyée en conversation), l'étage e-mail est **remplacé** par WhatsApp,
+  la page d'atterrissage n'est **pas** construite. Chez AMK, `CONTRÔLE` est déjà l'aimant « document
+  unique » ; il manque le **dénominateur** (les `CONTRÔLE` reçus par vidéo).
+- 27/10/2026 · **Deux idées, et elles étaient déjà écrites** : `content/IDEES-ABONNES-2026-10-27.md` —
+  **« La monture cherche son nom »** (série 5 épisodes, `content-plan-month1` §2b, jamais tournée) et
+  **« Une question, une réponse »** (série validée par King le 23/10, `CONTENT-CREATION` §5 sexies, jamais
+  tournée). Mécanique d'abonné dans les deux cas : **une promesse de suite tenue le lendemain**. Les deux
+  accroches passent **4/4** à `audit_hook` ; `audit_ideas` passe avec trois avertissements conservés.
+- 27/10/2026 · **Garde-fous neufs** dans `tools/qa/audit_post_dm.py` : `abonnement-mendicite` et
+  `serie-sans-boucle` — banc **30/30**. `BRAND-STRATEGY` §11 **amendé** : les abonnés passent de « non
+  mesuré » à **indicateur intermédiaire**, lu en **taux de suivi**, sans changer la promesse (on ne promet
+  ni vues, ni abonnés, ni patients). Borne rappelée : au Cameroun, **pas de lien en bio** — des abonnés
+  produisent des **conversations WhatsApp**, pas du trafic vers le site.
+- 27/10/2026 · **Ce qui manque** : une capture du **profil TikTok** (bio, épinglés, playlists) — la décision
+  de s'abonner se prend là, et on n'en a aucune image. Les visites de profil ne figurent pas dans les
+  captures. Rien n'est tourné, rien n'est publié.
+
+## 27/10/2026 (soir, 3) · DM Optique — sans le docteur, sans visage : la réponse est un fichier de 14 s
+
+- 27/10/2026 · **Question de King** : « IDEA-01 et IDEA-02, laquelle peut être faite sans le docteur,
+  laquelle peut être faite sans visage ? » **Réponse** : **IDEA-01** — et **IDEA-02 ne peut pas** : elle vit
+  du comptoir (la monture qui glisse, la pince, le réglage), donc du décor et du geste, pas d'un visage.
+  Le tableau des dépendances est dans `content/IDEES-ABONNES-2026-10-27.md` §8.
+- 27/10/2026 · **Épisode 1 d'IDEA-01 produit** : `clients/dm-optic/content/month1/w3/assets/monture-01-h08.mp4`
+  — **14,20 s**, 1080×1920, 30 fps, H.264, 1,35 Mo, **muet**, **aucun visage**, **aucun tournage**. Moteur
+  reproductible `tools/record/make_dmoptic_monture.py` (45 s de rendu). Matière : la photo réelle du cabinet
+  et la référence que le site publie (H08 · double pont, aviateur, noir et doré).
+- 27/10/2026 · **Portique mouvement** : **OK**, y compris à la fenêtre serrée d'**1 s** — c'est cette mesure
+  qui a fait retravailler le cadrage (un macro de monture sur fond blanc casse le cadre ; le logo a besoin
+  d'une pastille crème ; le bandeau de texte doit être opaque sur la carte crème).
+- 27/10/2026 · **Kit de publication** : `content/month1/w3/MONTURE-01-KIT.md` — accroche sur trois composantes
+  (texte / visuel / **parlé : aucune voix, déclaré**), deux légendes avec **deux liens préremplis différents**,
+  commentaire épinglé, réponse d'accueil, compteur, seuils écrits d'avance. `audit_post_dm` passe ; le refus
+  `hook-desaligne` a été **étendu** : une pièce déclarée **muette** passe avec un avertissement explicite
+  (`piece-muette`), banc **31/31**. Exception `.gitignore` datée : le master entre au dépôt (1,4 Mo) pour
+  être atteignable par un lien.
+- 27/10/2026 · **Ce qui manque** : la **H08 est-elle encore au cabinet** — le site la publie, personne ne l'a
+  confirmée cette semaine. Si elle est vendue, l'épisode 1 prend la monture suivante (une ligne à changer).
+  Rien n'est publié.
+- 27/10/2026 · **Épisode 1, version parlée** (tour 195, King : « audit it for hooks and retention rate then add
+  voice ») : accroche auditée — les deux phrases utilisées jusqu'ici sont **refusées** par `audit_hook`
+  (`mots-manquants`), la retenue est **« Votre monture n'a pas de nom. Regardez : elle devient la vôtre. »**
+  (✓ niveau 1). Mouvement repris (0–1 s : max 9,08, **2 coupes**), **8 cartons**, aucun tenu plus de 1,8 s.
+  Voix `voice-05`, 5 blocs mesurés, montage **calé sur la mesure**. Rendu
+  `w3/assets/monture-01-h08-voix.mp4` — **19,87 s**, H.264 + AAC 48 kHz mono, 2,30 Mo. Le master muet reste.
+- 27/10/2026 · **Un faux négatif corrigé dans la porte** : `audit_post_dm` refusait la pièce parlée en
+  `hook-desaligne` (« 1 nombre commun ») alors que texte et voix disent tous deux **H08** et **un quartier,
+  une ville**. L'extracteur ne voyait ni `H08` ni `8h30` (lettre collée au chiffre) et comptait les fenêtres
+  de temps comme du contenu. Il les voit ; **le seuil ne bouge pas** (≥ 2) ; banc **35/35**.
+- 27/10/2026 · **Épisode 1, v3 — l'histoire et le jeu** (tour 196, King : « create a story behind the naming
+  … more human … games/competitions/polls »). Le script vit désormais dans
+  `content/month1/w3/MONTURE-01-SCRIPT.py` (6 beats + rôles + Porte W43), lu par `audit_story` : **✓ 0
+  avertissement**. Histoire : sur le site, **40 montures, 40 codes** — la fiche s'appelle
+  « H08 · Double pont aviateur noir et doré ». Jeu en trois manches : un mot → vote « 1 ou 2 » → le nom
+  reste écrit sur la fiche. Passe `humanizer` sur les 6 phrases (2 ouvertures « On… », 1 deux-points
+  d'énumération, 1 fragment). Rendu **25,01 s** parlée + **25,0 s** muette, portique **OK** aux deux
+  fenêtres. **Un chiffre faux attrapé avant le rendu** : « 65 montures » → **40** (le site en publie 40 ;
+  65, c'est le nombre de photos dans le dossier).
+- 27/10/2026 · **Épisode 1, v4 — le vote A/B et la cadence** (tour 197). King : « Votre monture n'est pas
+  la leur » + trois scripts proposés + cadence mardi/vendredi/mardi. Les trois scripts passent par
+  `audit_story` : **mêmes quatre refus** (`pas-de-lockin`, `preuve-absente`, `rehook-mal-place`,
+  `cta-non-aligne`) — verdict de porte, pas de goût. On garde d'eux **le vote binaire** (P1), « c'est son
+  code » (P2), l'ancrage local et la date (P3) ; on refuse **« Suis la page »** (notre porte :
+  `abonnement-mendicite`) et le **« coup de cœur »** (un jury qui peut tout faire n'est pas un concours).
+  Accroche : **« Elle n'a pas de nom. Vous choisissez celui qui reste. »** (53 car.). Rendu **27,30 s**
+  parlée / **27,3 s** muette. **Amendement** `DIRECTION-MARQUE-v2` §12 : la monture est le personnage de
+  cette série, et « quarante montures » est autorisé à l'écran (le §10.5 le refusait). Cadence écrite dans
+  `posting-calendar.md` ; « Pourquoi on revient » recule au 06/11.
+- 27/10/2026 · **Épisode 1, v5 — les trois images** (tour 198). King : « en plus du script et ce qui
+  apparaît sur l'écran, je veux que tu ajoutes des images », avec trois beats nommés. Trois inserts
+  ajoutés au film, **deux sur de la matière réelle** : la **page du catalogue** du site qui défile (H02,
+  H04, H05 — le « toutes s'appellent par un code » devient visible au lieu d'être affirmé) et la **fiche
+  H08** posée dans le cadre. Le troisième est le **visage** : une personne portant la monture, en **image
+  générée** — l'exception que King a accordée, écrite au kit §8 (un plan, une approximation de la H08,
+  révocable, remplaçable par une vraie photo en une commande). Rendu **27,30 s / 4,35 Mo** parlée,
+  **27,10 s / 3,91 Mo** muette ; la voix n'a pas été refaite. **Portes** : `audit_story` ✓,
+  `audit_video_motion` **OK** aux fenêtres 1 s **et** 2 s sur les deux fichiers, `audit_post_dm` ✓, banc
+  35/35. Deux choses apprises et écrites : une capture pleine page contient un **raccord** à couper
+  (8 190 px / 2 225 px), et un défilement en `ease` pur **s'arrête** en fin de plan — corrigé en
+  55 % ease + 45 % linéaire.
+- 27/10/2026 · **Épisode 1, v6 — humanizer, Roast Room, film calme** (tour 199). King : « the script needs
+  to go through humanizer and roast room, remove all the motion design elements, the images move too
+  much ». Les six phrases passent au skill `humanizer` (5 motifs corrigés), puis à une **séance de Roast
+  Room** à cinq sièges : trois options, vote pondéré **B** (humaniser + calmer, garder la structure).
+  L'image passe en **calme** : images fixes, 13 plans, coupes franches, plus aucun zoom ni bandeau qui
+  glisse. `audit_video_motion` est **complété** d'un mode `--calme` (tenue max 2,6 s par image) — une
+  porte se complète, elle ne se désarme pas ; règle écrite en `DIRECTION-MARQUE-v2` **§13**. Nouvelle voix
+  (**voice-06**), respirations internes ramenées à 0,20 s : **28,37 s / 1,75 Mo** parlée, **27,10 s /
+  1,29 Mo** muette. Portes : `audit_story` ✓, `audit_hook` ✓, `audit_video_motion --calme` OK (2,17 s max,
+  28 changements), `audit_post_dm` ✓, banc 35/35.
+- 27/10/2026 · **Épisode 1, v7 — le script final de King** (tour 200). Cinq blocs (hook · show the frame
+  · vote · set the rule · follow CTA) et un déroulé image en six plans, appliqués. Gardé mot pour mot : la
+  ligne de vote, la règle (« le surnom le plus cité avant mardi… dans l'épisode 2 »), « Résultat mardi »,
+  « Suivez la page ». Trois corrections argumentées : le hook (la porte `audit_hook` exigeait sujet,
+  action, objectif, contraste), la preuve (40 montures / 40 codes, **prononcée** — sa condition même :
+  on ne montre que ce qu'on dit), et le CTA (« Suivez DM Optique » seul = `abonnement-mendicite` ; sa
+  propre ligne image disait « Résultat mardi — suivez la page », c'est elle qui est gardée, avec la
+  récompense datée). **Aucun essayage, aucune image générée, aucune maquette renommée.** Deux cartons
+  dessinés : `vote_card` (A et B côte à côte, l'un allumé puis l'autre par coupe) et `rule_card`
+  (RÉSULTAT MARDI, LUN/MAR/MER). Rendu **29,53 s** parlé et muet. Portes : `audit_story` ✓,
+  `audit_hook` ✓, `audit_video_motion --calme` OK sur les deux fichiers (2,3 s max, 19 changements),
+  `audit_post_dm` ✓, banc 35/35.
+- 27/10/2026 · **Publié à 17 h 48 — Facebook et TikTok** (épisode 1, H08, 29,53 s). Le kit de publication et
+  le compteur J0 → J+7 sont dans `clients/dm-optic/content/month1/w3/PUBLICATION-2026-10-27.md`. **Aucun
+  chiffre n'est noté** : la pièce a moins d'une heure, et un chiffre écrit sans l'avoir lu ne vaut rien. Ce
+  qui a été fait ensuite, à la demande de King (« document all we went through so that we don't repeat these
+  errors ») : `knowledge/MAKING-OF-MONTURE-01-2026-10-27.md` — sept tours, **21 rendus** dont **17** de
+  correction, **21 erreurs** classées en cinq familles — et la leçon §34 des `CONTENT-LESSONS`. Deux
+  préventions ajoutées au code : `trim_seam()` (le raccord des captures pleine page est détecté et
+  **imprimé** à chaque rendu, plus besoin de le mesurer à la main) et la vérification que le rendu reste
+  identique aux portes (2,33 s max, 19 changements). Passage de relais : `ops/HANDOFF-2026-10-27.md`.
+
+### 27/10/2026 (soir) — hygiène du dépôt : 44 branches supprimées, 3 gardées
+
+**Rien à voir avec un envoi** : cette entrée existe pour que la session suivante ne cherche pas des branches
+qui n'existent plus. **47 branches `origin/arena/*` → 3** (44 supprimées). Critère (la généalogie ne marche pas ici, l'historique
+est squashé) : PR **MERGED** **et** `git diff --shortstat origin/main <branche>` = 0 fichier.
+
+- **Supprimées (44)** : toutes avaient une **PR fusionnée** (76 PR de #1 à #83 — les mêmes noms de branche
+  ont servi plusieurs fois). Aucune branche à PR ouverte n'a été touchée.
+- **Gardées** : `arena/d9c51fc4-amk` (**#84 OPEN** — la branche de travail, contenu **pas** dans `main`) ·
+  `arena/ecb2ac1c-amk` (**#78 OPEN** — lot de vente du 27/10, +574/−777) · `arena/fc8110b1-amk`
+  (**#40 OPEN** — photo du dépôt au 24/10, −30 858 lignes).
+- **Le détail et la commande** : `ops/GIT-STABILITY-NOTE.md`, section du 27/10 au soir.
+### 28/10/2026 (matin) — le fil du Dr FOGUE passé au crible : un oui verbal, zéro franc
+
+King a fourni quatre captures du fil (26/10 17 h 19 → 27/10 21 h 46) et demandé l'analyse. **Rien n'a été
+envoyé au client** : ce tour écrit seulement l'analyse et répare ce qui la rendait invisible.
+
+> **⚠ CORRECTION, même jour (midi).** L'entrée ci-dessous affirmait que King avait offert une **baisse de
+> prix** à 21 h 46 et que la séance du Roast Room avait dû « convertir » cette remise. **King n'a jamais
+> écrit cela.** Son message de 21 h 46 se termine par « Qu'est-ce qui vous ferait dire que ça vaut le coup
+> pour vous ? » — ni prix, ni remise, ni contrepartie. La phrase citée était **inventée** : j'ai résumé un
+> souvenir au lieu d'ouvrir la capture. C'est la famille d'erreur n° 1 du registre (matière fausse ou
+> incomplète, `knowledge/MAKING-OF-MONTURE-01-2026-10-27.md`), appliquée à la lecture au lieu de la vidéo.
+> Analyse et séance **réécrites** en v2 ; verdict du matin **retiré**.
+
+- **`knowledge/ANALYSE-FIL-DR-FOGUE-2026-10-28.md`** — chronologie message par message, ce qui a marché
+  (la vitesse, le rattrapage du 17 h 33, la question fermée qui a produit « ok allez y »), ce qui a cassé
+  (**prix par écrit** dans un message qui commence par « Avant qu'on ne fixe une date de rencontre » ;
+  « coût total » ; messages de 6 à 12 lignes ; **un fait inventé** — « votre emplacement principal à
+  Akwa » ; **une image générée d'une praticienne** montrée comme son site), l'objection relue (« pas sûr
+  que ça marche » = risque, jamais traité), et **les deux messages à envoyer** (note vocale 25 s + deux
+  créneaux).
+- **`knowledge/ROAST-2026-10-28-DR-FOGUE-PRIX.md`** — séance **v2**, 5 sièges / 10 voix, sur la vraie
+  question du 28/10 : **le client n'est pas dans l'ICP**. A classer hors ICP 4,3 · **B aller le voir sans
+  prix 8,0** · C offre recadrée par écrit 4,1 · D attendre 4,0. Verdict **B**, avec une condition de
+  Buffett : on y va **sans le site sous le bras**, pour qualifier, pas pour convertir.
+- **`leads/build/crm.py`** — table `FIL_AFRICA_OPTIC_2710` : la conversation, `Contacted/Reply/stage/
+  reply_type/last_send_state/Follow-up date`, et deux corrections de fait. **Avant ce tour**, toute
+  l'histoire de ce prospect ne vivait que dans `leads/CRM.csv`, une **sortie** du script : un rebuild
+  remettait la ligne à `Contacted=No` / `stage=prospecting` (mesuré : 10 colonnes perdues).
+- **Décalage mesuré au passage** : **18 lignes** du CSV diffèrent du générateur, dont **17 = tout l'état
+  d'envoi du LOT 3 du 26/10**, **1 lead absent** (« Star Optic ») et **2 `reply_type` hors vocabulaire**
+  (`interested`, `salutation`). **Non réparé** : trancher `salutation` d'abord (voir analyse §9 ④).
+### 28/10/2026 (midi) — la porte d'entrée : comment on ne réécrit plus à ce profil
+
+Ruling King : *« il n'est pas dirigeant (decision taker), il est consultant itinérant »* → **le fil du
+Dr Fogue est parqué**, sans relance, sans prix, sans visite. Ma recommandation « aller le voir » (Roast
+Room, 8,0/10) était fausse : un déplacement ne crée pas un acheteur. Bandeau de rétractation dans les
+deux documents ; la ligne CRM passe à `parked` / `authority = sans-autorite` / `Q1_pas_acheteur`.
+
+Puis le ruling demandé : **un process de qualification explicite**.
+
+- **`sales/QUALIFICATION-2026-10-28.md`** — cinq questions, **trois niveaux d'exigence** (froid → première
+  réponse → prix/devis/visite), quatre verdicts, six codes de motif, deux règles de gouvernance (la
+  personne qui répond n'est pas l'acheteur ; un non-ICP qui dit oui ne s'achète pas avec une remise).
+  Le cas Fogue y est écrit noir sur blanc comme cas d'école.
+- **`tools/qa/audit_qualification.py`** — la porte mécanique. **12 cas de banc, 12/12.** Sur le CRM réel :
+  **7 fils engagés cités, 1 bloquant, 18 avertissements** — dont le fait que **0 / 8 fils engagés n'a de
+  rôle d'acheteur écrit**. Il refuse un `qualifying+` sans canal vérifié, et un code de disqualification
+  posé sur une ligne encore engagée.
+- **`leads/build/crm.py`** — deux champs (`authority`, `qualification`) ; **19 lignes de l'état CSV portées
+  dans le générateur** (dont tout l'envoi du LOT 3 du 26/10 : un rebuild remettait 17 leads à « jamais
+  contacté » **en silence**) ; **1 lead absent** (« Star Optic ») récupéré ; `salutation` (hors vocabulaire
+  fermé) rangé en `human` — la réponse d'ISEE disparaissait du comptage de l'entonnoir depuis le 26/10.
+  ⚠ **Défaut trouvé** : `kylaya-labo-bali` et `scientilabo-akwa` **existent deux fois** dans le relevé —
+  une table indexée par slug écrit sur les deux lignes. Contourné par nom + signalé à chaque construction ;
+  la vraie sortie (fusion via `same_buyer_as`) change le compte du pipeline et revient à King.
+- **`leads/CRM.csv` reconstruit** — vérifié **ligne par ligne** : 191 → 191, et **2 écarts seulement**, les
+  deux voulus (Fogue parqué, ISEE en `human`).
+- **Renvois posés** dans `RESEARCH-STANDARD` §8b, `CLIENT-MESSAGING-RULES` §9 et le playbook ICP §1.2.
+
+**Application au lot du jour** : 13 relances datées du 28/10 → **12 passent** (WhatsApp vérifié, pas de
+site vivant, opticien ICP A) ; **London Vision exclu** (`wa_verified = unknown`, ruling 12/10). Pour les
+12, la question « qui décide de ce qui s'affiche sur le site ? » entre dans le premier échange du fil qui
+répond — elle ne coûte pas un message si elle remplace une phrase de vente.
+### 28/10/2026 (après-midi) — le verrou du déplacement : le prix d'abord, la route en dernier
+
+Deux rulings de King, et une correction de ma part.
+
+**① « Un praticien itinérant n'est pas une cible. »** La question que j'avais laissée ouverte est fermée :
+pas d'offre à créer, pas de palier à ajouter dans `PRIX-2026-10-24`, rien à facturer. Le profil est hors
+cible, et la porte (`audit_qualification.py`) le refuse avant l'envoi. Le cas Fogue n'est plus un cas de
+vente : c'est le cas qui a produit la porte.
+
+**② « Le prix avant le RDV, pour ne pas négocier sur place. »** Ma qualification du matin disait
+l'inverse (« pas de prix, pas de devis, pas de déplacement » au niveau N2). **C'était faux, et le dossier
+le dément** : les deux déplacements du 25/09, faits pour convaincre, n'ont rien signé (0 acompte) ; le
+seul rendez-vous qui a converti — **DM Optique, 07/10, Bonabéri** — a eu lieu **après** le prix accepté
+(tarif fondateur du 25/09) et **avant** l'acompte (13/10).
+
+- **`sales/QUALIFICATION-2026-10-28.md` §2 réécrite** : la séquence est désormais **besoin → prix +
+  périmètre écrit → accord daté → date → route**. Et une sous-section **« le verrou du déplacement »** :
+  V1 autorité · V2 prix **et périmètre** écrits, accord daté · V3 objet de spécification ≤ 45 min ·
+  V4 coût connu avant de partir. Ce qui n'est **pas** une raison de se déplacer : « il a l'air
+  intéressé », « il a demandé à nous voir », « il faut aller le chercher ».
+- **`leads/DEPLACEMENTS.csv`** — le registre qui manquait : les **trois** rendez-vous connus (Univers
+  Optique et UNI-LABO le 25/09, DM Optique le 07/10), avec coût, durée, objet et issue. **Coûts laissés
+  vides exprès** : ils se demandent à King, ils ne s'estiment pas.
+- **`tools/qa/audit_deplacement.py`** — **11 cas de banc, 11/11**. Sur le registre : 0 bloquant,
+  5 avertissements ; **3 rendez-vous clos, 1 signé, 0/3 trajets chiffrés** → le coût par client signé ne
+  peut pas encore être calculé, et le script le dit au lieu de l'inventer.
+- **`knowledge/ROAST-2026-10-28-PRIX-AVANT-RDV.md`** — séance à 5 sièges (10 voix) : **prix avant la date
+  8,1** contre statu quo **3,6** et prix nu **4,7**. Le conseil donne raison à King et ajoute une
+  condition : **le prix part avec son périmètre écrit**, sinon la négociation se déplace du montant vers
+  le contenu — c'est-à-dire qu'elle a lieu quand même, mais en séance.
+
+### 28/10 (soir) · les coûts sont arrivés, et le groupe 1 des relances est passé à la porte
+
+- **Les trajets sont chiffrés.** King a donné les trois courses : **Bépanda 3 500**, **Carrefour Eto'o
+  3 500**, **Bonabéri 3 000**. `leads/DEPLACEMENTS.csv` les porte désormais, la mention « vides exprès »
+  de l'entrée du matin est donc périmée. `audit_deplacement.py` : **3/3 chiffrés, 10 000 FCFA de trajets
+  pour 1 client signé → 10 000 FCFA par signature.** Le chiffre est mauvais, il est vrai, et il reste
+  écrit tel quel.
+- **`sales/RELANCE-G1-2026-10-28.md`** — les **cinq premiers** messages du lot du 28/10 (Ets Espace
+  Médical, ASS pour RRPHDD, Bellevue Optique, S.O.S Vision, Capelli), écrits pour être **collés tels
+  quels** : 60 à 70 mots, quatre phrases, une question. Porte : **0 bloquant, 0 avertissement**.
+  - Ce que la porte a repris, et pourquoi : ① et ② dépassaient 70 mots de deux et un mot (le plafond est
+    une règle, pas une indication) ; ③ était propre ; ④ **affirmait l'absence de site sans SITE-CHECK
+    daté** — exactement la faute ISEE du 26/10 — la ligne a été ajoutée sous le titre ; ⑤ demandait
+    « le vôtre », une phrase qui ne nomme aucune page et qui a été remplacée par « l'aperçu du site ».
+- **Ce que ces cinq ne sont pas** : des premières touches. Ce sont des **rappels à J+2**, une exception
+  datée à la règle du J+7, et chacun dit qu'il est un rappel — « je sais que c'est un rappel » — plutôt
+  que de faire semblant d'écrire pour la première fois.
+- **Le reste du lot** : 7 messages (Saoudia, Pagrot, Light, Optique Pro, Free Optic, Alpha Optic,
+  Maranatha), à écrire par groupes de 5 comme King l'a demandé.
+
+### 28/10 (nuit) · l'export Europe/Amérique : trois portes vérifiées, une recommandation qui n'est pas « non »
+
+- **`knowledge/EXPORT-2026-10-28-EUROPE-ET-AMERIQUE.md`** — la question de King traitée comme une
+  question de marché, pas de rédaction. Trois portes, chacune vérifiée à la source :
+  **encaisser** (Stripe sans compte marchand au Cameroun, PayPal en « send only », Wise sans
+  coordonnées USD, **Payoneer seul rail documenté**), **écrire** (le froid WhatsApp est notre seule
+  arme et il est hors-jeu en UE/US : la CNIL exige information + opposition dans chaque message B2B,
+  le TCPA américain exige un consentement écrit pour le SMS), **vendre** (en Europe et aux États-Unis,
+  le défaut qu'on répare — l'absence de site — est l'exception, pas la norme : notre première ligne n'a
+  pas de destinataire).
+- **Le prix, chiffré, ne bloque pas** : Standard 250 000 FCFA = **381 €** contre **1 500 à 3 500 €**
+  pour le même travail chez un freelance français, soit **4× à 9×**. Notre taux réel, 8 900 FCFA/h
+  (13,6 €/h), est 2 à 4 fois sous le plancher français. Mais **4× le prix achète 4× l'exigence de
+  preuve**, et la preuve manque.
+- **Le plafond se retourne contre l'export** : un site vendu 1 500 € vaut 984 000 FCFA, plus du double
+  du plafond de 450 000 fixé le 24/10. Vendre à un prix européen aujourd'hui **viole la règle** — et
+  c'est exactement la faute que la règle visait.
+- **Recommandation : 2,6/10 pour l'export maintenant, 7,4/10 pour l'acheteur en euros resté à Douala.**
+  Le signataire qui vit à Paris mais dont la clinique est à Bonabéri : même produit, même WhatsApp,
+  même grille en FCFA, et **le transfert arrive en portefeuille mobile** — pas besoin d'entité, pas
+  besoin de Payoneer, pas besoin de réécrire un message.
+- **Critère d'arrêt écrit** : 10 prospects examinés, moins de 2 avec un signal **écrit** d'un décideur à
+  l'étranger → la piste est morte et on l'écrit. **Déclencheur daté** pour rouvrir l'export vrai : le
+  premier résultat client mesuré, pas une humeur.
+- **Ce que je n'ai pas fait** : aucune relance du lot interrompue, aucun message écrit pour l'export.
+  Le groupe 2 des 12 attend toujours le mot de King.
+
+### 28/10 (nuit, 2) · l'export ne peut plus attendre — et l'arithmétique le prouve mieux qu'un argument
+
+**Les trois rulings de King** : lancer la recherche des dix, trouver une niche à 500 $ + 95 $/mois en
+Europe et aux États-Unis, et **« the export doesn't wait »**, objectif **500 000 FCFA par mois**.
+
+- **`sales/EXPORT-PLAN-2026-10-28.md`** — le plan complet. Le §1 est le seul qui compte : **Douala plafonne
+  à 240 000 FCFA/mois** (5 clients, 2 Croissance au maximum, ruling du 24/10), soit **48 % de
+  l'objectif**. L'export n'est donc pas une envie, c'est le seul chemin qui reste. La cible réelle est
+  **10 abonnés à 95 $** (9 en virement, 11–12 pour absorber le départ à 5 %/mois) : une installation ne
+  compte pas dans le récurrent.
+- **Le prix de King ne viole aucune règle interne** — 500 $ = 295 000 FCFA, sous le plafond de 450 000
+  et au-dessus de Standard ; 95 $ = 56 000, entre Suivi et Croissance. **Le plafond du 24/10 n'a pas
+  besoin d'être amendé**, contrairement à ce que j'écrivais le matin : l'export ne passe pas par un
+  palier à 1 500 €, il passe par un produit à 500 $.
+- **La niche est le detailing automobile**, et c'est la mesure qui le dit, pas le goût : **42,9 % sans
+  site**, le plus haut des 32 métiers mesurés sur 2,78 M de fiches Google Maps (Leadity, Q3 2026). Les
+  dentistes américains sont à 1,5 % ; l'opticien a un site depuis quinze ans. **Notre métier d'origine ne
+  se transpose pas — la méthode, si.** Une pose céramique vaut 700 à 2 000 $ : une seule paie
+  l'installation et deux ans d'abonnement.
+- **Le prix est au niveau du marché, pas en dessous** : Working Class Marketing, spécialiste detailing,
+  affiche **599 $ + 60 $/mois**. King à 500 $ + 95 $ est dans le marché.
+- **Payoneer est le rail, et il fait le récurrent** : demandes de paiement et liens réutilisables, le
+  client paie par carte (3,99 % + 0,49 $) ou virement local (0–1 %) **sans compte**, retrait vers
+  Afriland, Ecobank, BICEC, UBA. À ouvrir et à tester à 1 $ avant la première vente.
+- **La condition technique du modèle est écrite** : le site est **statique**. En WordPress, les 4–5 h/mois
+  de la routine d'entretien × 10 clients = 40–50 h : le modèle mange la semaine. En statique, 20–30 min
+  par client, soit 3–5 h/mois pour dix.
+- **`leads/DIASPORA-2026-10-28.md`** — les dix. **Cinq portent un signal écrit** (critère d'arrêt
+  franchi), mais **deux seulement n'ont pas déjà un site utilisable**, dont une association. Verdict
+  écrit : **segment mince, lent, opportuniste, pas une campagne.** Deux messages en partent, zéro budget.
+- **Décision de King attendue** sur l'aperçu automatique (le ruling du 24/10 interdit la page construite
+  par prospect : la lettre est violée, l'esprit est sauf si c'est un script), sur le maintien de 500 $
+  jusqu'au cinquième client, et sur la ligne « on dit la vérité quand on demande d'où on travaille ».
+
+### 28/10 (nuit, 3) · Vban : le rail est moins cher, mais il ne prélève rien
+
+King : *« I won't use Payoneer I'll use Vban. »* Recherche faite aux sources de Vban, pas aux articles qui
+la présentent. **`knowledge/VBAN-2026-10-28.md`**.
+
+- **Ce qui est documenté** : TM Payments Limited (société canadienne), **« Vban is not a bank »**, services
+  via des partenaires régulés **non nommés**, **Cameroun (XAF) explicitement listé**, comptes USD/GBP/EUR
+  **au nom du titulaire** — Vban écrit elle-même qu'elle **n'opère pas de compte « open beneficiary »**.
+- **Les frais, au centime** : réception USD ACH **0,5 %** (min 1 $, max 19 $), virement USD 0,8 % (min 5 $,
+  max 15 $), EUR 0,5 % (min 2 €, max 8 €), **conversion 0 %, retrait vers XAF 0 %**. Sur 500 $ :
+  **2,50 $** contre **20,44 $** chez Payoneer. Sur 95 $ : **1 $** contre 4,28 $.
+- **Conséquence arithmétique** : **neuf abonnés** au lieu de dix (55 460 FCFA nets par client américain).
+  Onze à douze avec l'attrition, contre dix à onze — le plan a été recalculé.
+- **La contrainte que la page d'accueil ne dit pas** : **Vban n'encaisse pas les cartes**. Ni lien de
+  paiement, ni facturation automatique, ni prélèvement. L'argent arrive **par virement** sur un compte
+  virtuel. Donc **les 95 $ mensuels ne se prélèvent pas** : sans changement d'offre, c'est l'attrition
+  silencieuse garantie. Réponse écrite : **l'année payée d'avance (950 $, deux mois de service en plus)**
+  devient la forme normale de l'abonnement — un seul virement, zéro relance, et 557 700 FCFA encaissés.
+  Ce n'est pas une remise : la règle du 24/10 interdit de baisser un prix, elle n'interdit pas d'ajouter
+  du périmètre.
+- **Le risque, dit franchement** : 3,4/5 sur 108 avis Play, 3,2/5 sur 13 avis Trustpilot ; les griefs sont
+  répétés et précis — fonds annoncés jamais crédités, remboursements qui traînent des semaines, comptes
+  gelés. Et un cas instructif : le support a répondu à un utilisateur que l'application était **réservée
+  aux freelancers**, donc **la nature des fonds est contrôlée**. Trois règles : **retrait hebdomadaire,
+  solde au plancher** ; **facture + périmètre + capture pour chaque virement** ; **Payoneer en secours**,
+  proposé au client, pas subi.
+- **Cinq questions sans réponse publique** sont écrites dans le dossier, à poser **par écrit avant le
+  premier dollar** (taux XAF réel, banques camerounaises acceptées, virement d'une société sur un compte
+  personnel, existence d'un compte entreprise, ségrégation des fonds). Et le test à 1 $ : recevoir,
+  retirer, exporter le relevé, chronométrer.
+- **Un point pour King** : **950 $ = 560 500 FCFA dépasse le plafond de 450 000** du 24/10. Recommandation
+  écrite : le plafond vise la vente d'un site au-delà de sa valeur prouvée, pas l'encaissement d'un an de
+  service à prix unitaire inchangé — donc il passe. **La décision reste à King, et elle est écrite comme
+  telle.**
+
+### 28/10 (nuit, 4) · Vban, second passage : une erreur à moi, et la règle qui bloque tous les paiements
+
+King a demandé deux fois la recherche sur Vban. Le second passage a ouvert quatre articles d'aide que le
+premier avait manqués. Deux conclusions changent, dont une que **j'avais écrite faux**.
+
+- **CORRECTION — les partenaires bancaires sont nommés.** Le premier dossier disait « aucun partenaire
+  nommé, aucune garantie ». C'est vrai des conditions de service, **faux de la base d'aide** : les comptes
+  USD sont chez **Lead Bank** (Kansas City, Missouri, **banque assurée FDIC**, Virtual Account Numbers sur
+  compte maître → assurance par transparence jusqu'à 250 000 $, à condition que le registre identifie le
+  bénéficiaire) ; les comptes GBP et EUR chez **Clear Junction Ltd** (**EMI agréée FCA, FRN 900684**,
+  **pas de garantie des dépôts** mais **cantonnement obligatoire**, avec rapprochement quotidien et audit
+  annuel depuis la réforme CASS 15 de mai 2026). **L'argent est chez des institutions sérieuses ; ce qui
+  reste incertain, c'est le registre de Vban, pas la banque derrière.**
+- **LA RÈGLE QUI BLOQUE TOUT** — article « FX Deposit Verification » : Vban vérifie que **le nom de
+  l'émetteur correspond au nom du titulaire**. Un client « Mike's Detailing LLC » vers un compte AKWOKING
+  **ne correspond pas** → **retenue de vérification sur 100 % de nos encaissements**, 1 à 3 jours. Cela
+  explique d'un coup tous les avis « l'argent a été envoyé, il n'arrive jamais » : ce n'est pas un vol,
+  c'est un processus non annoncé. Protocole écrit : pré-autoriser chaque client auprès du support avant
+  sa première facture, numéro de facture dans la référence du virement, 1 à 3 jours dans la trésorerie,
+  capture de chaque virement annoncé. **Et le test à 1 $ doit se faire depuis un compte tiers** — depuis
+  son propre compte, il ne déclenche rien et n'apprend rien : mon conseil d'hier était mauvais.
+- **LE CÔTÉ CAMEROUNAIS, jamais regardé jusqu'ici.** Règlement des changes CEMAC n°02/18 : article 67
+  (déclaration de toute transaction de services avec l'étranger), **68 (domiciliation bancaire au-delà de
+  5 millions FCFA — seuil franchi par l'objectif lui-même, 6 millions/an)**, **70 (rapatriement par la
+  banque domiciliataire via la BEAC)**, **41-42 (compte à l'étranger interdit sans autorisation BEAC — et
+  un compte Vban est un compte à l'étranger)**, 127 (sanction : **10 % du montant**). Le texte existe ; je
+  n'ai aucun cas d'espèce camerounais et je ne prétends pas qu'il sera appliqué. Mais il devient opposable
+  au moment exact où l'objectif est atteint.
+- **L'impôt change la cible.** Exports à **TVA zéro** (bien). L'IS à 3 % des plateformes étrangères
+  **ne nous concerne pas** (c'est pour les non-résidents, seuils 50 M FCFA ou 1 000 utilisateurs). Mais
+  l'**IRPP d'un particulier monte à 35 % + 10 % de CAC au-delà de 5 millions** : sur 6 millions, l'impôt
+  peut peser 1,5 à 2 millions. **Donc 500 000 FCFA doit être un net.** La cible passe de **9 à 11-13
+  abonnés**, et un comptable camerounais entre en semaine 1, pas en mois 12.
+- **Deux conséquences pratiques** : facturer **au nom qui figure sur le compte** (AKWOKING, personne
+  physique exerçant sous l'enseigne AMK), sinon la vérification de dépôt bloque et le comptable du client
+  aussi ; et **retirer chaque semaine vers une banque camerounaise**, ce qui sert à la fois de prudence
+  contre un gel et d'apparence de rapatriement CEMAC.
+
+### 28/10 (soir) · la règle 60-30-10 passe du conseil à la mesure
+
+Capture de `designs_by_max` (4/10) envoyée par King : « Analyse, then research all the terms and how they
+can be applied to our workflow. » — **`knowledge/COULEUR-60-30-10-2026-10-28.md`**.
+
+- **Le trou trouvé** : `AMK-DESIGN-SKILLS.md` §6.1 énonce la règle 60-30-10 **depuis le 17/09** et **aucun
+  des vingt-huit outils de `tools/qa/` ne mesurait une proportion**. Une règle écrite, jamais exécutée —
+  le défaut que le dépôt dénonce ailleurs.
+- **`tools/qa/audit_palette.py` créé** — **20 cas de banc, 20/20**. Trois modes : `--sheet` (contrat des
+  jetons et paires de contraste, à l'étape 4), `--html` (ce que le CSS peint, à l'étape 9), `--image`
+  (**la vraie surface en pixels**, sur une capture). PNG décodé **sans Pillow ni numpy** (zlib seul) :
+  une capture 1080×1080 en 1,2 s. Le contraste n'est pas rejoué — le script **importe `lum`/`ratio`
+  d'`audit_html.py`**, pour que deux outils ne se contredisent jamais.
+- **Deux vraies fautes trouvées dans nos planches** : B (Terracotta `#C56A3C` + blanc = **3,82:1**) et
+  E (Nursery `#3E8F6B` + blanc = **3,93:1**) échouaient au niveau AA sur le texte des boutons.
+  **Corrigées** selon la doctrine d'`autofix_contrast.py` (assombrir l'aplat, garder le texte) :
+  **`#B15F36`** (4,61:1) et **`#398462`** (4,52:1). Les planches repassent à **0 faute**.
+- **La correction au post** : il conseille de mettre « main text and button » dans l'accent à 10 %. **Le
+  bouton oui, le texte courant non** — l'accent est presque toujours le moins contrasté sur fond clair
+  (nos ambre/or sont à 1,98–2,53:1), et tout texte accentué inverse la hiérarchie.
+- **La nuance du cinéma, appliquée au web** : un film se mesure **par cadre**, une page se déroule. Donc on
+  mesure **par écran** (trois captures), jamais sur une capture pleine page — sinon l'accent se dilue dans
+  le vide et une page correcte échoue.
+- **Bandelettes** : dominant 45–85 % (seul « trop peu » est une faute ; 95 % de navy sur nos posts Facebook
+  est un parti pris), secondaire 5–40 %, accent 0,7–15 % (trop = faute). Le banc verrouille les deux cas.
+- **Deux leçons du banc lui-même** : un accent employé comme couleur de texte n'est pas une faute *par
+  nature* (l'ambre clair sur le navy du site est à **13,06:1**) ; la faute est l'illisibilité. Sur la page
+  d'accueil, les deux seuls usages sont des chiffres et un label mono : **avertissement, pas blocage**.
+  Et un champ à 95 % d'une couleur n'est pas un défaut : seul « trop peu de dominant » bloque.
+- **Portes posées** : `design/WORKFLOW.md` §4 (avant le HTML) et §9 (après la capture) ; §6.1 de
+  `AMK-DESIGN-SKILLS.md` pointe maintenant vers l'outil et ses bandes.
+- **Ce que la règle ne fait pas** : elle ne rend pas une palette belle, elle ne remplace pas 4,5:1, et
+  **APCA n'est pas la règle** (retiré du brouillon WCAG 3 en juillet 2023, toujours exploratoire).
+
+### 28/10 (soir, 2) · DM OPTIQUE audité contre le livre, six règles corrigées, et le livre doté d'un index
+
+**Navigateur, enfin.** `bash tools/video/install.sh` (Chromium @sparticuz + libnspr/libnss + polices),
+`pip --user playwright pillow numpy`. Douze tours de cette session avaient écrit « non mesurable ici » :
+la ligne disparaît. `shot.py` tourne en 50 s, captures 1440×900 et 390×844.
+
+**`shot.py` gagne les règles du §13 qu'aucun outil ne vérifiait** : bilinguisme `data-en`/`data-fr`,
+**6 tailles de texte max** (§5), **blocs du premier écran** (§7), hauteur de nav, sourcils, liens morts,
+`alt`, JSON-LD, `transition:all`, `prefers-reduced-motion`, `:focus-visible`, et il **nomme le sélecteur**
+de chaque taille — un constat qui ne dit pas où est réparable.
+
+**Audit du site (`clients/dm-optic/audits/AUDIT-AMK-SKILLS-2026-10-28.md`), 97 pages, six corrections :**
+
+- **§13, le bug des 142 blocs** — `html.js .rv` masquait `.rv.in` par spécificité. `:not(.in)`,
+  `revealAll()`, minuteur 2,5 s, `@media (scripting:none)`. **836 blocs sur 97 pages : 0 faute** (182 avant).
+- **§7, le premier écran portait 23 blocs de texte** — la table « Où / WhatsApp / Opticien » sous les
+  boutons doublonnait la carte d'identité. Retirée. **6 blocs**.
+- **§5, douze tailles de texte** — ramenées à **six** (52 / 36,8 / 19,2 / 17 / 15 / 13).
+- **§6.1, la marque invisible** — `audit_palette.py` mesure le bleu du cabinet à **0,07 %** de la page.
+  La bande sombre (19 % de la surface) était en quasi-noir : elle passe au bleu du cabinet `#0B2450`.
+  **76,4 / 20,6 / 1,3 — 0 faute, 0 avertissement.**
+- **§3.3, trois cartes égales** — la vitrine passe en `1.35fr 1fr 1fr`.
+- **La dérive** — `.mnav`, `.mnav-panel`, `.psrc` vivaient dans la page construite et **pas dans le
+  gabarit**. Le constructeur a refusé de reconstruire : il a eu raison. Portés, puis reconstruit.
+
+**Deux tests « cassés » ne l'étaient pas** : `test_dmoptic_page.mjs` comptait les `<details>` **dans les
+commentaires CSS** et ignorait le cinquième lien catalogue du menu mobile. Corrigé côté test.
+
+**`AMK-DESIGN-SKILLS.md` §39 — l'index qui manquait** : les quatre couches (loi / métier / plancher /
+matière), les **67 familles** vendoriées, **les 49 instruments** de `tools/qa/` avec la règle que chacun
+sert et l'étape où il passe, la chaîne de build commande par commande, et **les six choses qu'aucun outil
+ne mesure**. §13 gagne les trois contrôles nés aujourd'hui.
+
+**Reste ouvert** : 13 pages ne disent pas ce qui se passe après le clic (c'est une promesse : elle se
+demande), 6 pages de filtres sans état d'erreur, et la vitrine porte trois boutons WhatsApp pour une action
+principale par section (§19.1) — arbitrage King.
+
+### 28/10 (nuit) · DM OPTIQUE publié sur Cloudflare — et la porte de livraison avait raison de refuser
+
+**Publié.** Run GitHub Actions **40699327400** : porte de livraison ✓ puis `wrangler deploy` ✓ en 52 s.
+Vérifié en ligne (pas sur parole) : `https://dmoptiquesarl.com/` sert la nouvelle page — la table de
+faits du premier écran a disparu, la bande sombre est bleue, le bouton d'appel est au bleu du cabinet.
+Fiche monture vérifiée aussi (`/montures/femmes/f01-ovale-doree/`).
+
+**Ce qui s'était passé avant.** Mes deux premiers envois ont **échoué** à la porte (`--strict`), et le
+workflow a bien fait son travail : il n'a rien publié. Cause : mes reconstructions avaient ramené les
+fichiers à l'état du **constructeur**, plus ancien que les fichiers déployés. Quatre régressions :
+
+| Ce qui manquait | Où c'était | Réparé dans |
+|---|---|---|
+| `Product` (sans prix ni `Offer`) sur 80 fiches | ajouté aux fichiers, jamais au constructeur | `build_dmoptic_montures.py` |
+| `og:image` en JPEG 1200×630 (WhatsApp) | idem, le constructeur repointait le WebP 1600×1200 | idem |
+| `llms.txt` : section anglaise (48 URL) | idem | idem |
+| `<link rel=icon>` ×4 + `favicon*` | dans la page, pas dans le gabarit | `dmoptic-v1.tpl.html` |
+| `https://…com//fichier` (double barre) | `__BASE__/` + base qui finit déjà par `/` | `build_dmoptic.py` |
+
+**La leçon, deux fois dans la même journée** : `_headers` puis le schéma produit. Un dépôt où le
+constructeur est en retard sur ses propres artefacts produit des reconstructions qui **défont** du
+travail. La porte de livraison est ce qui l'a vu, et c'est exactement pour ça qu'elle existe.
+
+**Reste** : la porte passe en 0 P1 / 0 P2 / 1 P3, comme avant ce chantier.
+
+---
+
+## 28 octobre 2026 · tour 221 — six lois de la perception, et la page qui les enfreignait toutes
+
+King : « Go through these six laws, research them, learn them, add them to our design documents, audit
+the site, apply it, then deploy. » Dans cet ordre, et rien sauté.
+
+**1 · Cherchées.** Six lois, six sources primaires ou presque : closure (Gestalt, la carte suivante qui
+dépasse), figure-ground (le voile qui **soustrait** le fond ; repère 17,4:1 → 2,5:1), banner blindness
+(Benway & Lane 1998, Rice ; CTR 44 % en 1994 → 0,05 %), Parkinson (Zuko, **215 formulaires** : 71 %
+contre 59 % ; autofill −75 % d'abandon ; 1-3 champs 41 %, 4-6 51 %, 7+ 31 %), connectedness (la connexion
+uniforme bat proximité et ressemblance), choice overload (Iyengar & Lepper 2000 : 24 confitures → 3 %
+achètent, 6 → 30 % ; **critique retenue** : Scheibehenne 2010, 50 études, effet ≈ 0).
+
+**2 · Outillées.** `tools/qa/audit_laws.py` — lit le HTML **et** le CSS servis, rend fautes,
+avertissements et notes, et se juge lui-même : **16/16** au banc. Trois bugs trouvés par le banc, pas par
+moi : une regex d'alpha qui lisait `18` au lieu de `.55` (tous les voiles jugés transparents), un voile de
+photo pris pour un voile de panneau, et un « aucune étape déclarée » qui passait pour un succès.
+
+**3 · Écrites.** `AMK-DESIGN-SKILLS.md` **§40** (six lois, chiffres, sources, quatre pièges) et
+`design/CRAFT-FLOOR.md` **§9** (six obligations). L'index §39 gagne la ligne de l'instrument — la règle de
+tenue de l'index veut que ce soit le même commit.
+
+**4 · Audité, corrigé.** Le portique a trouvé **2 fautes réelles** : le tiroir mobile s'ouvrait sur une page
+intacte (index + montures/femmes) et le rail des fiches n'annonçait aucune suite. Corrigé dans le gabarit
+et le constructeur, pas dans les fichiers générés :
+
+| Ce qui clochait | Correction |
+|---|---|
+| tiroir mobile sans voile | `.mnav[open]::after` — rgba .45 + blur 2 px, 180 ms, coupé par reduced-motion |
+| 3 étapes = 3 cartes | une seule surface + filets de 1 px (§05, accueil et 47 sous-pages) |
+| « Vous aimerez aussi » empilé | `.v2-rail` : carte à 78 %, amorce **22 %**, snap |
+| `a.psrc` en pastille bordée | redevenu lien de texte souligné |
+| 17 cases de filtre d'un coup | 6 formes visibles, couleurs derrière `<details>` avec son compte (11) |
+| « Tout afficher » / « Effacer » | « Voir les montures » / « See the frames » + clavier mobile |
+| 7ᵉ taille de texte (1,15 rem) | retombée sur l'échelle, plafond 6 (§5) |
+
+Deux bugs **de mes propres outils** trouvés en route : un `content:"\2013"` que le CSS servait en `"3"`
+(le dépliant affichait « COULEUR (11) 3 »), et `shot.mjs` qui comptait les blocs sous la ligne de
+flottaison — une galerie de 24 fiches annonçait **150 blocs** — et chaque phrase **deux fois**, parce que
+le site est bilingue.
+
+**5 · Vérifié.** `audit_laws.py --dir hosting/previews/dmoptic` : **0 faute · 0 avertissement**.
+`audit_delivery.py --strict` : **0 P1 · 0 P2 · 1 P3 — VERT** (le P3 est l'image d'aperçu partagée par
+plusieurs pages, connu). `test_dmoptic_page.mjs` : toutes les assertions passent. Capture sur 10 URL
+représentatives : **toutes vertes** (elles étaient rouges pour de faux le matin).
+
+---
+
+## 28 octobre 2026 · tour 222 — les 100 termes SEO, et deux pages qui manquaient
+
+King envoie quatre captures (100 termes SEO, compte `lawrenceaiseo`) et demande : « do research on all
+these terms and add what needs to be added… pour ranker sur *opticians in Douala* et *optometrist in
+Douala* ». Traitement : recherche, puis audit du site contre chaque terme, puis corrections, puis §9 du
+playbook.
+
+**Ce que l'audit a trouvé de vrai (et que personne n'avait vu).**
+
+1. **Le `<h1>` de l'accueil portait la marque, pas le métier.** « DM OPTIQUE SARL · DOUALA ». La cible
+   de King n'était donc dans aucune balise qui classe ; le métier vivait dans un `<p class="kicker">`.
+   Le sourcil est passé **dans** le h1 : la page dit maintenant « Opticien optométriste à Douala ·
+   inscrit à l'ONOC » puis le nom, sans changer un pixel de rendu.
+2. **Les 10 pages anglaises étaient orphelines.** Aucune page ne les liait : les boutons FR/EN sont des
+   `<button>` (bascule DOM), pas des liens. Elles n'existaient que par `hreflang` et le sitemap. Un lien
+   `English` / `Français` est ajouté au pied de page.
+3. **Deux services étaient décrits sans page** : verres sur ordonnance, réparation et entretien. C'est
+   le premier signal on-page local en 2026 (Whitespark), et notre propre audit du 21/10 l'avait déjà
+   écrit. Les deux pages sont écrites avec les faits du client : ordonnance, ce qu'on regarde sur une
+   monture, le repère de l'entrée, aucun prix, aucun délai inventé, aucune marque.
+4. **Le `robots.txt` annonçait 48 pages** alors que la surface est de 20. Réécrit et commenté.
+5. **Le plafond du sitemap était écrit en dur (16)** : il râlait à la première page ajoutée. Il se
+   calcule maintenant sur la surface décidée. Un plafond qu'on corrige à la main ne plafonne rien.
+
+**Ce qui a été refusé, et pourquoi c'est le cœur de la réponse.** Une page par quartier, une page par
+variante de requête, une rallonge de pages de montures pour « couvrir » le catalogue : Google nomme les
+pages ville qui renvoient toutes au même endroit comme du **doorway abuse**, et la production de pages
+en série comme du **scaled content abuse** (« no matter how it's created »). Deux pages ont été
+ajoutées, pas vingt. La surface indexée passe de 16 à 20 URL.
+
+**Ce qui a changé dans la documentation.** `AMK-SEO-PLAYBOOK.md` **§9** : quatre corrections au playbook
+de septembre (dont la proximité, ≈ 55 % du poids local, qui manquait à notre tableau), la fin du rich
+result FAQ (**retiré par Google le 7 mai 2026**, après l'avoir réservé en août 2023 aux sites publics de
+santé), et la règle hreflang (une annotation sans lien retour est **ignorée**). Le détail des 100 termes,
+avec source et statut, est dans `clients/dm-optic/seo/SEO-100-2026-10-28.md`.
+
+**Un nouveau portique, avec son banc.** `tools/qa/audit_seo_local.py` lit le site **entier** (là où
+`audit_seo.py` lit une page à la fois) : cible ville + métier, réciprocité hreflang, orphelines,
+cannibalisation de titres, NAP identique partout, `Optician` complet, `Service`, robots, culs-de-sac.
+**15 témoins, 15 verts.** Et il tourne dans la porte de publication : une page qui redevient orpheline
+bloque l'envoi, au lieu de se découvrir au bout de trois mois.
+
+**IndexNow** : à chaque publication, le workflow prévient Bing, Yandex, Seznam et Naver avec les 20 URL
+du sitemap (clé servie à la racine du domaine). Un échec de cette étape ne retient jamais le site.
+
+**Portes au vert** : `audit_seo` 101 pages · `audit_delivery --strict` 0 P1 / 0 P2 / 1 P3 (le P3 connu
+des images d'aperçu) · `audit_laws` 0 / 0 · `audit_seo_local` 0 faute / 0 avertissement · capture
+`shot.py` sur 5 URL neuves, toutes vertes.
+
+**Ce qui ne se fait pas depuis ce dépôt, et qui pèse plus que lui** : la fiche Google (≈ 32 % du poids
+local), les avis (16–20 %), la proximité (≈ 55 %, contrôle de personne). King, avec le client.
+
+**Une chose n'a pas pu partir.** Le workflow `.github/workflows/deploy-dmoptic.yml` (étape IndexNow +
+deux contrôles du portique SEO local) est refusé au push : *« refusing to allow a GitHub App to create
+or update workflow … without `workflows` permission »*, et l'API répond 403. Le fichier est prêt dans
+l'arbre de travail, non commité pour ne pas bloquer les prochains envois. Le site se publie normalement
+sans lui ; il ne prévient simplement pas Bing. À débloquer : permission `workflows` sur l'application
+GitHub, ou copie à la main.
+
+## 28 octobre 2026 · tour 226 — vingt-deux questions, et le schéma qui doit dire la même chose
+
+**Ce qui est parti.** Une page neuve, `/questions/`, et son miroir `/en/questions/`. Vingt-deux
+questions posées au cabinet, ramenées des pages existantes et des 34 façons de chercher relevées au
+tour 225, rangées en cinq thèmes (l'examen, les montures et les verres, la réparation, le prix et
+l'assurance, venir au cabinet). Chaque réponse commence par l'information. Aucune n'est repliée dans un
+accordéon : **une réponse fermée n'est pas citée**. La surface indexée passe de 10 à 11 URL françaises,
+22 avec les miroirs.
+
+**Trois corrections trouvées en vérifiant, pas en écrivant.**
+1. **Le `FAQPage` de l'accueil faisait doublon.** Six questions sur l'accueil, vingt-deux sur la page
+   neuve, deux balisages qui finissent par se contredire et deux pages qui se cannibalisent. L'accueil
+   garde trois réponses courtes et le lien ; le `FAQPage` vit à un seul endroit, par langue.
+2. **Le miroir anglais déclarait la FAQ française.** `to_en()` réécrivait les adresses du JSON-LD, mais
+   les données structurées vivent dans `<head>` et la réécriture ne passait que sur `<body>` : **toutes**
+   les pages anglaises pointaient donc sur les adresses françaises, depuis des semaines. Corrigé, avec
+   une liste explicite des nœuds qui décrivent la page (fil d'Ariane, `Service`, `FAQPage`, `Product`), sans elle, l'adresse de l'entreprise devenait `/en/` sur les pages anglaises.
+3. **Le balisage n'était pas vérifié contre le texte.** Ajout de `check_questions` dans
+   `tools/qa/audit_seo_local.py` : chaque question et chaque réponse du schéma doit se retrouver
+   **mot pour mot** dans le texte visible, et aucune question ne doit être reposée ailleurs. 44 paires
+   balisées, 22 distinctes, miroirs FR/EN comptés ensemble : zéro écart.
+
+**Deux pièges, notés pour ne pas les revivre.** Un f-string Python 3.11 refuse `\uXXXX` dans une
+expression : les accents s'écrivent en clair. Et le HTML écrit par Python échappe les apostrophes en
+`&#x27;`, ce qui faisait « différer » dix-neuf réponses d'un schéma identique : on décode avant de
+comparer.
+
+**Contenu, et ce qu'il refuse de dire.** L'ordonnance (non, l'examen la détermine) · la durée (« nous
+ne publions pas de durée ») · la **fréquence des contrôles** (deux ans adulte sain, un an enfant ou
+personne diabétique, attribuée au *College of Optometrists* et renvoyée au cabinet) · la différence
+opticien / optométriste / ophtalmologue (titre légal, inscription ONOC **021/2016**) · « l'examen ne
+détecte pas les maladies de l'œil » (renvoi à l'ophtalmologue) · réparer ou remplacer en trois cas ·
+assurances (Belife, Willis Towers Watson, Groupe Activa, « selon votre police »), paiement, livraison ·
+adresse exacte et comment prendre rendez-vous. Toujours absents : prix, marque, délai chiffré, avis,
+symptôme.
+
+**Portes.** `audit_seo_local --strict` 0 faute / 0 avertissement (10 vérifications désormais, banc
+15/15) · `audit_seo` 103 pages, 0 problème hreflang sur 51 paires · `audit_delivery --strict` 0 P1 /
+0 P2 / 1 P3 (l'image d'aperçu partagée, connue) · `audit_laws` 0 / 0 · `audit_aeo` 0 / 0 ·
+`audit_a11y --strict` 0 / 0 sur les deux pages · `test_dmoptic_page.mjs` **71 verts, 0 échec** (dont
+les nouveaux contrôles de la page) · `shot.py` vert sur `/questions/`, `/en/questions/` et l'accueil.
+`llms.txt` nomme la page.
+
+**Ce que ça ne fait pas.** Ça ne touche ni la fiche Google, ni les avis, ni la proximité (≈ 55 % du
+poids local). Aucune position n'est promise. Restent ouverts : l'urgence (« cassé aujourd'hui »,
+« ouvert maintenant »), l'avant/après en photos, et « près de moi ».
+
+## 28 octobre 2026 · tour 227 — le dépôt rangé : quatre branches, deux fermées, une carte qui revient au vert
+
+**Ce qu'il y avait, ce qu'on croyait.** Quatre branches en tout sur le distant, pas trente : `main`,
+cette branche, et deux autres sessions. Aucune n'était fusionnée, aucune n'était abandonnée sans
+contenu. Le désordre n'était donc pas là où on le cherche d'habitude.
+
+**Ce qui était vraiment sale, et qui coûtait cher.**
+1. **La porte « La carte du dépôt se rejoue à l'identique » échouait à chaque poussée.** Cause :
+   `.github/workflows/deploy-dmoptic.yml` restait **modifié sans être commité** depuis le 28/10 (la
+   permission `workflows` manque, la poussée est refusée). `build_full_graph.py` lit les fichiers
+   suivis, donc les 32 lignes en attente changeaient la carte, et la CI reprochait au contenu livré
+   un écart qui venait d'ailleurs. La version voulue est maintenant parquée dans
+   `ops/workflows-en-attente/`, avec le mode d'emploi et ce qui ne tourne pas aujourd'hui. L'arbre de
+   travail est propre pour la première fois depuis quatre jours, et la porte est **verte**.
+2. **Deux workflows portent le même nom.** `machine.workflow.yml` n'existe plus dans aucun fichier
+   (404 sur l'API) mais reste listé et actif côté GitHub. Il faudra une main humaine : je n'ai pas la
+   permission de le désactiver (403).
+3. **PR #40 fermée, branche supprimée.** Une section de 34 lignes ajoutée à un handoff du 22/10, déjà
+   remplacé par `HANDOFF-2026-10-26.md`, rouge depuis quatre jours.
+4. **PR #78 fermée après reprise.** Deux fiches utiles seulement : **Optic Swiss** (Akwa, 690 910 167)
+   et **Leroy Optique Médicale** (Terminus Saint-Michel, 697 32 89 45). Reprises dans `leads/CRM.csv`,
+   **et corrigées** : la branche datait d'un schéma à 52 colonnes, le CRM en a 54 depuis (`authority`,
+   `qualification`). Recopiées telles quelles, les notes auraient glissé de deux colonnes, en silence.
+   Le reste du lot (onze messages, `sales/LOT-2026-10-27.md`) reste lisible dans la PR fermée : elle
+   ne disparaît pas. Vérifié après suppression de la branche :
+   `git fetch origin pull/78/head:lot-27-10` ramène le commit `9cc52210`, et `pull/40/head` ramène
+   `ad7743f1`.
+
+**Comment ça se vérifie.** `git status` vide · `python3 tools/graphify/build_full_graph.py` sans
+différence · run `La machine` **vert** sur `456556c6` puis sur la poussée de reprise. Le seul check
+encore rouge est `Workers Builds: dmoptiquesarl`, l'intégration Cloudflare qui reconstruit la même
+chose que le workflow de publication : deux publieurs pour un site, c'est un de trop. À débrancher
+côté Cloudflare (Settings → Builds), pas ici.
+
+## 28 octobre 2026 · tour 228 — Hallmark installée, deux fautes corrigées, zéro pixel changé
+
+**Ce qui a été installé.** `nutlope/hallmark` (MIT, v2.0.0) par sa propre commande,
+`npx -y skills add nutlope/hallmark -g --agent '*' -y`, dans `~/.agents/skills/hallmark`. Sans
+`--agent '*' -y`, le menu interactif s'arrête sans rien installer quand il n'a pas de terminal : c'est
+le premier essai, et il a échoué proprement.
+
+**Ce qui a été écrit.** `design/HALLMARK.md` : la commande, la version, le plancher de seize règles, le
+verdict sur le site, **et la liste des écarts écartés un par un avec leur raison**. Le §39.2 bis de
+`AMK-DESIGN-SKILLS.md` y renvoie. La compétence n'est **pas vendoriée** : 5,6 de ses 7,1 Mo sont des
+aperçus de thèmes en JPEG, et elle se met à jour toute seule. On garde la commande et le verdict, pas la
+copie.
+
+**Le verbe choisi : `audit`.** La compétence prévoit `audit` et `redesign` pour un design existant, et
+prévient qu'on ne l'applique pas sans la nommer. King l'a nommée, donc une passe était autorisée ; mais
+le design de DM OPTIQUE est approuvé, mesuré (papier 55,67 %, encre 17,32 %, blanc 9,36 %) et **en
+ligne**. Une refonte n'est pas une décision d'outil.
+
+**Ce que le linter a trouvé, et ce qui a été corrigé.** Accueil : **67 fautes**, ramenées à **65**.
+`/questions/` : 67, ramenées à 66. Les deux seules corrigées ne changent pas un pixel :
+1. `overflow-x: clip` sur `html` et `body`. **`clip` et pas `hidden`** : `hidden` transforme `<html>` en
+   conteneur de défilement et casse le `position:sticky` de la barre fixe. Le cercle du premier écran
+   sort du cadre par construction, c'est lui qui poussait la page de côté sur un téléphone.
+2. `minmax(0, 1.35fr)` sur les deux grilles à images : sans le `minmax`, une colonne refuse de descendre
+   sous son contenu, et la grille déborde au lieu de rétrécir.
+
+**Ce qui a été écarté, avec la raison dans le document.** 38 couleurs en dur hors des jetons (ombres,
+filets, blancs : les sortir, c'est refaire le système du client), 8 blancs purs (le blanc est *dans* la
+palette mesurée), 8 étiquettes en capitales espacées (c'est la voix du design), 9 chaînes à points
+médians (copie approuvée), 1 cadratin dans le `<title>` (les 22 titres suivent la même forme), 184
+espacements hors échelle de 4 px (le site tient un rythme de 2 px).
+
+**Limite dite franchement.** L'étage `--render` du linter demande `puppeteer-core`, absent du bac : on a
+lu le CSS et le HTML, pas la page peinte. L'œil reste `shot.py`, vert sur l'accueil après correction, et
+les portes maison sont toutes repassées : portique SEO local 0/0, livraison 0 P1 et 0 P2, lois 0/0,
+AEO 0/0, `test_dmoptic_page` 71 verts.

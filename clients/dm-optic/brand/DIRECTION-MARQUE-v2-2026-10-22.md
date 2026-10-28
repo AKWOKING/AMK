@@ -224,3 +224,54 @@ dans le §7) :
 - **Verbatims** : `clients/dm-optic/onboarding/REPONSES-CLIENT.md` (15/10), `site/CLIENT-REQUIREMENTS-BRIEF.md` (08/10), `dossier.md`, `sales/Activity-Log.md` (01/10, 19/10).
 - **Recherche interne** : `research/market-analysis.md` §7 (moteurs d'achat, confiance dans le professionnel) ; `sales/research/2026-W43-techniques.md` §12 (synthèse « le client ne veut pas des lunettes ») et §12b (porte en cinq temps).
 - **Recherche externe, lue le 22/10** : Ocuco, *Short-Form Video for Opticians* (juillet 2026) ; d4ymrkt, *Top 10 marketing predictions for eye care 2026* (janvier 2026) ; RevolutionEHR, *Optometry Social Media Marketing* (règle 80/20) ; Heygen, *Optometry Marketing* (septembre 2026 — la décision « qui soigne » ≠ la décision « où acheter »).
+
+---
+
+## 12 · Amendement du 27/10/2026 — la série « la monture cherche son nom »
+
+> **Ce que cet amendement corrige.** Le §8 dit : « *la monture n'est plus un sujet. Elle apparaît comme la
+> conséquence d'un besoin, jamais comme une vitrine* », et le §10.5 a été **barré** : « *aucun nombre de
+> montures, nulle part, y compris à l'écran* ». La série tournée les 27/10 (tours 194–197) fait exactement
+> l'inverse : **la monture est le sujet**, et le film dit « **quarante montures** ».
+>
+> Ce n'est pas un oubli de fabrication : c'est une **instruction de King** du 27/10 — *« create a story
+> behind the naming of the glasses, if not viewers won't feel engaged »* — qui demande une série où le
+> cadre est le personnage. Une doctrine se corrige, elle ne se contourne pas : voilà la correction, écrite,
+> datée, et bornée.
+
+| Ce que la v2 disait | Ce que la série fait | Portée |
+|---|---|---|
+| la monture **n'est pas un sujet** | elle est **le personnage** d'une série de nommage : un objet sans nom, qu'on nomme en public | **uniquement** la série « la monture cherche son nom », épisode par épisode |
+| **aucun nombre de montures**, nulle part | « quarante montures, quarante codes » (vidéo) et « 40 » à l'écran | **uniquement** le nombre de **fiches publiées sur le site** — jamais un stock, jamais une disponibilité, jamais un prix |
+| une pièce par semaine, la monture en conséquence | la série occupe le **créneau vidéo du mardi**, le carrousel du vendredi porte le vote | la cadence contractuelle (2 publications/semaine) ne change pas |
+
+**Ce qui ne change pas, et qui reste opposable** : aucun visage de patient, aucune photo du personnel sans
+accord, aucun diagnostic, aucune promesse de vue, aucun prix de monture, aucune marque nommée tant que la
+liste du client n'est pas reçue, la sortie honnête (« si vous voyez bien, ne venez pas »), et les portes
+(`audit_hook`, `audit_story`, `audit_post_dm`, `audit_video_motion`).
+
+**Ce qui peut annuler cet amendement** : un mot de King. La série est la sienne ; le §8 reste vrai pour
+toutes les autres pièces du mois (le réglage, l'examen, le nettoyage), qui ne parlent toujours pas d'une
+monture en particulier.
+
+## 13 · Amendement du 27/10/2026 (soir) — le film calme
+
+> **La parole de King, mot pour mot** : *« remove all the motion design elements, the images move too
+> much »*. Elle ne porte pas sur le texte (il est traité au §11b et par le skill humanizer) : elle porte
+> sur **la façon dont l'image se tient**.
+
+| Ce que la maison faisait | Ce que la série fait désormais | Portée |
+|---|---|---|
+| poussées avant, panoramiques, bandeaux qui glissent, filets qui grandissent — « un plan qui s'arrête est un plan figé » | **images fixes, coupes franches**, texte en fondu de 0,12 s, carton du site immobile | **uniquement** la série « la monture cherche son nom » |
+| `audit_video_motion` bloquait toute fenêtre figée plus de 2 s (règle du 21/10, née d'un diaporama) | le mode **`--calme`** juge la **tenue** : aucune image ne tient plus de **2,6 s** sans un changement (coupe, carton, texte) | le mode par défaut ne change pas ; `--calme` est explicite dans la commande |
+
+**Pourquoi ce n'est pas un renoncement au rythme.** Le mouvement quitte le cadre et reste dans le
+montage : 12 images, 15 changements, aucune tenue au-delà de 2,6 s. C'est mesurable, et c'est mesuré à
+chaque rendu.
+
+**Ce qui ne change pas** : les cinq verrous du §12, l'interdiction des promesses, le vouvoiement, la
+sortie honnête, et la règle du texte prononcé avant l'image (`HOOK-FIRST`).
+
+**Ce qui peut annuler cet amendement** : un mot de King. Si le calme ne retient personne, on rallume le
+mouvement avec `--mouvement` — l'ancien film est toujours dans le même fichier, une option à passer.
+

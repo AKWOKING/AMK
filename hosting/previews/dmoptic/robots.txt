@@ -1,5 +1,11 @@
 # DM OPTIQUE SARL — https://dmoptiquesarl.com
-# Sitemap : 48 pages françaises + 48 pages anglaises (/en/), reliées par hreflang.
+# Surface d'indexation (26/10, élargie le 28/10) : 10 pages françaises et leurs
+# 10 miroirs anglais, listées dans /sitemap.xml. Les fiches de montures restent
+# accessibles mais en noindex,follow : elles servent au lien WhatsApp.
+# Rien n'est interdit ici, y compris aux robots des assistants (GPTBot, ClaudeBot,
+# PerplexityBot, Google-Extended). Ce n'est pas une faveur technique : Google écrit
+# qu'aucun fichier spécial n'est nécessaire pour apparaître dans ses fonctionnalités
+# IA, et qu'un robots.txt fermé n'est pas un moyen de se faire citer.
 User-agent: *
 Allow: /
 

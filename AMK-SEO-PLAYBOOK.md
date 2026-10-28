@@ -308,3 +308,70 @@ la partie la plus dure du référencement, pas l'exécution.
 **Repère à battre : 6 impressions · 0 clic · position 2,3 · 3 vues du profil Google.**
 **Objectif : ≥ 20 impressions, ≥ 2 clics, ≥ 20 vues du profil.**
 **Le vrai signe que ça marche : une première requête tapée par un inconnu** — aujourd'hui il n'y en a aucune.
+
+---
+
+## 9 · LES 100 TERMES DE 2026, ET CE QUI A CHANGÉ DEPUIS SEPTEMBRE (28/10/2026)
+
+**Origine :** quatre captures envoyées par King (compte `lawrenceaiseo`, 100 entrées). Le traitement
+terme par terme, pour DM OPTIQUE, est dans `clients/dm-optic/seo/SEO-100-2026-10-28.md`. Ce paragraphe
+ne le recopie pas : il retient **ce que les sources 2026 changent à nos règles**, y compris quand elles
+contredisent ce qui est écrit plus haut dans ce fichier.
+
+### 9.1 Quatre corrections à ce playbook
+
+| Ce § disait (21–23/09) | Ce que les sources 2026 disent | Décision |
+|---|---|---|
+| §1, point 10 : « llms.txt — **ne pas faire** pour Google » | Google, doc primaire (*AI features and your website*) : « There are no additional requirements… You don't need to create new machine readable files, AI text files, or markup » | Le fichier **existe** (validé par King le 20/10, 100 liens) et sert les agents qui le lisent. **On ne lui attribue aucun gain de classement** et on le dit dans la doc client |
+| §1, point 11 : « miroirs Markdown — ne pas faire » | inchangé : aucun besoin, et la source secondaire parlait d'une « idée stupide » | ⊘ écarté, avec la raison écrite |
+| §2 : « signaux du profil 32 %, avis ~20 %, on-page ~15 % » | Whitespark 2026 : **proximité ≈ 55 %**, profil ≈ 32 %, avis **16–20 %**, on-page ≈ **19 %**. La proximité n'était pas dans notre tableau | On ajoute la proximité en tête, **et** la conséquence : aucune promesse de position n'est possible, même avec un site parfait |
+| §3, règle 3 : « une page par service, et une page par ville *quand on aura de quoi la remplir* » | Règles Google (spam policies, màj 28/08/2026) : « pages targeted at specific regions or cities that funnel users to one page » = **doorway abuse** ; générer des pages en série = **scaled content abuse**, « no matter how it's created » | **Aucune page de quartier, jamais.** Une page de service seulement si elle porte des faits propres au client. C'est ce qui a été fait le 28/10 pour les verres et la réparation |
+
+### 9.2 Les cinq gestes qui rapportent le plus, dans l'ordre
+
+1. **La fiche Google** (King, avec le client) : catégorie principale **Optometrist** ou **Optician** —
+   quatre sources convergent, la catégorie large (« Eye care center ») dilue l'intention — plus les
+   secondaires réelles, les horaires exacts, les photos récentes. C'est le seul levier qui pèse plus
+   que tout ce dépôt réuni.
+2. **Les avis, régulièrement** (16–20 % et en hausse) : demandés après le service, sans tri, sans
+   incitation, et répondus factuellement. Jamais repris sur le site.
+3. **Le NAP identique partout** : un numéro, une adresse, mot pour mot, sur le site, le schéma, la
+   fiche, Facebook et TikTok. `tools/qa/audit_seo_local.py` le vérifie page par page.
+4. **Une page par service, avec des faits** : c'est le premier signal on-page local en 2026.
+5. **La surface indexée** : peu de pages, toutes bonnes. On a retiré 76 pages de l'index le 26/10 pour
+   cette raison, et on n'en a ajouté que deux qui avaient du contenu.
+
+### 9.3 Ce qui ne se fait plus, et qu'il faut cesser d'attendre
+
+- **Le bloc FAQ dans les résultats Google.** Réservé en août 2023 aux sites publics de santé, supprimé
+  pour tous le **7 mai 2026**, documentation retirée le 15 juin 2026. Le balisage `FAQPage` reste utile
+  aux assistants ; il n'apporte plus de dépliant dans Google. Toute promesse de « rich result FAQ » est
+  une promesse morte.
+- **Le `hreflang` à moitié fait.** Une annotation sans lien retour est **ignorée**, pas partiellement
+  appliquée. `x-default` est recommandé, jamais exigé. `audit_seo_local.py` vérifie la réciprocité dans
+  les deux sens et l'auto-référence.
+- **Le canonical comme remède aux filtres.** Google recommande d'abord les **fragments `#`** (que le
+  robot ignore) ou `robots.txt`. Le canonical ne fait que consolider, et il faut d'abord crawler la page
+  pour le lire. Notre catalogue filtre en `#`, donc rien à nettoyer.
+
+### 9.4 Le portique
+
+```bash
+python3 tools/qa/audit_seo_local.py --self-test                     # 15/15 — le banc mord
+python3 tools/qa/audit_seo_local.py hosting/previews/dmoptic --strict   # 0 faute · 0 avertissement
+```
+
+Neuf vérifications qui demandent de lire le site **entier** : cible (ville + métier dans titre et H1),
+hreflang (réciprocité, x-default), sitemap (dedans/dehors), orphelines, cannibalisation de titres, NAP,
+schéma (`Optician` complet, `Service`, aucun avis inventé), robots, culs-de-sac. `audit_seo.py` continue
+de vérifier les balises page par page ; les deux ne se remplacent pas.
+
+### 9.5 Sources de ce paragraphe
+
+Whitespark 2026 (via `replyonthefly.com`, `ahdigital.me`, `flashcrafter.ai`, `digisegment.com`) ·
+catégorie Optometrist (`vaza.ai`, `redefineweb.com`, `rocketgrowthagency.com`, `askotter.ai`) ·
+fin de la FAQ riche (`elementera.com`, `gethelpable.com`, `aischemagen.com`) · hreflang
+(`seomadman.com`, `visibilityiq365.com`) · doorway et contenu à l'échelle (`cheers.tech`,
+`townsmithwp.com`, `seohandbook.co.uk`, règle Google du 28/08/2026) · facettes (`sibleydigital.com`,
+`scalewithsearch.com`) · seuils CWV (`digitalapplied.com`, `hustlemarketers.com` citant web.dev) ·
+doc Google primaire (`developers.google.com/search/docs/appearance/ai-features`).

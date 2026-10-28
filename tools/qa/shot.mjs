@@ -127,8 +127,12 @@ async function audit(width, height, label, fullPage) {
       }
       return false;
     };
+    // Un tiroir fermé n'est pas un défaut de mise en page : ses liens attendent hors cadre derrière
+    // le bouton menu (details non [open], aria-hidden, inert). On ne les compte ni ici ni au contraste.
+    const inClosedPanel = el => Boolean(el.closest('details:not([open]), [aria-hidden="true"], [inert]'));
     const wide = [];
     document.querySelectorAll('body *').forEach(el => {
+      if (inClosedPanel(el)) return;
       const r = el.getBoundingClientRect();
       if (r.width === 0 || r.height === 0) return;
       if (r.right > de.clientWidth + 2 || r.left < -2) {
@@ -157,6 +161,7 @@ async function audit(width, height, label, fullPage) {
     const seen = new Set();
     document.querySelectorAll('h1,h2,h3,h4,p,li,a,button,label,span,strong,em,td,th').forEach(el => {
       if (!el.textContent || !el.textContent.trim()) return;
+      if (inClosedPanel(el)) return;
       const cs = getComputedStyle(el);
       if (cs.visibility === 'hidden' || cs.display === 'none' || parseFloat(cs.opacity) < 0.6) return;
       const r = el.getBoundingClientRect();
@@ -231,12 +236,146 @@ async function audit(width, height, label, fullPage) {
   if (consoleErrors.length) add('P1', 'CONSOLE', `${consoleErrors.length} erreur(s) console`, `${label} · ${consoleErrors.slice(0, 4).join(' | ')}`);
   if (failedReq.length) add('P2', 'NETWORK', `${failedReq.length} requête(s) échouée(s)`, `${label} · ${failedReq.slice(0, 4).join(' | ')}`);
 
+  // ── RÈGLES §13 / §3 / §5 / §7 que le rendu seul peut vérifier (une fois, sur le desktop) ───────────
+  if (label === 'desktop') {
+    const r = await page.evaluate(() => {
+      const txt = el => (el.textContent || '').replace(/\s+/g, ' ').trim();
+      const css = [];
+      for (const sh of Array.from(document.styleSheets)) {
+        try { for (const rule of Array.from(sh.cssRules)) css.push(rule.cssText); } catch (e) { /* feuille cross-origin */ }
+      }
+      const CSS = css.join('\n');
+
+      // 1 · bilinguisme : chaque texte doit exister dans les deux langues (data-en / data-fr)
+      const en = document.querySelectorAll('[data-en]').length;
+      const fr = document.querySelectorAll('[data-fr]').length;
+      const orphan = document.querySelectorAll('[data-en]:not([data-fr]), [data-fr]:not([data-en])').length;
+
+      // 2 · le premier écran : combien de blocs de texte y vivent réellement
+      const h1 = document.querySelector('h1');
+      let heroLeaves = 0, h1Lines = 0, heroHost = null;
+      if (h1) {
+        heroHost = h1.closest('section, header, [class*="hero"]') || h1.parentElement;
+        const leaves = Array.from(heroHost.querySelectorAll('*')).filter(el => {
+          if (el.closest('svg')) return false;
+          // §3.3 : une colonne qui porte un vrai élément (carte, table, figure) n'est pas une pile de
+          // texte. On mesure la pile, et le widget compte pour un : c'est la lecture du §7.
+          if (el.closest('figure, table, dl, form')) return false;
+          // 28/10 · deux fausses alertes : la mesure comptait (a) les blocs SOUS la ligne de flottaison
+          // — une galerie de 24 fiches annonçait « 150 blocs » — et (b) chaque puce d'une liste répétée,
+          // alors que la loi de proximité les lit comme UNE rangée. On mesure le premier écran, et une
+          // liste de 2+ éléments vaut pour un bloc.
+          // Un composant RÉPÉTÉ (trois portes de catalogue, trois boutons d'action) est un widget,
+          // pas trois paragraphes de héro : dès que deux frères partagent tag+classe, on ne compte pas.
+          const inRepetition = (() => {
+            let n = el.parentElement;
+            while (n && n !== heroHost) {
+              const p = n.parentElement;
+              if (p) {
+                const key = n.tagName + '|' + (n.className || '').toString();
+                const sibs = Array.from(p.children).filter(c => c.tagName + '|' + (c.className || '').toString() === key);
+                if (sibs.length > 1) return true;
+              }
+              n = n.parentElement;
+            }
+            return false;
+          })();
+          if (inRepetition) return false;
+          // 28/10 · troisième fausse alerte : le site est bilingue, donc chaque libellé existe deux fois
+          // (bouton > span.fr-only). On ne compte que la feuille la plus profonde, sinon chaque phrase
+          // vaut deux blocs. Les fils d'Ariane (nav) ne sont pas de la copie de premier écran.
+          if (el !== h1 && el.closest('nav')) return false;
+          const own = Array.from(el.childNodes).some(n => n.nodeType === 3 && n.textContent.trim());
+          if (own && Array.from(el.querySelectorAll('*')).some(d => Array.from(d.childNodes).some(n => n.nodeType === 3 && n.textContent.trim()))) return false;
+          const cs = getComputedStyle(el);
+          const rect = el.getBoundingClientRect();
+          const onFirstScreen = rect.top < window.innerHeight && rect.bottom > 0;
+          return own && onFirstScreen && cs.display !== 'none' && cs.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
+        });
+        heroLeaves = leaves.length;
+        const lh = parseFloat(getComputedStyle(h1).lineHeight) || 1;
+        h1Lines = Math.round(h1.getBoundingClientRect().height / lh);
+      }
+
+      // 3 · navigation : hauteur et nombre d'entrées
+      const nav = document.querySelector('header, nav');
+      const navH = nav ? Math.round(nav.getBoundingClientRect().height) : 0;
+      const navLinks = nav ? nav.querySelectorAll('nav a, a').length : 0;
+
+      // 4 · sourcils : combien, pour combien de sections
+      const sections = document.querySelectorAll('section').length;
+      const eyebrows = document.querySelectorAll('.kicker, .eyebrow, [class*="kicker"], [class*="eyebrow"]').length;
+
+      // 5 · liens morts et liens de contact
+      const dead = Array.from(document.querySelectorAll('a[href="#"], a[href=""]')).length;
+      const contact = Array.from(document.querySelectorAll('a[href^="tel:"], a[href*="wa.me"], a[href^="mailto:"]'))
+        .map(a => a.getAttribute('href'));
+
+      // 6 · images : alternative, chargement différé
+      const imgs = Array.from(document.querySelectorAll('img'));
+      const noAlt = imgs.filter(i => !i.hasAttribute('alt')).length;
+      const lazy = imgs.filter(i => i.getAttribute('loading') === 'lazy').length;
+
+      // 7 · données structurées
+      let jsonldBad = 0, jsonldBlocks = 0;
+      document.querySelectorAll('script[type="application/ld+json"]').forEach(s => {
+        jsonldBlocks += 1;
+        try { JSON.parse(s.textContent); } catch (e) { jsonldBad += 1; }
+      });
+
+      // 8 · échelle typographique
+      const sizes = new Set();
+      const sizeWhere = {};
+      document.querySelectorAll('h1,h2,h3,h4,p,li,a,span,button,small,blockquote,td,th,label,summary,div').forEach(el => {
+        const t = txt(el);
+        if (!t || el.children.length > 2) return;
+        const cs = getComputedStyle(el);
+        if (cs.display === 'none' || cs.visibility === 'hidden') return;
+        const px = Math.round(parseFloat(cs.fontSize) * 10) / 10;
+        sizes.add(px);
+        if (!sizeWhere[px]) {
+          const cls = (el.className || '').toString().trim().split(/\s+/)[0];
+          sizeWhere[px] = el.tagName.toLowerCase() + (cls ? '.' + cls : '');
+        }
+      });
+
+      // 9 · mouvement : les interdits mécaniques du §13
+      const transitionAll = (CSS.match(/transition\s*:\s*all\b/gi) || []).length;
+      const reducedMotion = /@media[^{]*prefers-reduced-motion/i.test(CSS);
+      const focusVisible = /:focus-visible/.test(CSS);
+      const slow = (CSS.match(/transition[^;}]*?(\d{3,})ms/g) || [])
+        .map(s => Number((/(\d+)ms/.exec(s) || [0, 0])[1])).filter(ms => ms > 700).length;
+
+      return {
+        bi: { en, fr, orphan }, heroLeaves, h1Lines, navH, navLinks, sections, eyebrows,
+        dead, contact, imgs: imgs.length, noAlt, lazy, jsonldBlocks, jsonldBad,
+        sizes: Array.from(sizes).sort((a, b) => a - b), sizeWhere, transitionAll, reducedMotion, focusVisible, slow,
+      };
+    });
+
+    if (r.bi.orphan) add('P1', 'BILINGUE', `${r.bi.orphan} élément(s) sans la paire data-en/data-fr`, `${r.bi.en} data-en · ${r.bi.fr} data-fr · §13/§20.8`);
+    if (r.h1Lines > 2) add('P2', 'H1', `le h1 fait ${r.h1Lines} lignes en 1440 px`, 'le plafond est 2, §7');
+    if (r.navH > 80) add('P2', 'NAV', `la navigation mesure ${r.navH} px de haut`, 'plafond 80 px, §7');
+    if (r.heroLeaves > 6) add('P2', 'HERO', `le premier écran porte ${r.heroLeaves} blocs de texte`, 'repère §7 : 4 (sourcil + titre + sous-texte + boutons)');
+    if (r.eyebrows > Math.ceil(r.sections / 3)) add('P3', 'EYEBROW', `${r.eyebrows} sourcils pour ${r.sections} sections`, 'plafond ceil(sections/3), §3.4');
+    if (r.dead) add('P2', 'LINK', `${r.dead} lien(s) mort(s) (# ou vide)`, '§13');
+    if (r.noAlt) add('P2', 'ALT', `${r.noAlt} image(s) sans attribut alt`, '§13');
+    if (r.jsonldBad) add('P2', 'JSONLD', `${r.jsonldBad} bloc(s) JSON-LD illisible(s)`, `${r.jsonldBlocks} bloc(s) au total, §13`);
+    if (r.sizes.length > 6) add('P3', 'TYPE', `${r.sizes.length} tailles de texte distinctes`, `plafond 6, §5 · ${r.sizes.join(' / ')} px`);
+    if (r.transitionAll) add('P2', 'MOTION', `${r.transitionAll} \`transition: all\``, 'interdit, §13');
+    if (!r.reducedMotion) add('P2', 'MOTION', 'aucun bloc `prefers-reduced-motion`', '§13');
+    if (!r.focusVisible) add('P2', 'FOCUS', 'aucune règle `:focus-visible` dans la feuille', '§13');
+    if (r.slow) add('P3', 'MOTION', `${r.slow} transition(s) au-delà de 700 ms`, 'révélations ≤ 700 ms, §13');
+    rulesReport = r;
+  }
+
   const file = path.join(OUT, `${label}.png`);
   await page.screenshot({ path: file, fullPage });
   await page.close();
   return { label, width, height, screenshot: file, title: m.title, pageHeight: m.height, heroText: m.heroText };
 }
 
+let rulesReport = null;
 const shots = [];
 shots.push(await audit(1440, 900, 'desktop', true));
 shots.push(await audit(390, 844, 'mobile', true));
@@ -249,7 +388,7 @@ await browser.close();
 const count = lvl => findings.filter(f => f.level === lvl).length;
 const verdict = count('P1') > 0 || (STRICT && count('P2') > 0) ? 'ROUGE' : (count('P2') > 0 ? 'ORANGE' : 'VERT');
 
-const report = { url, out: OUT, screenshots: shots, findings, totals: { p1: count('P1'), p2: count('P2'), p3: count('P3') }, verdict };
+const report = { url, out: OUT, screenshots: shots, findings, rules: rulesReport, totals: { p1: count('P1'), p2: count('P2'), p3: count('P3') }, verdict };
 fs.writeFileSync(path.join(OUT, 'rapport.json'), JSON.stringify(report, null, 2));
 
 console.log(`\nVÉRIFICATION DE DESIGN — ${target}`);

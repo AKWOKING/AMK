@@ -10,8 +10,16 @@ agrégation par fenêtre de `--window` secondes (défaut 2 s — la fenêtre où
 Une fenêtre est **FIGÉE** si son écart maximal reste sous `--thresh` (défaut 1.5/255).
 Les écarts > `--cut` (défaut 8) sont comptés comme des **coupes** (changement de scène).
 
+Mode **calme** (`--calme`, ajouté le 27/10/2026) : King a demandé un film sans élément de motion
+design — « remove all the motion design elements, the images move too much ». Un film calme n'a pas
+d'écart entre images *par construction* : le mesurer à l'ancienne règle reviendrait à lui interdire
+d'exister. La règle du mode calme est donc celle du montage, pas celle du mouvement : **aucune image
+ne tient plus de `--hold` secondes sans un changement** (coupe, carton, apparition de texte). C'est ce
+qui sépare un film calme d'un diaporama — et c'est mesurable.
+
 Usage :
     python3 tools/qa/audit_video_motion.py <video.mp4> [--window 2.0] [--fps 12] [--thresh 1.5] [--json]
+    python3 tools/qa/audit_video_motion.py <video.mp4> --calme [--hold 2.6] [--freeze 0.3]
 
 Sortie : tableau par fenêtre + verdict. Code de sortie 1 si au moins une fenêtre est figée
 (le portique est bloquant : une vidéo qui gèle 2 s de suite ne part pas en publication).
@@ -56,6 +64,12 @@ def main():
     ap.add_argument("--thresh", type=float, default=1.5, help="sous cet écart maximal, la fenêtre est FIGÉE")
     ap.add_argument("--cut", type=float, default=8.0, help="écart considéré comme une coupe (changement de scène)")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--calme", action="store_true",
+                    help="film sans motion design : on juge la TENUE des images, pas le mouvement")
+    ap.add_argument("--hold", type=float, default=2.6,
+                    help="durée maximale d'une image immobile, en secondes (mode calme)")
+    ap.add_argument("--freeze", type=float, default=0.3,
+                    help="sous cet écart, l'image est considérée immobile (mode calme)")
     a = ap.parse_args()
 
     if not os.path.exists(a.video):
@@ -75,6 +89,38 @@ def main():
             prev = cur
 
         dur = duration(a.video)
+
+        if a.calme:
+            # ── règle du film calme : la plus longue tenue d'une image immobile ────────────────
+            runs, cur = [], 0
+            for t, d in deltas:
+                if d < a.freeze:
+                    cur += 1
+                    runs.append((cur * step, t))
+                else:
+                    cur = 0
+            longest = max((r for r in runs), default=(0.0, 0.0))
+            cuts = sum(1 for t, d in deltas if d >= a.cut)
+            over = longest[0] > a.hold
+            result = {
+                "video": a.video, "duree_s": round(dur, 2), "mode": "calme",
+                "tenue_max_s": round(longest[0], 2), "tenue_max_fin_s": round(longest[1], 2),
+                "plafond_s": a.hold, "coupes": cuts,
+                "verdict": (f"BLOQUÉ — une image tient {longest[0]:.1f} s sans changement "
+                            f"(plafond {a.hold:g} s)")
+                           if over else
+                           f"OK — image la plus longue tenue {longest[0]:.1f} s "
+                           f"≤ {a.hold:g} s · {cuts} coupes",
+            }
+            if a.json:
+                print(json.dumps(result, ensure_ascii=False, indent=2))
+            else:
+                print(f"\n{os.path.basename(a.video)}  ·  {result['duree_s']} s  ·  mode calme  ·  "
+                      f"plafond {a.hold:g} s")
+                print(f"tenue la plus longue : {longest[0]:.2f} s (fin à {longest[1]:.2f} s) · "
+                      f"coupes : {cuts}")
+                print(f"\nVERDICT : {result['verdict']}")
+            return 1 if over else 0
         n_windows = max(1, int(np.ceil(dur / a.window)))
         rows, frozen = [], []
         for w in range(n_windows):

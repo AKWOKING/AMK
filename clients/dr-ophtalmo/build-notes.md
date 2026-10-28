@@ -176,3 +176,86 @@ appelle.
 **Mesures avant déploiement.** Le texte garde **7,3:1 à 9:1** de contraste sur ordinateur (pire cas
 mesuré sur 96 × 54 points de la photographie, dégradé compris) et le visage reste entier aux quatre
 largeurs testées (1100, 1280, 1440, 1920).
+
+## 9 · Réservation en ligne — la route A, prête et éteinte (27/10/2026)
+
+**La demande.** King : « prépare la route A dès maintenant derrière une configuration éteinte » — un
+champ `bookingUrl` vide, le bouton qui n'apparaît que s'il est rempli, les phrases qui basculent ensemble,
+les tests ajustés. Le jour où le médecin donne ses horaires et son lien, il n'y a plus qu'à coller l'URL.
+
+**Ce qui a été construit.** Un fichier neuf, `js/booking.js`, et rien d'autre qui décide :
+
+| Élément | Rôle |
+|---|---|
+| `bookingUrl: ""` dans `js/config/doctor.js` | le seul interrupteur |
+| `bookingStatus(url)` | vide → bouton absent ; `https` exigé ; hôte limité à `calendar.app.google` / `calendar.google.com` ; sinon absent, sans message d'erreur devant un patient |
+| `liveCopyKey(base, enabled)` | une seule fonction choisit les variantes de **deux** phrases, donc elles ne peuvent pas diverger |
+| `meta.liveSync` | **déduit** du champ, plus jamais écrit à la main |
+| `renderBooking()` | le bouton, le `href`, le masquage, les deux phrases ; appelé depuis `renderStatic()` donc rejoué à chaque bascule FR/EN |
+
+**Pourquoi un lien et non une intégration.** Une iframe Google chargerait `calendar.google.com` et
+poserait ses cookies dès l'affichage : trois tests tombent (domaine tiers, cookies, `liveSync`), et la
+promesse « aucun appel à un tiers » du `llms.txt` devient fausse. Une vraie synchronisation (OAuth +
+fonction serverless + jetons) demande un secret, une gestion de panne et une politique de confidentialité
+— pour un gain réel mais faible face à un lien qui s'ouvre en deux secondes. `ops/BRAINSTORM-RESERVATION-DR-FOGUE-2026-10-27.md`
+garde les trois routes et le verdict.
+
+**Ce que la page ne fait pas, même allumée.** Elle ne crée pas le rendez-vous : c'est Google, chez le
+médecin. Le formulaire reste sous le bouton, et la phrase « une demande n'est pas un rendez-vous confirmé »
+reste vraie — elle s'applique à la demande, pas au créneau réservé.
+
+**Les portes.**
+- `tests/logic.test.mjs` — **59 vérifications** (7 neuves) : lien vide, `https` seul, hôtes connus, refus
+  silencieux du reste, bouton masqué sans `href` en dur, aucune iframe, aucun script tiers, les deux
+  phrases qui basculent dans les deux langues, la bascule écrite à un seul endroit du code.
+- `tools/qa/verify_booking_dom.mjs` — **le rendu, dans un DOM simulé** : assemble `app.js`, l'exécute,
+  lit la page éteinte puis allumée, en FR puis en EN. 15 contrôles, 0 faute. Dépendances installées hors
+  du dépôt (`jsdom`, `esbuild`), parce que le site lui-même doit rester sans dépendance.
+- Chromium headless : cartes capturées dans les deux états (1440 et 390), **0 erreur console**,
+  **0 débordement**. Images dans `clients/dr-ophtalmo/apercu-reservation/`.
+- `audit_a11y` 0/0 · `audit_images` 0/0 · `audit_hero --strict` vert · `audit_html` 0 · `audit_aeo` 0 ·
+  `audit_delivery` 0 P1 / 0 P2 / 1 P3.
+
+**Une erreur corrigée en route.** La première version du bouton utilisait le glyphe `↗` : il ne se rend
+pas dans toutes les polices, et le bouton apparaissait avec un carré vide. Remplacé par un SVG inline,
+qui hérite de `currentColor`.
+
+**Ce qui reste à faire, et qui n'est pas technique.** Rien ne se branche avant deux réponses du médecin :
+les **horaires** des quatre lieux (une page de réservation se construit sur des plages hebdomadaires), et
+**combien de pages** il veut — une seule sur un compte Google personnel, une par lieu si son abonnement le
+permet. Et une décision qui appartient à King : une réservation transforme une demande en engagement ; si
+le médecin ne tient pas ses créneaux, le bouton fait plus de dégâts que WhatsApp.
+
+## 10 · Une page par lieu, et le message d'après réservation (27/10/2026)
+
+**Deux ajouts, tous deux éteints.** La recommandation « une page pour Africa Médical, la demande écrite
+pour les trois autres » supposait un lien **par lieu** : il existe maintenant. Et le message WhatsApp
+d'après réservation répond à la question de King — « le médecin reçoit-il un WhatsApp comme si le patient
+lui avait écrit ? » — sans passer par l'API de Meta.
+
+| Élément | Comportement |
+|---|---|
+| `locations[].bookingUrl` | page valable pour **ce lieu seul** ; le lieu gagne sur la page générale |
+| `bookingMode(config, id)` | `"off"` · `"on"` · `"partial"` — trois états, pas deux |
+| état `partial` | un autre lieu a une page : on le dit, **et on ne met pas le bouton** (il enverrait un patient de Mbouda réserver à Douala) |
+| `booking.waCta` | « Prévenir le Dr Fogue sur WhatsApp », après le clic : lien `wa.me` prérempli, **du numéro du patient** |
+| `meta.liveSync` | déduit de **tous** les liens (lieu et général), jamais écrit à la main |
+
+**Pourquoi le WhatsApp n'est pas automatique, et pourquoi on ne fait pas semblant.** Google n'envoie ni
+SMS ni WhatsApp — seulement des e-mails, et ses rappels automatiques sont payants. Un envoi automatique
+depuis le numéro du médecin exige l'API Meta : un numéro qui n'est plus sur l'application, ou une
+coexistence avec WhatsApp Business ; des messages facturés depuis le 1ᵉʳ octobre 2026 au-delà de 1 000
+par mois ; un webhook et une fonction à maintenir. Détail et chiffres dans
+`clients/dr-ophtalmo/AGENDA-ET-WHATSAPP-2026-10-27.md`.
+
+**Le bouton d'après réservation, lui, est gratuit et vrai** : le message part réellement du téléphone du
+patient. Sa limite est écrite dans le document : il est **facultatif**, donc il ne remplace pas un
+automatisme.
+
+**Les portes.** `tests/logic.test.mjs` — **67 vérifications** (8 neuves : lien par lieu, lieu prioritaire,
+refus silencieux, trois variantes de phrase, message qui nomme lieu et médecin, aucune promesse de rappel
+WhatsApp/SMS). `tools/qa/verify_booking_dom.mjs` — **quatre états** dans un DOM simulé (aucun lien / page
+générale / page pour un seul lieu, vu de Mbouda / vu d'Africa Médical), en FR puis EN : 0 faute. Chromium :
+cartes capturées dans les trois états, **0 erreur console, 0 débordement**. `audit_a11y` 0/0 ·
+`audit_images` 0/0 · `audit_hero --strict` vert · `audit_html` 0 · `audit_aeo` 0 · `audit_delivery` 0 P1 /
+0 P2 / 1 P3.

@@ -11,6 +11,11 @@ _Before the first line of HTML, lock ONE token sheet (per `AMK-DESIGN-SKILLS.md`
 ## Token architecture (every sheet exposes the same names)
 `--ink` body text · `--ink-soft` muted · `--surface` page bg · `--surface-2` raised bg · `--line` hairline · `--brand` / `--brand-bright` (hover) / `--brand-tint` (soft bg) · `--on-brand` text on brand · semantic `--ok/--warn/--danger` + tints · `--radius` (12/16/20 scale, ONE system) · tinted `--shadow` · type ramp via `clamp()` · 4/8 spacing scale · Outfit house font unless the brief names another.
 Contrast rule: `--on-brand` on `--brand` and `--ink` on `--surface` both pass WCAG AA 4.5:1; large text 3:1. Verify, don't assume.
+**28/10/2026 — vérifié par outil, deux planches corrigées.** `tools/qa/audit_palette.py --sheet` a trouvé deux paires
+qui échouaient au niveau AA : planche **B** (`#C56A3C` + blanc = 3,82:1) et planche **E** (`#3E8F6B` + blanc = 3,93:1).
+Correction selon la doctrine de `autofix_contrast.py` (assombrir l'aplat, garder le texte) : **B → `#B15F36`** (4,61:1),
+**E → `#398462`** (4,52:1). Les accents ambre/or restent sous 3:1 sur crème (1,98 à 2,53:1) : **le bouton principal
+de ces planches prend `--brand`, jamais `--accent`**. Détail : `knowledge/COULEUR-60-30-10-2026-10-28.md` §3.2.
 
 ---
 
@@ -30,7 +35,7 @@ Registry family: `premium` structure + Forest rotation family. Anxiety-defusing,
 Registry family: `terracotta`/`cafe` structure. Rotation alternative when Forest was last used.
 ```css
 --ink:#2B211C; --ink-soft:#6A5C52; --surface:#FAF6F1; --surface-2:#FFFFFF; --line:#EAE1D6;
---brand:#C56A3C; --brand-bright:#A8562D; --brand-tint:#F8E7DD; --on-brand:#FFFFFF;
+--brand:#B15F36; --brand-bright:#A8562D; --brand-tint:#F8E7DD; --on-brand:#FFFFFF;
 --slate:#3E4A52; --slate-tint:#E6EAEC;                  /* cool counterweight, never blue-purple */
 --ok:#3E7A4F; --warn:#B97F2C; --danger:#A83A2E;
 --radius:18px; --radius-lg:22px;
@@ -63,7 +68,7 @@ Registry family: `professional`/`premium`. Crest-driven: derive hues from the re
 Registry family: `friendly`. Rounded, soft, playful but controlled; one desaturated bright pair, no candy rainbow.
 ```css
 --ink:#27302B; --ink-soft:#5C6B60; --surface:#FCFAF5; --surface-2:#FFFFFF; --line:#ECEADF;
---brand:#3E8F6B; --brand-bright:#327557; --brand-tint:#E3F2EA; --on-brand:#FFFFFF;
+--brand:#398462; --brand-bright:#327557; --brand-tint:#E3F2EA; --on-brand:#FFFFFF;
 --sun:#E2A93B; --sun-tint:#FAF0D9; --berry:#C7657A;            /* tiny pops only */
 --ok:#3E8F6B; --warn:#C88A2B; --danger:#B0503A;
 --radius:20px; --radius-lg:26px;                      /* rounder system, locked page-wide */

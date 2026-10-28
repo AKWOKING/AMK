@@ -12,9 +12,18 @@ import assert from "node:assert/strict";
 import { doctorConfig, isKnown, doctorDisplayName, whatsappNumber } from "../js/config/doctor.js";
 import { services } from "../js/config/services.js";
 import { whatsappMessage, buildWhatsappUrl, formatDate, limits } from "../js/config/appointment.js";
-import { dictionaries, createTranslator } from "../js/i18n/index.js";
+import { dictionaries, createTranslator, resolve } from "../js/i18n/index.js";
 import { buildWeek, hasAnyHours, locationDays, locationLabel, WEEK } from "../js/lib/schedule.js";
 import { validate } from "../js/lib/validators.js";
+import {
+  bookingStatus,
+  bookingFor,
+  bookingCapability,
+  bookingMode,
+  liveCopyKey,
+  liveNoteKey,
+  BOOKING_HOSTS,
+} from "../js/booking.js";
 
 let passed = 0;
 const check = (label, fn) => {
@@ -58,8 +67,10 @@ check("un lien d'itinéraire ne va jamais sans adresse vérifiée", () => {
   }
 });
 
-check("le site ne prétend pas être branché sur un agenda", () => {
-  assert.equal(doctorConfig.meta.liveSync, false);
+check("le site ne se dit branché sur un agenda que si un lien existe", () => {
+  // `meta.liveSync` n'est plus écrit à la main : il est déduit de `bookingUrl`
+  // (js/config/doctor.js). Les deux ne peuvent donc pas se contredire.
+  assert.equal(doctorConfig.meta.liveSync, bookingStatus(doctorConfig.bookingUrl).enabled);
 });
 
 check("aucun numéro douteux : si WhatsApp existe, c'est 8 à 15 chiffres", () => {
@@ -427,6 +438,12 @@ check("aucune ressource servie depuis un domaine tiers", () => {
       // aucun navigateur ne va la chercher. Elle est donc tolérée ici, et elle seule.
       if (/schema\.org|w3\.org|github\.com\/AKWOKING|mdn\.|example\.com|wa\.me/.test(url)) continue;
       if (url === "https://dr-ophtalmo-preview.vercel.app/") continue;
+      // Le lien de réservation est une DONNÉE de configuration, pas une
+      // ressource chargée : aucun navigateur ne va le chercher avant le clic.
+      // Seul l'hôte validé par js/booking.js est toléré, et seulement s'il est
+      // réellement configuré — aujourd'hui la liste est vide.
+      const bookingHost = bookingStatus(doctorConfig.bookingUrl).host;
+      if (bookingHost && url.startsWith(`https://${bookingHost}/`)) continue;
       found.push(url);
     }
   }
@@ -441,6 +458,211 @@ check("aucun formulaire n'envoie de données, aucun cookie, aucune mesure", () =
     !/googletagmanager|gtag\(|google-analytics|plausible\.io|matomo\.(js|php)/i.test(joined),
     "une mesure d'audience est branchée",
   );
+});
+
+/* ── 9 · Réservation en ligne (route A) ────────────────────────────────── */
+console.log("\n9 · Réservation en ligne");
+
+check("un lien vide n'active rien", () => {
+  const status = bookingStatus("");
+  assert.equal(status.enabled, false);
+  assert.equal(status.href, "");
+  assert.equal(status.reason, "empty");
+});
+
+check("seul un lien https vers un service de réservation connu est accepté", () => {
+  // Ce qui est accepté : la page de réservation Google, en https.
+  for (const url of [
+    "https://calendar.app.google/abc123",
+    "https://calendar.google.com/calendar/appointments/schedules/xyz?gv=true",
+  ]) {
+    assert.equal(bookingStatus(url).enabled, true, url);
+  }
+  // Ce qui est refusé, et pourquoi : le bouton disparaît, la page n'explique
+  // pas — on ne met pas un message d'erreur devant un patient.
+  const refused = {
+    "http://calendar.app.google/abc123": "insecure",
+    "javascript:alert(1)": "insecure",
+    "https://calendly.com/docteur-fogue": "host",
+    "https://calendar.app.google.evil.example/x": "host",
+    "pas une url": "malformed",
+  };
+  for (const [url, reason] of Object.entries(refused)) {
+    const status = bookingStatus(url);
+    assert.equal(status.enabled, false, url);
+    assert.equal(status.reason, reason, url);
+    assert.equal(status.href, "", url);
+  }
+});
+
+check("un lien par lieu ne vaut que pour ce lieu", () => {
+  // Le montage gratuit honnête : une page pour Africa Médical, rien ailleurs.
+  const config = {
+    bookingUrl: "",
+    locations: [
+      { id: "mbouda", bookingUrl: "" },
+      { id: "africa-medical", bookingUrl: "https://calendar.app.google/douala" },
+    ],
+  };
+  assert.equal(bookingCapability(config), true, "une page existe pourtant");
+  assert.equal(bookingMode(config, "africa-medical"), "on");
+  assert.equal(bookingMode(config, "mbouda"), "partial", "Mbouda ne doit pas voir le bouton");
+  const douala = bookingFor(config, "africa-medical");
+  assert.equal(douala.scope, "location");
+  assert.equal(douala.href, "https://calendar.app.google/douala");
+  assert.equal(bookingFor(config, "mbouda").enabled, false);
+});
+
+check("une page générale vaut pour tous les lieux", () => {
+  const config = {
+    bookingUrl: "https://calendar.app.google/tous",
+    locations: [{ id: "mbouda", bookingUrl: "" }, { id: "bafoussam", bookingUrl: "" }],
+  };
+  for (const id of ["mbouda", "bafoussam"]) {
+    assert.equal(bookingMode(config, id), "on", id);
+    assert.equal(bookingFor(config, id).scope, "global", id);
+  }
+});
+
+check("le lieu gagne sur la page générale", () => {
+  // Un médecin peut vouloir une page par lieu ; la plus précise est la bonne.
+  const config = {
+    bookingUrl: "https://calendar.app.google/tous",
+    locations: [{ id: "africa-medical", bookingUrl: "https://calendar.app.google/douala" }],
+  };
+  assert.equal(bookingFor(config, "africa-medical").href, "https://calendar.app.google/douala");
+  assert.equal(bookingFor(config, "africa-medical").scope, "location");
+  assert.equal(bookingFor(config, "mbouda").href, "https://calendar.app.google/tous");
+});
+
+check("un lien refusé laisse la page honnête, quel que soit le lieu", () => {
+  // Un lien http:// par lieu ne doit ni activer le bouton, ni faire dire au
+  // site qu'il est branché sur un agenda.
+  const config = { bookingUrl: "", locations: [{ id: "mbouda", bookingUrl: "http://calendar.app.google/x" }] };
+  assert.equal(bookingCapability(config), false);
+  assert.equal(bookingMode(config, "mbouda"), "off");
+  assert.equal(bookingFor(config, "mbouda").enabled, false);
+});
+
+check("sans lien nulle part, le site reste exactement comme avant", () => {
+  assert.equal(bookingCapability(doctorConfig), false, "un lien traîne dans la configuration");
+  for (const location of doctorConfig.locations) {
+    assert.equal(bookingMode(doctorConfig, location.id), "off", location.id);
+  }
+  assert.equal(doctorConfig.meta.liveSync, false);
+});
+
+check("la phrase des rendez-vous a trois variantes, jamais deux à la fois", () => {
+  assert.equal(liveNoteKey("off"), "appointment.liveNote");
+  assert.equal(liveNoteKey("on"), "appointment.liveNoteWhenBooked");
+  assert.equal(liveNoteKey("partial"), "appointment.liveNotePartial");
+  for (const translate of [fr, en]) {
+    const [off, on, partial] = [liveNoteKey("off"), liveNoteKey("on"), liveNoteKey("partial")].map(translate);
+    assert.notEqual(off, on);
+    assert.notEqual(off, partial);
+    assert.notEqual(on, partial);
+    // « partiel » ne doit pas promettre le bouton qu'il n'y a pas.
+    assert.ok(!/bouton|button/i.test(partial), "la variante partielle annonce un bouton absent");
+  }
+});
+
+check("le message WhatsApp d'après réservation nomme le lieu et le médecin", () => {
+  for (const translate of [fr, en]) {
+    const modele = translate("booking.waMessage");
+    assert.match(modele, /\{place\}/, "le lieu n'est pas dans le message");
+    assert.match(modele, /\{doctor\}/, "le médecin n'est pas dans le message");
+    // Il part du numéro du patient : le site ne doit pas le présenter comme
+    // envoyé par le site, ni comme une notification automatique.
+    assert.ok(!/notification/i.test(modele), "le message promet une notification");
+  }
+});
+
+check("aucune phrase ne promet un rappel par WhatsApp ni par SMS", () => {
+  // Google n'envoie ni SMS ni WhatsApp — seulement des e-mails, et ses rappels
+  // automatiques sont une option payante. Une phrase qui promettrait un rappel
+  // serait fausse, et c'est le genre de promesse qu'un patient retient.
+  for (const dict of [dictionaries.fr, dictionaries.en]) {
+    for (const key of flatten(dict)) {
+      const value = resolve(dict, key);
+      if (typeof value !== "string") continue;
+      assert.ok(
+        !/rappel\s+(par\s+)?(whatsapp|sms)|(whatsapp|sms)\s+reminder|reminder\s+(by|via)\s+(whatsapp|sms)/i.test(value),
+        `${key} promet un rappel WhatsApp/SMS que Google n'envoie pas`,
+      );
+    }
+  }
+});
+
+check("la liste des hôtes acceptés est courte et explicite", () => {
+  assert.deepEqual(BOOKING_HOSTS, ["calendar.app.google", "calendar.google.com"]);
+});
+
+check("le bouton de réservation est masqué tant que le lien est vide", () => {
+  const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
+  const block = html.match(/<div class="booking" data-booking hidden>([\s\S]*?)<\/div>/);
+  assert.ok(block, "le bloc de réservation a disparu du HTML");
+  // Pas de href en dur : sans lien configuré, il n'existe aucun bouton mort,
+  // même si le JavaScript ne s'exécute pas.
+  assert.ok(!/href=/.test(block[1]), "le bouton porte un href en dur");
+  assert.match(block[1], /rel="noopener noreferrer"/);
+  assert.match(block[1], /target="_blank"/);
+});
+
+check("aucune iframe, aucun script de réservation n'est chargé", () => {
+  // La route A est un lien sortant. Le jour où quelqu'un voudra « intégrer »
+  // l'agenda, ce test tombera avant la page.
+  const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
+  assert.ok(!/<iframe/i.test(html), "une iframe a été ajoutée");
+  const scripts = [...html.matchAll(/<script[^>]*src="([^"]+)"/g)].map((m) => m[1]);
+  assert.deepEqual(scripts, ["js/app.js"], "un script tiers a été ajouté");
+});
+
+check("les deux phrases basculent ensemble, et ne se contredisent jamais", () => {
+  const pairs = [
+    ["appointment.liveNote", /aucune connexion à un agenda|no connection to any calendar/i],
+    ["consultations.scheduleNote", /aucune synchronisation avec un agenda|nothing is synced to a calendar/i],
+  ];
+  for (const [base, denial] of pairs) {
+    const booked = liveCopyKey(base, true);
+    assert.equal(booked, `${base}WhenBooked`);
+    assert.equal(liveCopyKey(base, false), base, `${base} : l'état éteint change la clef`);
+
+    for (const translate of [fr, en]) {
+      const off = translate(base);
+      const on = translate(booked);
+      assert.match(off, denial, `${base} : la version sans lien ne nie plus l'agenda`);
+      assert.ok(!denial.test(on), `${base}WhenBooked nie encore tout agenda alors qu'un lien existe`);
+      assert.match(on, /agenda|calendar/i, `${base}WhenBooked ne dit pas d'où viennent les créneaux`);
+      assert.notEqual(off, on, `${base} : aucune bascule réelle`);
+    }
+  }
+});
+
+check("le bouton et les phrases sortent d'un seul calcul", () => {
+  // Ce test ne juge pas le style : il empêche la divergence. Le jour où
+  // quelqu'un défait le lien entre le bouton et la copie, il tombe.
+  const app = fs.readFileSync(path.join(root, "js/app.js"), "utf8");
+  const statique = app.slice(app.indexOf("function renderStatic"), app.indexOf("function renderBooking"));
+  assert.match(statique, /renderBooking\(\);/, "renderStatic ne rend plus la réservation");
+  assert.equal((app.match(/data-i18n-when-booked/g) || []).length, 1, "la bascule est écrite deux fois");
+  assert.match(app, /block\.hidden = mode !== "on"/, "le bloc ne dépend plus de l'état du lieu");
+  assert.match(app, /liveNoteKey\(mode\)/, "la phrase des rendez-vous ne suit plus l'état");
+  assert.match(app, /liveCopyKey\("consultations\.scheduleNote"/, "la note de la semaine ne bascule plus");
+});
+
+check("chaque variante « WhenBooked » a sa phrase d'origine", () => {
+  // Une variante sans base ne s'afficherait jamais ; une base sans variante
+  // afficherait le déni alors que le bouton existe.
+  for (const dict of [dictionaries.fr, dictionaries.en]) {
+    const keys = flatten(dict);
+    for (const key of keys.filter((k) => k.endsWith("WhenBooked"))) {
+      const base = key.replace(/WhenBooked$/, "");
+      assert.ok(keys.includes(base), `${key} n'a pas de phrase d'origine`);
+    }
+    for (const key of ["booking.cta", "booking.note", "booking.label", "booking.or"]) {
+      assert.ok(keys.includes(key), `${key} manque au dictionnaire`);
+    }
+  }
 });
 
 /* ── 8 · L'aperçu reste privé ──────────────────────────────────────────── */

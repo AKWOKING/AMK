@@ -20,6 +20,7 @@ vitrine sont encore des illustrations).*
 | 7 | **Marques de montures** que vous vendez | La page ne nomme aujourd'hui **aucune marque** (on n'en invente aucune). Avec votre liste, on peut écrire « nous portons… » ; sans elle, la vitrine renvoie la question au WhatsApp | à confirmer |
 | 8 | **La liste des services** : confirmer ou retirer, parmi les six de la page (examen de la vue · verres sur ordonnance · montures · lunettes de soleil · réparation et entretien · lentilles de contact) | Aujourd'hui la page liste les six services **types** d'un cabinet d'optique. Un cabinet ne fait pas tout : ce qu'on retire disparaît, ce qu'on ajoute s'écrit | à valider |
 | 9 | *(facultatif)* **Une phrase de vous**, vos mots, sur ce que vous dites à vos patients | La page n'a **aucun avis** (on n'en invente pas) ; une vraie phrase, signée de votre nom, vaut mieux que dix citations inventées | à demander |
+| 10 | **Les 22 réponses de `/questions/`** à relire sur son téléphone (28/10) : la fréquence des contrôles (deux ans / un an), les trois assurances nommées, les lentilles de contact | Ce sont des faits sur le cabinet, pas sur le métier : ce qui est faux se retire, ce qui manque s'ajoute | à valider |
 
 ## Ce qu'on fait dès qu'on reçoit
 
