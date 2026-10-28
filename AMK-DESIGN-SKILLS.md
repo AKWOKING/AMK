@@ -2514,6 +2514,7 @@ everything yourself »).
 | `audit_seo.py` / `audit_aeo.py` | référencement statique, mobile-first / ce qu'une machine peut citer | §31 |
 | `audit_delivery.py` | la porte de livraison : ce qu'un audit extérieur a vu et que nos portiques ne voyaient pas | §13, §18.4 |
 | `audit_site_amk.py` | les lois de la maison que les autres portiques ne vérifient pas | §4 |
+| `audit_laws.py` | **les six lois de la perception** sur le HTML/CSS servis : amorce d'un rail, voile d'un panneau, forme publicitaire, défauts de formulaire, liaison d'un flux, surcharge de choix — banc de 16 témoins (`--self-test`) | §40 |
 | `audit_claims.py` | refuse une publication qui contredit un verrou client | §3.6, §34 |
 | `check_inline_js.py` | chaque `<script>` inline compile (JSON-LD validé à part) | §13 |
 | `render_svg.py`, `raster_svg_path.py` | **regarder** un tracé SVG avant de le livrer | §8 |
@@ -2540,7 +2541,7 @@ dit. **Toute règle ajoutée à ce fichier ajoute son cas au témoin.**
 | 5-6 | copie, images | `audit_claims.py`, `audit_images.py` |
 | 7 | build | — |
 | 8 | mouvement | `design/MOTION.md` §6 ; `audit_reveal.py` |
-| 9 | pré-vol | `shot.py` → `audit_html.py` → `audit_a11y.py` → `audit_page.py` → `audit_hero.py` → `audit_palette.py --image` → `check_inline_js.py` → `test_audit_*` |
+| 9 | pré-vol | `shot.py` → `audit_html.py` → `audit_a11y.py` → `audit_page.py` → `audit_hero.py` → `audit_laws.py` → `audit_palette.py --image` → `check_inline_js.py` → `test_audit_*` |
 
 **Deux commandes avant tout, une fois par session** :
 
@@ -2582,3 +2583,136 @@ la direction de marque. Tout le reste est du contexte.
 **Règle de tenue de cet index** : quand un portique est ajouté, renommé ou retiré, **ce § change dans le
 même commit**. Un index qui ment est pire que pas d'index — c'est le même défaut qu'une capture Instagram
 recopiée sans être mesurée.
+
+---
+
+## §40 SIX LOIS DE LA PERCEPTION, ET LA PAGE QUI LES ENFREIGNAIT TOUTES (28 Oct 2026, tour 221)
+
+Le 28 octobre, King a posé six lois et demandé de les **chercher, les apprendre, les écrire ici, auditer
+le site, corriger, puis publier**. Ce paragraphe est la partie « les écrire ici ». Il ne remplace pas §39 :
+§39 dit **où vit chaque chose**, §40 dit **ce que six lois de la perception exigent d'une page** et
+comment on le vérifie sans regarder.
+
+### 40.1 Pourquoi ces six-là, et pas trente
+
+Les six lois décrivent ce que l'œil fait **avant** de lire. Elles ne parlent ni de goût, ni de marque, ni
+de copy : elles décrivent des faits de perception, ce qui les rend **mesurables sur le HTML et le CSS
+servis**. C'est la seule catégorie de règle qu'un portique peut tenir tout seul, sans jugement.
+
+| # | Loi | Ce qu'elle dit | Ce qu'elle interdit chez nous |
+|---|---|---|---|
+| 01 | **Closure** (Gestalt) | le cerveau complète une forme incomplète | un rail horizontal dont rien ne dépasse : l'œil croit la série finie |
+| 02 | **Figure-ground** | ce qui est au premier plan doit **soustraire** le fond | un panneau qui s'ouvre sur une page intacte, sans voile |
+| 03 | **Banner blindness** | l'œil saute ce qui a la forme d'une publicité | une pastille, un encart, un « sponsored » qui porte une action utile |
+| 04 | **Parkinson** | une tâche prend tout le temps qu'on lui donne | un formulaire qui redemande ce qu'on sait déjà, ou un bouton au libellé flou |
+| 05 | **Connectedness** | le lien **uniforme** (même surface) bat la proximité et la ressemblance | des étapes posées en cartes séparées : trois sujets, pas un parcours |
+| 06 | **Choice overload** | au-delà d'un seuil, plus d'options = moins de décisions | 17 cases de filtre ouvertes d'emblée, un catalogue déversé sans entrée |
+
+### 40.2 Les six lois, avec leur source et leur chiffre
+
+**01 · Closure — laisser la carte suivante dépasser.** La loi de fermeture (Wertheimer, école de la
+Gestalt) veut que le cerveau complète une forme interrompue ; le motif canonique en interface est le
+**défilement horizontal dont la carte suivante est partiellement visible** (≈ 30 %). Source :
+`medium.com/design-bootcamp/gestalt-laws`, `atlantis-press.com/article/125976903.pdf`, `thestory.is`.
+Chez nous : le rail « Vous aimerez aussi » des 40 fiches montrait **trois cartes empilées** sur téléphone,
+donc trois écrans de plus et rien qui dise « la série continue ». Corrigé en `.v2-rail` :
+`grid-auto-columns:78%`, amorce **22 %**, accroche `scroll-snap`, grille classique au-delà de 780 px.
+Mesure de la capture : conteneur 366 px de large, contenu 867 px, carte **273 px** (75 % de la largeur
+utile) — la fiche suivante entre franchement dans le cadre.
+
+**02 · Figure-ground — assombrir l'arrière.** Le voile (« scrim ») **réduit la présence du fond** ; les
+trois outils sont le contraste, l'ombre et le voile. Repère de la recherche : un premier plan à **17,4:1**
+qui tombe à **2,5:1** au moment où le fond recule. Sources : `uxbyexample.co.uk/entries/figure-ground/`,
+`nielsenphd.substack.com/p/gestalt-principles`, `owl-listener/law-of-figure-ground`,
+`scienceinsights.org`. Chez nous : le tiroir mobile `.mnav` s'ouvrait **sur une page intacte** ; ajout de
+`.mnav[open]::after` — `rgba(10,18,32,.45)` + `backdrop-filter:blur(2px)`, `z-index` 39, le bouton reste
+cliquable au-dessus (`z-index` 41), animation de 180 ms **coupée** par `prefers-reduced-motion`.
+
+**03 · Banner blindness — ne pas ressembler à une pub.** Benway & Lane (1998, Rice University) ont nommé
+le phénomène ; le CTR bannière est passé de **44 % en 1994 à 0,05 %** ; l'eye-tracking de NN/g répète
+depuis 1997 que **« users almost never look at anything that looks like an ad »**. Sources :
+`bannersnack.com`, NN/g via `digia.tech`, `leadalchemists.com`. Chez nous : la source d'une fiche
+(`a.psrc`) était devenue une **pastille bordée avec icône**, exactement la forme qu'on saute ; elle est
+redevenue un **lien de texte souligné** (filet à 1 px, `text-decoration-thickness`).
+
+**04 · Parkinson — remplir ce qu'on sait déjà.** Parkinson (1955) : « le travail s'étale jusqu'à remplir
+le temps disponible ». Sur le web : `lawsofux.com/parkinsons-law/`. Zuko a mesuré **215 formulaires** :
+**71 %** d'achèvement quand le formulaire peut se remplir seul, contre **59 %** ; l'autofill fait chuter
+l'abandon de **75 %**. Un formulaire de 1-3 champs convertit à **41 %**, 4-6 à **51 %**, 7+ à **31 %**
+(`kirro.io/form-design`, `newsletter.uxuniversity.io`). Chez nous : le panneau de filtres avait **trois
+boutons** dont deux au libellé interchangeable (« Tout afficher » / « Effacer ») ; le premier est devenu
+**« Voir les montures » / « See the frames »** — le libellé dit ce qu'il fait. Le champ de recherche porte
+`enterkeyhint="search"`, `autocapitalize="none"`, `spellcheck="false"` : la touche du clavier mobile dit
+« rechercher » au lieu de « retour ».
+
+**05 · Connectedness — une seule surface pour un parcours.** La **connexion uniforme** (éléments réunis
+par une même surface, un même cadre) bat la proximité et la ressemblance : c'est le résultat le plus
+robuste de la Gestalt appliquée à l'interface. Sources : `toptal.com/designers/ui/gestalt-principles-of-design`,
+`reallygooddesigns.com`, `kittl.com`, `designyourway.net`. Chez nous : les trois étapes du parcours
+(`.steps`, accueil) et les étapes des 47 sous-pages étaient **trois cartes séparées** — trois sujets.
+Une seule surface, séparée par des **filets de 1 px** : la liaison dit « et ensuite ».
+
+**06 · Choice overload — moins d'options d'emblée.** Iyengar & Lepper (2000) : **24 confitures** font
+s'arrêter **60 %** des visiteurs et **3 %** achètent ; **6 confitures** font s'arrêter **40 %** et **30 %**
+achètent. Sur les 401(k) : **−2 points de participation par 10 fonds** offerts. La critique compte :
+Scheibehenne, Greifeneder & Todd (2010), **50 études**, effet moyen **≈ 0** — la surcharge n'existe que
+sous quatre conditions (pas de préférence claire, options difficiles à comparer, pas d'expertise, coût de
+recherche élevé). Sources : `onegoodthing.space`, `yukaichou.com`, `wisechecker.com`. Chez nous : le
+panneau de filtres ouvrait **17 cases** (6 formes + 11 couleurs) d'un coup. La famille la plus courte
+(la forme) reste visible ; la couleur passe derrière un `<details>` natif qui **annonce son compte**
+(« Couleur (11) »). Les cases restent dans le DOM : le filtre, le fragment `#` et les puces actives
+continuent de fonctionner à l'identique, sans une ligne de JavaScript de plus.
+
+### 40.3 Le portique : `tools/qa/audit_laws.py`
+
+```bash
+python3 tools/qa/audit_laws.py --self-test                      # 16/16
+python3 tools/qa/audit_laws.py --dir hosting/previews/dmoptic    # 0 faute · 0 avertissement
+python3 tools/qa/audit_laws.py --only closure,figure <page.html>  # une loi à la fois
+```
+
+Il lit le HTML **et** le CSS **servis** (jamais le gabarit), et il rend trois choses : des **fautes**
+(la loi est enfreinte), des **avertissements** (la loi est probablement enfreinte, un humain tranche), des
+**notes** (ce qu'il a mesuré, et pourquoi la loi ne s'applique pas). Un `return` précoce doit dire
+« non applicable » — jamais se taire.
+
+### 40.4 Les quatre pièges que le portique a tendus le jour de sa naissance
+
+Un portique neuf ment trois fois avant de dire vrai. Les quatre erreurs sont écrites ici parce qu'elles
+se reproduiront :
+
+1. **L'alpha lu au mauvais endroit.** `rgba?\([^)]*?,\s*(\.?\d+)\)` rend **18** pour `rgba(10,18,32,.55)` :
+   il prend le deuxième composant. Il faut parser les **quatre** composants et lire le quatrième. Conséquence
+   évitée : tous les voiles jugés transparents, donc zéro faute détectée sur un site qui en avait deux.
+2. **Le voile de photo pris pour un voile de panneau.** Un `linear-gradient` sur une photographie n'est pas
+   une soustraction du fond : c'est du décor. Seul un voile d'**état** (`.is-open`, `[open]`, `:target`,
+   `scrim|veil|overlay`) compte.
+3. **« Loi non applicable » confondu avec « loi respectée ».** Le premier jet de la loi 05 renvoyait une
+   note « aucun groupe d'étapes déclaré » sur une page cassée. Chaque `return` précoce a désormais son
+   témoin dans le banc.
+4. **Le contrôle caché compté comme visible.** Un `<details>` fermé est **déjà** une réponse à la surcharge :
+   le compter comme une case visible punissait la correction. Le portique sépare « visibles » et
+   « repliés », et le dit.
+
+À quoi s'ajoutent deux corrections du **même jour dans `shot.mjs`**, trouvées en auditant :
+les blocs du premier écran comptaient (a) le contenu **sous la ligne de flottaison** — une galerie de 24
+fiches annonçait « 150 blocs » — et (b) **chaque phrase deux fois**, le site étant bilingue (`button > span.fr-only`).
+Un tiroir fermé n'est pas un débordement : ses liens attendent hors cadre. Et une 7ᵉ taille de texte
+(1,15 rem, porte du catalogue) est retombée sur l'échelle : **plafond 6** (§5).
+
+### 40.5 Ce que ces six lois ne mesurent pas
+
+Elles décrivent la **perception**, pas le **sens**. Un rail à 22 % d'amorce peut être laid ; un voile à
+45 % peut noircir une photo qu'on voulait montrer ; replier onze couleurs peut cacher celle que le client
+cherchait. Le portique dit « la forme est là », jamais « c'est beau ». Le dernier mot reste une capture
+regardée — `shot.py` — et un œil humain, le jour où King ouvre la page sur son téléphone en plein soleil
+(§24.3.5).
+
+### 40.6 Sources
+
+- Gestalt / closure : `medium.com/design-bootcamp/gestalt-laws` · `atlantis-press.com/article/125976903.pdf` · `thestory.is`
+- Figure-ground : `uxbyexample.co.uk/entries/figure-ground/` · `nielsenphd.substack.com/p/gestalt-principles` · `owl-listener/law-of-figure-ground` · `scienceinsights.org`
+- Banner blindness : `bannersnack.com` (Benway & Lane 1998) · NN/g via `digia.tech` · `leadalchemists.com`
+- Parkinson : `lawsofux.com/parkinsons-law/` · `kirro.io/form-design` (Zuko, 215 formulaires) · `newsletter.uxuniversity.io`
+- Connectedness : `toptal.com/designers/ui/gestalt-principles-of-design` · `reallygooddesigns.com` · `kittl.com` · `designyourway.net`
+- Choice overload : Iyengar & Lepper 2000 via `onegoodthing.space` et `yukaichou.com` · Scheibehenne 2010 · `wisechecker.com`

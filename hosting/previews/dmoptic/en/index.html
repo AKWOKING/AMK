@@ -47,6 +47,13 @@
     font-weight:600;font-size:var(--fs-base)}
   .mnav-panel a+a{border-top:1px solid var(--line-2)}
   .mnav-panel a:focus-visible{outline:3px solid var(--brand);outline-offset:-3px}
+  /* 28/10 · figure-ground : le panneau s'ouvrait sur une page restée à son contraste maximum.
+     L'œil ne savait pas quel plan était devant. Un voile plein écran, et le panneau devient
+     franchement la figure. Le bouton reste cliquable au-dessus (z-index 41). */
+  .mnav[open]::after{content:"";position:fixed;inset:0;z-index:39;background:rgba(10,18,32,.45);
+    backdrop-filter:blur(2px);animation:mnav-veil .18s var(--ease) both}
+  .mnav[open]>summary{position:relative;z-index:41}
+  @keyframes mnav-veil{from{opacity:0}to{opacity:1}}
 }
 /* 23/10 — en-tête mobile : la marque ne pousse plus le menu hors de l'écran */
 @media (max-width:430px){
@@ -279,8 +286,14 @@ figure.band-fig figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);
 html.js .band::before{animation:drift 2.8s var(--ease) 1 both}
 .band .wrap{position:relative;z-index:1}
 .steps{display:grid;gap:16px;margin-top:34px}
-@media (min-width:780px){ .steps{grid-template-columns:repeat(3,1fr);gap:22px} }
+@media (min-width:780px){ .steps{grid-template-columns:repeat(3,1fr);gap:0;background:var(--night-2);
+  border:1px solid var(--night-line);border-radius:var(--r-lg);overflow:hidden} }
 .step{background:var(--night-2);border:1px solid var(--night-line);border-radius:var(--r-lg);padding:22px}
+/* 28/10 · connectedness : trois cartes espacées lisaient comme trois choses, pas comme un parcours.
+   Sur grand écran elles forment une seule surface, séparées par un filet — la liaison dit « étape
+   suivante », pas « autre sujet ». Mobile : les cartes restent empilées (le filet vertical suffit). */
+@media (min-width:780px){ .step{background:none;border:0;border-radius:0;border-left:1px solid var(--night-line);padding:26px 24px}
+  .step:first-child{border-left:0} }
 .step .n{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.14em;color:var(--ember-2)}
 .step h3{margin-top:12px;font-size:var(--fs-h3)}
 .step p{margin:.5rem 0 0;color:var(--on-night-2);font-size:var(--fs-sm)}
@@ -347,10 +360,15 @@ footer.site{background:var(--night);color:var(--on-night);padding:52px 0 0;margi
 footer.site a{color:var(--on-night)}
 .fgrid{display:grid;gap:30px}
 @media (min-width:860px){ .fgrid{grid-template-columns:1.35fr 1fr 1fr 1.1fr;gap:34px} }
-.psrc{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:14px;padding:0 14px;border:1px solid rgba(169,184,207,.42);border-radius:999px;color:var(--on-night-2);font-size:13px;line-height:1.2;text-decoration:none;box-sizing:border-box;transition:color .18s ease,border-color .18s ease}
-.psrc:hover,.psrc:focus-visible{color:var(--ember-2);border-color:var(--ember-2);background:rgba(240,145,96,.08)}
-.psrc:focus-visible{outline:2px solid var(--ember-2);outline-offset:2px}
-.psrc svg{display:block;width:14px;height:14px;flex:0 0 auto;fill:var(--ember-2)}
+/* 28/10 · banner blindness : la pastille bordée, arrondie, avec son icône, avait exactement la forme
+   d'un widget publicitaire — et l'œil saute les widgets. Même information, même place, autre forme :
+   un lien de texte dans le pied de page, souligné au survol. */
+.psrc{display:inline-flex;align-items:baseline;gap:6px;margin-top:12px;color:var(--on-night-2);
+  font-size:13px;line-height:1.4;text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:3px;text-decoration-color:rgba(169,184,207,.5);transition:color .18s ease}
+.psrc:hover,.psrc:focus-visible{color:var(--ember-2);text-decoration-color:currentColor}
+.psrc:focus-visible{outline:2px solid var(--ember-2);outline-offset:3px;border-radius:4px}
+.psrc svg{display:block;width:12px;height:12px;flex:0 0 auto;fill:currentColor;translate:0 1px}
 @media (prefers-reduced-motion:reduce){.psrc{transition:none}}
 footer.site .brand{color:#fff}
 footer.site .brand .thin{color:rgba(255,255,255,.82)}
@@ -389,7 +407,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
   html{scroll-behavior:auto}
   html.js .rv,html.js .rv:not(.in){opacity:1;transform:none;transition:none}
   html.js .glint{animation:none;stroke-dasharray:none;stroke-dashoffset:0}
-  html.js .wash,html.js .lensring,html.js .band::before{animation:none}
+  html.js .wash,html.js .lensring,html.js .band::before,.mnav[open]::after{animation:none}
   *{transition-duration:.01ms !important}
 }
 </style>

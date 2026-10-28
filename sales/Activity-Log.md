@@ -7445,3 +7445,50 @@ constructeur est en retard sur ses propres artefacts produit des reconstructions
 travail. La porte de livraison est ce qui l'a vu, et c'est exactement pour ça qu'elle existe.
 
 **Reste** : la porte passe en 0 P1 / 0 P2 / 1 P3, comme avant ce chantier.
+
+---
+
+## 28 octobre 2026 · tour 221 — six lois de la perception, et la page qui les enfreignait toutes
+
+King : « Go through these six laws, research them, learn them, add them to our design documents, audit
+the site, apply it, then deploy. » Dans cet ordre, et rien sauté.
+
+**1 · Cherchées.** Six lois, six sources primaires ou presque : closure (Gestalt, la carte suivante qui
+dépasse), figure-ground (le voile qui **soustrait** le fond ; repère 17,4:1 → 2,5:1), banner blindness
+(Benway & Lane 1998, Rice ; CTR 44 % en 1994 → 0,05 %), Parkinson (Zuko, **215 formulaires** : 71 %
+contre 59 % ; autofill −75 % d'abandon ; 1-3 champs 41 %, 4-6 51 %, 7+ 31 %), connectedness (la connexion
+uniforme bat proximité et ressemblance), choice overload (Iyengar & Lepper 2000 : 24 confitures → 3 %
+achètent, 6 → 30 % ; **critique retenue** : Scheibehenne 2010, 50 études, effet ≈ 0).
+
+**2 · Outillées.** `tools/qa/audit_laws.py` — lit le HTML **et** le CSS servis, rend fautes,
+avertissements et notes, et se juge lui-même : **16/16** au banc. Trois bugs trouvés par le banc, pas par
+moi : une regex d'alpha qui lisait `18` au lieu de `.55` (tous les voiles jugés transparents), un voile de
+photo pris pour un voile de panneau, et un « aucune étape déclarée » qui passait pour un succès.
+
+**3 · Écrites.** `AMK-DESIGN-SKILLS.md` **§40** (six lois, chiffres, sources, quatre pièges) et
+`design/CRAFT-FLOOR.md` **§9** (six obligations). L'index §39 gagne la ligne de l'instrument — la règle de
+tenue de l'index veut que ce soit le même commit.
+
+**4 · Audité, corrigé.** Le portique a trouvé **2 fautes réelles** : le tiroir mobile s'ouvrait sur une page
+intacte (index + montures/femmes) et le rail des fiches n'annonçait aucune suite. Corrigé dans le gabarit
+et le constructeur, pas dans les fichiers générés :
+
+| Ce qui clochait | Correction |
+|---|---|
+| tiroir mobile sans voile | `.mnav[open]::after` — rgba .45 + blur 2 px, 180 ms, coupé par reduced-motion |
+| 3 étapes = 3 cartes | une seule surface + filets de 1 px (§05, accueil et 47 sous-pages) |
+| « Vous aimerez aussi » empilé | `.v2-rail` : carte à 78 %, amorce **22 %**, snap |
+| `a.psrc` en pastille bordée | redevenu lien de texte souligné |
+| 17 cases de filtre d'un coup | 6 formes visibles, couleurs derrière `<details>` avec son compte (11) |
+| « Tout afficher » / « Effacer » | « Voir les montures » / « See the frames » + clavier mobile |
+| 7ᵉ taille de texte (1,15 rem) | retombée sur l'échelle, plafond 6 (§5) |
+
+Deux bugs **de mes propres outils** trouvés en route : un `content:"\2013"` que le CSS servait en `"3"`
+(le dépliant affichait « COULEUR (11) 3 »), et `shot.mjs` qui comptait les blocs sous la ligne de
+flottaison — une galerie de 24 fiches annonçait **150 blocs** — et chaque phrase **deux fois**, parce que
+le site est bilingue.
+
+**5 · Vérifié.** `audit_laws.py --dir hosting/previews/dmoptic` : **0 faute · 0 avertissement**.
+`audit_delivery.py --strict` : **0 P1 · 0 P2 · 1 P3 — VERT** (le P3 est l'image d'aperçu partagée par
+plusieurs pages, connu). `test_dmoptic_page.mjs` : toutes les assertions passent. Capture sur 10 URL
+représentatives : **toutes vertes** (elles étaient rouges pour de faux le matin).

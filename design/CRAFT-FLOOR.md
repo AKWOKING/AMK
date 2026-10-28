@@ -100,3 +100,34 @@ Implemented in both generators 15 Sep as `@graph` JSON-LD:
 - Before any UI edit → this file §2.
 - Final pass → root law §13 + Addendum #3 gates C1–C14 + real Android test (night/sunlight/slow MTN).
 - Something looks "fine but generic" → §3 table + Anthropic five-trait list; change the specific default, do not soften it.
+
+## 9. The six perception laws — and the gate that holds them (28 Oct 2026)
+
+Craft floor §2 checks the built result; these six check what the eye does **before** reading. Full
+reasoning, sources and the traps the tool sprang: `AMK-DESIGN-SKILLS.md` **§40**. The short version, as
+obligations on every page we ship:
+
+1. **Closure** — a horizontal rail must leave the next card **partly visible** (8–55 % of the card; our
+   cards run at 78 % width, so 22 % shows). A rail whose cards end flush reads as a finished series.
+2. **Figure-ground** — a panel, drawer or modal opens **over a dimmed page**: scrim ≥ 0.35 alpha or a
+   real blur. A gradient over a photo is décor, not a scrim; it does not count.
+3. **Banner blindness** — nothing that carries a useful action may wear an ad's shape (bordered pill,
+   icon chip, boxed label). A source link is a **text link with an underline**.
+4. **Parkinson** — no field we could fill ourselves (`autocomplete`, sane defaults), no two buttons with
+   interchangeable labels, and on mobile the keyboard says what the field is (`enterkeyhint`,
+   `autocapitalize`, `spellcheck`).
+5. **Connectedness** — steps of one flow share **one surface** separated by hairlines, not one card each.
+   Uniform connection beats proximity.
+6. **Choice overload** — more than 7 controls visible at once in a filter panel is a decision wall: keep
+   the shortest family open, fold the long one behind a native `<details>` that **announces its count**.
+   The controls stay in the DOM, so filtering, `#fragments` and active chips keep working.
+
+The gate, run before delivery:
+
+```bash
+python3 tools/qa/audit_laws.py --self-test                        # 16/16 — the gate bites
+python3 tools/qa/audit_laws.py --dir hosting/previews/dmoptic     # 0 faute · 0 avertissement
+```
+
+It reads the **served** HTML/CSS, never the template. "Not applicable" must be said out loud — a silent
+check is not a passing check.

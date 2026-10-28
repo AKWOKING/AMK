@@ -185,7 +185,7 @@ V2_CSS = """
 .v2-door{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
 .v2-door img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#F6EBE0}
 .v2-door .v2-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px}
-.v2-door h2{margin:0;font-size:1.15rem}
+.v2-door h2{margin:0;font-size:1.05rem}  /* 28/10 : 1,15 rem etait la 7e taille de la page (plafond 6, §5) */
 .v2-door p{margin:0;color:var(--ink-2);font-size:var(--fs-sm)}
 .v2-door .v2-go{font:600 var(--fs-sm)/1 var(--f-b);color:var(--brand)}
 .v2-filters{margin-top:22px}
@@ -201,6 +201,23 @@ V2_CSS = """
 @media(prefers-reduced-motion:reduce){html.js .v2-filters-panel.is-open{animation:none}}
 .v2-toolbar .btn{min-height:48px}
 .v2-group{border:0;margin:16px 0 0;padding:0}
+/* 28/10 · choice overload : la famille repliee. Un depliant natif, aucun JavaScript de plus. */
+.v2-more{margin:16px 0 0}
+.v2-more>summary{display:inline-flex;align-items:center;gap:8px;cursor:pointer;list-style:none;
+  font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+  padding:6px 0;min-height:44px}
+.v2-more>summary::-webkit-details-marker{display:none}
+.v2-more>summary::after{content:"+";font-size:14px;line-height:1}
+.v2-more[open]>summary::after{content:"–"}
+.v2-more>summary:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
+.v2-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* 28/10 · closure : la fiche suivante depasse de 22 % — assez pour que l'oeil complete la serie,
+   assez peu pour que la fiche lue reste entiere. Le defilement est natif, avec accroche. */
+.v2-rail{grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:thin;padding-bottom:8px;margin-right:-16px;padding-right:16px}
+.v2-rail>*{scroll-snap-align:start}
+@media(min-width:780px){.v2-rail{grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;
+  padding-bottom:0;margin-right:0;padding-right:0}}
 .v2-group legend{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:0}
 .v2-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .v2-pill{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 12px;border:1px solid var(--line-strong);border-radius:999px;background:var(--card);color:var(--ink);font:600 var(--fs-sm)/1 var(--f-b);cursor:pointer}
@@ -239,6 +256,12 @@ V2_CSS = """
 .v2-steps{counter-reset:v2step;list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
 @media(min-width:760px){.v2-steps{grid-template-columns:1fr 1fr}}
 .v2-steps li{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px}
+/* 28/10 · connectedness : des cartes separees lisaient comme des sujets distincts. Une seule surface,
+   separee par des filets : la liaison dit « et ensuite ». */
+@media(min-width:760px){.v2-steps{gap:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+  .v2-steps li{background:none;border:0;border-radius:0;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+  .v2-steps li:nth-child(odd){border-left:0}
+  .v2-steps li:nth-child(-n+2){border-top:0}}
 .v2-steps .n{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.12em;color:var(--brand)}
 .v2-steps h2{margin:.5rem 0 0;font-size:var(--fs-h3);line-height:1.25}
 .v2-steps p{margin:.45rem 0 0;color:var(--ink-2);font-size:var(--fs-sm)}
@@ -276,7 +299,9 @@ FILTER_JS = """<script>/* Filtres du catalogue v2 : OU dans un groupe, ET entre 
       c.hidden=!ok; if(ok)n++;
     });
     count.textContent=n+(n>1?L(' affichées',' shown'):L(' affichée',' shown'));
-    if(show)show.textContent=L('Tout afficher','Show all');
+    /* 28/10 · Parkinson : ce bouton ne montre pas tout, il ferme le panneau et amene a la grille.
+       Le libelle dit maintenant ce qu'il fait, et cesse d'etre le jumeau d'Effacer. */
+    if(show)show.textContent=L('Voir les montures','See the frames');
     empty.hidden=(n!==0);
     boxes.forEach(function(b){var l=b.closest?b.closest('label'):null; if(l)l.classList.toggle('is-on',b.checked);});
     renderChips(st);
@@ -746,7 +771,19 @@ def main():
                     f'<label class="v2-pill"><input type="checkbox" data-group="{group_key}" '
                     f'value="{esc(slugify(label))}" data-label="{esc(label)}"> {esc(label)} '
                     f'<span class="v2-n">{n}</span></label>')
-            groups.append(f'''<fieldset class="v2-group">
+            # 28/10 · choice overload : 17 cases d'un coup, c'est la table de confitures. La famille
+            # la plus courte (la forme) reste visible ; la couleur (jusqu'a 11) passe derriere un
+            # depliant natif, avec son compte annonce. Les cases restent dans le DOM : le filtre, le
+            # fragment # et les puces actives continuent de fonctionner a l'identique.
+            if len(pills) > 7:
+                groups.append(f'''<details class="v2-more"><summary>{B(fr_g, en_g)} <span class="v2-n">({len(pills)})</span></summary>
+        <fieldset class="v2-group">
+          <legend class="v2-sr">{B(fr_g, en_g)}</legend>
+          <div class="v2-pills">{chr(10).join(pills)}</div>
+        </fieldset>
+      </details>''')
+            else:
+                groups.append(f'''<fieldset class="v2-group">
         <legend>{B(fr_g, en_g)}</legend>
         <div class="v2-pills">{chr(10).join(pills)}</div>
       </fieldset>''')
@@ -758,10 +795,10 @@ def main():
     <p class="lede">{B("Nos montures, photographiées une par une au cabinet, à essayer sur votre visage. Touchez une fiche pour la voir sous d'autres angles, ou demandez-la directement sur WhatsApp.", "Our frames, photographed one by one at the practice, to try on your face. Open a frame to see other angles, or ask for it directly on WhatsApp.")}</p>
     <form class="v2-filters" role="search">
       <div class="v2-toolbar">
-        <label class="v2-search">{B("Rechercher", "Search")}<input class="v2-q" type="search" name="q" placeholder="Rechercher une monture…" autocomplete="off"></label>
+        <label class="v2-search">{B("Rechercher", "Search")}<input class="v2-q" type="search" name="q" placeholder="Rechercher une monture…" autocomplete="off" enterkeyhint="search" autocapitalize="none" spellcheck="false"></label>
         <p class="v2-count" role="status" aria-live="polite">Nos montures</p>
         <button class="btn v2-filter-toggle" type="button" aria-expanded="false" aria-controls="filtres-{c}">{B("Filtrer", "Filter")}</button>
-        <button class="btn v2-show" type="button">{B("Tout afficher", "Show all")}</button>
+        <button class="btn v2-show" type="button">{B("Voir les montures", "See the frames")}</button>
         <button class="btn v2-reset" type="button">{B("Effacer", "Clear")}</button>
       </div>
       <div class="v2-filters-panel" id="filtres-{c}">
@@ -802,9 +839,12 @@ def main():
             sims = sims[:3]
             sim_block = ""
             if sims:
+                # 28/10 · closure : trois fiches empilees sur telephone = trois ecrans de plus, et
+                # rien ne dit qu'il y en a d'autres. Un rail qui laisse depasser la fiche suivante
+                # (78 %) dit « la serie continue » sans un mot. Grille classique des 780 px.
                 sim_block = f'''<section class="wrap" aria-labelledby="h-sims">
     <h2 id="h-sims" class="rv">{B("Vous aimerez aussi", "You may also like")}</h2>
-    <ul class="v2-grid">
+    <ul class="v2-grid v2-rail">
       {chr(10).join(mini_card(g) for g in sims)}
     </ul>
   </section>'''

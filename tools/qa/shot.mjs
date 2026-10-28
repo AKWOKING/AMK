@@ -127,8 +127,12 @@ async function audit(width, height, label, fullPage) {
       }
       return false;
     };
+    // Un tiroir fermé n'est pas un défaut de mise en page : ses liens attendent hors cadre derrière
+    // le bouton menu (details non [open], aria-hidden, inert). On ne les compte ni ici ni au contraste.
+    const inClosedPanel = el => Boolean(el.closest('details:not([open]), [aria-hidden="true"], [inert]'));
     const wide = [];
     document.querySelectorAll('body *').forEach(el => {
+      if (inClosedPanel(el)) return;
       const r = el.getBoundingClientRect();
       if (r.width === 0 || r.height === 0) return;
       if (r.right > de.clientWidth + 2 || r.left < -2) {
@@ -157,6 +161,7 @@ async function audit(width, height, label, fullPage) {
     const seen = new Set();
     document.querySelectorAll('h1,h2,h3,h4,p,li,a,button,label,span,strong,em,td,th').forEach(el => {
       if (!el.textContent || !el.textContent.trim()) return;
+      if (inClosedPanel(el)) return;
       const cs = getComputedStyle(el);
       if (cs.visibility === 'hidden' || cs.display === 'none' || parseFloat(cs.opacity) < 0.6) return;
       const r = el.getBoundingClientRect();
@@ -256,10 +261,36 @@ async function audit(width, height, label, fullPage) {
           // §3.3 : une colonne qui porte un vrai élément (carte, table, figure) n'est pas une pile de
           // texte. On mesure la pile, et le widget compte pour un : c'est la lecture du §7.
           if (el.closest('figure, table, dl, form')) return false;
+          // 28/10 · deux fausses alertes : la mesure comptait (a) les blocs SOUS la ligne de flottaison
+          // — une galerie de 24 fiches annonçait « 150 blocs » — et (b) chaque puce d'une liste répétée,
+          // alors que la loi de proximité les lit comme UNE rangée. On mesure le premier écran, et une
+          // liste de 2+ éléments vaut pour un bloc.
+          // Un composant RÉPÉTÉ (trois portes de catalogue, trois boutons d'action) est un widget,
+          // pas trois paragraphes de héro : dès que deux frères partagent tag+classe, on ne compte pas.
+          const inRepetition = (() => {
+            let n = el.parentElement;
+            while (n && n !== heroHost) {
+              const p = n.parentElement;
+              if (p) {
+                const key = n.tagName + '|' + (n.className || '').toString();
+                const sibs = Array.from(p.children).filter(c => c.tagName + '|' + (c.className || '').toString() === key);
+                if (sibs.length > 1) return true;
+              }
+              n = n.parentElement;
+            }
+            return false;
+          })();
+          if (inRepetition) return false;
+          // 28/10 · troisième fausse alerte : le site est bilingue, donc chaque libellé existe deux fois
+          // (bouton > span.fr-only). On ne compte que la feuille la plus profonde, sinon chaque phrase
+          // vaut deux blocs. Les fils d'Ariane (nav) ne sont pas de la copie de premier écran.
+          if (el !== h1 && el.closest('nav')) return false;
           const own = Array.from(el.childNodes).some(n => n.nodeType === 3 && n.textContent.trim());
+          if (own && Array.from(el.querySelectorAll('*')).some(d => Array.from(d.childNodes).some(n => n.nodeType === 3 && n.textContent.trim()))) return false;
           const cs = getComputedStyle(el);
           const rect = el.getBoundingClientRect();
-          return own && cs.display !== 'none' && cs.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
+          const onFirstScreen = rect.top < window.innerHeight && rect.bottom > 0;
+          return own && onFirstScreen && cs.display !== 'none' && cs.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
         });
         heroLeaves = leaves.length;
         const lh = parseFloat(getComputedStyle(h1).lineHeight) || 1;
