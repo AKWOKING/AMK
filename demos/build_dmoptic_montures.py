@@ -211,6 +211,13 @@ V2_CSS = """
 .v2-more[open]>summary::after{content:"–"}
 .v2-more>summary:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
 .v2-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* 28/10 · questions : la question en gras, la reponse en dessous. Pas de depliant : un moteur et un
+   assistant lisent le texte tel qu'il est servi, et une reponse repliee n'est pas une reponse citee. */
+.v2-qa{margin:14px 0 30px;padding:0}
+.v2-qa>div{padding:16px 0;border-top:1px solid var(--line)}
+.v2-qa>div:first-child{border-top:0}
+.v2-qa dt{font-weight:700;color:var(--ink);font-size:var(--fs-base);line-height:1.4}
+.v2-qa dd{margin:6px 0 0;color:var(--ink-2);font-size:var(--fs-sm);line-height:1.65;max-width:68ch}
 /* 28/10 · closure : la fiche suivante depasse de 22 % — assez pour que l'oeil complete la serie,
    assez peu pour que la fiche lue reste entiere. Le defilement est natif, avec accroche. */
 .v2-rail{grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;
@@ -383,8 +390,13 @@ def set_attr(head, attr, key, val):
     return head.replace("</head>", f'<meta {attr}="{key}" content="{esc(val)}">\n</head>', 1)
 
 
-def to_en(page_html, path, title, desc, base):
-    """Page française → page anglaise. Une seule source de vérité : le contenu n'est pas dupliqué."""
+def to_en(page_html, path, title, desc, base, ld_en=()):
+    """Page française → page anglaise. Une seule source de vérité : le contenu n'est pas dupliqué.
+
+    Sauf le balisage qui porte du TEXTE : une FAQPage française sur une page anglaise dit à un
+    moteur une chose que le visiteur ne peut pas lire. `ld_en` remplace donc ces nœuds par leur
+    version anglaise, avant la réécriture des adresses.
+    """
     fr_url, en_url = base + path, base + en_path(path)
     head, sep, body = page_html.partition("</head>")
     if not sep:
@@ -468,11 +480,43 @@ def to_en(page_html, path, title, desc, base):
     body = body.replace("Tout afficher", "Show all")
 
     # Données structurées : les adresses de page deviennent anglaises, les fichiers restent à la racine.
+    # Nœuds qui décrivent LA PAGE (et non l'entreprise) : eux seuls changent d'adresse en /en/.
+    # Sans cette liste, l'URL de l'entreprise deviendrait /en/ sur les pages anglaises.
+    PAGE_SCOPED = {"BreadcrumbList", "ListItem", "WebPage", "Service", "FAQPage",
+                   "Question", "Answer", "Product"}
+    by_type = {n.get("@type"): n for n in ld_en}
+
+    def swap_urls(node):
+        """Réécrit base/… → base/en/…, récursivement, dans un nœud de page."""
+        if isinstance(node, dict):
+            return {k: swap_urls(v) for k, v in node.items()}
+        if isinstance(node, list):
+            return [swap_urls(v) for v in node]
+        if isinstance(node, str) and node.startswith(base + "/"):
+            return base + "/en" + node[len(base):]
+        return node
+
     def ld(m):
         block = m.group(0)
-        block = re.sub(r'(")' + re.escape(base) + r'([^"]*/)"',
-                       lambda mm: '"' + base + "/en" + mm.group(2) + '"', block)
+        inner = re.search(r">(\{.*\})</script>", block, re.S)
+        if not inner:
+            return block
+        doc = json.loads(inner.group(1))
+        nodes = doc["@graph"] if "@graph" in doc else [doc]
+        out = []
+        for n in nodes:
+            typ = n.get("@type")
+            n = json.loads(json.dumps(by_type[typ])) if typ in by_type else n
+            out.append(swap_urls(n) if typ in PAGE_SCOPED else n)
+        if out != nodes:
+            doc = dict(doc, **{"@graph": out}) if "@graph" in doc else out[0]
+            block = ('<script type="application/ld+json">'
+                     + json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "</script>")
         return block
+
+    # Les données structurées vivent dans <head> : les traiter aussi dans le corps laissait le
+    # balisage anglais pointer sur les adresses françaises (28/10).
+    head = re.sub(r'<script type="application/ld\+json">.*?</script>', ld, head, flags=re.S)
     body = re.sub(r'<script type="application/ld\+json">.*?</script>', ld, body, flags=re.S)
     return head + "</head>" + body
 
@@ -541,6 +585,7 @@ class Site:
         self.paths = ["/"]
         self.noindex = []        # pages écrites en noindex,follow (26/10) : hors sitemap
         self.pairs = []          # (chemin, titre EN, description EN) — miroir /en/
+        self.ld_en = {}          # chemin → nœuds de schéma anglais (28/10)
 
     @staticmethod
     def _chrome(block):
@@ -632,7 +677,7 @@ class Site:
         return dock
 
     def page(self, path, title, desc, main_html, ld_graph=None, og_image=None, og_wh=None, extra_script="", dock_wa=None,
-             en_meta=None, indexable=True):
+             en_meta=None, indexable=True, ld_en=None):
         head = self._head(path, title, desc, ld_graph, og_image, og_wh)
         if not indexable:
             # Le miroir anglais est fabriqué à partir de ce fichier : il hérite du noindex, c'est voulu.
@@ -667,6 +712,8 @@ class Site:
         self.paths.append(path)
         if en_meta:
             self.pairs.append((path, en_meta[0], en_meta[1]))
+            if ld_en:
+                self.ld_en[path] = ld_en
         return out
 
     def crumbs(self, items):
@@ -953,6 +1000,12 @@ def main():
       <a class="btn" href="{TEL}">{B("Appeler le 656 122 239", "Call 656 122 239")}</a>
     </div>
     <p class="note">{B("Pour des verres correcteurs, apportez l'ordonnance de votre ophtalmologue. Pour des lunettes de soleil, un réglage ou une réparation, non.", "For prescription lenses, bring your ophthalmologist's prescription. For sunglasses, an adjustment or a repair, no.")}</p>
+    <h2 class="rv">{B("Ce que cet examen fait, et ce qu'il ne fait pas", "What this examination does, and what it does not")}</h2>
+    <dl class="v2-facts rv">
+      <div><dt>{B("Il mesure", "It measures")}</dt><dd>{B("ce que chaque œil voit, et la correction que vos verres devront porter. Rien ne touche l'œil.", "what each eye sees, and the correction your lenses will need. Nothing touches the eye.")}</dd></div>
+      <div><dt>{B("Il ne traite pas", "It does not treat")}</dt><dd>{B("une douleur, une maladie de l'œil, une baisse brutale de la vue : c'est l'ophtalmologue, le médecin spécialiste. On vous le dit et on vous oriente.", "pain, eye disease or a sudden loss of sight: that is for the ophthalmologist, the medical specialist. We say so and point you to the right place.")}</dd></div>
+      <div><dt>{B("Quand revenir", "When to come back")}</dt><dd>{B("repère : tous les deux ans pour un adulte sans problème particulier, chaque année pour un enfant. La fréquence qui vous concerne se décide ici.", "guide: every two years for an adult with no particular problem, every year for a child. The schedule that applies to you is decided here.")} <a href="/questions/">{B("Voir les 22 questions", "See the 22 questions")}</a></dd></div>
+    </dl>
   </section>'''
     written.append(site.page(
         "/examen-de-vue/", "Examen de vue à Bonabéri, Douala — DM OPTIQUE SARL",
@@ -1124,6 +1177,9 @@ def main():
       <a class="btn" href="{TEL}">{B("Appeler le 656 122 239", "Call 656 122 239")}</a>
     </div>
     <p class="note">{B("Une monture cassée n'est pas toujours réparable : une soudure sur certains métaux, ou une charnière intégrée, ne se refait pas. On le dit avant, pas après.", "A broken frame is not always repairable: some metal joints, or an integrated hinge, cannot be redone. We say so before, not after.")}</p>
+    <h2 class="rv">{B("Réparer ou remplacer ?", "Repair or replace?")}</h2>
+    <p class="rv">{B("Trois cas, et ils couvrent presque tout. Une vis, une plaquette, un réglage : c'est une réparation, et c'est souvent ce qui manquait. Une monture déformée ou une branche tordue : ça se redresse, tant que le métal n'a pas cassé. Une monture cassée net, ou dont la charnière est arrachée : on regarde, et on vous dit franchement si c'est fini — avant que vous payiez quoi que ce soit.", "Three cases, and they cover almost everything. A screw, a nose pad, an adjustment: that is a repair, and it is often what was missing. A bent frame or a twisted temple: it can be straightened, as long as the metal has not snapped. A frame broken clean through, or with a torn-off hinge: we look, and we tell you plainly if it is finished — before you pay anything.")}</p>
+    <p class="note">{B("Ce que vous pouvez faire vous-même : resserrer une vis avec un tournevis d'horloger. Le reste, non : une branche se tord à froid et casse, la colle ne tient pas une charnière.", "What you can do yourself: tighten a screw with a watchmaker's screwdriver. The rest, no: a temple bent cold snaps, and glue does not hold a hinge.")} <a href="/questions/">{B("Toutes les questions", "All the questions")}</a></p>
     <p class="note">{B("Besoin de verres neufs ?", "Need new lenses?")} <a href="/verres-sur-ordonnance/">{B("Verres sur ordonnance", "Prescription lenses")}</a> {B("· Envie de changer de monture ?", "· Fancy a new frame?")} <a href="/montures/">{B("Nos montures", "Our frames")}</a></p>
   </section>'''
     written.append(site.page(
@@ -1136,6 +1192,154 @@ def main():
         dock_wa=REPAIR_WA,
         en_meta=("Repairs and adjustments in Bonaberi, Douala — DM OPTIQUE SARL",
                  "Broken frame, lost screw, bent temples, worn nose pads: bring it to the practice in Bonaberi, or send a photo on WhatsApp before travelling.")))
+
+    # ── Les questions (28/10) ───────────────────────────────────────────────────
+    # Pourquoi cette page : les gens ne tapent pas « opticien Bonabéri », ils tapent une QUESTION.
+    # Vingt-deux questions réelles, chacune avec sa réponse en première phrase, pour qu'une phrase
+    # sorte de la page et tienne debout toute seule (c'est ce qu'un moteur cite, et ce qu'un assistant
+    # extrait). Rien d'inventé : ni durée, ni prix, ni marque, ni symptôme. Deux réponses DISENT ce que
+    # le cabinet ne fait pas — c'est le signal de confiance le plus rare dans ce marché.
+    QA = [
+        ("L'examen de la vue", "The eye examination", [
+            ("Faut-il une ordonnance pour faire un examen de la vue ?",
+             "Do I need a prescription to have an eye examination?",
+             "Non. L'examen se fait au cabinet, sans ordonnance, et c'est lui qui détermine la correction. L'ordonnance de votre ophtalmologue n'est nécessaire que pour faire tailler les verres.",
+             "No. The examination is done at the practice, without a prescription, and it is the examination that works out the correction. Your ophthalmologist's prescription is only needed to have the lenses made."),
+            ("Combien de temps prend un examen de la vue ?",
+             "How long does an eye examination take?",
+             "Nous ne publions pas de durée : elle dépend de ce qu'il y a à mesurer. Vous demandez sur WhatsApp, la réponse vous dit combien de temps prévoir.",
+             "We do not publish a duration: it depends on what has to be measured. Ask on WhatsApp, and the answer tells you how much time to allow."),
+            ("Quand faut-il refaire contrôler sa vue ?",
+             "How often should I have my eyes checked?",
+             "Comme repère : tous les deux ans pour un adulte sans problème particulier, chaque année pour un enfant et pour une personne diabétique. Ce sont les intervalles publiés par le Collège des optométristes britannique ; la fréquence qui vous concerne se décide au cabinet, pas sur cette page.",
+             "As a guide: every two years for an adult with no particular problem, every year for a child and for anyone with diabetes. These are the intervals published by the College of Optometrists; the schedule that applies to you is decided at the practice, not on this page."),
+            ("L'examen touche-t-il l'œil ?",
+             "Does the examination touch the eye?",
+             "Non. Ce qui est décrit ici — les questions, les acuités, la réfraction — se mesure sans rien poser sur l'œil. Si un examen plus poussé vous semble nécessaire, on vous le dit et on vous oriente.",
+             "No. What is described here — the questions, visual acuity, refraction — is measured without putting anything on the eye. If a more thorough examination seems necessary, we say so and point you to the right place."),
+            ("L'examen détecte-t-il les maladies de l'œil ?",
+             "Does the examination detect eye disease?",
+             "Non, et c'est important à savoir. Ici, on mesure la vue et on détermine la correction : la loi camerounaise dit que l'opticien-optométriste conçoit l'équipement optique qui compense une anomalie de la vision. Une douleur, une maladie de l'œil ou une baisse brutale : c'est l'ophtalmologue, le médecin spécialiste.",
+             "No, and that matters. Here we measure sight and work out the correction: Cameroonian law says the optometrist optician designs the optical equipment that compensates for a vision defect. Pain, eye disease or a sudden loss of sight: that is for the ophthalmologist, the medical specialist."),
+            ("Faut-il prendre rendez-vous ?",
+             "Do I need an appointment?",
+             "Écrivez sur WhatsApp avant de venir : on vous dit s'il faut un rendez-vous, et quand passer. L'examen de vue se fait le matin, de 8h30 à 13h00.",
+             "Write on WhatsApp before coming: we tell you whether an appointment is needed, and when to come. Eye examinations are in the morning, from 8:30 to 13:00."),
+        ]),
+        ("Les montures et les verres", "Frames and lenses", [
+            ("Comment choisir une monture qui va à mon visage ?",
+             "How do I choose a frame that suits my face?",
+             "On essaie. La forme du visage guide la forme de la monture, la largeur décide de l'appui sur le nez et derrière les oreilles, et une photo ne dit ni l'un ni l'autre. C'est pour ça que le choix se fait au cabinet, devant un miroir.",
+             "You try them on. Face shape guides the shape of the frame, width decides how it sits on the nose and behind the ears, and a photo tells you neither. That is why the choice is made at the practice, in front of a mirror."),
+            ("Mes verres correcteurs peuvent-ils aller dans cette monture ?",
+             "Can my prescription lenses go into this frame?",
+             "Presque toujours, mais la taille du cercle compte : une monture trop grande décentre le verre, et la correction n'est plus la même au centre. On regarde la monture avec votre ordonnance avant de commander.",
+             "Almost always, but the size of the rim matters: a frame that is too big decentres the lens, and the correction is no longer the same at the centre. We look at the frame together with your prescription before ordering."),
+            ("Les lunettes de soleil peuvent-elles être à ma vue ?",
+             "Can sunglasses be made to my prescription?",
+             "Oui. Le verre teinté se monte à votre correction, pour conduire ou travailler dehors. Dites ce que vous faites au soleil : la teinte et la catégorie du verre se choisissent là-dessus.",
+             "Yes. Tinted lenses can be made to your prescription, for driving or working outdoors. Tell us what you do in the sun: the tint and the lens category are chosen from that."),
+            ("Adaptez-vous des lentilles de contact ?",
+             "Do you fit contact lenses?",
+             "Oui, avec un suivi. Apportez votre ordonnance de lentilles si vous en avez une. Ce n'est pas la solution de tout le monde : on vous dit au cabinet si votre correction s'y prête.",
+             "Yes, with follow-up. Bring your contact lens prescription if you have one. It is not right for everyone: we tell you at the practice whether your correction suits it."),
+            ("Quelle est la différence entre un opticien, un optométriste et un ophtalmologue ?",
+             "What is the difference between an optician, an optometrist and an ophthalmologist?",
+             "L'ophtalmologue est le médecin spécialiste de l'œil : il traite les maladies et opère. L'opticien-optométriste mesure la vue et conçoit l'équipement qui la corrige — c'est le titre que la loi camerounaise donne au diplômé qui a les deux formations, et celui de M. Domche Noumbi, inscrit à l'ONOC sous le numéro 021/2016.",
+             "The ophthalmologist is the medical specialist of the eye: they treat disease and operate. The optometrist optician measures sight and designs the equipment that corrects it — that is the title Cameroonian law gives to the graduate with both trainings, and the one held by Mr Domche Noumbi, registered with the ONOC under number 021/2016."),
+            ("Est-ce que vous vendez des marques ?",
+             "Do you sell brands?",
+             "Nous ne publions aucune liste de marques : une marque annoncée est une marque qu'il faut avoir. Demandez celle que vous cherchez sur WhatsApp, la réponse vous dit si elle est en boutique.",
+             "We publish no list of brands: an announced brand is a brand you have to stock. Ask about the one you are looking for on WhatsApp, and the answer tells you whether it is in store."),
+        ]),
+        ("La réparation", "Repairs", [
+            ("Ma monture est cassée : est-ce réparable ?",
+             "My frame is broken: can it be repaired?",
+             "Souvent, mais pas toujours : certaines soudures et certaines charnières intégrées ne se refont pas. Envoyez une photo sur WhatsApp : la réponse vous dit si c'est réparable, et si le déplacement en vaut la peine.",
+             "Often, but not always: some metal joints and some integrated hinges cannot be redone. Send a photo on WhatsApp: the answer tells you whether it can be repaired, and whether the trip is worth it."),
+            ("Faut-il réparer ou remplacer ?",
+             "Should I repair or replace?",
+             "Trois cas. La vis, la plaquette, le réglage : c'est une réparation, et elle règle la plupart des problèmes. La monture déformée ou la branche tordue : ça se redresse, tant que le métal n'a pas cassé. La monture cassée net, ou dont la charnière est arrachée : on regarde, et on vous dit franchement si c'est fini.",
+             "Three cases. A screw, a nose pad, an adjustment: that is a repair, and it fixes most problems. A bent frame or twisted temple: it can be straightened, as long as the metal has not snapped. A frame broken clean through, or with a torn-out hinge: we look at it and tell you plainly if it is finished."),
+            ("Puis-je la réparer moi-même ?",
+             "Can I repair it myself?",
+             "Une vis se resserre avec un tournevis d'horloger, et c'est utile à savoir. Le reste, non : une branche se tord à froid et casse, la colle ne tient pas sur une charnière, et une monture forcée se déforme sans revenir. C'est là que le passage au cabinet évite d'aggraver.",
+             "A screw can be tightened with a watchmaker's screwdriver, and that is worth knowing. The rest, no: a temple bent cold snaps, glue does not hold a hinge, and a frame forced back goes out of shape for good. That is where coming to the practice stops it getting worse."),
+        ]),
+        ("Le prix, l'assurance, le paiement", "Price, insurance, payment", [
+            ("Combien coûte une paire de lunettes ?",
+             "How much do a pair of glasses cost?",
+             "Il n'y a pas de prix unique, et nous n'en publions pas : un verre correcteur ne coûte pas la même chose selon la correction, et une monture selon le modèle. Le prix se demande — sur WhatsApp, avec votre ordonnance ou la monture qui vous plaît, ou au cabinet.",
+             "There is no single price, and we do not publish one: a corrective lens does not cost the same depending on the correction, and a frame depending on the model. You ask for the price — on WhatsApp, with your prescription or the frame you like, or at the practice."),
+            ("Acceptez-vous mon assurance ?",
+             "Do you accept my insurance?",
+             "Nous travaillons avec Belife Insurance, Willis Towers Watson et Groupe Activa, et le dossier de prise en charge se monte avec vous. Ce qui est couvert dépend de votre police, pas de nous : apportez votre carte d'assuré et votre ordonnance.",
+             "We work with Belife Insurance, Willis Towers Watson and Groupe Activa, and the claim file is put together with you. What is covered depends on your policy, not on us: bring your insurance card and your prescription."),
+            ("Et si je n'ai pas d'assurance ?",
+             "What if I have no insurance?",
+             "Vous payez au cabinet, comme tout le monde : espèces, Mobile Money, ou en plusieurs fois. L'absence d'assurance ne change ni l'examen ni le conseil.",
+             "You pay at the practice, like everyone else: cash, Mobile Money, or in instalments. Having no insurance changes neither the examination nor the advice."),
+            ("Peut-on payer en plusieurs fois ?",
+             "Can I pay in instalments?",
+             "Oui, le paiement en plusieurs fois est possible, et la livraison aussi. Les modalités se voient au cabinet, sur le devis, avant la commande.",
+             "Yes, payment in instalments is possible, and so is delivery. The terms are agreed at the practice, on the quote, before the order."),
+        ]),
+        ("Venir au cabinet", "Coming to the practice", [
+            ("Où se trouve le cabinet, exactement ?",
+             "Where exactly is the practice?",
+             "À Bonabéri, quartier Ndobo Mayor, immeuble West Hotel, 1er étage, dernière porte à droite. Le repère est l'enseigne « Consultation » au-dessus de l'entrée.",
+             "In Bonaberi, Ndobo Mayor district, West Hotel building, first floor, last door on the right. The landmark is the “Consultation” sign above the entrance."),
+            ("Quels sont les horaires ?",
+             "What are the opening hours?",
+             "Lundi – Samedi. L'examen de vue se fait de 8h30 à 13h00 ; pour les montures, les verres et la réparation, le cabinet est ouvert de 8h30 à 17h30.",
+             "Monday – Saturday. Eye examinations run from 8:30 to 13:00; for frames, lenses and repairs the practice is open from 8:30 to 17:30."),
+            ("Comment prendre rendez-vous ?",
+             "How do I book?",
+             "Un message sur WhatsApp, avec ce dont vous avez besoin : vue qui a changé, ordonnance à monter, monture à réparer. Le message part déjà écrit, vous pouvez le modifier avant de l'envoyer. Le téléphone reste possible : 656 122 239.",
+             "One WhatsApp message, with what you need: a change in your sight, a prescription to fill, a frame to repair. The message is already written, and you can edit it before sending. The phone still works: 656 122 239."),
+        ]),
+    ]
+
+    def qa_html():
+        parts = []
+        for fr_theme, en_theme, items in QA:
+            parts.append(f'<h2 class="rv">{B(fr_theme, en_theme)}</h2><dl class="v2-qa">')
+            for q_fr, q_en, a_fr, a_en in items:
+                parts.append(f'<div class="rv"><dt>{B(q_fr, q_en)}</dt>'
+                             f'<dd>{B(a_fr, a_en)}</dd></div>')
+            parts.append("</dl>")
+        return chr(10).join(parts)
+
+    qa_ld = {"@type": "FAQPage", "@id": site.abs("/questions/") + "#faq",
+             "mainEntity": [{"@type": "Question", "name": q_fr,
+                             "acceptedAnswer": {"@type": "Answer", "text": a_fr}}
+                            for _, _, items in QA for q_fr, _, a_fr, _ in items]}
+    n_qa = len(qa_ld["mainEntity"])
+    # Le miroir anglais porte le MÊME schéma, dans la langue de sa page : sans ça, /en/questions/
+    # déclare 22 questions françaises, et le texte balisé n'est pas celui que le visiteur lit.
+    qa_ld_en = {"@type": "FAQPage", "@id": site.abs("/questions/") + "#faq",
+                "mainEntity": [{"@type": "Question", "name": q_en,
+                                "acceptedAnswer": {"@type": "Answer", "text": a_en}}
+                               for _, _, items in QA for _, q_en, _, a_en in items]}
+
+    questions_main = f'''<section class="wrap">
+    {site.crumbs([(B("Accueil", "Home"), "/"), (B("Questions", "Questions"), None)])}
+    <h1 class="rv">{B("Les questions qu'on nous pose au cabinet", "The questions we are asked at the practice")}</h1>
+    <p class="lede rv">{B("Vingt-deux questions, et pour chacune la réponse en première phrase. Si la vôtre n'y est pas, écrivez sur WhatsApp : c'est souvent plus rapide qu'un moteur de recherche.", "Twenty-two questions, each answered in its first sentence. If yours is not here, write on WhatsApp: that is often faster than a search engine.")}</p>
+    {qa_html()}
+    <div class="actions rv">
+      {wa_btn(VISIT_WA[0], VISIT_WA[1], "Poser ma question sur WhatsApp", "Ask my question on WhatsApp")}
+      <a class="btn" href="{TEL}">{B("Appeler le 656 122 239", "Call 656 122 239")}</a>
+    </div>
+    <p class="note">{B("Ce que cette page ne dit pas : ni prix, ni délai, ni marque. Non par discrétion, mais parce qu'aucun des trois ne se résume honnêtement en une phrase valable pour tout le monde.", "What this page does not say: no prices, no lead times, no brands. Not out of discretion, but because none of the three can honestly be summed up in one sentence that holds for everyone.")}</p>
+  </section>'''
+    written.append(site.page(
+        "/questions/", "Questions sur l'examen de vue, les montures et la r\u00e9paration \u2014 DM OPTIQUE SARL",
+        "Vingt-deux questions pos\u00e9es au cabinet DM OPTIQUE SARL \u00e0 Bonab\u00e9ri (Douala) : ordonnance, dur\u00e9e, r\u00e9paration, assurances, paiement, adresse.",
+        questions_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Questions", "/questions/")]), qa_ld],
+        dock_wa=VISIT_WA, ld_en=[qa_ld_en],
+        en_meta=("Questions about eye examinations, frames and repairs \u2014 DM OPTIQUE SARL",
+                 "Twenty-two questions asked at the DM OPTIQUE SARL practice in Bonaberi (Douala): prescription, duration, repairs, insurance, payment, address.")))
 
     # ── Page 404 + en-têtes hôte (préparation Cloudflare, F7) ───────────────────
     notfound_main = f'''<section class="wrap">
@@ -1182,7 +1386,8 @@ def main():
         page_html = fr_file.read_text(encoding="utf-8")
         target = OUTDIR / en_path(path).strip("/") / "index.html"
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(to_en(page_html, path, en_title, en_desc, site.base), encoding="utf-8")
+        target.write_text(to_en(page_html, path, en_title, en_desc, site.base,
+                                site.ld_en.get(path, ())), encoding="utf-8")
         en_pages.append((en_path(path), en_title))
     if site.base:
         print(f"  miroir /en/ : {len(site.pairs)} pages")
@@ -1204,6 +1409,8 @@ def main():
         "/reparation-et-entretien/": ("Réparation et entretien — vis, plaquettes, branches, réglage", "Repairs and adjustments — screws, nose pads, temples, fitting"),
         "/le-cabinet/": ("Le cabinet — l'équipement et l'adresse", "The practice — equipment and address"),
         "/contact/": ("Contact — adresse, horaires, WhatsApp", "Contact — address, hours, WhatsApp"),
+        "/questions/": ("Questions — 22 réponses sur l'examen, les montures, la réparation, l'assurance et le rendez-vous",
+                        "Questions — 22 answers on the examination, frames, repairs, insurance and booking"),
     }
     llms = ["# DM OPTIQUE SARL", "",
             "> Cabinet d'optique médicale à Bonabéri, Douala (Cameroun), inscrit à l'ONOC. Examen de la vue, verres sur ordonnance, montures femme/homme/enfant, réglage et réparation. Le premier contact passe par WhatsApp : le message arrive déjà écrit.",

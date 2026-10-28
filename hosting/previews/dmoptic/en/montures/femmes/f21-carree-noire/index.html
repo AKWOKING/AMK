@@ -467,6 +467,13 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 .v2-more[open]>summary::after{content:"–"}
 .v2-more>summary:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
 .v2-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* 28/10 · questions : la question en gras, la reponse en dessous. Pas de depliant : un moteur et un
+   assistant lisent le texte tel qu'il est servi, et une reponse repliee n'est pas une reponse citee. */
+.v2-qa{margin:14px 0 30px;padding:0}
+.v2-qa>div{padding:16px 0;border-top:1px solid var(--line)}
+.v2-qa>div:first-child{border-top:0}
+.v2-qa dt{font-weight:700;color:var(--ink);font-size:var(--fs-base);line-height:1.4}
+.v2-qa dd{margin:6px 0 0;color:var(--ink-2);font-size:var(--fs-sm);line-height:1.65;max-width:68ch}
 /* 28/10 · closure : la fiche suivante depasse de 22 % — assez pour que l'oeil complete la serie,
    assez peu pour que la fiche lue reste entiere. Le defilement est natif, avec accroche. */
 .v2-rail{grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;
@@ -524,7 +531,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 .v2-steps h2{margin:.5rem 0 0;font-size:var(--fs-h3);line-height:1.25}
 .v2-steps p{margin:.45rem 0 0;color:var(--ink-2);font-size:var(--fs-sm)}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://dmoptiquesarl.com/"}, {"@type": "ListItem", "position": 2, "name": "Montures", "item": "https://dmoptiquesarl.com/montures/"}, {"@type": "ListItem", "position": 3, "name": "Femmes", "item": "https://dmoptiquesarl.com/montures/femmes/"}, {"@type": "ListItem", "position": 4, "name": "F21 · Carrée noire", "item": "https://dmoptiquesarl.com/montures/femmes/f21-carree-noire/"}]}, {"@type": "Product", "name": "F21 · Carrée noire", "url": "https://dmoptiquesarl.com/montures/femmes/f21-carree-noire/", "image": ["https://dmoptiquesarl.com/montures/monture-f21.jpg"], "description": "Femme — forme carrée, noire. À essayer au cabinet. Demandez-la sur WhatsApp au 656 122 239 — référence F21.", "sku": "F21", "category": "Monture de vue"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://dmoptiquesarl.com/en/"},{"@type":"ListItem","position":2,"name":"Montures","item":"https://dmoptiquesarl.com/en/montures/"},{"@type":"ListItem","position":3,"name":"Femmes","item":"https://dmoptiquesarl.com/en/montures/femmes/"},{"@type":"ListItem","position":4,"name":"F21 · Carrée noire","item":"https://dmoptiquesarl.com/en/montures/femmes/f21-carree-noire/"}]},{"@type":"Product","name":"F21 · Carrée noire","url":"https://dmoptiquesarl.com/en/montures/femmes/f21-carree-noire/","image":["https://dmoptiquesarl.com/en/montures/monture-f21.jpg"],"description":"Femme — forme carrée, noire. À essayer au cabinet. Demandez-la sur WhatsApp au 656 122 239 — référence F21.","sku":"F21","category":"Monture de vue"}]}</script>
 <meta name="robots" content="noindex,follow">
 <link rel="alternate" hreflang="fr" href="https://dmoptiquesarl.com/montures/femmes/f21-carree-noire/">
 <link rel="alternate" hreflang="en" href="https://dmoptiquesarl.com/en/montures/femmes/f21-carree-noire/">
@@ -544,7 +551,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       <a href="/en/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a>
       <a href="/en/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a>
       <a href="/en/le-cabinet/"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a>
-      <a href="/en/#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
+      <a href="/en/questions/"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
       <a href="/en/contact/"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a>
     </nav>
     <div class="langbox" role="group" aria-label="Langue / Language">
@@ -557,7 +564,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         <a href="/en/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a>
       <a href="/en/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a>
       <a href="/en/le-cabinet/"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a>
-      <a href="/en/#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
+      <a href="/en/questions/"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
       <a href="/en/contact/"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a>
       </nav>
     </details>

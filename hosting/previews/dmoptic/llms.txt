@@ -15,6 +15,7 @@
 - [Contact — adresse, horaires, WhatsApp](https://dmoptiquesarl.com/contact/) — Contact — address, hours, WhatsApp
 - [Verres sur ordonnance — ordonnance, monture, montage, ajustement](https://dmoptiquesarl.com/verres-sur-ordonnance/) — Prescription lenses — prescription, frame, fitting, adjustment
 - [Réparation et entretien — vis, plaquettes, branches, réglage](https://dmoptiquesarl.com/reparation-et-entretien/) — Repairs and adjustments — screws, nose pads, temples, fitting
+- [Questions — 22 réponses sur l'examen, les montures, la réparation, l'assurance et le rendez-vous](https://dmoptiquesarl.com/questions/) — Questions — 22 answers on the examination, frames, repairs, insurance and booking
 
 ## Fiches des montures
 Chaque monture photographiée au cabinet a sa page ; chaque page existe en français et en anglais.
@@ -78,7 +79,7 @@ Mirror of the French pages, for agents that read English. Each page declares its
 - [The DM OPTIQUE SARL practice in Bonaberi, Douala](https://dmoptiquesarl.com/en/le-cabinet/)
 - [All our frames in Bonaberi — DM OPTIQUE SARL](https://dmoptiquesarl.com/en/montures/)
 
-### Frame pages (45)
+### Frame pages (46)
 
 - [Children frames in Bonaberi — DM OPTIQUE SARL](https://dmoptiquesarl.com/en/montures/enfants/)
 - [E07 · Oval, black and red — DM OPTIQUE SARL](https://dmoptiquesarl.com/en/montures/enfants/e07-ovale-noire-et-rouge/)
@@ -123,5 +124,6 @@ Mirror of the French pages, for agents that read English. Each page declares its
 - [H05 · Double bridge, square, black and gold — DM OPTIQUE SARL](https://dmoptiquesarl.com/en/montures/hommes/h05-double-pont-carre-noir-et-dore/)
 - [H07 · Double bridge, grey — DM OPTIQUE SARL](https://dmoptiquesarl.com/en/montures/hommes/h07-double-pont-gris/)
 - [H08 · Double bridge aviator, black and gold — DM OPTIQUE SARL](https://dmoptiquesarl.com/en/montures/hommes/h08-double-pont-aviateur-noir-et-dore/)
+- [Questions about eye examinations, frames and repairs — DM OPTIQUE SARL](https://dmoptiquesarl.com/en/questions/)
 - [Repairs and adjustments in Bonaberi, Douala — DM OPTIQUE SARL](https://dmoptiquesarl.com/en/reparation-et-entretien/)
 - [Prescription lenses in Bonaberi, Douala — DM OPTIQUE SARL](https://dmoptiquesarl.com/en/verres-sur-ordonnance/)

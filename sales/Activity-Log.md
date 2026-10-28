@@ -7553,3 +7553,50 @@ or update workflow … without `workflows` permission »*, et l'API répond 403.
 l'arbre de travail, non commité pour ne pas bloquer les prochains envois. Le site se publie normalement
 sans lui ; il ne prévient simplement pas Bing. À débloquer : permission `workflows` sur l'application
 GitHub, ou copie à la main.
+
+## 28 octobre 2026 · tour 226 — vingt-deux questions, et le schéma qui doit dire la même chose
+
+**Ce qui est parti.** Une page neuve, `/questions/`, et son miroir `/en/questions/`. Vingt-deux
+questions posées au cabinet, ramenées des pages existantes et des 34 façons de chercher relevées au
+tour 225, rangées en cinq thèmes (l'examen, les montures et les verres, la réparation, le prix et
+l'assurance, venir au cabinet). Chaque réponse commence par l'information. Aucune n'est repliée dans un
+accordéon : **une réponse fermée n'est pas citée**. La surface indexée passe de 10 à 11 URL françaises,
+22 avec les miroirs.
+
+**Trois corrections trouvées en vérifiant, pas en écrivant.**
+1. **Le `FAQPage` de l'accueil faisait doublon.** Six questions sur l'accueil, vingt-deux sur la page
+   neuve, deux balisages qui finissent par se contredire et deux pages qui se cannibalisent. L'accueil
+   garde trois réponses courtes et le lien ; le `FAQPage` vit à un seul endroit, par langue.
+2. **Le miroir anglais déclarait la FAQ française.** `to_en()` réécrivait les adresses du JSON-LD, mais
+   les données structurées vivent dans `<head>` et la réécriture ne passait que sur `<body>` : **toutes**
+   les pages anglaises pointaient donc sur les adresses françaises, depuis des semaines. Corrigé, avec
+   une liste explicite des nœuds qui décrivent la page (fil d'Ariane, `Service`, `FAQPage`, `Product`), sans elle, l'adresse de l'entreprise devenait `/en/` sur les pages anglaises.
+3. **Le balisage n'était pas vérifié contre le texte.** Ajout de `check_questions` dans
+   `tools/qa/audit_seo_local.py` : chaque question et chaque réponse du schéma doit se retrouver
+   **mot pour mot** dans le texte visible, et aucune question ne doit être reposée ailleurs. 44 paires
+   balisées, 22 distinctes, miroirs FR/EN comptés ensemble : zéro écart.
+
+**Deux pièges, notés pour ne pas les revivre.** Un f-string Python 3.11 refuse `\uXXXX` dans une
+expression : les accents s'écrivent en clair. Et le HTML écrit par Python échappe les apostrophes en
+`&#x27;`, ce qui faisait « différer » dix-neuf réponses d'un schéma identique : on décode avant de
+comparer.
+
+**Contenu, et ce qu'il refuse de dire.** L'ordonnance (non, l'examen la détermine) · la durée (« nous
+ne publions pas de durée ») · la **fréquence des contrôles** (deux ans adulte sain, un an enfant ou
+personne diabétique, attribuée au *College of Optometrists* et renvoyée au cabinet) · la différence
+opticien / optométriste / ophtalmologue (titre légal, inscription ONOC **021/2016**) · « l'examen ne
+détecte pas les maladies de l'œil » (renvoi à l'ophtalmologue) · réparer ou remplacer en trois cas ·
+assurances (Belife, Willis Towers Watson, Groupe Activa, « selon votre police »), paiement, livraison ·
+adresse exacte et comment prendre rendez-vous. Toujours absents : prix, marque, délai chiffré, avis,
+symptôme.
+
+**Portes.** `audit_seo_local --strict` 0 faute / 0 avertissement (10 vérifications désormais, banc
+15/15) · `audit_seo` 103 pages, 0 problème hreflang sur 51 paires · `audit_delivery --strict` 0 P1 /
+0 P2 / 1 P3 (l'image d'aperçu partagée, connue) · `audit_laws` 0 / 0 · `audit_aeo` 0 / 0 ·
+`audit_a11y --strict` 0 / 0 sur les deux pages · `test_dmoptic_page.mjs` **71 verts, 0 échec** (dont
+les nouveaux contrôles de la page) · `shot.py` vert sur `/questions/`, `/en/questions/` et l'accueil.
+`llms.txt` nomme la page.
+
+**Ce que ça ne fait pas.** Ça ne touche ni la fiche Google, ni les avis, ni la proximité (≈ 55 % du
+poids local). Aucune position n'est promise. Restent ouverts : l'urgence (« cassé aujourd'hui »,
+« ouvert maintenant »), l'avant/après en photos, et « près de moi ».

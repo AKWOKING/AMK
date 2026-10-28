@@ -466,6 +466,13 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 .v2-more[open]>summary::after{content:"–"}
 .v2-more>summary:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
 .v2-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* 28/10 · questions : la question en gras, la reponse en dessous. Pas de depliant : un moteur et un
+   assistant lisent le texte tel qu'il est servi, et une reponse repliee n'est pas une reponse citee. */
+.v2-qa{margin:14px 0 30px;padding:0}
+.v2-qa>div{padding:16px 0;border-top:1px solid var(--line)}
+.v2-qa>div:first-child{border-top:0}
+.v2-qa dt{font-weight:700;color:var(--ink);font-size:var(--fs-base);line-height:1.4}
+.v2-qa dd{margin:6px 0 0;color:var(--ink-2);font-size:var(--fs-sm);line-height:1.65;max-width:68ch}
 /* 28/10 · closure : la fiche suivante depasse de 22 % — assez pour que l'oeil complete la serie,
    assez peu pour que la fiche lue reste entiere. Le defilement est natif, avec accroche. */
 .v2-rail{grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;
@@ -523,7 +530,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 .v2-steps h2{margin:.5rem 0 0;font-size:var(--fs-h3);line-height:1.25}
 .v2-steps p{margin:.45rem 0 0;color:var(--ink-2);font-size:var(--fs-sm)}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://dmoptiquesarl.com/"}, {"@type": "ListItem", "position": 2, "name": "Réparation et entretien", "item": "https://dmoptiquesarl.com/reparation-et-entretien/"}]}, {"@type": "Service", "@id": "https://dmoptiquesarl.com/reparation-et-entretien/#service", "name": "Réparation et entretien de lunettes", "serviceType": "Réparation, réglage et entretien de montures", "description": "Réparation, réglage et entretien de montures au cabinet, à Bonabéri (Douala) : vis, plaquettes, branches, charnières, monture déformée.", "url": "https://dmoptiquesarl.com/reparation-et-entretien/", "provider": {"@id": "https://dmoptiquesarl.com/#dmoptic"}, "areaServed": [{"@type": "City", "name": "Douala"}, {"@type": "Place", "name": "Bonabéri, Ndobo Mayor"}], "availableLanguage": ["fr", "en"]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://dmoptiquesarl.com/en/"},{"@type":"ListItem","position":2,"name":"Réparation et entretien","item":"https://dmoptiquesarl.com/en/reparation-et-entretien/"}]},{"@type":"Service","@id":"https://dmoptiquesarl.com/en/reparation-et-entretien/#service","name":"Réparation et entretien de lunettes","serviceType":"Réparation, réglage et entretien de montures","description":"Réparation, réglage et entretien de montures au cabinet, à Bonabéri (Douala) : vis, plaquettes, branches, charnières, monture déformée.","url":"https://dmoptiquesarl.com/en/reparation-et-entretien/","provider":{"@id":"https://dmoptiquesarl.com/en/#dmoptic"},"areaServed":[{"@type":"City","name":"Douala"},{"@type":"Place","name":"Bonabéri, Ndobo Mayor"}],"availableLanguage":["fr","en"]}]}</script>
 <link rel="alternate" hreflang="fr" href="https://dmoptiquesarl.com/reparation-et-entretien/">
 <link rel="alternate" hreflang="en" href="https://dmoptiquesarl.com/en/reparation-et-entretien/">
 <link rel="alternate" hreflang="x-default" href="https://dmoptiquesarl.com/reparation-et-entretien/">
@@ -542,7 +549,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       <a href="/en/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a>
       <a href="/en/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a>
       <a href="/en/le-cabinet/"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a>
-      <a href="/en/#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
+      <a href="/en/questions/"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
       <a href="/en/contact/"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a>
     </nav>
     <div class="langbox" role="group" aria-label="Langue / Language">
@@ -555,7 +562,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         <a href="/en/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a>
       <a href="/en/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a>
       <a href="/en/le-cabinet/"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a>
-      <a href="/en/#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
+      <a href="/en/questions/"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
       <a href="/en/contact/"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a>
       </nav>
     </details>
@@ -587,6 +594,9 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       <a class="btn" href="tel:+237656122239"><span class="fr-only" lang="fr">Appeler le 656 122 239</span><span class="en-only" lang="en">Call 656 122 239</span></a>
     </div>
     <p class="note"><span class="fr-only" lang="fr">Une monture cassée n&#x27;est pas toujours réparable : une soudure sur certains métaux, ou une charnière intégrée, ne se refait pas. On le dit avant, pas après.</span><span class="en-only" lang="en">A broken frame is not always repairable: some metal joints, or an integrated hinge, cannot be redone. We say so before, not after.</span></p>
+    <h2 class="rv"><span class="fr-only" lang="fr">Réparer ou remplacer ?</span><span class="en-only" lang="en">Repair or replace?</span></h2>
+    <p class="rv"><span class="fr-only" lang="fr">Trois cas, et ils couvrent presque tout. Une vis, une plaquette, un réglage : c&#x27;est une réparation, et c&#x27;est souvent ce qui manquait. Une monture déformée ou une branche tordue : ça se redresse, tant que le métal n&#x27;a pas cassé. Une monture cassée net, ou dont la charnière est arrachée : on regarde, et on vous dit franchement si c&#x27;est fini — avant que vous payiez quoi que ce soit.</span><span class="en-only" lang="en">Three cases, and they cover almost everything. A screw, a nose pad, an adjustment: that is a repair, and it is often what was missing. A bent frame or a twisted temple: it can be straightened, as long as the metal has not snapped. A frame broken clean through, or with a torn-off hinge: we look, and we tell you plainly if it is finished — before you pay anything.</span></p>
+    <p class="note"><span class="fr-only" lang="fr">Ce que vous pouvez faire vous-même : resserrer une vis avec un tournevis d&#x27;horloger. Le reste, non : une branche se tord à froid et casse, la colle ne tient pas une charnière.</span><span class="en-only" lang="en">What you can do yourself: tighten a screw with a watchmaker&#x27;s screwdriver. The rest, no: a temple bent cold snaps, and glue does not hold a hinge.</span> <a href="/en/questions/"><span class="fr-only" lang="fr">Toutes les questions</span><span class="en-only" lang="en">All the questions</span></a></p>
     <p class="note"><span class="fr-only" lang="fr">Besoin de verres neufs ?</span><span class="en-only" lang="en">Need new lenses?</span> <a href="/en/verres-sur-ordonnance/"><span class="fr-only" lang="fr">Verres sur ordonnance</span><span class="en-only" lang="en">Prescription lenses</span></a> <span class="fr-only" lang="fr">· Envie de changer de monture ?</span><span class="en-only" lang="en">· Fancy a new frame?</span> <a href="/en/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a></p>
   </section>
 </main>

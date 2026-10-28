@@ -150,25 +150,79 @@ const faqBlock = faqStart >= 0 ? markup.slice(faqStart, markup.indexOf("</sectio
 const details = [...faqBlock.matchAll(/<details>[\s\S]*?<\/details>/g)].map((m) => m[0]);
 const summaries = details.map((d) => (d.match(/<summary[\s>]/g) || []).length);
 ok(`les ${details.length} accordéons ont UN seul <summary> chacun (§20.11)`,
-   details.length === 6 && summaries.every((n) => n === 1), "summary par bloc : " + summaries.join(", "));
+   details.length === 3 && summaries.every((n) => n === 1), "summary par bloc : " + summaries.join(", "));
 ok("chaque <summary> porte ses DEUX langues à l'intérieur (jamais la classe de langue sur lui)",
    details.every((d) => {
      const s = (d.match(/<summary>[\s\S]*?<\/summary>/) || [""])[0];
      return s.includes("fr-only") && s.includes("en-only");
    }));
 
-const faq = ld["@graph"].find((g) => g["@type"] === "FAQPage").mainEntity;
-const plain = (x) => x.replace(/<[^>]+>/g, " ").replace(/&nbsp;|\u00a0/g, " ").replace(/\u2019/g, "'").replace(/\s+/g, " ").trim();
-const qVisible = [...html.matchAll(/<summary><span><span class="fr-only"[^>]*>([\s\S]*?)<\/span>/g)].map((m) => plain(m[1]));
-const aVisible = [...html.matchAll(/<\/summary>\s*<p><span class="fr-only"[^>]*>([\s\S]*?)<\/span>/g)].map((m) => plain(m[1]));
-ok(`les ${faq.length} questions du schéma sont mot pour mot celles de la page`,
-   faq.length === 6 && faq.every((q, i) => plain(q.name) === qVisible[i]),
-   "vues : " + qVisible.length);
-ok("les réponses du schéma sont mot pour mot celles de la page",
-   faq.every((q, i) => plain(q.acceptedAnswer.text) === aVisible[i]),
-   faq.map((q, i) => plain(q.acceptedAnswer.text) === aVisible[i] ? "" : "n°" + (i + 1)).join(" "));
-ok("chaque réponse commence par l'information, pas par le contexte (BLUF)",
-   faq.every((q) => plain(q.acceptedAnswer.text).split(" ").length >= 12));
+/* 28/10 — l'accueil ne porte plus le FAQPage : les 22 réponses vivent sur /questions/, une seule
+   fois. Deux FAQPage qui se répètent finissent par se contredire, et deux pages qui répondent à la
+   même question se cannibalisent. L'accueil garde trois réponses courtes et le lien. */
+const faqs = ld["@graph"].filter((g) => g["@type"] === "FAQPage");
+ok("l'accueil ne déclare AUCUN FAQPage (le balisage vit sur /questions/)", faqs.length === 0,
+   faqs.length + " nœud(s)");
+ok("l'accueil renvoie vers /questions/", /href="\/questions\/"/.test(markup));
+ok("les trois réponses de l'accueil tiennent en une phrase chacune", details.length === 3 &&
+   details.every((d) => {
+     const p = (d.match(/<\/summary>\s*<p>[\s\S]*?<\/p>/) || [""])[0];
+     return p.replace(/<[^>]+>/g, " ").split(/\s+/).length < 70;
+   }));
+
+/* ── /questions/ : la page qui porte les réponses ───────────────────────────────────────────────
+   Vérifiée seulement si elle est construite (elle l'est à la livraison). Le schéma doit dire ce que
+   la page montre, dans la langue de la page : une FAQ française sur /en/ est une phrase que le
+   visiteur anglais ne peut pas lire. */
+const QA_DIR = path.join(ROOT, "hosting", "previews", "dmoptic");
+/* Le HTML écrit par Python échappe les apostrophes en `&#x27;` : sans décodage, chaque réponse
+   « diffère » du schéma pour une raison qui n'existe pas (piège du 28/10). */
+const unentity = (t) => t.replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+  .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
+  .replace(/&nbsp;/g, " ").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+  .replace(/&amp;/g, "&");
+const strip = (t) => unentity(t.replace(/<script[\s\S]*?<\/script>/g, " ")
+  .replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, " "))
+  .replace(/\u00a0/g, " ").replace(/[\u2018\u2019]/g, "'").replace(/\s+/g, " ").trim().toLowerCase();
+const readQa = (file) => {
+  if (!fs.existsSync(file)) return null;
+  const page = fs.readFileSync(file, "utf8");
+  const blocks = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map((m) => JSON.parse(m[1]));
+  const nodes = blocks.flatMap((d) => d["@graph"] || [d]);
+  const faq = nodes.find((n) => n["@type"] === "FAQPage");
+  return { page, faq, text: strip(page) };
+};
+const fr = readQa(path.join(QA_DIR, "questions", "index.html"));
+const en = readQa(path.join(QA_DIR, "en", "questions", "index.html"));
+if (!fr) {
+  console.log("  --   /questions/ pas encore construite : contrôle sauté");
+} else {
+  const qs = fr.faq?.mainEntity || [];
+  ok(`/questions/ déclare ${qs.length} questions`, qs.length === 22, qs.length + " nœud(s)");
+  ok("/questions/ : chaque question du schéma est écrite dans la page, telle quelle",
+     qs.every((q) => fr.text.includes(strip(q.name))),
+     qs.filter((q) => !fr.text.includes(strip(q.name))).map((q) => q.name.slice(0, 40)).join(" | "));
+  ok("/questions/ : chaque réponse du schéma est écrite dans la page, telle quelle",
+     qs.every((q) => fr.text.includes(strip(q.acceptedAnswer.text))),
+     qs.filter((q) => !fr.text.includes(strip(q.acceptedAnswer.text))).length + " écart(s)");
+  ok("/questions/ : aucune question n'est reposée deux fois", new Set(qs.map((q) => q.name)).size === qs.length);
+  ok("/questions/ : aucun prix, aucune marque, aucun délai chiffré dans les réponses",
+     qs.every((q) => !/(fcfa|xaf|\d+\s*(jours?|heures?|minutes?))/i.test(q.acceptedAnswer.text)));
+  if (en) {
+    const enQs = en.faq?.mainEntity || [];
+    ok("/en/questions/ porte le MÊME nombre de questions", enQs.length === qs.length, enQs.length + " nœud(s)");
+    ok("/en/questions/ est balisée en anglais, pas en français",
+       enQs.length > 0 && !/[éèêàçùôî]\s|^faut-il/i.test(enQs[0].name) &&
+       !/[éèêàçùô]/.test(enQs.map((q) => q.name).join(" ")),
+       enQs[0]?.name);
+    ok("/en/questions/ n'affiche pas de réponse française dans son balisage",
+       enQs.every((q) => !fr.faq.mainEntity.some((f) => f.acceptedAnswer.text === q.acceptedAnswer.text)));
+    ok("les deux pages s'annoncent mutuellement (hreflang réciproque)",
+       /hreflang="fr" href="https:\/\/dmoptiquesarl\.com\/questions\/"/.test(en.page) &&
+       /hreflang="en" href="https:\/\/dmoptiquesarl\.com\/en\/questions\/"/.test(fr.page));
+  }
+}
 ok("la page est en production (16/10, domaine dmoptiquesarl.com) : pas de noindex",
    !/<meta name="robots" content="noindex,nofollow">/.test(html));
 

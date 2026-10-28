@@ -469,6 +469,13 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 .v2-more[open]>summary::after{content:"–"}
 .v2-more>summary:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
 .v2-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* 28/10 · questions : la question en gras, la reponse en dessous. Pas de depliant : un moteur et un
+   assistant lisent le texte tel qu'il est servi, et une reponse repliee n'est pas une reponse citee. */
+.v2-qa{margin:14px 0 30px;padding:0}
+.v2-qa>div{padding:16px 0;border-top:1px solid var(--line)}
+.v2-qa>div:first-child{border-top:0}
+.v2-qa dt{font-weight:700;color:var(--ink);font-size:var(--fs-base);line-height:1.4}
+.v2-qa dd{margin:6px 0 0;color:var(--ink-2);font-size:var(--fs-sm);line-height:1.65;max-width:68ch}
 /* 28/10 · closure : la fiche suivante depasse de 22 % — assez pour que l'oeil complete la serie,
    assez peu pour que la fiche lue reste entiere. Le defilement est natif, avec accroche. */
 .v2-rail{grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;
@@ -542,7 +549,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       <a href="/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a>
       <a href="/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a>
       <a href="/le-cabinet/"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a>
-      <a href="/#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
+      <a href="/questions/"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
       <a href="/contact/"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a>
     </nav>
     <div class="langbox" role="group" aria-label="Langue / Language">
@@ -555,7 +562,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         <a href="/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a>
       <a href="/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a>
       <a href="/le-cabinet/"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a>
-      <a href="/#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
+      <a href="/questions/"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
       <a href="/contact/"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a>
       </nav>
     </details>
@@ -591,6 +598,12 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       <a class="btn" href="tel:+237656122239"><span class="fr-only" lang="fr">Appeler le 656 122 239</span><span class="en-only" lang="en">Call 656 122 239</span></a>
     </div>
     <p class="note"><span class="fr-only" lang="fr">Pour des verres correcteurs, apportez l&#x27;ordonnance de votre ophtalmologue. Pour des lunettes de soleil, un réglage ou une réparation, non.</span><span class="en-only" lang="en">For prescription lenses, bring your ophthalmologist&#x27;s prescription. For sunglasses, an adjustment or a repair, no.</span></p>
+    <h2 class="rv"><span class="fr-only" lang="fr">Ce que cet examen fait, et ce qu&#x27;il ne fait pas</span><span class="en-only" lang="en">What this examination does, and what it does not</span></h2>
+    <dl class="v2-facts rv">
+      <div><dt><span class="fr-only" lang="fr">Il mesure</span><span class="en-only" lang="en">It measures</span></dt><dd><span class="fr-only" lang="fr">ce que chaque œil voit, et la correction que vos verres devront porter. Rien ne touche l&#x27;œil.</span><span class="en-only" lang="en">what each eye sees, and the correction your lenses will need. Nothing touches the eye.</span></dd></div>
+      <div><dt><span class="fr-only" lang="fr">Il ne traite pas</span><span class="en-only" lang="en">It does not treat</span></dt><dd><span class="fr-only" lang="fr">une douleur, une maladie de l&#x27;œil, une baisse brutale de la vue : c&#x27;est l&#x27;ophtalmologue, le médecin spécialiste. On vous le dit et on vous oriente.</span><span class="en-only" lang="en">pain, eye disease or a sudden loss of sight: that is for the ophthalmologist, the medical specialist. We say so and point you to the right place.</span></dd></div>
+      <div><dt><span class="fr-only" lang="fr">Quand revenir</span><span class="en-only" lang="en">When to come back</span></dt><dd><span class="fr-only" lang="fr">repère : tous les deux ans pour un adulte sans problème particulier, chaque année pour un enfant. La fréquence qui vous concerne se décide ici.</span><span class="en-only" lang="en">guide: every two years for an adult with no particular problem, every year for a child. The schedule that applies to you is decided here.</span> <a href="/questions/"><span class="fr-only" lang="fr">Voir les 22 questions</span><span class="en-only" lang="en">See the 22 questions</span></a></dd></div>
+    </dl>
   </section>
 </main>
 

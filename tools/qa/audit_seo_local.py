@@ -30,6 +30,7 @@ pas est dite, jamais passée sous silence.
 from __future__ import annotations
 
 import argparse
+import html as HTML
 import json
 import re
 import shutil
@@ -56,6 +57,16 @@ ROBOTS_RE = re.compile(r'<meta\s+name="robots"\s+content="([^"]*)"', re.I)
 A_RE = re.compile(r'<a\b[^>]*?href="([^"]+)"', re.I)
 TAG_RE = re.compile(r"<[^>]+>")
 PHONE = "+237656122239"
+
+
+def flat(t: str) -> str:
+    """Texte comparable : entités décodées, espaces insécables et apostrophes typographiques
+    ramenées à leur forme simple. Sans ça, « Douala&nbsp;? » et « Douala ? » ne se rencontrent
+    jamais — et le contrôle le plus utile du fichier devient un générateur de fausses alertes."""
+    t = HTML.unescape(t or "")
+    t = (t.replace("\u00a0", " ").replace("\u2019", "'").replace("\u2018", "'")
+          .replace("\u02bc", "'").replace("\u201c", '"').replace("\u201d", '"'))
+    return re.sub(r"\s+", " ", t).strip().lower()
 # L'adresse doit être identique mot pour mot partout où elle est écrite (facteur NAP).
 ADDRESS_KEYS = ("Ndobo Mayor", "West Hotel", "Bonabéri")
 
@@ -326,6 +337,55 @@ def check_robots(site: Path) -> dict:
     return out
 
 
+# ── 10 · questions ─────────────────────────────────────────────────────────────────────────────
+def check_questions(pages) -> dict:
+    """Le balisage FAQ doit dire EXACTEMENT ce que la page montre.
+
+    Google l'exige (contenu structuré = contenu visible), et un assistant qui cite une réponse
+    inventée dans le JSON-LD cite une phrase que le visiteur ne peut pas lire. On vérifie aussi
+    qu'aucune question n'est posée deux fois sur le site : deux pages qui répondent à la même
+    question se cannibalisent, exactement comme deux titres identiques.
+    """
+    out = {"fails": [], "warns": [], "notes": []}
+    seen: dict[str, str] = {}
+    total = 0
+    for path, p in pages.items():
+        visible = flat(p["plain"])
+        for node in ld_nodes(p, "FAQPage"):
+            for q in node.get("mainEntity", []) or []:
+                if not isinstance(q, dict):
+                    continue
+                name = (q.get("name") or "").strip()
+                ans = ((q.get("acceptedAnswer") or {}).get("text") or "").strip()
+                if not name or not ans:
+                    out["fails"].append(f"{path} : question ou réponse vide dans le balisage")
+                    continue
+                total += 1
+                if flat(name) not in visible:
+                    out["fails"].append(f"{path} : la question « {name[:52]}… » est dans le balisage "
+                                        f"mais pas dans le texte de la page")
+                if flat(ans) not in visible:
+                    out["fails"].append(f"{path} : la réponse à « {name[:40]}… » est dans le balisage "
+                                        f"mais pas dans le texte de la page")
+                if len(ans) < 60:
+                    out["warns"].append(f"{path} : « {name[:40]}… » a une réponse de {len(ans)} "
+                                        f"caractères : trop courte pour tenir seule hors contexte")
+                # Une page et son miroir anglais portent la même question : ce n'est pas une
+                # cannibalisation, c'est une traduction. On compare donc les paires FR/EN.
+                key = (flat(name), path.replace("/en/", "/", 1))
+                if key in seen and seen[key] != path:
+                    out["warns"].append(f"« {name[:48]}… » est posée sur {seen[key]} et sur {path}")
+                else:
+                    seen[key] = path
+    if total:
+        distinct = len({k[0] for k in seen})
+        out["notes"].append(f"{total} question(s) balisée(s) sur {distinct} distinctes "
+                            f"(miroirs FR/EN comptés ensemble), toutes présentes dans le texte visible")
+    else:
+        out["notes"].append("aucun balisage FAQ sur ce site : rien à vérifier")
+    return out
+
+
 # ── 9 · cul-de-sac ──────────────────────────────────────────────────────────────────────────
 def check_dead_end(pages) -> dict:
     out = {"fails": [], "warns": [], "notes": []}
@@ -342,7 +402,7 @@ def check_dead_end(pages) -> dict:
 
 
 # ── exécution ───────────────────────────────────────────────────────────────────────────────
-CHECKS = ("cible", "hreflang", "sitemap", "orphelins", "cannibal", "nap", "schema", "robots", "cul-de-sac")
+CHECKS = ("cible", "hreflang", "sitemap", "orphelins", "cannibal", "nap", "schema", "questions", "robots", "cul-de-sac")
 
 
 def audit(site: Path, base: str = "") -> dict:
@@ -355,6 +415,7 @@ def audit(site: Path, base: str = "") -> dict:
         "cannibal": check_cannibal(pages),
         "nap": check_nap(pages),
         "schema": check_schema(pages),
+        "questions": check_questions(pages),
         "robots": check_robots(site),
         "cul-de-sac": check_dead_end(pages),
     }
