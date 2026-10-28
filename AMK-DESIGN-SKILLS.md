@@ -173,6 +173,7 @@ When the client provides an explicit visual reference (screenshot/Dribbble), the
 - Text on accent: WCAG AA 4.5:1 (3:1 for large text). Audit every CTA.
 - Shadows tinted to background hue. Consistent light direction across all shadows.
 - **60-30-10 balance:** ~60% neutral surfaces, ~30% brand colour, ~10% accent. The accent is the rarest colour on the page; CTAs and key numbers own the 10%. If the accent is everywhere, nothing is emphasised.
+  **Measured since 28/10, not recited:** `python3 tools/qa/audit_palette.py --sheet|--html|--image`. Bands: dominant 45–85% (only *too little* is a fail), secondary 5–40%, accent 0.7–15% (too much is a fail). Measure **per viewport**, never on the full-page scroll — a 1440×8000 capture dilutes the accent in empty space. The accent never carries running text: it owns the button, the link, the key number. Full analysis: `knowledge/COULEUR-60-30-10-2026-10-28.md`.
 - **Tinted neutrals are derived, not picked:** background tints = the brand/accent hue with saturation and brightness reduced (a contextual tint, never accidental grey).
 - **Contrast is checked, not felt:** run every brand/background pair through a contrast checker (Coolors Contrast Checker or equivalent) before shipping: 4.5:1 body, 3:1 large (the §13 promise, verified).
 - Skip colour-psychology folklore: legibility first, one personality accent second.

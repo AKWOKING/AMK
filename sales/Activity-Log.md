@@ -7349,3 +7349,33 @@ premier avait manqués. Deux conclusions changent, dont une que **j'avais écrit
   physique exerçant sous l'enseigne AMK), sinon la vérification de dépôt bloque et le comptable du client
   aussi ; et **retirer chaque semaine vers une banque camerounaise**, ce qui sert à la fois de prudence
   contre un gel et d'apparence de rapatriement CEMAC.
+
+### 28/10 (soir) · la règle 60-30-10 passe du conseil à la mesure
+
+Capture de `designs_by_max` (4/10) envoyée par King : « Analyse, then research all the terms and how they
+can be applied to our workflow. » — **`knowledge/COULEUR-60-30-10-2026-10-28.md`**.
+
+- **Le trou trouvé** : `AMK-DESIGN-SKILLS.md` §6.1 énonce la règle 60-30-10 **depuis le 17/09** et **aucun
+  des vingt-huit outils de `tools/qa/` ne mesurait une proportion**. Une règle écrite, jamais exécutée —
+  le défaut que le dépôt dénonce ailleurs.
+- **`tools/qa/audit_palette.py` créé** — **19 cas de banc, 19/19**. Trois modes : `--sheet` (contrat des
+  jetons et paires de contraste, à l'étape 4), `--html` (ce que le CSS peint, à l'étape 9), `--image`
+  (**la vraie surface en pixels**, sur une capture). PNG décodé **sans Pillow ni numpy** (zlib seul) :
+  une capture 1080×1080 en 1,2 s. Le contraste n'est pas rejoué — le script **importe `lum`/`ratio`
+  d'`audit_html.py`**, pour que deux outils ne se contredisent jamais.
+- **Deux vraies fautes trouvées dans nos planches** : B (Terracotta `#C56A3C` + blanc = **3,82:1**) et
+  E (Nursery `#3E8F6B` + blanc = **3,93:1**) échouaient au niveau AA sur le texte des boutons.
+  **Corrigées** selon la doctrine d'`autofix_contrast.py` (assombrir l'aplat, garder le texte) :
+  **`#B15F36`** (4,61:1) et **`#398462`** (4,52:1). Les planches repassent à **0 faute**.
+- **La correction au post** : il conseille de mettre « main text and button » dans l'accent à 10 %. **Le
+  bouton oui, le texte courant non** — l'accent est presque toujours le moins contrasté sur fond clair
+  (nos ambre/or sont à 1,98–2,53:1), et tout texte accentué inverse la hiérarchie.
+- **La nuance du cinéma, appliquée au web** : un film se mesure **par cadre**, une page se déroule. Donc on
+  mesure **par écran** (trois captures), jamais sur une capture pleine page — sinon l'accent se dilue dans
+  le vide et une page correcte échoue.
+- **Bandelettes** : dominant 45–85 % (seul « trop peu » est une faute ; 95 % de navy sur nos posts Facebook
+  est un parti pris), secondaire 5–40 %, accent 0,7–15 % (trop = faute). Le banc verrouille les deux cas.
+- **Portes posées** : `design/WORKFLOW.md` §4 (avant le HTML) et §9 (après la capture) ; §6.1 de
+  `AMK-DESIGN-SKILLS.md` pointe maintenant vers l'outil et ses bandes.
+- **Ce que la règle ne fait pas** : elle ne rend pas une palette belle, elle ne remplace pas 4,5:1, et
+  **APCA n'est pas la règle** (retiré du brouillon WCAG 3 en juillet 2023, toujours exploratoire).
