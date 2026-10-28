@@ -7546,3 +7546,10 @@ des images d'aperçu) · `audit_laws` 0 / 0 · `audit_seo_local` 0 faute / 0 ave
 
 **Ce qui ne se fait pas depuis ce dépôt, et qui pèse plus que lui** : la fiche Google (≈ 32 % du poids
 local), les avis (16–20 %), la proximité (≈ 55 %, contrôle de personne). King, avec le client.
+
+**Une chose n'a pas pu partir.** Le workflow `.github/workflows/deploy-dmoptic.yml` (étape IndexNow +
+deux contrôles du portique SEO local) est refusé au push : *« refusing to allow a GitHub App to create
+or update workflow … without `workflows` permission »*, et l'API répond 403. Le fichier est prêt dans
+l'arbre de travail, non commité pour ne pas bloquer les prochains envois. Le site se publie normalement
+sans lui ; il ne prévient simplement pas Bing. À débloquer : permission `workflows` sur l'application
+GitHub, ou copie à la main.
