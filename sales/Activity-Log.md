@@ -7311,3 +7311,41 @@ la présentent. **`knowledge/VBAN-2026-10-28.md`**.
   écrite : le plafond vise la vente d'un site au-delà de sa valeur prouvée, pas l'encaissement d'un an de
   service à prix unitaire inchangé — donc il passe. **La décision reste à King, et elle est écrite comme
   telle.**
+
+### 28/10 (nuit, 4) · Vban, second passage : une erreur à moi, et la règle qui bloque tous les paiements
+
+King a demandé deux fois la recherche sur Vban. Le second passage a ouvert quatre articles d'aide que le
+premier avait manqués. Deux conclusions changent, dont une que **j'avais écrite faux**.
+
+- **CORRECTION — les partenaires bancaires sont nommés.** Le premier dossier disait « aucun partenaire
+  nommé, aucune garantie ». C'est vrai des conditions de service, **faux de la base d'aide** : les comptes
+  USD sont chez **Lead Bank** (Kansas City, Missouri, **banque assurée FDIC**, Virtual Account Numbers sur
+  compte maître → assurance par transparence jusqu'à 250 000 $, à condition que le registre identifie le
+  bénéficiaire) ; les comptes GBP et EUR chez **Clear Junction Ltd** (**EMI agréée FCA, FRN 900684**,
+  **pas de garantie des dépôts** mais **cantonnement obligatoire**, avec rapprochement quotidien et audit
+  annuel depuis la réforme CASS 15 de mai 2026). **L'argent est chez des institutions sérieuses ; ce qui
+  reste incertain, c'est le registre de Vban, pas la banque derrière.**
+- **LA RÈGLE QUI BLOQUE TOUT** — article « FX Deposit Verification » : Vban vérifie que **le nom de
+  l'émetteur correspond au nom du titulaire**. Un client « Mike's Detailing LLC » vers un compte AKWOKING
+  **ne correspond pas** → **retenue de vérification sur 100 % de nos encaissements**, 1 à 3 jours. Cela
+  explique d'un coup tous les avis « l'argent a été envoyé, il n'arrive jamais » : ce n'est pas un vol,
+  c'est un processus non annoncé. Protocole écrit : pré-autoriser chaque client auprès du support avant
+  sa première facture, numéro de facture dans la référence du virement, 1 à 3 jours dans la trésorerie,
+  capture de chaque virement annoncé. **Et le test à 1 $ doit se faire depuis un compte tiers** — depuis
+  son propre compte, il ne déclenche rien et n'apprend rien : mon conseil d'hier était mauvais.
+- **LE CÔTÉ CAMEROUNAIS, jamais regardé jusqu'ici.** Règlement des changes CEMAC n°02/18 : article 67
+  (déclaration de toute transaction de services avec l'étranger), **68 (domiciliation bancaire au-delà de
+  5 millions FCFA — seuil franchi par l'objectif lui-même, 6 millions/an)**, **70 (rapatriement par la
+  banque domiciliataire via la BEAC)**, **41-42 (compte à l'étranger interdit sans autorisation BEAC — et
+  un compte Vban est un compte à l'étranger)**, 127 (sanction : **10 % du montant**). Le texte existe ; je
+  n'ai aucun cas d'espèce camerounais et je ne prétends pas qu'il sera appliqué. Mais il devient opposable
+  au moment exact où l'objectif est atteint.
+- **L'impôt change la cible.** Exports à **TVA zéro** (bien). L'IS à 3 % des plateformes étrangères
+  **ne nous concerne pas** (c'est pour les non-résidents, seuils 50 M FCFA ou 1 000 utilisateurs). Mais
+  l'**IRPP d'un particulier monte à 35 % + 10 % de CAC au-delà de 5 millions** : sur 6 millions, l'impôt
+  peut peser 1,5 à 2 millions. **Donc 500 000 FCFA doit être un net.** La cible passe de **9 à 11-13
+  abonnés**, et un comptable camerounais entre en semaine 1, pas en mois 12.
+- **Deux conséquences pratiques** : facturer **au nom qui figure sur le compte** (AKWOKING, personne
+  physique exerçant sous l'enseigne AMK), sinon la vérification de dépôt bloque et le comptable du client
+  aussi ; et **retirer chaque semaine vers une banque camerounaise**, ce qui sert à la fois de prudence
+  contre un gel et d'apparence de rapatriement CEMAC.

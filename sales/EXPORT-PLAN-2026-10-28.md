@@ -60,6 +60,29 @@ le bon sens. Vban (TM Payments Limited, Cameroun en XAF explicitement supporté)
 > **Conséquence pratique : on facture en dollars les clients américains et en euros les clients
 > européens, jamais l'inverse** — un euros facturé à un Américain coûte deux conversions.
 
+### 1.2 bis · Deux corrections du second passage sur Vban, et elles changent les chiffres
+
+**① Chaque encaissement sera retenu.** Vban vérifie que **le nom de l'émetteur correspond au nom du
+titulaire du compte**. Un virement de « Mike's Detailing LLC » vers un compte au nom d'AKWOKING **ne
+correspond pas** : il part en revue. **100 % de nos paiements** passent donc par une retenue de 1 à 3
+jours. Ce n'est pas un défaut, c'est le fonctionnement, et il faut le prévoir dans la trésorerie et dans
+les promesses faites au client. Détail et protocole : `knowledge/VBAN-2026-10-28.md` §9.
+
+**② 500 000 FCFA doit être un net, pas un brut.** À 6 millions de chiffre d'affaires annuel, l'IRPP d'un
+particulier est à **35 % + 10 % de centimes additionnels** (barème : 10 / 15 / 25 / 35 %). L'impôt réel
+peut donc représenter **1,5 à 2 millions**, et le brut à viser est plus proche de **650 000 à 700 000
+FCFA par mois**. Les exports sont à **TVA zéro**, ce qui aide, mais ne change pas l'IRPP.
+
+| Cible | Calcul | Abonnés nécessaires |
+|---|---|---|
+| 500 000 FCFA **bruts** | 500 000 ÷ 55 460 | **9** |
+| 500 000 FCFA **nets d'impôt** (hypothèse 30 % de charge) | 714 000 ÷ 55 460 | **13** |
+| Cible recommandée, à confirmer par un comptable | — | **11 à 13** |
+
+**Ce que ça impose** : un comptable camerounais en semaine 1, pas en mois 12. Et **facturer au nom qui
+figure sur le compte** (AKWOKING, personne physique exerçant sous l'enseigne AMK), sinon la vérification
+de dépôt bloque le virement et le comptable du client bloque la facture.
+
 ### 1.3 Le vrai risque de ce modèle : le départ
 
 À 95 $/mois, personne ne se bat pour rester. Un taux de départ de 5 %/mois (la norme basse de ce genre
