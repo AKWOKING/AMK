@@ -105,22 +105,63 @@ obligé le client à nous corriger sur son propre cabinet.
 
 ---
 
-## 2 · Trois niveaux d'exigence — parce qu'on ne peut pas tout savoir avant d'écrire
+## 2 · Trois niveaux d'exigence — et **le prix avant la route**
 
 La même porte ne demande pas la même preuve à un premier message et à un devis. Confondre les deux
-donne soit un blocage total (personne n'est jamais qualifié), soit le laisser-aller du 26/10. Trois
-niveaux, et **Q1 ne recule à aucun** :
+donne soit un blocage total (personne n'est jamais qualifié), soit le laisser-aller du 26/10.
 
-| Niveau | Quand | Ce que Q1 exige | Ce qui est interdit |
+> **Correction du 28/10 (ruling King).** La version du matin interdisait le prix avant le rendez-vous.
+> **C'était faux, et c'est l'inverse de notre propre histoire** : *« J'ai posé le prix avant de fixer le
+> RDV pour qu'en arrivant sur place on soit sur la même longueur d'onde, on parle du détail du projet au
+> lieu de négocier encore. »* Le seul rendez-vous qui a converti — **DM Optique, mercredi 07/10** — a eu
+> lieu **après** que le prix était posé (tarif fondateur, 25/09) et **avant** l'acompte (13/10). Les deux
+> déplacements du 25/09 où le prix n'était pas tenu (Univers, UNI-LABO) n'ont rien signé.
+
+| Niveau | Quand | Ce qui doit être établi | Ce qui est interdit |
 |---|---|---|---|
-| **N1 · premier contact froid** | on écrit à un cabinet d'un ICP connu, avant toute réponse | le **rôle ciblé** est écrit (`propriétaire` ou `gérant`, déduit du type d'ICP), Q2 ✅ Q3 ✅ Q4 ✅ Q5 ✅ | pas de prix, pas d'offre, pas d'aperçu *promis* comme déjà fait, pas de visite |
-| **N2 · première réponse** | dès que la personne parle | on **établit qui c'est** : nom + rôle + `authority`, et on pose la question « qui décide de ce qui s'affiche sur le site ? » | pas de prix, pas de devis, pas de déplacement |
-| **N3 · prix, devis, visite** | avant tout chiffre et tout déplacement | `authority` = **proprietaire** ou **mandate** avec le signataire nommé | tout le reste attend |
+| **N1 · premier contact froid** | on écrit à un cabinet d'un ICP connu, avant toute réponse | le **rôle ciblé** écrit (`propriétaire`), Q2 ✅ Q3 ✅ Q4 ✅ Q5 ✅ | pas de prix **encore** — on ne connaît pas le périmètre. Aucune promesse, aucune visite |
+| **N2 · première réponse** | dès que la personne parle | nom + rôle + `authority` : « qui décide de ce qui s'affiche sur le site ? » | pas de visite. **C'est ici qu'on annonce le prix** quand le besoin est clair |
+| **N3 · prix → accord → date → route** | dans cet ordre, jamais un autre | prix **annoncé avec son périmètre écrit**, puis **accord explicite du client sur le prix**, puis seulement la date | partir sans que le prix soit accepté. Négocier sur place ce qui n'a pas été dit avant |
 
-**La règle qui rend N1 acceptable** : un message N1 ne promet rien et ne coûte rien au prospect — il pose
-une question fermée. C'est ce qui autorise à écrire sans savoir encore qui signe. **Le 26/10, on a sauté
-de N1 à N3 en trois messages** : prix par écrit, puis « avant qu'on ne fixe une date ». C'est ça, le
-faux pas, plus que le message lui-même.
+**Ce que le niveau N3 rend obligatoire, dans cet ordre exact :**
+
+1. **Le prix, une fois, avec son périmètre écrit** — ce qui est dedans (pages, domaine, hébergement,
+   fiche, formation) et ce qui n'y est pas. Un prix sans périmètre se renégocie en arrivant : le client
+   découvre en séance ce qu'il croyait inclus.
+2. **L'accord du client sur ce prix, daté** — un « ok » écrit, un message, une signature sur la proforma.
+   Pas un « on en parlera ».
+3. **Seulement ensuite, la date.** Et la date a **un objet** : préciser (photos, horaires, nom exact,
+   accès), signer, ou livrer. **Jamais « convaincre »** — c'est déjà fait, ou ce n'est pas la peine.
+4. **La route en dernier**, et seulement si le verrou du §2 bis est vert.
+
+### 2 bis · Le verrou du déplacement — quatre conditions, toutes obligatoires
+
+Un déplacement coûte une demi-journée, du carburant et une pièce d'estime. Il ne se décide pas parce que
+le client est sympa : il se décide parce que **quatre conditions sont vertes**.
+
+| # | Condition | Pourquoi elle est là |
+|---|---|---|
+| **V1 · l'autorité** | `authority` = **propriétaire** ou **mandaté** avec le nom du signataire | un déplacement ne crée pas un dirigeant (cas Dr Fogue, 28/10) |
+| **V2 · le prix accepté** | prix **et** périmètre écrits, accord daté du client | c'est la règle du 28/10 : arriver sur place pour négocier, c'est deux fois le même travail |
+| **V3 · l'objet** | l'ordre du jour tient en **trois points** de spécification (photos, horaires/nom, signature) et **≤ 45 minutes** | une réunion sans objet devient une réunion de vente, donc une négociation |
+| **V4 · le coût connu** | on sait ce que le trajet coûte **avant** de le faire | ce qui n'est pas compté se répète. Le registre `leads/DEPLACEMENTS.csv` le garde |
+
+**Ce qui n'est pas une raison de se déplacer** : « il a l'air intéressé », « il a demandé à nous voir »,
+« il faut aller le chercher ». Ces trois phrases ont produit les deux déplacements perdus du 25/09.
+
+**Ce qui reste un déplacement légitime même sans prix** : un client **déjà payant** (réglage, photo,
+séance de travail) — il n'est plus un prospect. Le verrou ne s'applique qu'aux prospects.
+
+### 2 ter · La mesure qui manque : le coût réel d'un rendez-vous
+
+Le dépôt n'a **aucun chiffre** sur ce que coûte un déplacement. Le registre `leads/DEPLACEMENTS.csv` et
+`tools/qa/audit_deplacement.py` le construisent à partir d'aujourd'hui : par rendez-vous — date, lieu,
+verrou respecté ou non, coût du transport, durée, issue — et à la fin, **le coût par client signé**.
+Les trois rendez-vous déjà connus y entrent (deux perdus le 25/09, un signé le 07/10), avec le coût
+**laissé vide** tant que King ne l'a pas donné : un chiffre inventé vaudrait moins que pas de chiffre.
+
+⚠️ **Ce document a été corrigé, pas nuancé** : il disait « pas de prix, pas de devis, pas de déplacement »
+au niveau N2. C'était mon ajout du matin, et il contredisait la pratique de King et son propre dossier.
 
 ---
 
@@ -183,8 +224,8 @@ Si un prospect hors ICP (ou sans autorité) dit « oui » :
 2. **on ne construit pas d'offre sur mesure dans le fil** — une offre qui n'existe dans aucun palier est
    une décision de King, pas une improvisation ;
 3. **on écrit le cas, on le date, et on demande un ruling.** C'est ce qui s'est passé le 28/10 avec le
-   Dr Fogue : `parked`, motif `Q1_pas_acheteur`, et une question ouverte (« un praticien itinérant
-   multi-sites est-il une cible, et à quel prix ? »).
+   Dr Fogue : `parked`, motif `Q1_pas_acheteur` — et le ruling est tombé dans la journée : **un praticien
+   itinérant n'est pas une cible**. Le profil est fermé, la porte le refuse désormais avant l'envoi.
 
 ---
 
@@ -209,9 +250,10 @@ recommandaient **d'aller le voir** (option B, 8,0/10). **C'était faux** : on ne
 qualifier quelqu'un qui n'a pas l'autorité d'acheter, et un déplacement ne crée pas un dirigeant. Les deux
 documents portent la correction.
 
-**Ce que le cas a réellement produit** : une question d'offre qui n'a pas de réponse dans le dépôt — *un
-praticien itinérant multi-sites est-il une cible, et avec quel objet, à quel prix ?* Elle est **ouverte**,
-et elle n'appartient qu'à King.
+**Ce que le cas a produit** — une question, désormais **tranchée** : *un praticien itinérant multi-sites
+est-il une cible ?* **Non** (ruling King, 28/10 : *« un praticien itinérant n'est pas une cible »*). Il
+n'y a donc **pas d'offre à créer**, pas de palier à ajouter, rien à facturer : le profil est hors cible,
+et une porte de plus suffit à ne plus y écrire. Ce que le cas a vraiment produit, c'est **la porte**. »
 
 ---
 

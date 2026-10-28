@@ -7165,3 +7165,33 @@ Puis le ruling demandé : **un process de qualification explicite**.
 site vivant, opticien ICP A) ; **London Vision exclu** (`wa_verified = unknown`, ruling 12/10). Pour les
 12, la question « qui décide de ce qui s'affiche sur le site ? » entre dans le premier échange du fil qui
 répond — elle ne coûte pas un message si elle remplace une phrase de vente.
+### 28/10/2026 (après-midi) — le verrou du déplacement : le prix d'abord, la route en dernier
+
+Deux rulings de King, et une correction de ma part.
+
+**① « Un praticien itinérant n'est pas une cible. »** La question que j'avais laissée ouverte est fermée :
+pas d'offre à créer, pas de palier à ajouter dans `PRIX-2026-10-24`, rien à facturer. Le profil est hors
+cible, et la porte (`audit_qualification.py`) le refuse avant l'envoi. Le cas Fogue n'est plus un cas de
+vente : c'est le cas qui a produit la porte.
+
+**② « Le prix avant le RDV, pour ne pas négocier sur place. »** Ma qualification du matin disait
+l'inverse (« pas de prix, pas de devis, pas de déplacement » au niveau N2). **C'était faux, et le dossier
+le dément** : les deux déplacements du 25/09, faits pour convaincre, n'ont rien signé (0 acompte) ; le
+seul rendez-vous qui a converti — **DM Optique, 07/10, Bonabéri** — a eu lieu **après** le prix accepté
+(tarif fondateur du 25/09) et **avant** l'acompte (13/10).
+
+- **`sales/QUALIFICATION-2026-10-28.md` §2 réécrite** : la séquence est désormais **besoin → prix +
+  périmètre écrit → accord daté → date → route**. Et une sous-section **« le verrou du déplacement »** :
+  V1 autorité · V2 prix **et périmètre** écrits, accord daté · V3 objet de spécification ≤ 45 min ·
+  V4 coût connu avant de partir. Ce qui n'est **pas** une raison de se déplacer : « il a l'air
+  intéressé », « il a demandé à nous voir », « il faut aller le chercher ».
+- **`leads/DEPLACEMENTS.csv`** — le registre qui manquait : les **trois** rendez-vous connus (Univers
+  Optique et UNI-LABO le 25/09, DM Optique le 07/10), avec coût, durée, objet et issue. **Coûts laissés
+  vides exprès** : ils se demandent à King, ils ne s'estiment pas.
+- **`tools/qa/audit_deplacement.py`** — **11 cas de banc, 11/11**. Sur le registre : 0 bloquant,
+  5 avertissements ; **3 rendez-vous clos, 1 signé, 0/3 trajets chiffrés** → le coût par client signé ne
+  peut pas encore être calculé, et le script le dit au lieu de l'inventer.
+- **`knowledge/ROAST-2026-10-28-PRIX-AVANT-RDV.md`** — séance à 5 sièges (10 voix) : **prix avant la date
+  8,1** contre statu quo **3,6** et prix nu **4,7**. Le conseil donne raison à King et ajoute une
+  condition : **le prix part avec son périmètre écrit**, sinon la négociation se déplace du montant vers
+  le contenu — c'est-à-dire qu'elle a lieu quand même, mais en séance.
