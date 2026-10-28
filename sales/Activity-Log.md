@@ -7600,3 +7600,35 @@ les nouveaux contrôles de la page) · `shot.py` vert sur `/questions/`, `/en/qu
 **Ce que ça ne fait pas.** Ça ne touche ni la fiche Google, ni les avis, ni la proximité (≈ 55 % du
 poids local). Aucune position n'est promise. Restent ouverts : l'urgence (« cassé aujourd'hui »,
 « ouvert maintenant »), l'avant/après en photos, et « près de moi ».
+
+## 28 octobre 2026 · tour 227 — le dépôt rangé : quatre branches, deux fermées, une carte qui revient au vert
+
+**Ce qu'il y avait, ce qu'on croyait.** Quatre branches en tout sur le distant, pas trente : `main`,
+cette branche, et deux autres sessions. Aucune n'était fusionnée, aucune n'était abandonnée sans
+contenu. Le désordre n'était donc pas là où on le cherche d'habitude.
+
+**Ce qui était vraiment sale, et qui coûtait cher.**
+1. **La porte « La carte du dépôt se rejoue à l'identique » échouait à chaque poussée.** Cause :
+   `.github/workflows/deploy-dmoptic.yml` restait **modifié sans être commité** depuis le 28/10 (la
+   permission `workflows` manque, la poussée est refusée). `build_full_graph.py` lit les fichiers
+   suivis, donc les 32 lignes en attente changeaient la carte, et la CI reprochait au contenu livré
+   un écart qui venait d'ailleurs. La version voulue est maintenant parquée dans
+   `ops/workflows-en-attente/`, avec le mode d'emploi et ce qui ne tourne pas aujourd'hui. L'arbre de
+   travail est propre pour la première fois depuis quatre jours, et la porte est **verte**.
+2. **Deux workflows portent le même nom.** `machine.workflow.yml` n'existe plus dans aucun fichier
+   (404 sur l'API) mais reste listé et actif côté GitHub. Il faudra une main humaine : je n'ai pas la
+   permission de le désactiver (403).
+3. **PR #40 fermée, branche supprimée.** Une section de 34 lignes ajoutée à un handoff du 22/10, déjà
+   remplacé par `HANDOFF-2026-10-26.md`, rouge depuis quatre jours.
+4. **PR #78 fermée après reprise.** Deux fiches utiles seulement : **Optic Swiss** (Akwa, 690 910 167)
+   et **Leroy Optique Médicale** (Terminus Saint-Michel, 697 32 89 45). Reprises dans `leads/CRM.csv`,
+   **et corrigées** : la branche datait d'un schéma à 52 colonnes, le CRM en a 54 depuis (`authority`,
+   `qualification`). Recopiées telles quelles, les notes auraient glissé de deux colonnes, en silence.
+   Le reste du lot (onze messages, `sales/LOT-2026-10-27.md`) reste lisible dans la PR fermée : elle
+   ne disparaît pas, `gh pr checkout 78` la ramène.
+
+**Comment ça se vérifie.** `git status` vide · `python3 tools/graphify/build_full_graph.py` sans
+différence · run `La machine` **vert** sur `456556c6` puis sur la poussée de reprise. Le seul check
+encore rouge est `Workers Builds: dmoptiquesarl`, l'intégration Cloudflare qui reconstruit la même
+chose que le workflow de publication : deux publieurs pour un site, c'est un de trop. À débrancher
+côté Cloudflare (Settings → Builds), pas ici.
