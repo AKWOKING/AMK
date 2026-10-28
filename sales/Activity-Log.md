@@ -7420,3 +7420,28 @@ ne mesure**. §13 gagne les trois contrôles nés aujourd'hui.
 **Reste ouvert** : 13 pages ne disent pas ce qui se passe après le clic (c'est une promesse : elle se
 demande), 6 pages de filtres sans état d'erreur, et la vitrine porte trois boutons WhatsApp pour une action
 principale par section (§19.1) — arbitrage King.
+
+### 28/10 (nuit) · DM OPTIQUE publié sur Cloudflare — et la porte de livraison avait raison de refuser
+
+**Publié.** Run GitHub Actions **40699327400** : porte de livraison ✓ puis `wrangler deploy` ✓ en 52 s.
+Vérifié en ligne (pas sur parole) : `https://dmoptiquesarl.com/` sert la nouvelle page — la table de
+faits du premier écran a disparu, la bande sombre est bleue, le bouton d'appel est au bleu du cabinet.
+Fiche monture vérifiée aussi (`/montures/femmes/f01-ovale-doree/`).
+
+**Ce qui s'était passé avant.** Mes deux premiers envois ont **échoué** à la porte (`--strict`), et le
+workflow a bien fait son travail : il n'a rien publié. Cause : mes reconstructions avaient ramené les
+fichiers à l'état du **constructeur**, plus ancien que les fichiers déployés. Quatre régressions :
+
+| Ce qui manquait | Où c'était | Réparé dans |
+|---|---|---|
+| `Product` (sans prix ni `Offer`) sur 80 fiches | ajouté aux fichiers, jamais au constructeur | `build_dmoptic_montures.py` |
+| `og:image` en JPEG 1200×630 (WhatsApp) | idem, le constructeur repointait le WebP 1600×1200 | idem |
+| `llms.txt` : section anglaise (48 URL) | idem | idem |
+| `<link rel=icon>` ×4 + `favicon*` | dans la page, pas dans le gabarit | `dmoptic-v1.tpl.html` |
+| `https://…com//fichier` (double barre) | `__BASE__/` + base qui finit déjà par `/` | `build_dmoptic.py` |
+
+**La leçon, deux fois dans la même journée** : `_headers` puis le schéma produit. Un dépôt où le
+constructeur est en retard sur ses propres artefacts produit des reconstructions qui **défont** du
+travail. La porte de livraison est ce qui l'a vu, et c'est exactement pour ça qu'elle existe.
+
+**Reste** : la porte passe en 0 P1 / 0 P2 / 1 P3, comme avant ce chantier.

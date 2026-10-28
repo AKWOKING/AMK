@@ -117,12 +117,21 @@ la section des questions ; le compte des liens dit 5 et nomme les cinq.
 
 ---
 
-## 5 · Reproduire
+## 5 · Publication
+
+Le workflow `.github/workflows/deploy-dmoptic.yml` publie sur Cloudflare Workers (`dmoptiquesarl`) à
+chaque envoi qui touche `hosting/previews/dmoptic/**`, **après** `audit_delivery.py --strict`. Run
+**40699327400** : porte ✓, `wrangler deploy` ✓, 52 s. Site vérifié en ligne après publication, pas
+seulement le code de sortie.
+
+## 6 · Reproduire
 
 ```bash
 bash tools/video/install.sh                       # une fois par session : Chromium + libs + polices + Pillow/numpy/playwright
 python3 demos/build_dmoptic.py --production --url https://dmoptiquesarl.com/ --force-rebuild
 python3 demos/build_dmoptic_montures.py           # les 47 sous-pages + le miroir EN
+python3 tools/ops/dm_index_surface.py --apply     # surface d'indexation : 16 URL au sitemap, 80 fiches noindex
+python3 tools/qa/audit_delivery.py hosting/previews/dmoptic --base https://dmoptiquesarl.com --strict
 python3 tools/qa/shot.py hosting/previews/dmoptic/index.html --out /tmp/dm
 python3 tools/qa/audit_palette.py --image /tmp/dm/desktop.png \
     --palette "#EEF1F5=surface,#FFFFFF=surface,#0B2450=brand,#1A3F86=brand,#0B7A3E=accent,#E0703A=semantic"
