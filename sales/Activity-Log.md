@@ -7625,7 +7625,9 @@ contenu. Le désordre n'était donc pas là où on le cherche d'habitude.
    **et corrigées** : la branche datait d'un schéma à 52 colonnes, le CRM en a 54 depuis (`authority`,
    `qualification`). Recopiées telles quelles, les notes auraient glissé de deux colonnes, en silence.
    Le reste du lot (onze messages, `sales/LOT-2026-10-27.md`) reste lisible dans la PR fermée : elle
-   ne disparaît pas, `gh pr checkout 78` la ramène.
+   ne disparaît pas. Vérifié après suppression de la branche :
+   `git fetch origin pull/78/head:lot-27-10` ramène le commit `9cc52210`, et `pull/40/head` ramène
+   `ad7743f1`.
 
 **Comment ça se vérifie.** `git status` vide · `python3 tools/graphify/build_full_graph.py` sans
 différence · run `La machine` **vert** sur `456556c6` puis sur la poussée de reprise. Le seul check
