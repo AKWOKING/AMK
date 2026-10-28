@@ -58,7 +58,7 @@ SITEMAP = SITE / "sitemap.xml"
 ROBOTS = '<meta name="robots" content="noindex,follow">'
 ORDRE_COEUR = ["/", "/montures/", "/montures/femmes/", "/montures/hommes/", "/montures/enfants/",
                "/examen-de-vue/", "/verres-sur-ordonnance/", "/reparation-et-entretien/",
-               "/le-cabinet/", "/contact/"]
+               "/questions/", "/le-cabinet/", "/contact/"]
 
 
 def base() -> str:
@@ -92,7 +92,7 @@ def whitelist() -> set[str]:
 
 
 def coeur() -> list[str]:
-    """Les pages qui ont du contenu : 10 françaises + leurs 10 miroirs anglais."""
+    """Les pages qui ont du contenu : 11 françaises + leurs 11 miroirs anglais."""
     fr = [p for p in ORDRE_COEUR if (SITE / p.strip("/") / "index.html").exists()]
     en = [x for x in ("/en" + p for p in fr) if (SITE / x.strip("/") / "index.html").exists()]
     return fr + en
