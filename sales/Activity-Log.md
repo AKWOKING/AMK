@@ -7195,3 +7195,23 @@ seul rendez-vous qui a converti — **DM Optique, 07/10, Bonabéri** — a eu li
   8,1** contre statu quo **3,6** et prix nu **4,7**. Le conseil donne raison à King et ajoute une
   condition : **le prix part avec son périmètre écrit**, sinon la négociation se déplace du montant vers
   le contenu — c'est-à-dire qu'elle a lieu quand même, mais en séance.
+
+### 28/10 (soir) · les coûts sont arrivés, et le groupe 1 des relances est passé à la porte
+
+- **Les trajets sont chiffrés.** King a donné les trois courses : **Bépanda 3 500**, **Carrefour Eto'o
+  3 500**, **Bonabéri 3 000**. `leads/DEPLACEMENTS.csv` les porte désormais, la mention « vides exprès »
+  de l'entrée du matin est donc périmée. `audit_deplacement.py` : **3/3 chiffrés, 10 000 FCFA de trajets
+  pour 1 client signé → 10 000 FCFA par signature.** Le chiffre est mauvais, il est vrai, et il reste
+  écrit tel quel.
+- **`sales/RELANCE-G1-2026-10-28.md`** — les **cinq premiers** messages du lot du 28/10 (Ets Espace
+  Médical, ASS pour RRPHDD, Bellevue Optique, S.O.S Vision, Capelli), écrits pour être **collés tels
+  quels** : 60 à 70 mots, quatre phrases, une question. Porte : **0 bloquant, 0 avertissement**.
+  - Ce que la porte a repris, et pourquoi : ① et ② dépassaient 70 mots de deux et un mot (le plafond est
+    une règle, pas une indication) ; ③ était propre ; ④ **affirmait l'absence de site sans SITE-CHECK
+    daté** — exactement la faute ISEE du 26/10 — la ligne a été ajoutée sous le titre ; ⑤ demandait
+    « le vôtre », une phrase qui ne nomme aucune page et qui a été remplacée par « l'aperçu du site ».
+- **Ce que ces cinq ne sont pas** : des premières touches. Ce sont des **rappels à J+2**, une exception
+  datée à la règle du J+7, et chacun dit qu'il est un rappel — « je sais que c'est un rappel » — plutôt
+  que de faire semblant d'écrire pour la première fois.
+- **Le reste du lot** : 7 messages (Saoudia, Pagrot, Light, Optique Pro, Free Optic, Alpha Optic,
+  Maranatha), à écrire par groupes de 5 comme King l'a demandé.
