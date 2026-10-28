@@ -7215,3 +7215,30 @@ seul rendez-vous qui a converti — **DM Optique, 07/10, Bonabéri** — a eu li
   que de faire semblant d'écrire pour la première fois.
 - **Le reste du lot** : 7 messages (Saoudia, Pagrot, Light, Optique Pro, Free Optic, Alpha Optic,
   Maranatha), à écrire par groupes de 5 comme King l'a demandé.
+
+### 28/10 (nuit) · l'export Europe/Amérique : trois portes vérifiées, une recommandation qui n'est pas « non »
+
+- **`knowledge/EXPORT-2026-10-28-EUROPE-ET-AMERIQUE.md`** — la question de King traitée comme une
+  question de marché, pas de rédaction. Trois portes, chacune vérifiée à la source :
+  **encaisser** (Stripe sans compte marchand au Cameroun, PayPal en « send only », Wise sans
+  coordonnées USD, **Payoneer seul rail documenté**), **écrire** (le froid WhatsApp est notre seule
+  arme et il est hors-jeu en UE/US : la CNIL exige information + opposition dans chaque message B2B,
+  le TCPA américain exige un consentement écrit pour le SMS), **vendre** (en Europe et aux États-Unis,
+  le défaut qu'on répare — l'absence de site — est l'exception, pas la norme : notre première ligne n'a
+  pas de destinataire).
+- **Le prix, chiffré, ne bloque pas** : Standard 250 000 FCFA = **381 €** contre **1 500 à 3 500 €**
+  pour le même travail chez un freelance français, soit **4× à 9×**. Notre taux réel, 8 900 FCFA/h
+  (13,6 €/h), est 2 à 4 fois sous le plancher français. Mais **4× le prix achète 4× l'exigence de
+  preuve**, et la preuve manque.
+- **Le plafond se retourne contre l'export** : un site vendu 1 500 € vaut 984 000 FCFA, plus du double
+  du plafond de 450 000 fixé le 24/10. Vendre à un prix européen aujourd'hui **viole la règle** — et
+  c'est exactement la faute que la règle visait.
+- **Recommandation : 2,6/10 pour l'export maintenant, 7,4/10 pour l'acheteur en euros resté à Douala.**
+  Le signataire qui vit à Paris mais dont la clinique est à Bonabéri : même produit, même WhatsApp,
+  même grille en FCFA, et **le transfert arrive en portefeuille mobile** — pas besoin d'entité, pas
+  besoin de Payoneer, pas besoin de réécrire un message.
+- **Critère d'arrêt écrit** : 10 prospects examinés, moins de 2 avec un signal **écrit** d'un décideur à
+  l'étranger → la piste est morte et on l'écrit. **Déclencheur daté** pour rouvrir l'export vrai : le
+  premier résultat client mesuré, pas une humeur.
+- **Ce que je n'ai pas fait** : aucune relance du lot interrompue, aucun message écrit pour l'export.
+  Le groupe 2 des 12 attend toujours le mot de King.
