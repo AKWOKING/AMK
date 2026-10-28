@@ -7133,3 +7133,35 @@ envoyé au client** : ce tour écrit seulement l'analyse et répare ce qui la re
 - **Décalage mesuré au passage** : **18 lignes** du CSV diffèrent du générateur, dont **17 = tout l'état
   d'envoi du LOT 3 du 26/10**, **1 lead absent** (« Star Optic ») et **2 `reply_type` hors vocabulaire**
   (`interested`, `salutation`). **Non réparé** : trancher `salutation` d'abord (voir analyse §9 ④).
+### 28/10/2026 (midi) — la porte d'entrée : comment on ne réécrit plus à ce profil
+
+Ruling King : *« il n'est pas dirigeant (decision taker), il est consultant itinérant »* → **le fil du
+Dr Fogue est parqué**, sans relance, sans prix, sans visite. Ma recommandation « aller le voir » (Roast
+Room, 8,0/10) était fausse : un déplacement ne crée pas un acheteur. Bandeau de rétractation dans les
+deux documents ; la ligne CRM passe à `parked` / `authority = sans-autorite` / `Q1_pas_acheteur`.
+
+Puis le ruling demandé : **un process de qualification explicite**.
+
+- **`sales/QUALIFICATION-2026-10-28.md`** — cinq questions, **trois niveaux d'exigence** (froid → première
+  réponse → prix/devis/visite), quatre verdicts, six codes de motif, deux règles de gouvernance (la
+  personne qui répond n'est pas l'acheteur ; un non-ICP qui dit oui ne s'achète pas avec une remise).
+  Le cas Fogue y est écrit noir sur blanc comme cas d'école.
+- **`tools/qa/audit_qualification.py`** — la porte mécanique. **12 cas de banc, 12/12.** Sur le CRM réel :
+  **7 fils engagés cités, 1 bloquant, 18 avertissements** — dont le fait que **0 / 8 fils engagés n'a de
+  rôle d'acheteur écrit**. Il refuse un `qualifying+` sans canal vérifié, et un code de disqualification
+  posé sur une ligne encore engagée.
+- **`leads/build/crm.py`** — deux champs (`authority`, `qualification`) ; **19 lignes de l'état CSV portées
+  dans le générateur** (dont tout l'envoi du LOT 3 du 26/10 : un rebuild remettait 17 leads à « jamais
+  contacté » **en silence**) ; **1 lead absent** (« Star Optic ») récupéré ; `salutation` (hors vocabulaire
+  fermé) rangé en `human` — la réponse d'ISEE disparaissait du comptage de l'entonnoir depuis le 26/10.
+  ⚠ **Défaut trouvé** : `kylaya-labo-bali` et `scientilabo-akwa` **existent deux fois** dans le relevé —
+  une table indexée par slug écrit sur les deux lignes. Contourné par nom + signalé à chaque construction ;
+  la vraie sortie (fusion via `same_buyer_as`) change le compte du pipeline et revient à King.
+- **`leads/CRM.csv` reconstruit** — vérifié **ligne par ligne** : 191 → 191, et **2 écarts seulement**, les
+  deux voulus (Fogue parqué, ISEE en `human`).
+- **Renvois posés** dans `RESEARCH-STANDARD` §8b, `CLIENT-MESSAGING-RULES` §9 et le playbook ICP §1.2.
+
+**Application au lot du jour** : 13 relances datées du 28/10 → **12 passent** (WhatsApp vérifié, pas de
+site vivant, opticien ICP A) ; **London Vision exclu** (`wa_verified = unknown`, ruling 12/10). Pour les
+12, la question « qui décide de ce qui s'affiche sur le site ? » entre dans le premier échange du fil qui
+répond — elle ne coûte pas un message si elle remplace une phrase de vente.

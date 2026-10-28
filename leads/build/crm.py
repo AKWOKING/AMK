@@ -63,6 +63,12 @@ NEW_FIELDS = [
     # M4 : le dossier de travail réel (concept, inspirations, maquette). L'audit §4 : 5 dossiers
     # sur 8 n'avaient AUCUNE ligne — du travail qui existe et que le CRM ignore.
     "dossier",
+    # qualification (28/10) — la porte d'entrée, `sales/QUALIFICATION-2026-10-28.md`.
+    # `authority` : proprietaire / mandate / sans-autorite / inconnu (Q1, la question qui a manqué au
+    #   Dr Fogue : il consulte dans les cabinets des autres, il n'a rien à équiper).
+    # `qualification` : Q-OK, ou le code du motif (Q1_pas_acheteur, Q2_pas_actif, Q3_hors_icp,
+    #   Q4_pas_de_canal, Q5_site_vivant, Q5_fait_non_verifie).
+    "authority", "qualification",
 ]
 
 # ── Les 15 leads hors classeur (audit §1), avec les seuls faits sourcés du dépôt ──
@@ -2564,6 +2570,266 @@ VERIF_WA_2510 = {
 
 
 
+# ── L'ÉTAT DU CSV QUE LE GÉNÉRATEUR NE CONNAISSAIT PAS (porté le 28/10/2026) ──────────────────────
+# Constat du 28/10 : `leads/CRM.csv` est une SORTIE de ce script, mais 20 lignes y portaient un état
+# que le générateur ignorait — dont TOUT l'envoi du LOT 3 du 26/10 (Contacted, last_send_state,
+# Follow-up date, stage_since) et deux leads disqualifiés après la découverte de leur site vivant
+# (2ᵉ passe du 22/09). Un rebuild les remettait à « jamais contacté » EN SILENCE.
+#
+# ⚠️ Le port est MÉCANIQUE : chaque valeur ci-dessous est recopiée telle quelle du CSV, colonne par
+# colonne, par comparaison programmatique (`csv` contre sortie du générateur). Rien n'est réécrit à la
+# main. Après ce port, un rebuild doit rendre un CSV identique, à deux colonnes près (authority,
+# qualification) — c'est la vérification qui vaut preuve, pas la relecture.
+ETAT_CSV_2810 = {
+    # ⚠️ DEUX slugs SONT EXCLUS volontairement : `kylaya-labo-bali` et `scientilabo-akwa` existent
+    # DEUX FOIS dans le relevé (une fois par l'annuaire, une fois par la passe « site vivant »), donc
+    # une table indexée par slug ne peut pas les distinguer — elle écrirait la même valeur sur les deux
+    # lignes. Défaut PRÉEXISTANT (le CSV porte les mêmes doublons). À trancher : fusionner en une ligne
+    # avec `same_buyer_as`, ou renommer les slugs de la source « annuaire ».
+    "alpha-optic": {
+        "Contacted": "Yes",
+        "Follow-up date": "2026-10-28",
+        "Notes": "SCOUT ONOC du 24/10 — ligne 87 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (2ᵉ tour, capture King) : 699 57 34 57 EST sur WhatsApp, profil « Alpha Optic » avec photo. Joignable, jamais contacté. · LOT 3 envoyé le 26/10 (heure non notée — déclaré par King)",
+        "follow_ups_sent": "0",
+        "last_send_state": "sent",
+        "stage_since": "2026-10-26",
+    },
+    "ass-pour-rrphdd": {
+        "Contacted": "Yes",
+        "Follow-up date": "2026-10-28",
+        "Notes": "SCOUT ONOC du 24/10 — ligne 134 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (2ᵉ tour) : 675 39 90 23 EST sur WhatsApp, PROFIL BUSINESS « AMBASSADOR Vision Sarl » — Medical & health, description lunetterie/verres/montures + service après-vente gratuit. Le nom du tableau de l'Ordre (« ASS pour RRPHDD ») n'est PAS le nom commercial : n'écrire que « Ambassador Vision ». · LOT 1 envoyé le 26/10 (heure non notée — déclaré par King)",
+        "follow_ups_sent": "0",
+        "last_send_state": "sent",
+        "stage_since": "2026-10-26",
+    },
+    "bellevue-optique": {
+        "Contacted": "Yes",
+        "Follow-up date": "2026-10-28",
+        "Notes": "SCOUT ONOC du 24/10 — ligne 135 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (2ᵉ tour) : 694 89 26 96 EST sur WhatsApp, PROFIL BUSINESS « bellevueoptique » — catégorie Optician, Bali Serena Hôtel rue des pavés, bellevue.optique@yahoo.fr, garanties 3 et 6 mois affichées. Fiche très tenue : bonne cible de re-engagement, le sujet l'intéresse déjà. · LOT 1 envoyé le 26/10 (heure non notée — déclaré par King)",
+        "follow_ups_sent": "0",
+        "last_send_state": "sent",
+        "stage_since": "2026-10-26",
+    },
+    "cabinet-optique-la-retine": {
+        "disqualification_reason": "lead mort — contacté le 24/09, message livré, aucune réponse (ruling King 26/10)",
+        "stage": "disqualified",
+        "stage_since": "2026-10-26",
+    },
+    "capelli-optique-medicale": {
+        "Contacted": "Yes",
+        "Follow-up date": "2026-10-28",
+        "Notes": "SCOUT ONOC du 24/10 — ligne 155 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (3ᵉ tour) : 675 26 89 81 EST sur WhatsApp, PROFIL BUSINESS « CAPELLI OPTIQUE MÉDICALE » — catégories « Optometrist • Optician », adresse « immeuble collé à la mairie de Douala 5 » (Bonamoussadi), visuel « la qualité de la vision supérieure ». Fiche tenue : bonne cible. · LOT 2 envoyé le 26/10 (heure non notée — déclaré par King)",
+        "follow_ups_sent": "0",
+        "last_send_state": "sent",
+        "stage_since": "2026-10-26",
+    },
+    "ets-espace-medical": {
+        "Contacted": "Yes",
+        "Follow-up date": "2026-10-28",
+        "Notes": "SCOUT ONOC du 24/10 — ligne 124 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (2ᵉ tour) : 655 04 95 29 EST sur WhatsApp, PROFIL BUSINESS « Optic Medical Favour and Joy » — catégorie Medical & health, Entrée Eneo PK11 Douala, favourjoyopticmedical@gmail.com, produits et description. ATTENTION : le nom commercial n'est PAS celui de l'annuaire de l'Ordre (« Ets Espace Médical ») — tout message doit utiliser le nom que le cabinet affiche, pas celui du tableau. MAPPING CONFIRMÉ par King le 25/10 : « 550 49 52 9 » EST 655 04 95 29 (« checked and crosschecked ») — c'est bien le même cabinet, pas deux numéros. · LOT 1 envoyé le 26/10 (heure non notée — déclaré par King)",
+        "follow_ups_sent": "0",
+        "last_send_state": "sent",
+        "stage_since": "2026-10-26",
+    },
+    "free-optic": {
+        "Contacted": "Yes",
+        "Follow-up date": "2026-10-28",
+        "Notes": "SCOUT ONOC du 24/10 — ligne 105 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (capture King) : 679 11 37 60 EST sur WhatsApp, PROFIL BUSINESS « Free Optic » — catégorie « Medical & health », description « examens de vue, vente de lunettes médicales, optiques et solaires… », base à Akwa/Bonamoussadi. Second meilleur signal de la liste. · LOT 3 envoyé le 26/10 (heure non notée — déclaré par King)",
+        "follow_ups_sent": "0",
+        "last_send_state": "sent",
+        "stage_since": "2026-10-26",
+    },
+    "isee": {
+        # `salutation` est hors du vocabulaire fermé (human / auto / none / vide) : ce n'est pas
+        # un auto-répondeur — un humain a écrit « Bonjour » le 26/10 à 15:41. Rangé en `human`,
+        # l'absence d'intention restant écrite dans `Conversation`. Sans ça, la réponse
+        # disparaissait du compte de l'entonnoir en silence.
+        "reply_type": "human",
+        "Contacted": "Yes",
+        "Notes": "SCOUT ONOC du 24/10 — ligne 90 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (capture King) : 656 97 80 43 EST sur WhatsApp, PROFIL BUSINESS « I See Better » — « Cabinet d'optique médicale », BP 3549 Douala, iseecameron@gmail.com, carte affichée. Meilleur signal de la liste : le cabinet tient déjà une fiche soignée, il se soucie de son image. · LOT 1 envoyé le 26/10 (heure non notée — déclaré par King) · clos par King le 26/10 à 16:04 (excuse envoyée après découverte de iseecameroon.com) — aucune relance",
+        "follow_ups_sent": "0",
+        "last_send_state": "sent",
+        "stage": "parked",
+        "stage_since": "2026-10-26",
+    },
+    "kamais-optic-bessengue": {
+        "disqualification_reason": "lead mort — contacté le 02/10 par gabarit, sans réponse ; trop tard pour une relance (ruling King 26/10)",
+        "stage": "disqualified",
+        "stage_since": "2026-10-26",
+    },
+
+    "light-optique": {
+        "Contacted": "Yes",
+        "Follow-up date": "2026-10-28",
+        "Notes": "SCOUT ONOC du 24/10 — ligne 114 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (2ᵉ tour) : 677 64 87 90 EST sur WhatsApp, profil « Light Optique » avec photo de boutique. Joignable. MAPPING CONFIRMÉ par King le 25/10 : la forme courte « 77648790 » EST 677 64 87 90 (« checked and crosschecked ») — la seule ligne « Light Optique » du lot, aucun risque de doublon. · LOT 2 envoyé le 26/10 (heure non notée — déclaré par King)",
+        "follow_ups_sent": "0",
+        "last_send_state": "sent",
+        "stage_since": "2026-10-26",
+    },
+    "london-vision": {
+        "Contacted": "Yes",
+        "Follow-up date": "2026-10-28",
+        "Notes": "VAGUE 1 OPTICIENS (21/09). Titulaire public : MINANKO Pascal. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir. · LOT 3 envoyé le 26/10 (heure non notée — déclaré par King)",
+        "follow_ups_sent": "0",
+        "last_send_state": "sent",
+        "stage_since": "2026-10-26",
+    },
+    "maranatha-optics": {
+        "Contacted": "Yes",
+        "Follow-up date": "2026-10-28",
+        "Notes": "SCOUT ONOC du 24/10 — ligne 158 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (3ᵉ tour) : 658 16 31 90 EST sur WhatsApp, profil « Maranatha Optics » avec visuel de montures. Joignable. · LOT 3 envoyé le 26/10 (heure non notée — déclaré par King)",
+        "follow_ups_sent": "0",
+        "last_send_state": "sent",
+        "stage_since": "2026-10-26",
+    },
+    "optique-pro": {
+        "Contacted": "Yes",
+        "Follow-up date": "2026-10-28",
+        "Notes": "SCOUT ONOC du 24/10 — ligne 156 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (3ᵉ tour) : 690 03 48 18 EST sur WhatsApp sous « Laury Ntemtsa » (catégorie « Post office », photo de personne). Le nom correspond au titulaire du tableau de l'Ordre (TEKENG NTEMTSA Sintiche Laury) : c'est la ligne DIRECTE du décideur, pas un standard. Écrire à Ntemtsa, pas « Optique Pro ». · LOT 2 envoyé le 26/10 (heure non notée — déclaré par King)",
+        "follow_ups_sent": "0",
+        "last_send_state": "sent",
+        "stage_since": "2026-10-26",
+    },
+    "pagrot-optique": {
+        "Contacted": "Yes",
+        "Follow-up date": "2026-10-28",
+        "Notes": "SCOUT ONOC du 24/10 — ligne 141 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (3ᵉ tour) : 699 90 46 91 EST sur WhatsApp, profil « Pagrot Optique » (initiale dans un rond vert, pas de photo). Joignable. · LOT 2 envoyé le 26/10 (heure non notée — déclaré par King)",
+        "follow_ups_sent": "0",
+        "last_send_state": "sent",
+        "stage_since": "2026-10-26",
+    },
+    "s-o-s-vision": {
+        "Contacted": "Yes",
+        "Follow-up date": "2026-10-28",
+        "Notes": "SCOUT ONOC du 24/10 — ligne 125 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (2ᵉ tour) : 699 86 04 63 EST sur WhatsApp, PROFIL BUSINESS « Sos Vision » — « Optician • Sunglasses and eyewear shop • Ophthalmologist », catalogue produits, horaires. Le seul de la liste qui se déclare aussi ophtalmologiste. · LOT 1 envoyé le 26/10 (heure non notée — déclaré par King)",
+        "follow_ups_sent": "0",
+        "last_send_state": "sent",
+        "stage_since": "2026-10-26",
+    },
+    "saoudia-optique": {
+        "Contacted": "Yes",
+        "Follow-up date": "2026-10-28",
+        "Notes": "SCOUT ONOC du 24/10 — ligne 88 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (capture King) : 696 04 04 13 EST sur WhatsApp, profil « Saoudia Optique ». Joignable, jamais contacté : entre dans la vague suivante. · LOT 2 envoyé le 26/10 (heure non notée — déclaré par King)",
+        "follow_ups_sent": "0",
+        "last_send_state": "sent",
+        "stage_since": "2026-10-26",
+    },
+
+    "tchaya-optique": {
+        "disqualification_reason": "lead mort — contacté le 24/09, livré et JAMAIS ouvert ; ruling King du 24/09 : aucune relance",
+        "stage": "disqualified",
+        "stage_since": "2026-10-26",
+    },
+}
+
+# Leads présents dans le CSV et ABSENTS du générateur (perdus à chaque rebuild). Recopiés entiers.
+LIGNES_AJOUTEES_2810 = [
+    {
+        "School": "Star Optic",
+        "City": "Douala",
+        "Language": "FR",
+        "Contacted": "No",
+        "Notes": "26/10 — JAMAIS ENVOYÉ : le 654 04 68 45 n'est pas sur WhatsApp (porte A non franchie, constaté par King). Écarté du LOT 3 v9 pour cette raison ; aucune relance, aucune date. Si un autre numéro est confirmé un jour, repartir d'une première touche, pas d'un suivi.",
+        "slug": "star-optic-bonapriso",
+        "stage": "disqualified",
+        "wa_number": "654 04 68 45",
+        "wa_verified": "no",
+        "last_send_state": "not_sent",
+        "source": "directory",
+        "source_detail": "Mont-Pandi fiche 763 + zenithinsurance.com",
+        "added_on": "2026-10-26",
+        "stage_since": "2026-10-26",
+        "disqualification_reason": "26/10 (King) : 654 04 68 45 absent de WhatsApp — porte A non franchie",
+        "wa_number_note": "AUCUN NUMERO SUR WHATSAPP le 26/10 (654 04 68 45 absent) — constaté par King",
+    },
+]
+
+# ── LES QUATRE LIGNES QU'UN SLUG PARTAGÉ EMPÊCHE DE GÉNÉRER (28/10/2026) ──────────────────────────
+# `kylaya-labo-bali` et `scientilabo-akwa` existent DEUX FOIS chacun : une fois comme « piège »
+# (LABS_ECARTES : le cabinet a un site vivant), une fois par la passe « site vitrine » (PROSE_LEADS).
+# Une table indexée par slug écrit sur les deux lignes à la fois — donc on distingue ici par le NOM,
+# qui est ce qui diffère réellement dans le relevé. Aucune valeur n'est inventée : chacune vient du
+# CSV du 28/10, colonne par colonne.
+#
+# ⚠️ Ce bloc ne règle PAS le défaut, il le contourne. La vraie sortie est une ligne par acheteur,
+# reliée par `same_buyer_as` — décision de King, parce qu'elle change le compte du pipeline.
+DOUBLONS_PAR_NOM_2810 = {
+    "scientilabo-akwa": {
+        "ScientiLabo": {
+            "City": "Douala (Akwa, 1749 rue Gallieni)",
+            "Contact channel": "WhatsApp",
+            "Contacted": "No",
+            "Demo made": "No",
+            "Language": "FR",
+            "Notes": "Vitrine à lui → profil. Agréé n°25 du Ministère de la Santé, 34 ans d'existence, analyse des eaux et toxicologie en plus de la biologie ; TROIS adresses e-mail différentes sur le site (scientisom@yahoo.fr, scientilabo@gmail.com, contact@scientilabo.com) et deux numéros (696 423 477 / 680 934 010). Présent dans le réseau de soins AssurTous.",
+            "Reply": "No",
+            "School": "ScientiLabo",
+            "Website": "scientilabo.com — VIVANT et fourni (34 ans, ISO 15189, RDV en ligne, résultats en ligne)",
+            "org_type": "lab",
+            "source": "pass_vitrine",
+            "source_detail": "2ᵉ passe du 22/09 (site à eux)",
+            "stage": "prospecting",
+            "wa_number": "696 423 477",
+            "wa_verified": "unknown",
+        },
+        "Scientilabo": {
+            "City": "Douala (Akwa, Rue Gallieni)",
+            "Contacted": "No",
+            "Demo made": "No",
+            "Language": "FR",
+            "Notes": "⛔ NE PAS ENVOYER. A un site vivant — 8 spécialités, 34 ans d'expérience. Écarté le 19/09 pendant la préparation du pack LABOS. C'est exactement le piège QUALITECH/Clinique des Anges — sauf que cette fois la vérification est passée avant la production, pas après.",
+            "Reply": "No",
+            "School": "Scientilabo",
+            "disqualification_reason": "A DÉJÀ UN SITE VIVANT (https://scientilabo.com/). Hors cible — vérifié AVANT toute production (règle 66).",
+            "org_type": "lab",
+            "site_checked_on": "2026-09-19",
+            "site_url": "https://scientilabo.com/",
+            "source": "directory",
+            "source_detail": "annuaires de Douala",
+            "stage": "disqualified",
+            "wa_number": "696 42 34 77",
+            "wa_verified": "no",
+        },
+    },
+    "kylaya-labo-bali": {
+        "KYLAYA LABO": {
+            "City": "Douala (Bali, 189 rue des Manguiers)",
+            "Contact channel": "WhatsApp",
+            "Contacted": "No",
+            "Demo made": "No",
+            "Language": "FR",
+            "Notes": "Vitrine à lui → profil. Site sérieux et complet : biochimie (≈70 analyses), marqueurs tumoraux, biologie moléculaire, prélèvements à domicile, résultats en ligne. Également dans le réseau de soins AssurTous.",
+            "Reply": "No",
+            "School": "KYLAYA LABO",
+            "Website": "kylayalabo.com — VIVANT (analyses, RDV en ligne, espaces résultats patients ET médecins)",
+            "org_type": "lab",
+            "source": "pass_vitrine",
+            "source_detail": "2ᵉ passe du 22/09 (site à eux)",
+            "stage": "prospecting",
+            "wa_number": "696 78 77 78",
+            "wa_verified": "unknown",
+        },
+        "Kylaya Labo": {
+            "City": "Douala (Bali, 189 Rue des Manguiers)",
+            "Contacted": "No",
+            "Demo made": "No",
+            "Language": "FR",
+            "Notes": "⛔ NE PAS ENVOYER. A un site vivant. Écarté le 19/09 pendant la préparation du pack LABOS. C'est exactement le piège QUALITECH/Clinique des Anges — sauf que cette fois la vérification est passée avant la production, pas après.",
+            "Reply": "No",
+            "School": "Kylaya Labo",
+            "disqualification_reason": "A DÉJÀ UN SITE VIVANT (http://www.kylayalabo.com/). Hors cible — vérifié AVANT toute production (règle 66).",
+            "org_type": "lab",
+            "site_checked_on": "2026-09-19",
+            "site_url": "http://www.kylayalabo.com/",
+            "source": "directory",
+            "source_detail": "annuaires de Douala",
+            "stage": "disqualified",
+            "wa_number": "696 78 77 78",
+            "wa_verified": "no",
+        },
+    },
+}
+
 # ── LE FIL DU Dr FOGUE (26–27/10) — la mémoire du prospect le plus chaud du dépôt ────────────────
 # Constat du 28/10 : toute la conversation (« je ne suis pas opticien patron », les trois photos,
 # « ok allez y », la demande de rencontre) vivait UNIQUEMENT dans `leads/CRM.csv`, qui est une SORTIE
@@ -2581,14 +2847,25 @@ VERIF_WA_2510 = {
 #      demandé le 26/10 à 17 h 33 et n'a jamais été donné : première question de la rencontre.
 FIL_AFRICA_OPTIC_2710 = {
     "africa-optic": {
+        # RULING KING 28/10 : « il n'est pas dirigeant (decision taker), il est consultant itinérant ».
+        # → on ne poursuit pas la conversation, on ne baisse pas le prix, on ne se déplace pas.
+        "stage": "parked",
+        "authority": "sans-autorite",
+        "qualification": "Q1_pas_acheteur",
+        "disqualification_reason":
+            "Q1_pas_acheteur + Q2_pas_actif (ruling King 28/10) : ophtalmologue ITINÉRANT, il consulte "
+            "dans Africa Médical et à l'Hôpital Charity sans en être le dirigeant ; aucune enseigne, "
+            "aucun local, aucune fiche à lui. Il l'a dit le 26/10 17:24 — « je ne suis pas opticien "
+            "patron ». Rien à équiper, personne pour signer. Réouverture : si un dirigeant d'Africa "
+            "Médical ou de Charity se manifeste, ou si King tranche une offre pour praticien itinérant "
+            "(elle n'existe pas dans PRIX-2026-10-24). Voir sales/QUALIFICATION-2026-10-28.md §4.",
         "Contacted": "Yes",
         "Reply": "Yes",
-        "stage": "qualifying",
         "stage_since": "2026-10-26",
         "reply_type": "human",           # vocabulaire fermé REPLY_TYPES : « human », pas « interested »
         "last_send_state": "sent",
         "follow_ups_sent": "0",
-        "Follow-up date": "2026-10-28",
+        "Follow-up date": "",   # parqué le 28/10 : aucune relance, aucune visite, aucun prix
         "Conversation_extra":
             "26/10 17:19 touche LOT 3 → 17:24 « je ne suis pas opticien patron » · 17:26 « par contre "
             "je suis ophtalmologue » (la prémisse du message était fausse : il n'est pas opticien) · "
@@ -4367,7 +4644,27 @@ def main() -> int:
     _apply_state(out, LOT_0210_KING, "LOT_0210_KING")
     _apply_state(out, LOT2_0210_KING, "LOT2_0210_KING")
     _apply_state(out, VERIF_WA_2510, "VERIF_WA_2510")
+    # L'état porté du CSV s'applique AVANT les tables de ruling : un ruling daté bat un portage
+    # mécanique. Fogue est exclu du port (sa ligne est réécrite par FIL_AFRICA_OPTIC_2710).
+    _apply_state(out, ETAT_CSV_2810, "ETAT_CSV_2810")
+    for _slug, _byname in DOUBLONS_PAR_NOM_2810.items():
+        for _rec in out:
+            if _rec.get("slug") == _slug and _rec.get("School") in _byname:
+                for _k, _v in _byname[_rec["School"]].items():
+                    _rec[_k] = _v
+    out.extend(dict(r) for r in LIGNES_AJOUTEES_2810)
     _apply_state(out, FIL_AFRICA_OPTIC_2710, "FIL_AFRICA_OPTIC_2710")
+    # ── DEUX LIGNES, UN SEUL SLUG : toute table d'état devient menteuse ────────────────────────────
+    # Trouvé le 28/10 en portant l'état du CSV dans ce script : `kylaya-labo-bali` et
+    # `scientilabo-akwa` existent chacun DEUX FOIS (l'annuaire, puis la passe « site vivant »). Une
+    # table indexée par slug écrit la même valeur sur les deux lignes, et la plus juste est perdue.
+    # On ne refuse pas la construction (le défaut est antérieur) : on le rend VISIBLE à chaque run.
+    _slugs = [r.get("slug") for r in out]
+    _dups = sorted({x for x in _slugs if x and _slugs.count(x) > 1})
+    if _dups:
+        print(f"  ⚠ slugs dupliqués : {', '.join(_dups)} — deux lignes, un seul identifiant. "
+              f"Les tables d'état ne peuvent pas les distinguer (à fusionner via `same_buyer_as` "
+              f"ou à renommer).")
     check_reply_types(out)
     check_no_wa_is_dead(out)
     check_tables_sans_doublon()

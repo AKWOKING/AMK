@@ -91,6 +91,14 @@ A claim the recipient could factually dispute, or that addresses a dead/moved/wr
 
 **Scoring:** 3/3 = send. **2/3 = King decides explicitly**, and the reason is written down. 1/3 = never send.
 
+> **28/10/2026 — porte C précisée.** « Buyer type » ci-dessus distingue un acheteur *propriétaire* d'un
+> acheteur *de conseil* ; le cas du Dr Fogue montre que le second cas n'était pas couvert : il
+> consulte **dans** les structures des autres, il n'en est pas le dirigeant, et il n'y a donc rien à
+> équiper. La classification à trois rôles (**propriétaire / mandaté / sans autorité**), les codes de
+> motif et les trois niveaux d'exigence (froid → réponse → prix) vivent dans
+> `sales/QUALIFICATION-2026-10-28.md`, et la porte mécanique est
+> `tools/qa/audit_qualification.py`.
+
 **Worked example (JOSS MEDI, 17 Sep):** A **FAIL** (their own FB number 674 84 39 02 not on WhatsApp; no verified line) · B **FAIL** (last FB post 24 Jun 2022) · C **FAIL** (11–50 staff clinic since 2009 = board buyer) → **0/3, parked dormant.** Same day, same check on L'Opticien Bali: A **PASS** (WhatsApp Business account seen, catalogue in use) · B **PASS** (business account + catalogue + seen active 11:54) · C **PASS** (single-store optician = owner) → **3/3, send.**
 
 ## 8c. DEEP CHECK — mandatory on EVERY prospect (King, 24 Sep 2026)

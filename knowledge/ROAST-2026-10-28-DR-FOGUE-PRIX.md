@@ -14,6 +14,12 @@
 > la phrase « Qu'est-ce qui vous ferait dire que ça vaut le coup pour vous ? ». Les options A/B/C de la
 > séance du matin sont **retirées**, pas réordonnées.
 
+> **⛔ VERDICT RETIRÉ — ruling King, 28/10.** *« Aller le voir ?? Pourquoi ?? Il n'est pas dirigeant
+> (decision taker), il est consultant itinérant. »* L'option B (aller le voir, 8,0/10) est **fausse** :
+> un déplacement ne crée pas un acheteur. La séance garde sa valeur de méthode — elle a bien posé la
+> question « qui est l'acheteur ? » et l'a mal tranchée — mais **la décision du jour est A** : parquer.
+> Ce que ça apprend : une séance qui note des options sans avoir vérifié Q1 note du bruit.
+
 ## Pourquoi cette séance existe
 
 King, 28/10 : *« Notre ICP c'est des cliniques privées avec entre 1-10 employés. Dr Fogue n'a pas de

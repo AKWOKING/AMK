@@ -7,8 +7,18 @@ SOURCES   5 captures WhatsApp fournies par King : 4 le 28/10 au matin (26/10 17 
           Aucune page web. Les seuls nombres sont la grille du dépôt (`knowledge/PRIX-2026-10-24.md`)
           et l'ICP (`sales/SOCIAL-ACQUISITION-PLAYBOOK-2026-10-25.md` §1.2).
 PORTÉE    Dr FOGUE, ophtalmologue, quatre lieux de consultation. Fiche CRM `africa-optic`.
-STATUT    **Version 2 — remplace celle du matin, dont une citation était fausse.** Voir §0 bis.
+STATUT    **Version 3 — la recommandation « aller le voir » est RETIRÉE** (voir l'encadré ci-dessous).
+          Version 2 avait retiré une citation fausse. Les deux corrections sont dans le fil du document.
 ```
+
+
+> **⛔ RULING KING, 28/10 — ce document ne recommande plus d'aller voir le Dr Fogue.**
+> *« Aller le voir ?? Pourquoi ?? Il n'est pas dirigeant (decision taker), il est consultant itinérant. »*
+> Le §8 et la séance du Roast Room proposent une rencontre de qualification. **C'est faux** : on ne se
+> déplace pas pour qualifier quelqu'un qui n'a ni l'actif ni l'autorité d'acheter, et un déplacement ne
+> crée pas un dirigeant. Le fil est **parqué** (`Q1_pas_acheteur` + `Q2_pas_actif`), sans relance, sans
+> prix, sans visite. La leçon retenue n'est plus « comment le convaincre » mais **« comment ne plus
+> écrire à ce profil »** → `sales/QUALIFICATION-2026-10-28.md`.
 
 ---
 

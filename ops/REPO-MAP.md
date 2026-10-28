@@ -2,15 +2,15 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-28
-Source : graphify-out/graph.json (13932 nœuds, 18238 arêtes)
+Source : graphify-out/graph.json (13933 nœuds, 18238 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **13932 nœuds** — dont 862 documents, 207 scripts, 33 modules, 140 pages HTML, 486 images, 10 vidéos, 40 audios, 51 fichiers de données, 11 PDF.
-- **3869 citations entre documents** (3143 en chemin exact, 726 par nom unique)
+- **13933 nœuds** — dont 862 documents, 207 scripts, 33 modules, 140 pages HTML, 486 images, 10 vidéos, 40 audios, 51 fichiers de données, 11 PDF.
+- **3868 citations entre documents** (3142 en chemin exact, 726 par nom unique)
 - **161 arêtes de remplacement** · **3 documents marqués périmés**
 - **428 documents que personne ne cite** (atteignables par aucun chemin de lecture)
 - **Couverture : 1916 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
@@ -71,11 +71,11 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 | `knowledge/LEAD-MAGNETS-2026-10-27.md` | 9 | 2× | L'AIMANT ET LA CONVERSION PAR VUE — le tunnel qui transforme des vues en contacts |
 | `knowledge/MARKETING-OPTICAL-2026-10-22.md` | 19 | 2× | Marketing de l'optique — ce que le dépôt sait, au 22/10/2026 |
 | `knowledge/PREUVE-VAGUE-ET-PERMISSION-2026-10-26.md` | 5 | 2× | La preuve vague, et le droit de ne pas construire d'avance (26/10/2026) |
-| `knowledge/ROAST-2026-10-28-DR-FOGUE-PRIX.md` | 7 | 2× | Roast Room — séance du 28/10/2026 · « le Dr Fogue n'est pas dans l'ICP : que fait-on ? » |
 | `knowledge/VIDEOS-2026-10-23-AUDIT.md` | 10 | 2× | Cinq vidéos, deux images — ce qu'on garde, ce qu'on corrige, ce qu'on jette |
 | `knowledge/CE-QUI-FAIT-DIRE-OUI-2026-10-26.md` | 11 | 1× | Ce qui fait dire oui — la comparaison du 26/10, texte reçu contre texte écrit |
 | `knowledge/PORTE-C-SITE-AVANT-D-AFFIRMER-2026-10-26.md` | 8 | 1× | On ne dit pas à quelqu'un ce qu'il n'a pas avant d'avoir cherché tous ses noms |
 | `knowledge/ROAST-2026-10-23-PRIX.md` | 9 | 1× | Roast Room — séance du 23/10/2026 · « faut-il afficher un prix sur le site AMK ? » |
+| `knowledge/ROAST-2026-10-28-DR-FOGUE-PRIX.md` | 7 | 1× | Roast Room — séance du 28/10/2026 · « le Dr Fogue n'est pas dans l'ICP : que fait-on ? » |
 | `knowledge/ROAST-2026-10-26-LOT-1-V2.md` | 9 | 0× | Roast Room — séance du 26/10/2026 · « ce que Google dit de vous » remplace-t-il « ce que G |
 | `knowledge/ROAST-2026-10-26-LOT-5.md` | 10 | 0× | Roast Room — séance du 26/10/2026 · « cinq messages, et King cherche avant d'envoyer : bon |
 
@@ -85,7 +85,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 
 | Rang | Document | Cité par | Titres |
 |---|---|---|---|
-| 1 | `sales/Activity-Log.md` | **206** | 300 |
+| 1 | `sales/Activity-Log.md` | **206** | 301 |
 | 2 | `AMK-DESIGN-SKILLS.md` | **42** | 173 |
 | 3 | `PRE-FLIGHT.md` | **38** | 41 |
 | 4 | `research/YouTube-Lessons.md` | **30** | 202 |
@@ -230,7 +230,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 2 | `dmopticsarl-2026-10-21.zip`, `dr-ophtalmo-site-2026-10-27.zip` |
 | style | 1 | `hosting/previews/dr-ophtalmo/css/styles.css` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 12016 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 12017 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
