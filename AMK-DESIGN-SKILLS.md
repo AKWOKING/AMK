@@ -2488,6 +2488,14 @@ Les trois autres pièces de la maison :
 | `emil/skills/` | Emil Kowalski : `emil-design-eng`, `animate`, `review-animations`, `find-animation-opportunities`, `apple-design`, `pick-ui-library` | §9 et `design/MOTION.md` en dérivent |
 | `taste/skills/` | Leonxlnx : `taste-skill` (l'anti-slop d'origine), `redesign-skill`, `brandkit`, `imagegen-frontend-web` | §3 et §12 en dérivent |
 
+### 39.2 bis Hallmark — installée par CLI, pas vendoriée (28/10)
+
+`nutlope/hallmark` (MIT, **v2.0.0**) : un **plancher de 16 règles** et un linter, `sloplint.mjs`. Elle
+s'installe et se met à jour toute seule, donc on ne la copie pas : `design/HALLMARK.md` garde la
+commande d'installation, la version, le verdict rendu sur le site DM OPTIQUE (deux fautes corrigées,
+zéro pixel changé), et **la liste des écarts écartés avec leur raison**. À relire avant de citer
+Hallmark comme une autorité : sur un design approuvé, c'est `audit`, jamais `redesign`.
+
 **Règle de lecture** : une bibliothèque vendoriée **n'a jamais raison contre ce fichier**. Elle propose une
 direction ; §3 et §6 disent si elle a le droit d'exister chez nous. §4.4 (Reference-Override) est la seule
 exception, et elle vient du **client**, pas d'un dépôt.

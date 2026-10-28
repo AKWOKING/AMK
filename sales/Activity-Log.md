@@ -7634,3 +7634,40 @@ différence · run `La machine` **vert** sur `456556c6` puis sur la poussée de 
 encore rouge est `Workers Builds: dmoptiquesarl`, l'intégration Cloudflare qui reconstruit la même
 chose que le workflow de publication : deux publieurs pour un site, c'est un de trop. À débrancher
 côté Cloudflare (Settings → Builds), pas ici.
+
+## 28 octobre 2026 · tour 228 — Hallmark installée, deux fautes corrigées, zéro pixel changé
+
+**Ce qui a été installé.** `nutlope/hallmark` (MIT, v2.0.0) par sa propre commande,
+`npx -y skills add nutlope/hallmark -g --agent '*' -y`, dans `~/.agents/skills/hallmark`. Sans
+`--agent '*' -y`, le menu interactif s'arrête sans rien installer quand il n'a pas de terminal : c'est
+le premier essai, et il a échoué proprement.
+
+**Ce qui a été écrit.** `design/HALLMARK.md` : la commande, la version, le plancher de seize règles, le
+verdict sur le site, **et la liste des écarts écartés un par un avec leur raison**. Le §39.2 bis de
+`AMK-DESIGN-SKILLS.md` y renvoie. La compétence n'est **pas vendoriée** : 5,6 de ses 7,1 Mo sont des
+aperçus de thèmes en JPEG, et elle se met à jour toute seule. On garde la commande et le verdict, pas la
+copie.
+
+**Le verbe choisi : `audit`.** La compétence prévoit `audit` et `redesign` pour un design existant, et
+prévient qu'on ne l'applique pas sans la nommer. King l'a nommée, donc une passe était autorisée ; mais
+le design de DM OPTIQUE est approuvé, mesuré (papier 55,67 %, encre 17,32 %, blanc 9,36 %) et **en
+ligne**. Une refonte n'est pas une décision d'outil.
+
+**Ce que le linter a trouvé, et ce qui a été corrigé.** Accueil : **67 fautes**, ramenées à **65**.
+`/questions/` : 67, ramenées à 66. Les deux seules corrigées ne changent pas un pixel :
+1. `overflow-x: clip` sur `html` et `body`. **`clip` et pas `hidden`** : `hidden` transforme `<html>` en
+   conteneur de défilement et casse le `position:sticky` de la barre fixe. Le cercle du premier écran
+   sort du cadre par construction, c'est lui qui poussait la page de côté sur un téléphone.
+2. `minmax(0, 1.35fr)` sur les deux grilles à images : sans le `minmax`, une colonne refuse de descendre
+   sous son contenu, et la grille déborde au lieu de rétrécir.
+
+**Ce qui a été écarté, avec la raison dans le document.** 38 couleurs en dur hors des jetons (ombres,
+filets, blancs : les sortir, c'est refaire le système du client), 8 blancs purs (le blanc est *dans* la
+palette mesurée), 8 étiquettes en capitales espacées (c'est la voix du design), 9 chaînes à points
+médians (copie approuvée), 1 cadratin dans le `<title>` (les 22 titres suivent la même forme), 184
+espacements hors échelle de 4 px (le site tient un rythme de 2 px).
+
+**Limite dite franchement.** L'étage `--render` du linter demande `puppeteer-core`, absent du bac : on a
+lu le CSS et le HTML, pas la page peinte. L'œil reste `shot.py`, vert sur l'accueil après correction, et
+les portes maison sont toutes repassées : portique SEO local 0/0, livraison 0 P1 et 0 P2, lois 0/0,
+AEO 0/0, `test_dmoptic_page` 71 verts.
