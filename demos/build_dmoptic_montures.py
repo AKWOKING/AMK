@@ -19,7 +19,8 @@ Règles appliquées :
 - **Aucun prix, aucune marque, aucune mesure** (brief §4 ; les mesures ne sont pas fournies → absentes).
 - Filtres = JS progressif + **fragments `#`** (jamais d'URL paramétrée indexable — Google, facettes) ;
   compteurs calculés sur les données, aucune pill à zéro résultat (SPEC §6) ; sans JS, grille complète.
-- Schémas : `BreadcrumbList` partout, `ItemList` sur hub/catégories ; **jamais** `Product`/`Offer`/`price`.
+- Schémas : `BreadcrumbList` partout, `ItemList` sur hub/catégories, `Product` **sans** `Offer` ni prix
+  sur chaque fiche (28/10 : la porte de livraison le demande, le prix reste interdit).
 - Les polices et le logo de la tête de l'accueil sont relatifs (`fonts/…`) : réécrits en absolu
   (`/fonts/…`) pour les pages nichées, sinon elles chargent dans le vide.
 - CTA unique par monture : WhatsApp, message avec le nom injecté (SPEC §0), « DM OPTIQUE SARL »
@@ -555,7 +556,14 @@ class Site:
         set_meta("property", "og:title", title)
         set_meta("property", "og:description", desc)
         if og_image:
-            set_meta("property", "og:image", self.abs(og_image[0]))
+            url_img = self.abs(og_image[0])
+            set_meta("property", "og:image", url_img)
+            # 28/10 : le type suit l'extension. Un og:image en WebP n'est pas garanti dans WhatsApp,
+            # qui est LE canal de ces clients — les fiches repointent donc vers le JPEG 1200×630.
+            if url_img.lower().endswith((".jpg", ".jpeg")):
+                set_meta("property", "og:image:type", "image/jpeg")
+            elif url_img.lower().endswith(".webp"):
+                set_meta("property", "og:image:type", "image/webp")
             set_meta("property", "og:image:alt", og_image[1])
             if og_wh:
                 set_meta("property", "og:image:width", str(og_wh[0]))
@@ -639,6 +647,22 @@ class Site:
         return {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": i + 1, "name": name, "item": self.abs(url)}
             for i, (name, url) in enumerate(items)]}
+
+    def product_ld(self, f, url, desc):
+        """La fiche monture, déclarée comme un produit — SANS prix et SANS `Offer`.
+
+        Le 22/10, la règle était « jamais Product » : elle datait du temps où l'on craignait qu'un
+        schéma produit ne promette un prix. La porte de livraison (`audit_delivery.py`, D7) demande
+        aujourd'hui le contraire : `name`, `image`, `description`, `sku` — et toujours aucun prix.
+        Ce que Google lit ici, c'est un objet nommé, pas une offre commerciale.
+        """
+        return {"@type": "Product",
+                "name": f["nom"],
+                "url": url,
+                "image": [self.abs(f"/montures/monture-{f['code'].lower()}.jpg")],
+                "description": desc,
+                "sku": f["code"],
+                "category": "Monture de vue"}
 
     def itemlist_ld(self, frames):
         return {"@type": "ItemList", "itemListElement": [
@@ -809,15 +833,20 @@ def main():
     </div>
   </section>
   {sim_block}'''
+            fiche_desc = (f"{f['phrase']} Demandez-la sur WhatsApp au 656 122 239 "
+                          f"— référence {f['code']}.")
             written.append(site.page(
                 frame_url(f), f"{f['nom']} — DM OPTIQUE SARL",
                 # La référence en fin de description : sans elle, deux montures de même forme et même
                 # couleur (F10/F11, H01/H02/H05/H08) portaient la MÊME description (audit 21/10).
-                f"{f['phrase']} Demandez-la sur WhatsApp au 656 122 239 — référence {f['code']}.",
+                fiche_desc,
                 fiche_main,
                 ld_graph=[site.crumb_ld([("Accueil", "/"), ("Montures", "/montures/"),
-                                          (fr_l, f"/montures/{c}/"), (f["nom"], frame_url(f))])],
-                og_image=(f["photos"][0], f["nom"]), og_wh=(1600, 1200), dock_wa=(fr_m, en_m),
+                                          (fr_l, f"/montures/{c}/"), (f["nom"], frame_url(f))]),
+                          site.product_ld(f, site.abs(frame_url(f)), fiche_desc)],
+                # 28/10 : l'aperçu de partage pointe le JPEG 1200×630 (WhatsApp), pas la photo WebP.
+                og_image=(f"/montures/monture-{f['code'].lower()}.jpg", f["nom"]), og_wh=(1200, 630),
+                dock_wa=(fr_m, en_m),
                 indexable=(INDEX_FICHES or frame_url(f) in liste_blanche()),
                 en_meta=(f"{tr_en(f, 'nom')} — DM OPTIQUE SARL",
                          f"{tr_en(f, 'phrase')} Ask for it on WhatsApp at 656 122 239 — reference {f['code']}.")))
@@ -974,6 +1003,7 @@ def main():
     (OUTDIR / "_headers").write_text(HEADERS, encoding="utf-8")
 
     # ── Miroir anglais ──────────────────────────────────────────────────────────────────────────
+    en_pages = []                      # (chemin EN, titre anglais) — sert aussi à llms.txt
     for path, en_title, en_desc in site.pairs:
         fr_file = OUTDIR / path.strip("/") / "index.html"
         if not fr_file.exists():
@@ -982,6 +1012,7 @@ def main():
         target = OUTDIR / en_path(path).strip("/") / "index.html"
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(to_en(page_html, path, en_title, en_desc, site.base), encoding="utf-8")
+        en_pages.append((en_path(path), en_title))
     if site.base:
         print(f"  miroir /en/ : {len(site.pairs)} pages")
     else:
@@ -1017,16 +1048,30 @@ def main():
     llms += ["", "## Fiches des montures",
              "Chaque monture photographiée au cabinet a sa page ; chaque page existe en français et en anglais.",
              ""] + fiches
+    # 28/10 : le fichier ne listait que le français. Or les 48 pages anglaises existent, et la porte
+    # de livraison (D4) exige que tout ce qui est dans le sitemap soit dans llms.txt. On les liste.
     llms += ["", "## Coordonnées",
              f"- Adresse : {ADDRESS_FR}",
              "- Téléphone et WhatsApp : +237 656 122 239",
              "- Horaires : Lundi–Samedi, 8h30–17h30 · examen de la vue 8h30–13h00",
              "- Langues : français et anglais sur toutes les pages · version anglaise : https://dmoptiquesarl.com/en/", ""]
+    if en_pages:
+        CORE_EN = ["/en/contact/", "/en/examen-de-vue/", "/en/", "/en/le-cabinet/", "/en/montures/"]
+        core = [(u, t) for u, t in en_pages if u in CORE_EN]
+        core.sort(key=lambda x: CORE_EN.index(x[0]))
+        fiches_en = sorted((u, t) for u, t in en_pages if u not in CORE_EN)
+        llms += ["## English pages", "",
+                 'Mirror of the French pages, for agents that read English. Each page declares its '
+                 'alternate in `<link rel="alternate" hreflang="en">`.', "", "### Sections", ""]
+        llms += [f"- [{t}]({site.abs(u)})" for u, t in core]
+        llms += ["", f"### Frame pages ({len(fiches_en)})", ""]
+        llms += [f"- [{t}]({site.abs(u)})" for u, t in fiches_en]
     llms_txt = chr(10).join(llms)
     n_links = llms_txt.count("](https://dmoptiquesarl.com")
-    if n_links != 48 or "+237 656 122 239" not in llms_txt or "FCFA" in llms_txt \
+    attendu = 48 + len(en_pages)
+    if n_links != attendu or "+237 656 122 239" not in llms_txt or "FCFA" in llms_txt \
             or any(b in llms_txt for b in ("Ray-Ban", "Oakley", "Gucci", "Essilor", "Zeiss", "NIDEK", "HP")):
-        sys.exit(f"llms.txt incohérent : {n_links} liens (attendu 48), verrous à vérifier")
+        sys.exit(f"llms.txt incohérent : {n_links} liens (attendu {attendu}), verrous à vérifier")
     (OUTDIR / "llms.txt").write_text(llms_txt, encoding="utf-8")
     print(f"  llms.txt : {n_links} liens, {len(llms_txt)} caractères")
 

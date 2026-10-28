@@ -298,6 +298,9 @@ def main():
         opts.url = CANON_BASE
     # Identifiants JSON-LD : toujours le domaine du cabinet (ce ne sont pas des adresses devinées).
     html = html.replace("__BASE__", CANON_BASE)
+    # 28/10 : `__BASE__` porte déjà sa barre finale ; les gabarits qui écrivent
+    # `__BASE__/fichier` produisaient `https://dmoptiquesarl.com//fichier` (D4 de la porte).
+    html = html.replace(CANON_BASE + "/", CANON_BASE)
     if opts.production:
         if ROBOTS_NOINDEX not in html:
             sys.exit("gabarit : la balise noindex à retirer est absente")
