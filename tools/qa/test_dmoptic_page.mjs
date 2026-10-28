@@ -128,8 +128,10 @@ ok("Option B : chaque carte a aussi son message en anglais, différent des deux 
    new Set(cardLinks.map((l) => (l[0].match(/data-en="([^"]*)"/) || [])[1])).size === 3);
 ok("Option B : l'adresse statique de chaque carte = le message français encodé par le JavaScript",
    cardLinks.every((l, i) => (l[0].match(/href="([^"]+)"/) || [])[1] === WA + encodeURIComponent(CAT_FR[i])));
-ok("catalogue lié depuis nav, parcours, vitrine et pied ; toujours ni filtre ni recherche sur l'accueil (D3, 20/10)",
-   (html.match(/href="\/montures\/"/g) || []).length === 4 &&
+/* 28/10 : le menu mobile (23/10, jamais porté dans le gabarit avant aujourd'hui) est devenu un
+   cinquième lien vers le catalogue — nav, menu mobile, parcours, vitrine, pied de page. */
+ok("catalogue lié depuis nav, menu mobile, parcours, vitrine et pied ; toujours ni filtre ni recherche sur l'accueil (D3, 20/10)",
+   (html.match(/href="\/montures\/"/g) || []).length === 5 &&
    !/type="search"|role="search"|class="[^"]*\bpill\b/.test(html));
 ok("D3 : le parcours ouvre les trois portes (examen, montures, contact) et la vitrine précède les services",
    html.includes('id="parcours"') && html.includes('href="/examen-de-vue/"') && html.includes('href="/contact/"') &&
@@ -138,7 +140,14 @@ ok("aucun prix dans le texte visible",
    !/\b\d{2,3}\s?\d{3}\s?(FCFA|XAF|fcfa)\b/i.test(html) && !/priceRange/.test(html));
 
 /* ── AEO (§31.3) : cinq questions visibles, cinq questions dans le schéma, mot pour mot ────────── */
-const details = [...html.matchAll(/<details>[\s\S]*?<\/details>/g)].map((m) => m[0]);
+/* Le balayage ignore les commentaires et les blocs <style>/<script> : un commentaire qui PARLE de
+   `<details>` (le menu mobile en cite un) ne doit pas compter comme un accordéon. */
+const markup = html.replace(/<script[\s\S]*?<\/script>/g, "")
+                    .replace(/<style[\s\S]*?<\/style>/g, "")
+                    .replace(/<!--[\s\S]*?-->/g, "");
+const faqStart = markup.indexOf('id="questions"');
+const faqBlock = faqStart >= 0 ? markup.slice(faqStart, markup.indexOf("</section>", faqStart)) : markup;
+const details = [...faqBlock.matchAll(/<details>[\s\S]*?<\/details>/g)].map((m) => m[0]);
 const summaries = details.map((d) => (d.match(/<summary[\s>]/g) || []).length);
 ok(`les ${details.length} accordéons ont UN seul <summary> chacun (§20.11)`,
    details.length === 6 && summaries.every((n) => n === 1), "summary par bloc : " + summaries.join(", "));

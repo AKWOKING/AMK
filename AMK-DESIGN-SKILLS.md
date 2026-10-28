@@ -2,6 +2,8 @@
 
 _Consolidated from three MIT-licensed agent skill libraries: `bergside/awesome-design-skills` (TypeUI, 67 design-system families), `Leonxlnx/taste-skill` (anti-slop frontend), and `emilkowalski/skills` (animation/design engineering). Vendored sources live in `design/vendor/` (full family token sheets: `design/vendor/bergside-skills/<family>/`, digest `design/vendor/registry-digest.json`; motion skills: `design/vendor/emil/skills/`; taste skills: `design/vendor/taste/skills/`)._
 
+**Where everything lives:** **§39 is the index** — the four layers (law / craft / floor / tokens), the 67 vendored families, the 49 instruments of `tools/qa/` and the rule each one serves, the build chain command by command, and the six things no tool can measure. Read it once; come back to it every time you cannot remember which script checks what.
+
 **How to use:** the build pipeline is `design/WORKFLOW.md` (9 stages). Before building, read §1-§2 below (infer the brief, set dials), lock a token sheet from `design/STYLE-TOKENS.md`, build against §4-§11, run the motion pass (`design/MOTION.md`), run §13 before delivery. For image/comps work, also read §15. This library is an overlay on top of the AMK standing standards (single-file HTML, EN|FR, base64, Concept Production Standard, nameless-template rule, no fabricated facts).
 
 ---
@@ -392,6 +394,9 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 - [ ] Heading ≤ 2 lines desktop; nav 1 line ≤ 80px; hero CTAs visible at 800px height
 - [ ] CTA contrast AA; no wrapped CTA labels; one label per intent
 - [ ] Eyebrow count ≤ ceil(sections/3) (unless reference-driven)
+- [ ] **Type scale ≤ 6 distinct sizes at 1440px** — `shot.py` counts them and names the selector (§5)
+- [ ] **First screen ≤ 6 text blocks** (sourcil, titre, ville/chapeau, sous-texte, boutons, la carte) — `shot.py` (§7)
+- [ ] **60-30-10 measured, not recited** — `audit_palette.py --sheet` at stage 4, `--image` on three viewport captures at stage 9 (§6.1)
 - [ ] No 3+ consecutive same layout families; no zigzag ×3
 - [ ] Em-dash scan: zero in EN strings (hyphen ok); FR permitted
 - [ ] No filler verbs, no fake names, no unlabeled fake numbers
@@ -2447,3 +2452,133 @@ Ce qu'on en garde, en trois lignes :
 posés sur une **image de fond** (`.adband` : photo + voile sombre). Le calcul ne voit pas l'image ; le
 texte est lisible. Ces findings se **nomment** dans le rapport au lieu d'être « corrigés » à l'aveugle —
 changer la couleur d'un texte lisible casserait la page pour satisfaire un outil.
+
+---
+
+## §39 L'INDEX — où vit chaque document, et quel outil vérifie chaque règle (28 Oct 2026)
+
+_Cette bibliothèque a grossi par lots : §1-§24 en septembre, §25-§37 en trois nuits, §38 en octobre. Les
+règles ont poussé plus vite que les instruments, et les instruments plus vite que la mémoire de qui les a
+écrits. Ce § est le seul endroit qui répond à « **où est-ce écrit, et qu'est-ce qui le vérifie ?** ».
+Rien ici n'ajoute une règle : tout ici range._
+
+### 39.1 Les quatre couches, de la loi au pixel
+
+| Couche | Fichier | Ce qu'on y trouve | Quand on l'ouvre |
+|---|---|---|---|
+| **La loi** | `AMK-DESIGN-SKILLS.md` (ce fichier) | les interdits, les seuils, les portes. En cas de désaccord, **c'est ce fichier qui tranche** | avant chaque build, §1 → §39 |
+| **Le métier** | `design/WORKFLOW.md` | les 9 étapes, de la recherche au pré-vol | étape par étape |
+| **Le plancher** | `design/CRAFT-FLOOR.md` | contraste, ombres, échelle, motion : ce qui ne se discute pas | avant de livrer |
+| **La matière** | `design/STYLE-TOKENS.md` | sept planches `:root` (A-G) + le registre de rotation | à l'étape 4 |
+
+Les trois autres pièces de la maison :
+
+- **`design/MOTION.md`** — jetons de mouvement, durées, les quatre questions avant d'animer, le tableau
+  avant/après. Un mouvement qui ne passe pas ces quatre questions ne s'écrit pas.
+- **`design/LESSONS.md`** — les corrections de craft déjà payées, une par ligne. À relire après une
+  critique client, jamais avant.
+- **`design/README.md`** — la carte du dossier : playbooks, bibliothèques vendoriées, procédure de mise à
+  jour. **C'est le seul index qui existait avant ce §**, et il ne parle que de `design/`.
+
+### 39.2 Les bibliothèques vendoriées (`design/vendor/`, MIT)
+
+| Dossier | Contenu | Notre usage |
+|---|---|---|
+| `bergside-skills/` | **67 familles** de design system (`<famille>/SKILL.md` + `DESIGN.md`), digest machine dans `registry-digest.json` (67 jeux de jetons analysés) | à l'étape 3b pour explorer des directions ; §14 les résume en une ligne chacune |
+| `emil/skills/` | Emil Kowalski : `emil-design-eng`, `animate`, `review-animations`, `find-animation-opportunities`, `apple-design`, `pick-ui-library` | §9 et `design/MOTION.md` en dérivent |
+| `taste/skills/` | Leonxlnx : `taste-skill` (l'anti-slop d'origine), `redesign-skill`, `brandkit`, `imagegen-frontend-web` | §3 et §12 en dérivent |
+
+**Règle de lecture** : une bibliothèque vendoriée **n'a jamais raison contre ce fichier**. Elle propose une
+direction ; §3 et §6 disent si elle a le droit d'exister chez nous. §4.4 (Reference-Override) est la seule
+exception, et elle vient du **client**, pas d'un dépôt.
+
+### 39.3 Les instruments — ce que chacun a le droit de dire
+
+`tools/qa/` contient **49 scripts**. Les voici rangés par ce qu'ils mesurent, avec la règle qu'ils servent.
+Un outil qui ne sert aucune règle n'a pas à exister ; une règle sans outil est un conseil (§3.8, « QA
+everything yourself »).
+
+**Le rendu (nécessite `bash tools/video/install.sh`)**
+
+| Script | Mesure | Règle |
+|---|---|---|
+| `shot.py` → `shot.mjs` | débordement, texte coupé, images cassées, contraste, focus visible, console, blocs restés invisibles + **les règles §13** : bilinguisme, 6 tailles max, blocs du premier écran, hauteur de nav, sourcils, liens morts, `alt`, JSON-LD, `transition:all`, `prefers-reduced-motion`, `:focus-visible` | §7, §13, §24 |
+| `audit_html.py` | contraste AA sur **chaque passage de texte**, en desktop **et** mobile ; exporte `lum`/`ratio` aux autres outils | §6.1, §27 |
+| `audit_a11y.py` | WCAG 2.2 niveau A/AA, critère par critère | §27, §28 |
+| `autofix_contrast.py` | propose (et avec `--write`, applique) les corrections de contraste **scopées** | §6.1 |
+| `audit_palette.py` | **60-30-10** : `--sheet` (jetons), `--html` (CSS peint), `--image` (pixels). PNG décodé sans dépendance | §6.1 |
+| `audit_page.py` | hiérarchie, échelle de type, densité, ce qui se passe après le clic | §5, §7, §11 |
+| `audit_hero.py` | premier écran : h1 visible, porté par le texte, accordéons natifs | §26, §29 |
+| `audit_reveal.py` | le bug des 142 blocs : règle de base, état révélé, filet, `scripting:none` | §13 |
+| `audit_images.py` | photographies livrées : poids, dimensions, sens unique | §25, §32 |
+| `audit_seo.py` / `audit_aeo.py` | référencement statique, mobile-first / ce qu'une machine peut citer | §31 |
+| `audit_delivery.py` | la porte de livraison : ce qu'un audit extérieur a vu et que nos portiques ne voyaient pas | §13, §18.4 |
+| `audit_site_amk.py` | les lois de la maison que les autres portiques ne vérifient pas | §4 |
+| `audit_claims.py` | refuse une publication qui contredit un verrou client | §3.6, §34 |
+| `check_inline_js.py` | chaque `<script>` inline compile (JSON-LD validé à part) | §13 |
+| `render_svg.py`, `raster_svg_path.py` | **regarder** un tracé SVG avant de le livrer | §8 |
+| `check_sms.py` | segments réels d'un SMS | §20, §35 |
+
+**Le contenu et le commercial** (hors design, listés pour que personne ne les cherche ailleurs) :
+`audit_hook.py` §13 accroche · `audit_ideas.py` · `audit_story.py` · `audit_reel.py` · `audit_trust.py` ·
+`audit_funnel.py` · `audit_publication.py` · `audit_platform.py` · `audit_post_dm.py` ·
+`audit_outreach.py` · `audit_qualification.py` · `audit_deplacement.py` · `audit_video_motion.py` ·
+`audit_render_freshness.py`.
+
+**Les témoins** — `test_audit_*.py` et `test_*.mjs` (25 fichiers). Un portique sans témoin est un portique
+dont on ne sait pas s'il mord : chaque `test_audit_X.py` casse `X` une règle à la fois et vérifie qu'il le
+dit. **Toute règle ajoutée à ce fichier ajoute son cas au témoin.**
+
+### 39.4 La chaîne, dans l'ordre, avec la commande
+
+| Étape (§) | Geste | Commande |
+|---|---|---|
+| 1 | pré-vol documentaire | `bash tools/graphify/preflight.sh "<mots du brief>"` |
+| 2-3 | Design Read, dials | aucun outil : trois phrases écrites dans le dossier client |
+| 3b | explorer trois directions | `design/vendor/bergside-skills/` + §19.3 |
+| 4 | jetons | `python3 tools/qa/audit_palette.py --sheet design/STYLE-TOKENS.md` |
+| 5-6 | copie, images | `audit_claims.py`, `audit_images.py` |
+| 7 | build | — |
+| 8 | mouvement | `design/MOTION.md` §6 ; `audit_reveal.py` |
+| 9 | pré-vol | `shot.py` → `audit_html.py` → `audit_a11y.py` → `audit_page.py` → `audit_hero.py` → `audit_palette.py --image` → `check_inline_js.py` → `test_audit_*` |
+
+**Deux commandes avant tout, une fois par session** :
+
+```bash
+bash tools/video/install.sh     # Chromium embarqué (@sparticuz) + libnspr/libnss + polices, ~70 Mo dans /tmp
+pip install --break-system-packages --user playwright pillow numpy   # le reste de la boîte à outils
+```
+
+Sans le premier, `shot.py` refuse de tourner et six portiques se taisent. **Un portique muet ne vaut pas
+un portique vert** : quand un outil ne peut pas tourner, on l'écrit dans le rapport (§13).
+
+### 39.5 Ce qu'aucun instrument ne mesure
+
+1. **Le goût.** Un contraste à 7:1 peut être laid, une palette à 60-30-10 peut être morte.
+2. **La hiérarchie réelle** : `shot.py` compte les blocs du premier écran, il ne sait pas lequel est le
+   plus important.
+3. **Le sens d'une photographie** (§25) : un outil mesure son poids, pas ce qu'elle raconte.
+4. **La direction du regard** (§29.4) : trois personnes, trois avis, et c'est le client qui tranche.
+5. **L'ordre de tabulation réel** et le rendu à 200 % de zoom : `tools/qa/PROTOCOLE-LECTEUR-ECRAN.md`,
+   à la main, cinq minutes.
+6. **La vérité d'une affirmation** (§34) : le seul instrument est la source du client, et elle est datée.
+
+### 39.6 Les dossiers voisins, pour ne pas les confondre avec le design
+
+| Dossier | Contenu | Ne pas y chercher |
+|---|---|---|
+| `knowledge/` | les dossiers de fond (60-30-10, hook, humanizer, lead magnets, export) | des règles de design : elles sont ici |
+| `research/` | les sources : `YouTube-Lessons.md` (les 38 lots), audits Google/IG, AEO, accessibilité | des décisions : elles remontent ici après arbitrage |
+| `brand/` | le kit AMK : logos, `AMK-Logo-Kit.html`, présence, assets Facebook | la palette client |
+| `clients/<client>/` | briefs, audits, direction de marque, contenus, sites | nos règles maison |
+| `demos/` + `hosting/previews/` | les pages construites et leurs constructeurs | des sources : éditer le gabarit, jamais la page construite (§2.6 de l'audit DM OPTIQUE) |
+| `sales/`, `leads/` | pipeline, messages, plan d'export | du design |
+
+**Le seul document client qui doive être lu avant un build** : `clients/<client>/site/SPEC-PAGES-v1.md` et
+la direction de marque. Tout le reste est du contexte.
+
+---
+
+**Règle de tenue de cet index** : quand un portique est ajouté, renommé ou retiré, **ce § change dans le
+même commit**. Un index qui ment est pire que pas d'index — c'est le même défaut qu'une capture Instagram
+recopiée sans être mesurée.

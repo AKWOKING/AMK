@@ -7383,3 +7383,40 @@ can be applied to our workflow. » — **`knowledge/COULEUR-60-30-10-2026-10-28.
   `AMK-DESIGN-SKILLS.md` pointe maintenant vers l'outil et ses bandes.
 - **Ce que la règle ne fait pas** : elle ne rend pas une palette belle, elle ne remplace pas 4,5:1, et
   **APCA n'est pas la règle** (retiré du brouillon WCAG 3 en juillet 2023, toujours exploratoire).
+
+### 28/10 (soir, 2) · DM OPTIQUE audité contre le livre, six règles corrigées, et le livre doté d'un index
+
+**Navigateur, enfin.** `bash tools/video/install.sh` (Chromium @sparticuz + libnspr/libnss + polices),
+`pip --user playwright pillow numpy`. Douze tours de cette session avaient écrit « non mesurable ici » :
+la ligne disparaît. `shot.py` tourne en 50 s, captures 1440×900 et 390×844.
+
+**`shot.py` gagne les règles du §13 qu'aucun outil ne vérifiait** : bilinguisme `data-en`/`data-fr`,
+**6 tailles de texte max** (§5), **blocs du premier écran** (§7), hauteur de nav, sourcils, liens morts,
+`alt`, JSON-LD, `transition:all`, `prefers-reduced-motion`, `:focus-visible`, et il **nomme le sélecteur**
+de chaque taille — un constat qui ne dit pas où est réparable.
+
+**Audit du site (`clients/dm-optic/audits/AUDIT-AMK-SKILLS-2026-10-28.md`), 97 pages, six corrections :**
+
+- **§13, le bug des 142 blocs** — `html.js .rv` masquait `.rv.in` par spécificité. `:not(.in)`,
+  `revealAll()`, minuteur 2,5 s, `@media (scripting:none)`. **836 blocs sur 97 pages : 0 faute** (182 avant).
+- **§7, le premier écran portait 23 blocs de texte** — la table « Où / WhatsApp / Opticien » sous les
+  boutons doublonnait la carte d'identité. Retirée. **6 blocs**.
+- **§5, douze tailles de texte** — ramenées à **six** (52 / 36,8 / 19,2 / 17 / 15 / 13).
+- **§6.1, la marque invisible** — `audit_palette.py` mesure le bleu du cabinet à **0,07 %** de la page.
+  La bande sombre (19 % de la surface) était en quasi-noir : elle passe au bleu du cabinet `#0B2450`.
+  **76,4 / 20,6 / 1,3 — 0 faute, 0 avertissement.**
+- **§3.3, trois cartes égales** — la vitrine passe en `1.35fr 1fr 1fr`.
+- **La dérive** — `.mnav`, `.mnav-panel`, `.psrc` vivaient dans la page construite et **pas dans le
+  gabarit**. Le constructeur a refusé de reconstruire : il a eu raison. Portés, puis reconstruit.
+
+**Deux tests « cassés » ne l'étaient pas** : `test_dmoptic_page.mjs` comptait les `<details>` **dans les
+commentaires CSS** et ignorait le cinquième lien catalogue du menu mobile. Corrigé côté test.
+
+**`AMK-DESIGN-SKILLS.md` §39 — l'index qui manquait** : les quatre couches (loi / métier / plancher /
+matière), les **67 familles** vendoriées, **les 49 instruments** de `tools/qa/` avec la règle que chacun
+sert et l'étape où il passe, la chaîne de build commande par commande, et **les six choses qu'aucun outil
+ne mesure**. §13 gagne les trois contrôles nés aujourd'hui.
+
+**Reste ouvert** : 13 pages ne disent pas ce qui se passe après le clic (c'est une promesse : elle se
+demande), 6 pages de filtres sans état d'erreur, et la vitrine porte trois boutons WhatsApp pour une action
+principale par section (§19.1) — arbitrage King.
