@@ -7242,3 +7242,37 @@ seul rendez-vous qui a converti — **DM Optique, 07/10, Bonabéri** — a eu li
   premier résultat client mesuré, pas une humeur.
 - **Ce que je n'ai pas fait** : aucune relance du lot interrompue, aucun message écrit pour l'export.
   Le groupe 2 des 12 attend toujours le mot de King.
+
+### 28/10 (nuit, 2) · l'export ne peut plus attendre — et l'arithmétique le prouve mieux qu'un argument
+
+**Les trois rulings de King** : lancer la recherche des dix, trouver une niche à 500 $ + 95 $/mois en
+Europe et aux États-Unis, et **« the export doesn't wait »**, objectif **500 000 FCFA par mois**.
+
+- **`sales/EXPORT-PLAN-2026-10-28.md`** — le plan complet. Le §1 est le seul qui compte : **Douala plafonne
+  à 240 000 FCFA/mois** (5 clients, 2 Croissance au maximum, ruling du 24/10), soit **48 % de
+  l'objectif**. L'export n'est donc pas une envie, c'est le seul chemin qui reste. La cible réelle est
+  **10 abonnés à 95 $** (9 en virement, 11–12 pour absorber le départ à 5 %/mois) : une installation ne
+  compte pas dans le récurrent.
+- **Le prix de King ne viole aucune règle interne** — 500 $ = 295 000 FCFA, sous le plafond de 450 000
+  et au-dessus de Standard ; 95 $ = 56 000, entre Suivi et Croissance. **Le plafond du 24/10 n'a pas
+  besoin d'être amendé**, contrairement à ce que j'écrivais le matin : l'export ne passe pas par un
+  palier à 1 500 €, il passe par un produit à 500 $.
+- **La niche est le detailing automobile**, et c'est la mesure qui le dit, pas le goût : **42,9 % sans
+  site**, le plus haut des 32 métiers mesurés sur 2,78 M de fiches Google Maps (Leadity, Q3 2026). Les
+  dentistes américains sont à 1,5 % ; l'opticien a un site depuis quinze ans. **Notre métier d'origine ne
+  se transpose pas — la méthode, si.** Une pose céramique vaut 700 à 2 000 $ : une seule paie
+  l'installation et deux ans d'abonnement.
+- **Le prix est au niveau du marché, pas en dessous** : Working Class Marketing, spécialiste detailing,
+  affiche **599 $ + 60 $/mois**. King à 500 $ + 95 $ est dans le marché.
+- **Payoneer est le rail, et il fait le récurrent** : demandes de paiement et liens réutilisables, le
+  client paie par carte (3,99 % + 0,49 $) ou virement local (0–1 %) **sans compte**, retrait vers
+  Afriland, Ecobank, BICEC, UBA. À ouvrir et à tester à 1 $ avant la première vente.
+- **La condition technique du modèle est écrite** : le site est **statique**. En WordPress, les 4–5 h/mois
+  de la routine d'entretien × 10 clients = 40–50 h : le modèle mange la semaine. En statique, 20–30 min
+  par client, soit 3–5 h/mois pour dix.
+- **`leads/DIASPORA-2026-10-28.md`** — les dix. **Cinq portent un signal écrit** (critère d'arrêt
+  franchi), mais **deux seulement n'ont pas déjà un site utilisable**, dont une association. Verdict
+  écrit : **segment mince, lent, opportuniste, pas une campagne.** Deux messages en partent, zéro budget.
+- **Décision de King attendue** sur l'aperçu automatique (le ruling du 24/10 interdit la page construite
+  par prospect : la lettre est violée, l'esprit est sauf si c'est un script), sur le maintien de 500 $
+  jusqu'au cinquième client, et sur la ligne « on dit la vérité quand on demande d'où on travaille ».
