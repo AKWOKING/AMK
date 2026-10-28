@@ -107,6 +107,47 @@ HEADERS = """/*
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+
+# CACHE — 23/10 —————————————————————————————————————————————
+# Cloudflare Pages ne lit un splat `*` qu'en **fin** de motif : `/*.webp` ne matcherait rien
+# (leçon de l'audit du 23/10). D'où un bloc par dossier, et un bloc par fichier à la racine.
+# La règle équivalente côté tableau de bord est dans clients/dm-optic/launch/CACHE-2026-10-23.md.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/montures/*
+  Cache-Control: public, max-age=604800
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=604800
+/cabinet-enseigne.webp
+  Cache-Control: public, max-age=604800
+/cabinet-examen.webp
+  Cache-Control: public, max-age=604800
+/cabinet-hero-1080.webp
+  Cache-Control: public, max-age=31536000, immutable
+/cabinet-hero-640.webp
+  Cache-Control: public, max-age=31536000, immutable
+/cabinet-hero.webp
+  Cache-Control: public, max-age=31536000, immutable
+/cabinet-interieur.webp
+  Cache-Control: public, max-age=604800
+/dm-logo.webp
+  Cache-Control: public, max-age=31536000, immutable
+/dmoptic-solaires.webp
+  Cache-Control: public, max-age=604800
+/favicon-192.png
+  Cache-Control: public, max-age=604800
+/favicon-32.png
+  Cache-Control: public, max-age=604800
+/favicon.ico
+  Cache-Control: public, max-age=604800
+/og.jpg
+  Cache-Control: public, max-age=604800
+
+# Pas de bloc pour le HTML : Cloudflare Pages le sert déjà en `max-age=0, must-revalidate`.
+# Le forcer ici demanderait `/*.html`, un motif que l'hôte n'applique pas (splat en fin seulement).
 """
 
 # 22/10 (soir) — PAS de fichier `_redirects`. Cloudflare Workers n'accepte que des chemins RELATIFS
