@@ -7707,3 +7707,40 @@ de bord.
 pas) et la branche locale pointait encore sur `main` alors que le distant portait déjà le commit du
 tour 228. Réparé par `tools/graphify/install.sh` puis un recalage sur `origin`. La carte est repartie
 de 14 296 à 14 311 nœuds, CI verte.
+
+---
+
+## 230 · 29/10/2026 · l'avis Google entre sur le site, et la carte du comptoir
+
+**Ce qui manquait, vérifié et non supposé** : `writereview` n'apparaissait nulle part dans
+`hosting/previews/dmoptic/`. Le seul levier site vers la fiche était donc absent. Il est posé.
+
+**Le bloc, sur `/contact/` et `/en/contact/`** : une phrase, un lien souligné « Laisser un avis sur
+Google », `target="_blank"` et `rel="noopener noreferrer"`, précision « nouvel onglet » pour les
+lecteurs d'écran. Pas d'encart bordé, pas d'icône d'étoile : la loi 03 de §40 (banner blindness) dit
+que l'œil saute ce qui ressemble à une publicité, et une pastille avec une étoile en a exactement la
+forme. Aucune incitation, aucune condition de satisfaction : on demande un avis, pas une bonne note.
+
+**La carte du comptoir**, `launch/carte-avis-a6.pdf` (A6, 300 dpi) + `carte-avis-a6.png` +
+`qr-avis-google.svg` + `qr-avis-google.png`, générés par `tools/ops/make_qr_avis.py`. Correction
+d'erreur H (30 %) pour survivre à une impression bon marché et à un téléphone qui vise mal, adresse de
+repli en clair sous le QR, aucun texte qui promette une note ou un avantage.
+
+**Le QR n'a pas été supposé lisible, il a été relu.** `make_qr_avis.py --check` passe
+`opencv-python-headless` sur le PNG du QR **et sur la carte entière** : les deux rendent l'URL exacte.
+C'est la carte qu'on imprime, c'est donc elle qui devait se relire.
+
+**Deux corrections d'épreuve, à ne pas refaire.** ① `str.split()` coupe sur l'espace insécable : la
+première carte affichait « DM OPTIQUE SARL » coupé en deux, guillemet fermant seul à la ligne ;
+corrigé dans `wrap()` et le nom de marque est insécable. ② `shot.py` signalait un P2 « texte coupé »
+sur `.v2-sr` (1 px par 1 px, `clip`) : un texte masqué aux yeux mais pas aux lecteurs d'écran n'est
+pas un texte coupé. `shot.mjs` l'ignore maintenant, et la capture est repassée au vert **sans toucher
+au site** : c'était l'outil qui était faux.
+
+**Portes** : SEO local 0/0 · livraison 0 P1/0 P2/1 P3 · six lois 0/0 · AEO 0 faute sur 103 pages ·
+a11y AA 0 faute sur `/contact/` FR et EN · 71 contrôles verts · `shot.py` VERT sur `/contact/`,
+`/en/contact/` et l'accueil. Carte : 14 312 nœuds, 18 866 arêtes.
+
+**Ce qui reste ouvert** : D3 (message de demande d'avis à valider) : le texte du 21/10 existe déjà et
+est approuvé, il n'y a donc rien à réécrire, seulement à renvoyer ; B2 (sitemap, King) ; C1 et C6
+(état et catégorie de la fiche) ; puis la vidéo M. Domche et la refonte de l'accueil AMK.

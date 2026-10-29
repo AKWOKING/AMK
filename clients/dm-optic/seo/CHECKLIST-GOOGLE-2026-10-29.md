@@ -27,7 +27,11 @@ propriétaire. Tant qu'on les traite ensemble, on attend un miracle au lieu de f
 | **Mérite-t-il d'être cité ?** | Les pages, leur contenu, leurs réponses | nous (fait) | au rythme des mises à jour |
 
 Aujourd'hui, le chantier 3 est fait, le chantier 1 est à moitié fait, et le chantier 2 est le vrai
-inconnu : **personne n'a encore écrit noir sur blanc l'état de la fiche dans ce dépôt**.
+inconnu dans ce dépôt **avant le 23/10**. Depuis, `launch/MESSAGE-AVIS-GOOGLE-2026-10.md` porte la
+mesure du 23/10 : **4 avis, note 5,0, fiche « Complete info »**, dont 3 non lus. Ce qui reste inconnu,
+c'est **ce qu'elle vaut aujourd'hui** (C1) et **la catégorie principale réellement sélectionnée** (C6) :
+une note de 5,0 sur 4 avis ne se relit pas comme un stock, et la vélocité sur 90 jours compte plus que
+le total.
 
 ## 1 · Ce que Google a dans les mains, mesuré
 
@@ -130,12 +134,13 @@ vélocité sur 90 jours, qui pèse plus que le total.
 
 | # | Livrable | Effet | Coût |
 |---|---|---|---|
-| D1 | Lien « Vous êtes venu au cabinet ? Laissez un avis sur Google » sur `/contact/`, discret, une ligne | le patient qui sort de la page contact peut laisser un avis en un geste | 20 minutes |
-| D2 | QR code de ce même lien, prêt à imprimer pour le comptoir | la demande se fait au bon moment, dans la vraie vie | 10 minutes |
-| D3 | Message de demande d'avis, version courte FR + EN, à valider par King | sert sur WhatsApp après la visite, jamais avant | 15 minutes |
+| D1 | Lien « Vous êtes venu au cabinet ? Laissez un avis sur Google » sur `/contact/`, discret, une ligne | le patient qui sort de la page contact peut laisser un avis en un geste | ✅ **fait le 29/10** |
+| D2 | QR code de ce même lien, prêt à imprimer pour le comptoir | la demande se fait au bon moment, dans la vraie vie | ✅ **fait le 29/10** : `launch/carte-avis-a6.pdf` |
+| D3 | Message de demande d'avis, version courte FR + EN, à valider par King | sert sur WhatsApp après la visite, jamais avant | ⏳ restant |
 
-D1 à D3 ne sont pas faits ce tour : la commande était la checklist. Ils sont la suite logique, dans
-l'ordre.
+**D1 et D2 sont livrés** : voir `clients/dm-optic/launch/AVIS-GOOGLE-2026-10-29.md` (le bloc, la carte
+A6, la vérification de relecture du QR, et le faux positif corrigé dans `shot.mjs`). D3 reste ouvert :
+le texte d'une demande d'avis se valide avant d'être envoyé, il ne s'écrit pas au passage.
 
 ## 6 · Ce qu'on ne fera pas, et la raison
 
