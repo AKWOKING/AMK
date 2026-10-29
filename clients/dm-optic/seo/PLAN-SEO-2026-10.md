@@ -104,3 +104,8 @@ Le `FAQPage` reste pour les moteurs de réponse : Google ne l'affiche plus en ac
 
 **À relire par le client** (une ligne dans `a-completer.md`) : la fréquence des contrôles, les trois
 assurances nommées (Belife, Willis Towers Watson, Groupe Activa) et la phrase sur les lentilles.
+
+**La checklist d'exécution** : `CHECKLIST-GOOGLE-2026-10-29.md` (29/10). Elle range les gestes par
+propriétaire (site, Search Console, fiche), avec pour chacun **comment on vérifie** et **à quoi
+ressemble « c'est fait »**. C'est le document à ouvrir quand la question est « pourquoi ça n'apparaît
+pas encore », et il remplace la lecture des trois autres pour cette question-là.
