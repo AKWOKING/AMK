@@ -2,18 +2,18 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-29
-Source : graphify-out/graph.json (14394 nœuds, 18987 arêtes)
+Source : graphify-out/graph.json (14405 nœuds, 19002 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **14394 nœuds** — dont 881 documents, 215 scripts, 33 modules, 146 pages HTML, 492 images, 10 vidéos, 40 audios, 52 fichiers de données, 13 PDF.
-- **4053 citations entre documents** (3248 en chemin exact, 805 par nom unique)
+- **14405 nœuds** — dont 882 documents, 215 scripts, 33 modules, 146 pages HTML, 492 images, 10 vidéos, 40 audios, 52 fichiers de données, 13 PDF.
+- **4059 citations entre documents** (3252 en chemin exact, 807 par nom unique)
 - **164 arêtes de remplacement** · **3 documents marqués périmés**
 - **430 documents que personne ne cite** (atteignables par aucun chemin de lecture)
-- **Couverture : 1960 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
+- **Couverture : 1961 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
 ### Les dossiers du dépôt, par poids — et ce que chacun porte
 
@@ -21,7 +21,7 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 |---|---|---|
 | `hosting/` | 359 | Sites déployés et aperçus |
 | `tools/` | 301 | Outils et skills installés |
-| `clients/` | 271 | Dossiers clients |
+| `clients/` | 272 | Dossiers clients |
 | `content/` | 223 | Contenu, vidéos, carrousels, scripts |
 | `leads/` | 189 | CRM machine (CSV, records, vues générées) |
 | `design/` | 180 | Design, skills, vendor |
@@ -144,11 +144,11 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 *Le pivot d'une communauté est le document que **les autres membres du groupe** citent le plus (degré interne) — pas le document le plus cité du dépôt, qui l'est partout.*
 
-**628 documents sur 881 sont dans un sujet.** Les 215 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
+**629 documents sur 882 sont dans un sujet.** Les 215 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
 
 | # | Docs | Les 3 pivots internes | Ce que le groupe a en propre |
 |---|---|---|---|
-| 0 | 585 | `Activity-Log.md` · `AMK-DESIGN-SKILLS.md` · `PRE-FLIGHT.md` | `leads/` (26 % du groupe) |
+| 0 | 586 | `Activity-Log.md` · `AMK-DESIGN-SKILLS.md` · `PRE-FLIGHT.md` | `leads/` (26 % du groupe) |
 | 1 | 20 | `analyst-common.md` · `context-safety.md` · `report.md` | `tools/` (100 % du groupe) |
 | 2 | 5 | `claude-code-tools.md` · `codex-tools.md` · `pi-tools.md` | `tools/` (100 % du groupe) |
 | 3 | 4 | `PHOTOSHOOT-FICHE-1PAGE-2026-10.md` · `DEMO-SCRIPT-2026-10-07.md` · `VISIT-RUNSHEET-2026-10-07.md` | `clients/` (100 % du groupe) |
@@ -158,7 +158,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | 7 | 2 | `etapes-01-PUBLICATION.md` | `clients/` (100 % du groupe) |
 | 8 | 2 | `DESIGN.md` | `design/` (100 % du groupe) |
 
-### Communauté 0 — 585 documents
+### Communauté 0 — 586 documents
 
 - `sales/Activity-Log.md` — cité 205× dans le groupe, 208× au total
 - `AMK-DESIGN-SKILLS.md` — cité 45× dans le groupe, 47× au total
@@ -217,7 +217,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 | Nature | Fichiers | Où |
 |---|---|---|
-| document | 881 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
+| document | 882 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
 | image | 492 | `brand/AMK-logo-mono.png`, `brand/AMK-logo-mono.svg`, `brand/AMK-logo-primary.png` |
 | script | 215 | `brand/build_fb_assets.py`, `clients/dm-optic/content/month1/w3/MONTURE-01-SCRIPT.py`, `clients/dm-optic/content/tournage/DOMCHE-01-SCRIPT.py` |
 | page | 146 | `brand/AMK-Logo-Kit.html`, `brand/v1-green/AMK-Logo-Kit.html`, `clients/dm-optic/brand/CARTE-SIGNATURE-TABLEAU-VISION.html` |
@@ -233,7 +233,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 2 | `dmopticsarl-2026-10-21.zip`, `dr-ophtalmo-site-2026-10-27.zip` |
 | style | 1 | `hosting/previews/dr-ophtalmo/css/styles.css` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 12434 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 12444 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
@@ -283,7 +283,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 | Client | Fichiers | Documents | Brief ? |
 |---|---|---|---|
-| `dm-optic/` | 228 | 102 | oui |
+| `dm-optic/` | 229 | 103 | oui |
 | `dr-ophtalmo/` | 19 | 9 | — |
 | `labiomed/` | 1 | 1 | — |
 | `le-cristallin/` | 2 | 2 | — |
