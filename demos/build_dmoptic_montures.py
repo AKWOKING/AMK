@@ -82,6 +82,11 @@ PLACE_ID = "ChIJjdfYfQwXYRARAdi9mPLHGjY"
 MAPS = ("https://www.google.com/maps/search/?api=1&query=" + quote("DM OPTIQUE SARL")
         + "&query_place_id=" + PLACE_ID)
 
+# Le lien « laisser un avis » (29/10). Un seul geste, aucune incitation, aucune condition de
+# satisfaction : la page demande un avis, jamais une bonne note. Le place_id évite au patient de
+# chercher le cabinet par son nom, et évite surtout qu'il tombe sur une autre fiche.
+REVIEW = "https://search.google.com/local/writereview?placeid=" + PLACE_ID
+
 CATS = {
     "femmes": ("Femmes", "Women", "femmes"),
     "hommes": ("Hommes", "Men", "hommes"),
@@ -218,6 +223,18 @@ V2_CSS = """
 .v2-qa>div:first-child{border-top:0}
 .v2-qa dt{font-weight:700;color:var(--ink);font-size:var(--fs-base);line-height:1.4}
 .v2-qa dd{margin:6px 0 0;color:var(--ink-2);font-size:var(--fs-sm);line-height:1.65;max-width:68ch}
+/* 29/10 · l'avis. Loi 03 (banner blindness) : un encart bordé avec icône a la forme d'une publicité,
+   et l'oeil le saute. Ici, une ligne de texte et un lien souligné, rien d'autre à cliquer.
+   Aucune incitation, aucune condition de satisfaction : on demande un avis, jamais une bonne note. */
+.v2-review{margin:34px 0 0;padding:20px 0 0;border-top:1px solid var(--line);max-width:62ch}
+.v2-review p{margin:0;color:var(--ink-2);font-size:var(--fs-sm);line-height:1.65}
+.v2-review a{display:inline-flex;align-items:center;min-height:44px;margin-top:4px;color:var(--brand);
+  font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;
+  transition:color 160ms var(--ease)}
+@media(hover:hover) and (pointer:fine){.v2-review a:hover{color:var(--brand-2)}}
+.v2-review a:active{transform:scale(.98)}
+.v2-review a:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){.v2-review a{transition:none}}
 /* 28/10 · closure : la fiche suivante depasse de 22 % — assez pour que l'oeil complete la serie,
    assez peu pour que la fiche lue reste entiere. Le defilement est natif, avec accroche. */
 .v2-rail{grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;
@@ -1074,6 +1091,10 @@ def main():
       <figcaption class="note">{B("Repère : l'enseigne « Consultation », immeuble West Hotel — 1er étage, dernière porte à droite.", "Landmark: the “Consultation” sign, West Hotel building — first floor, last door on the right.")}</figcaption>
     </figure>
     <p class="note">{B("Le bouton WhatsApp ouvre la conversation avec le message déjà écrit : vous pouvez le modifier avant de l'envoyer. Nous répondons pendant les heures d'ouverture.", "The WhatsApp button opens the conversation with the message already written. You can edit it before sending. We reply during opening hours.")}</p>
+    <div class="v2-review">
+      <p>{B("Vous êtes venu au cabinet ? Votre avis sur Google aide les patients qui cherchent un opticien à Bonabéri.", "Have you been to the practice? Your review on Google helps the patients looking for an optician in Bonaberi.")}</p>
+      <a href="{REVIEW}" target="_blank" rel="noopener noreferrer">{B("Laisser un avis sur Google", "Leave a review on Google")}<span class="v2-sr">{B(" (nouvel onglet)", " (new tab)")}</span></a>
+    </div>
   </section>'''
     written.append(site.page(
         "/contact/", "Contact et adresse — DM OPTIQUE SARL, Bonabéri",

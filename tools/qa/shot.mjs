@@ -147,6 +147,10 @@ async function audit(width, height, label, fullPage) {
     const clipped = [];
     document.querySelectorAll('h1,h2,h3,p,li,a,button,span').forEach(el => {
       const cs = getComputedStyle(el);
+      // 29/10 : un texte masqué aux yeux mais pas aux lecteurs d'écran (.v2-sr, .sr, clip rect)
+      // n'est PAS un texte coupé. Le compter comme tel produisait un faux P2 à chaque ajout
+      // d'une précision accessible, et un faux positif coûte plus qu'un défaut manqué (§27.5).
+      if (cs.width.match(/^(0|1)(\.\d+)?px$/) || cs.height.match(/^(0|1)(\.\d+)?px$/)) return;
       if (cs.overflow === 'hidden' && el.scrollHeight > el.clientHeight + 2 && el.clientHeight > 0) {
         clipped.push({ tag: el.tagName.toLowerCase(), text: (el.textContent || '').trim().slice(0, 50) });
       }
