@@ -12,14 +12,23 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amk-cm.vercel.app/sample-secondary.html">
 <meta property="og:image" content="https://amk-cm.vercel.app/img/og-crestwood.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Crestwood College · Secondary School Website Concept">
 <meta name="twitter:description" content="A bilingual GCE secondary college concept with boarding section and transparent FCFA fees. Your college replaces the placeholders in 24h après validation du brief, free.">
 <meta name="twitter:image" content="https://amk-cm.vercel.app/img/og-crestwood.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='7' fill='%230F2A47'/%3E%3Cpath d='M16 7l9 5-9 5-9-5 9-5zM9 15.5v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4l-7 3.9-7-3.9z' fill='%23B08A3E'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Outfit servi depuis le site (29/10) : plus aucune requête vers un CDN de polices.
+   Mêmes fichiers et mêmes graisses que l'accueil. */
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/outfit-latin-400-normal.woff2') format('woff2')}
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/outfit-latin-500-normal.woff2') format('woff2')}
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/outfit-latin-600-normal.woff2') format('woff2')}
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/outfit-latin-700-normal.woff2') format('woff2')}
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:800;font-display:swap;src:url('fonts/outfit-latin-800-normal.woff2') format('woff2')}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -300,7 +309,6 @@ html.js .rv.in{opacity:1;transform:none}
   .hero-float{right:8px}
 }
 @media(max-width:860px){
-  .nav-links,.concept-chip{display:none}
   .burger{display:block}
   .nav-right .btn{display:none}
 }
@@ -328,6 +336,20 @@ html.js .rv.in{opacity:1;transform:none}
   .hero-float{left:10px;right:auto;max-width:232px;bottom:18px;padding:12px 14px}
   .hero-badge{font-size:11.5px;padding:7px 12px}
   .adband .wrap{padding:80px 16px}
+
+  /* --- NAV MOBILE (29/10) : les ancres restent visibles, sur une rangée qui défile ---------------
+     Avant : `.nav-links{display:none}` sous 640 px, sans bouton de menu. Au téléphone, un visiteur
+     ne pouvait plus sauter à « Tarifs » ni à « Visite » : le contenu restait atteignable en défilant,
+     la navigation non. Une rangée qui défile coûte 30 px et zéro JavaScript ; un menu hamburger
+     demanderait du JS, un piège de focus et un état — pour quatre liens. */
+  /* la pastille « site concept par AMK » sortait de la ligne et poussait la marque : elle
+     reste hors du premier écran, le bandeau DEMO du haut porte déjà la mention. */
+  .concept-chip{display:none}
+  .nav{height:auto;flex-wrap:wrap;padding-top:9px;padding-bottom:7px;row-gap:5px}
+  .nav-links{display:flex;flex:1 0 100%;order:3;justify-content:flex-start;gap:18px;
+    overflow-x:auto;padding:2px 0 3px;scrollbar-width:none;-ms-overflow-style:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{font-size:13px;line-height:1.7;white-space:nowrap}
 }
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
 @media(prefers-reduced-motion:reduce){

@@ -16,14 +16,23 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amk-cm.vercel.app/clinic-bonaberi.html">
 <meta property="og:image" content="https://amk-cm.vercel.app/img/og-clinic-bonaberi.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Bonabéri Medical Centre · Clinic & Laboratory Website Concept">
 <meta name="twitter:description" content="A patient-first private clinic concept: transparent FCFA pricing, bilingual WhatsApp booking. Every name and price is a placeholder we replace with yours in 24h après validation du brief, free.">
 <meta name="twitter:image" content="https://amk-cm.vercel.app/img/og-clinic-bonaberi.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='8' fill='%23155642'/%3E%3Cpath d='M14 8h4v6h6v4h-6v6h-4v-6H8v-4h6z' fill='%23F6F3EC'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Outfit servi depuis le site (29/10) : plus aucune requête vers un CDN de polices.
+   Mêmes fichiers et mêmes graisses que l'accueil. */
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/outfit-latin-400-normal.woff2') format('woff2')}
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/outfit-latin-500-normal.woff2') format('woff2')}
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/outfit-latin-600-normal.woff2') format('woff2')}
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/outfit-latin-700-normal.woff2') format('woff2')}
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:800;font-display:swap;src:url('fonts/outfit-latin-800-normal.woff2') format('woff2')}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -257,7 +266,6 @@ html.js .rv.in{opacity:1;transform:none}
 }
 @media(max-width:640px){
   section{padding:60px 0}
-  .nav-links,.concept-chip{display:none}
   .nav-right .btn{display:none}
   .bento{grid-template-columns:1fr}
   .price-grid{grid-template-columns:1fr}
@@ -278,6 +286,20 @@ html.js .rv.in{opacity:1;transform:none}
   .lang button{padding:6px 9px;font-size:12px}
   .nav-right .btn{padding:9px 14px;font-size:12.5px}
   .demobar{font-size:10.5px;letter-spacing:.1em;padding:6px 12px}
+
+  /* --- NAV MOBILE (29/10) : les ancres restent visibles, sur une rangée qui défile ---------------
+     Avant : `.nav-links{display:none}` sous 640 px, sans bouton de menu. Au téléphone, un visiteur
+     ne pouvait plus sauter à « Tarifs » ni à « Visite » : le contenu restait atteignable en défilant,
+     la navigation non. Une rangée qui défile coûte 30 px et zéro JavaScript ; un menu hamburger
+     demanderait du JS, un piège de focus et un état — pour quatre liens. */
+  /* la pastille « site concept par AMK » sortait de la ligne et poussait la marque : elle
+     reste hors du premier écran, le bandeau DEMO du haut porte déjà la mention. */
+  .concept-chip{display:none}
+  .nav{height:auto;flex-wrap:wrap;padding-top:9px;padding-bottom:7px;row-gap:5px}
+  .nav-links{display:flex;flex:1 0 100%;order:3;justify-content:flex-start;gap:18px;
+    overflow-x:auto;padding:2px 0 3px;scrollbar-width:none;-ms-overflow-style:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{font-size:13px;line-height:1.7;white-space:nowrap}
 }
 :focus-visible{outline:3px solid var(--emerald);outline-offset:2px;border-radius:6px}
 .mbar a:focus-visible{outline-color:var(--amber)}

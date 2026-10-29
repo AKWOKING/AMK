@@ -16,14 +16,23 @@
 <meta content="website" property="og:type"/>
 <meta content="https://amk-cm.vercel.app/en/mitoc.html" property="og:url"/>
 <meta content="https://amk-cm.vercel.app/img/og-mitoc.jpg" property="og:image"/>
+<meta content="image/jpeg" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Midas Touch Optic Center, Molyko Buea · Website Concept by AMK" name="twitter:title"/>
 <meta content="Eye tests and refraction, lenses mounted on site, frame gallery, WhatsApp booking, English and French." name="twitter:description"/>
 <meta content="https://amk-cm.vercel.app/img/og-mitoc.jpg" name="twitter:image"/>
 <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='8' fill='%2315539E'/%3E%3Cg fill='none' stroke='%23F7F5EE' stroke-width='2'%3E%3Ccircle cx='10.5' cy='17' r='4.5'/%3E%3Ccircle cx='21.5' cy='17' r='4.5'/%3E%3Cpath d='M15 17h2M6 15l-2-1.5M26 15l2-1.5'/%3E%3C/g%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Outfit servi depuis le site (29/10) : plus aucune requête vers un CDN de polices.
+   Mêmes fichiers et mêmes graisses que l'accueil. */
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/outfit-latin-400-normal.woff2') format('woff2')}
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:500;font-display:swap;src:url('../fonts/outfit-latin-500-normal.woff2') format('woff2')}
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:600;font-display:swap;src:url('../fonts/outfit-latin-600-normal.woff2') format('woff2')}
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:700;font-display:swap;src:url('../fonts/outfit-latin-700-normal.woff2') format('woff2')}
+  @font-face{font-family:'Outfit';font-style:normal;font-weight:800;font-display:swap;src:url('../fonts/outfit-latin-800-normal.woff2') format('woff2')}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -256,7 +265,6 @@ html.js .rv.in{opacity:1;transform:none}
   .hero-float{right:8px}
 }
 @media(max-width:860px){
-  .nav-links,.concept-chip{display:none}
   .burger{display:block}
   .nav-right .btn{display:none}
 }
@@ -285,6 +293,17 @@ html.js .rv.in{opacity:1;transform:none}
   .demobar{font-size:10.5px;letter-spacing:.1em;padding:6px 12px}
   .hero-float{left:10px;right:auto;max-width:230px;bottom:18px;padding:12px 14px}
   .hero-badge{font-size:11.5px;padding:7px 12px}
+
+  /* --- NAV MOBILE (29/10) : même correction que les pages françaises ; les ancres restent
+     visibles sur une rangée qui défile, au lieu de disparaître sans bouton de menu. */
+  /* la pastille « site concept par AMK » sortait de la ligne et poussait la marque : elle
+     reste hors du premier écran, le bandeau DEMO du haut porte déjà la mention. */
+  .concept-chip{display:none}
+  .nav{height:auto;flex-wrap:wrap;padding-top:9px;padding-bottom:7px;row-gap:5px}
+  .nav-links{display:flex;flex:1 0 100%;order:3;justify-content:flex-start;gap:18px;
+    overflow-x:auto;padding:2px 0 3px;scrollbar-width:none;-ms-overflow-style:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{font-size:13px;line-height:1.7;white-space:nowrap}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}

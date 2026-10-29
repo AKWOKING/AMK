@@ -85,9 +85,20 @@ Registry family: `clean`. Maximum legality and speed; warm off-white, one trust 
 ```
 
 ## G. AMK agency — LOCKED (brand, do not rotate)
+_Refaite le 29/10/2026 (`ops/REFONTE-ACCUEIL-2026-10-29.md`) : les valeurs d'avant étaient approximatives
+(`#12324A`, `#C8932F`) et ne correspondaient à aucun élément du site. Ce sont les jetons réellement peints._
 ```css
---ink:#13202A; --surface:#F7F6F2; --brand:#12324A; --amber:#C8932F; /* navy + amber per current site */
+/* noms exacts de site/accueil-2026-10-29.css — ne pas les renommer ici */
+--paper:#F7F6F2; --paper-2:#FFFFFF; --rule:#E5E1D7; --rule-2:#D8D3C6;
+--ink2:#0F172A; --ink-soft:#4A5568; --ink-mute:#5F6B7C; --brand:#0F172A; --brand-2:#1B2A44;
+--amber:#F59E0B; --on-amber:#0F172A; --amber-deep:#B45309; --amber-text:#8A4B06; --amber-tint:#FDF3E2;
+--r:16px; --r-lg:22px; --r-pill:999px;
 ```
+**Contrastes calculés** (WCAG 2.2, `python3` sur les valeurs ci-dessus) : encre (`--ink2`) sur papier (`--paper`) **16,5:1** ·
+encre sur ambre **8,3:1** (le bouton principal) · `--amber-text` `#8A4B06` sur `--amber-tint` **6,2:1**
+(les sourcils) · `--ink-soft` sur papier **7,0:1** · `--ink-mute` sur papier **5,0:1** · `--amber-deep`
+sur papier **4,6:1** (AA, pas AAA — d'où son usage ponctuel). Tous ≥ 4,5:1 : **A et AA tenus**.
+L'ambre est un accent : 3,4 % de l'écran du héros, mesuré par `audit_palette.py`.
 
 ---
 
@@ -106,3 +117,4 @@ Registry family: `clean`. Maximum legality and speed; warm off-white, one trust 
 | 2026-09-21 | **concept-le-cristallin-v1.html** (Le Cristallin - nommé) | **vert du flyer du client** (brand reel = reference §4.4, exempt de rotation) + papier chaud, accent laiton | builder `demos/build_le_cristallin.py` ; comparatif 8 lignes lu sur le site reel ; avant/apres peints sur la page |
 | 2026-09-22 | **concept-univers-optique-v2.html** (Univers Optique, Bepanda - nomme, redo de la v1) | **REFERENCE-DRIVEN, consigne et non choisie** : papier creme #FBF6EC / encre #1E1A15 / rouille #A94C23 (foncee de #B4552B pour tenir 5,2:1 sous le creme herite) / petrole #12303F ; Newsreader (serif, italique dans la meme famille) + Public Sans + JetBrains Mono ; rayons carte 20 px / puce 999 px ; dials V6 M4 D3 | override 1 « cream+terracotta » = palette des captures renvoyees par le client (§3.1 interdit le reflexe, pas la reference nommee dans clients/univers-optique/inspiration.md) · override 2 : une pilule au-dessus du H1 (§3.4) · meme NAP, memes faits, meme noindex · builder `demos/build_univers_optique_v2.py` · 4 rendus relus un a un, zero lettrage · voile du hero calculee au pire cas · 74 controles + 8 mutations refusees · v1 gardeee sous /univers-v1/ |
 | Next optic/eye build | must NOT repeat C → Terracotta+Slate or Olive+Brick+Paper adaptation | | |
+| 2026-10-29 | **Accueil AMK refondu** (`site/`, planche **G**) | G, encre + ambre + papier | référence King (barre claire, héros photo, 4 preuves) traduite dans nos jetons · héros mesuré 74,4 / 22,2 / 3,4 · bande d'appel ambre → encre (l'accent tapissait 29 % de l'écran) · `shot.py` 4 P1 → 0 |

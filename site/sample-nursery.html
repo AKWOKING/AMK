@@ -11,6 +11,9 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amk-cm.vercel.app/sample-nursery.html">
 <meta property="og:image" content="https://amk-cm.vercel.app/img/og-littleoaks.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Little Oaks · Nursery & Primary Website Concept">
 <meta name="twitter:description" content="A warm, playful homepage concept for nursery & primary schools (ages 2-11). Your school replaces the placeholders in 24h après validation du brief, free.">
@@ -186,7 +189,6 @@ footer{background:var(--ink);color:#CFE3EC;padding:50px 0 26px;font-size:14px}
 }
 @media(max-width:640px){
   section{padding:52px 0}
-  .nav-links{display:none}
   .why,.cls-grid{grid-template-columns:1fr}
   .topbar .tb-portal{display:none}
   .topbar .concept-chip{display:none}
@@ -194,6 +196,24 @@ footer{background:var(--ink);color:#CFE3EC;padding:50px 0 26px;font-size:14px}
   .mbar-cta{display:block}
   body{padding-bottom:74px}
   .blob{display:none}
+
+  /* --- NAV MOBILE (29/10) : les ancres restent visibles, sur une rangée qui défile ---------------
+     Avant : `.nav-links{display:none}` sous 640 px, sans bouton de menu. Au téléphone, un visiteur
+     ne pouvait plus sauter à « Tarifs » ni à « Visite » : le contenu restait atteignable en défilant,
+     la navigation non. Une rangée qui défile coûte 30 px et zéro JavaScript ; un menu hamburger
+     demanderait du JS, un piège de focus et un état — pour quatre liens. */
+  /* la pastille « site concept par AMK » sortait de la ligne et poussait la marque : elle
+     reste hors du premier écran, le bandeau DEMO du haut porte déjà la mention. */
+  .concept-chip{display:none}
+  /* le bouton du bandeau passe sur sa propre rangée et double la hauteur de l'en-tête :
+     `.mbar-cta` porte déjà ce bouton, fixé en bas de l'écran. */
+  .nav>.btn{display:none}
+  .logo .t small{display:none}
+  .nav{height:auto;flex-wrap:wrap;padding-top:9px;padding-bottom:7px;row-gap:5px}
+  .nav-links{display:flex;flex:1 0 100%;order:3;justify-content:flex-start;gap:18px;
+    overflow-x:auto;padding:2px 0 3px;scrollbar-width:none;-ms-overflow-style:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{font-size:13px;line-height:1.7;white-space:nowrap}
 }
 :focus-visible{outline:3px solid #0EA5E9;outline-offset:2px;border-radius:6px}
 .topbar .lang-sw{flex:none}.topbar .lang-sw button{white-space:nowrap}
@@ -201,6 +221,11 @@ footer{background:var(--ink);color:#CFE3EC;padding:50px 0 26px;font-size:14px}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
 }
+/* `.hero` a bien `overflow:hidden`, mais il n'était pas positionné : une pastille en
+   `position:absolute;right:-90px` prenait donc la fenêtre pour bloc conteneur, et `overflow`
+   ne rogne que les descendants dont il est le bloc conteneur. Résultat : 90 px de défilement
+   horizontal au bureau. `position:relative` suffit à lui rendre son rôle. Constaté le 29/10. */
+.hero,.classrooms{position:relative}
 </style>
 </head>
 <body>

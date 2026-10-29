@@ -123,6 +123,10 @@ def _hidden_below(css: str, cls: str) -> int | None:
     """Point de rupture sous lequel `.cls` n'est pas affichée, ou None si elle l'est toujours."""
     if not cls:
         return None
+    # Une règle de PSEUDO-ÉLÉMENT ne cache pas l'élément. `.nav-links::-webkit-scrollbar{display:none}`
+    # (la rangée d'ancres mobile, 29/10) se lisait comme « la nav est cachée » : le constat D1 se
+    # rallumait sur la correction qui le fermait. On retire ces règles-ci, pas les autres.
+    css = re.sub(r"[^{}/]*::[^{}]*\{[^{}]*\}", "", css)
     base = re.search(r"\.%s(?![-\w])\s*\{[^}]*?display\s*:\s*none" % re.escape(cls), css)
     shown_at = None
     for cond, body in media_blocks(css):
@@ -197,6 +201,12 @@ def check_nav(site: Path, pages: list[Path]) -> list[Finding]:
     pages = [p for p in pages if p.name != "404.html"] or pages
     for page in pages:
         html = read(page)
+        # Un GABARIT (`{{NAME}}`, ou un fichier `mockup-*`) n'est pas une page publique : il part dans le
+        # zip en `noindex,nofollow` et sert de modèle à jetons. Son menu n'a personne à servir — et sa
+        # règle `display:none` sur un `<nav>` de trois `href="#"` ne dit rien d'une vraie page. Même
+        # définition que `audit_aeo` (§31.2), pour que les deux portes ne se contredisent pas.
+        if re.search(r"\{\{[A-Z_]{2,}\}\}", html) or "mockup" in page.name.lower():
+            continue
         nav = None
         for m in NAV_RE.finditer(html):
             if len(re.findall(r"<a\b", m.group(2))) >= 2:
@@ -205,6 +215,10 @@ def check_nav(site: Path, pages: list[Path]) -> list[Finding]:
         if nav is None:
             continue
         css = "\n".join(re.findall(r"<style\b[^>]*>(.*?)</style>", html, re.I | re.S))
+        # Un commentaire CSS n'est pas une règle. Le 29/10, la note qui expliquait la correction
+        # (« Avant : `.nav-links{display:none}` ») a suffi à rallumer le constat qu'elle décrivait :
+        # l'instrument lisait le commentaire comme du code. On retire donc les commentaires d'abord.
+        css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
         total, hidden, bps = nav_links_state(css, nav.group(2))
         nav_hidden = _hidden_below(css, _nav_class(nav.group(1))) is not None
         if not nav_hidden and (total == 0 or hidden < total):
