@@ -7744,3 +7744,37 @@ a11y AA 0 faute sur `/contact/` FR et EN · 71 contrôles verts · `shot.py` VER
 **Ce qui reste ouvert** : D3 (message de demande d'avis à valider) : le texte du 21/10 existe déjà et
 est approuvé, il n'y a donc rien à réécrire, seulement à renvoyer ; B2 (sitemap, King) ; C1 et C6
 (état et catégorie de la fiche) ; puis la vidéo M. Domche et la refonte de l'accueil AMK.
+
+---
+
+## 231 · 29/10/2026 · les deux captures : le sitemap, la fiche, et un écart de trente minutes
+
+**Ce que King a envoyé** : le panneau Sitemaps de Search Console et une recherche « DM OPTIQUE SARL »
+avec le bloc de gestion de la fiche. Les deux sont rangés dans
+`clients/dm-optic/seo/preuves-2026-10-29/`, et la lecture est écrite dans
+`clients/dm-optic/seo/RELEVE-FICHE-2026-10-29.md`.
+
+**Sitemap** : soumis dans la propriété Domaine le 26/10, relu le **29/10**, **Success, 22 pages**. B2 est
+fait, et le compte est juste (22 URL indexables, les 80 fiches montures restent en `noindex,follow`).
+**Mais il y a deux lignes** : celle du `www`, soumise le 21/10, encore au vert. C'est un reste d'avant la
+redirection. Vérifié en ligne le 29/10 : `https://www.dmoptiquesarl.com/contact/` rend la page de
+l'apex, donc la 301 du 22/10 tient. Le geste est de retirer la ligne www, et il ne retire aucune URL de
+l'index.
+
+**Fiche** : six cases passent au vert d'un coup. Revendiquée et gérée (« You manage this Business
+Profile »), profil « Complete info », nom, adresse et téléphone identiques au site au mot près,
+catégorie **« Opticien »** rendue en français (la question de C6 est donc tranchée par l'écran, pas par
+nous, et on n'y touche pas), et **7 avis à 4,9** contre 4 avis à 5,0 le 23/10.
+
+**Le seul écart, et il n'est pas dans le site** : la fiche annonce « Open · Closes 5pm », soit 17h00,
+quand `/contact/` annonce 17h30. Trente minutes sur le champ qui fait qu'un patient se déplace pour
+rien. On ne corrige pas au hasard : c'est le cabinet qui dit laquelle des deux est vraie, puis on change
+le site (deux fichiers) ou la fiche.
+
+**Une citation tierce divergente** : une annonce Yandex nomme le cabinet « Cabinet De Soins Oculaires DM
+Optometrie ». Ce n'est pas notre fiche, on ne peut pas l'éditer sans ouvrir un compte, et ça n'apporte
+aucun patient au Cameroun. On la note, on n'y va pas.
+
+**Ce que ces captures ne prouvent pas** : que le site soit indexé. Sitemap lu et URL découvertes ne
+veulent pas dire URL dans l'index. Le seul chiffre qui le dit est le rapport « Pages », qui date du
+23/10 (4 pages sur 106). Prochaine mesure : 05/11.
