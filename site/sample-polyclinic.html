@@ -11,6 +11,9 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amk-cm.vercel.app/sample-polyclinic.html">
 <meta property="og:image" content="https://amk-cm.vercel.app/img/sample-polyclinic.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Polyclinique Méridien (Meridian Polyclinic) — ORL, dermatologie, diabétologie, gynécologie · Deido, Douala">
 <meta name="twitter:description" content="Polyclinique Méridien à Deido (Vallée Bessengue), Douala : ORL, dermatologie, diabétologie et gynécologie sur rendez-vous, accueil 24h/24. Rendez-vous par WhatsApp, en français et en anglais.">
@@ -56,7 +59,7 @@ html[data-lang="fr"] .fr-only{display:revert !important}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
 .brand b{font-family:Archivo,sans-serif;font-weight:800;font-size:1.04rem;display:block;line-height:1.05;letter-spacing:-.01em}
 .brand .bsub{display:block;font-size:.62rem;color:var(--ink-2);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
-.nav nav{margin-left:auto;display:none;gap:16px;font-size:.9rem}
+.nav nav{margin-left:auto;display:flex;gap:16px;font-size:.9rem}
 .nav nav a{text-decoration:none;color:var(--ink);opacity:.86}
 .lang{display:flex;margin-left:auto;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff}
 .lang button{border:0;background:transparent;padding:7px 12px;font:700 .78rem Archivo,sans-serif;color:var(--ink-2);cursor:pointer}
@@ -180,6 +183,16 @@ html.js .rv:not(.in){opacity:0;transform:translateY(14px);transition:opacity .5s
 html.js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}*{animation:none!important}}
 @media (scripting:none){.rv{opacity:1!important;transform:none!important}}
+/* NAV MOBILE (29/10) — `.nav nav` n'était pas seulement cachée sous 900 px : elle était en
+   `display:none` dans la règle de base, donc invisible tant qu'on ne passait pas le point de
+   rupture. Sous 900 px, les ancres forment maintenant une rangée qui défile, sous la marque. */
+@media(max-width:899px){
+  .nav .wrap{flex-wrap:wrap;row-gap:4px}
+  .nav nav{flex:1 0 100%;order:3;margin-left:0;gap:15px;font-size:.82rem;
+    overflow-x:auto;padding:1px 0 3px;scrollbar-width:none;-ms-overflow-style:none}
+  .nav nav::-webkit-scrollbar{display:none}
+  .nav nav a{white-space:nowrap}
+}
 </style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",

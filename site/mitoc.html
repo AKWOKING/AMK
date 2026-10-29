@@ -17,6 +17,9 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amk-cm.vercel.app/mitoc.html">
 <meta property="og:image" content="https://amk-cm.vercel.app/img/og-mitoc.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Midas Touch Optic Center · Website Concept">
 <meta name="twitter:description" content="An optician website concept: eye exams, lenses and frames with clear FCFA pricing and WhatsApp booking.">
@@ -257,7 +260,6 @@ html.js .rv.in{opacity:1;transform:none}
   .hero-float{right:8px}
 }
 @media(max-width:860px){
-  .nav-links,.concept-chip{display:none}
   .burger{display:block}
   .nav-right .btn{display:none}
 }
@@ -286,6 +288,20 @@ html.js .rv.in{opacity:1;transform:none}
   .demobar{font-size:10.5px;letter-spacing:.1em;padding:6px 12px}
   .hero-float{left:10px;right:auto;max-width:230px;bottom:18px;padding:12px 14px}
   .hero-badge{font-size:11.5px;padding:7px 12px}
+
+  /* --- NAV MOBILE (29/10) : les ancres restent visibles, sur une rangée qui défile ---------------
+     Avant : `.nav-links{display:none}` sous 640 px, sans bouton de menu. Au téléphone, un visiteur
+     ne pouvait plus sauter à « Tarifs » ni à « Visite » : le contenu restait atteignable en défilant,
+     la navigation non. Une rangée qui défile coûte 30 px et zéro JavaScript ; un menu hamburger
+     demanderait du JS, un piège de focus et un état — pour quatre liens. */
+  /* la pastille « site concept par AMK » sortait de la ligne et poussait la marque : elle
+     reste hors du premier écran, le bandeau DEMO du haut porte déjà la mention. */
+  .concept-chip{display:none}
+  .nav{height:auto;flex-wrap:wrap;padding-top:9px;padding-bottom:7px;row-gap:5px}
+  .nav-links{display:flex;flex:1 0 100%;order:3;justify-content:flex-start;gap:18px;
+    overflow-x:auto;padding:2px 0 3px;scrollbar-width:none;-ms-overflow-style:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{font-size:13px;line-height:1.7;white-space:nowrap}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}

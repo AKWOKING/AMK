@@ -15,6 +15,9 @@
 <meta content="website" property="og:type"/>
 <meta content="https://amk-cm.vercel.app/en/clinic-bonaberi.html" property="og:url"/>
 <meta content="https://amk-cm.vercel.app/img/og-clinic-bonaberi.jpg" property="og:image"/>
+<meta content="image/jpeg" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Clinic &amp; Lab Website Concept · Bonabéri Medical Centre | AMK" name="twitter:title"/>
 <meta content="A patient-first clinic concept by AMK: pricing, laboratory, maternity scans, WhatsApp booking." name="twitter:description"/>
@@ -229,7 +232,6 @@ html.js .rv.in{opacity:1;transform:none}
 }
 @media(max-width:640px){
   section{padding:60px 0}
-  .nav-links,.concept-chip{display:none}
   .nav-right .btn{display:none}
   .bento{grid-template-columns:1fr}
   .price-grid{grid-template-columns:1fr}
@@ -250,6 +252,17 @@ html.js .rv.in{opacity:1;transform:none}
   .lang button{padding:6px 9px;font-size:12px}
   .nav-right .btn{padding:9px 14px;font-size:12.5px}
   .demobar{font-size:10.5px;letter-spacing:.1em;padding:6px 12px}
+
+  /* --- NAV MOBILE (29/10) : même correction que les pages françaises ; les ancres restent
+     visibles sur une rangée qui défile, au lieu de disparaître sans bouton de menu. */
+  /* la pastille « site concept par AMK » sortait de la ligne et poussait la marque : elle
+     reste hors du premier écran, le bandeau DEMO du haut porte déjà la mention. */
+  .concept-chip{display:none}
+  .nav{height:auto;flex-wrap:wrap;padding-top:9px;padding-bottom:7px;row-gap:5px}
+  .nav-links{display:flex;flex:1 0 100%;order:3;justify-content:flex-start;gap:18px;
+    overflow-x:auto;padding:2px 0 3px;scrollbar-width:none;-ms-overflow-style:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{font-size:13px;line-height:1.7;white-space:nowrap}
 }
 :focus-visible{outline:3px solid var(--emerald);outline-offset:2px;border-radius:6px}
 .mbar a:focus-visible{outline-color:var(--amber)}

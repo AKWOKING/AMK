@@ -2,15 +2,15 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-29
-Source : graphify-out/graph.json (14405 nœuds, 19002 arêtes)
+Source : graphify-out/graph.json (14406 nœuds, 19005 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **14405 nœuds** — dont 882 documents, 215 scripts, 33 modules, 146 pages HTML, 492 images, 10 vidéos, 40 audios, 52 fichiers de données, 13 PDF.
-- **4059 citations entre documents** (3252 en chemin exact, 807 par nom unique)
+- **14406 nœuds** — dont 882 documents, 215 scripts, 33 modules, 146 pages HTML, 492 images, 10 vidéos, 40 audios, 52 fichiers de données, 13 PDF.
+- **4061 citations entre documents** (3254 en chemin exact, 807 par nom unique)
 - **164 arêtes de remplacement** · **3 documents marqués périmés**
 - **430 documents que personne ne cite** (atteignables par aucun chemin de lecture)
 - **Couverture : 1961 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
@@ -89,7 +89,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 
 | Rang | Document | Cité par | Titres |
 |---|---|---|---|
-| 1 | `sales/Activity-Log.md` | **208** | 320 |
+| 1 | `sales/Activity-Log.md` | **208** | 321 |
 | 2 | `AMK-DESIGN-SKILLS.md` | **47** | 188 |
 | 3 | `PRE-FLIGHT.md` | **39** | 41 |
 | 4 | `research/YouTube-Lessons.md` | **31** | 202 |
@@ -233,7 +233,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 2 | `dmopticsarl-2026-10-21.zip`, `dr-ophtalmo-site-2026-10-27.zip` |
 | style | 1 | `hosting/previews/dr-ophtalmo/css/styles.css` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 12444 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 12445 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 

@@ -1,0 +1,221 @@
+/* ============================================================================
+   PASSE DU 29/10/2026 — l'accueil AMK prend la grammaire de la référence que
+   King a envoyée (barre claire, héros photo, titre en trois lignes, un bouton,
+   rangée de quatre preuves) et garde NOS couleurs : encre #0F172A, ambre
+   #F59E0B, papier #F7F6F2.
+
+   Ce qui change, et pourquoi (diagnostic du 29/10, captures d'avant) :
+   · le premier écran n'avait pas de <h1> visible : `.seo-h1` mesurait 18 px.
+     Le titre visible était un <h2> de panneau, caché pour la moitié des
+     visiteurs selon l'onglet. Un seul titre, une seule phrase, jamais caché.
+   · l'en-tête était en `position:fixed` sans fond, sur un hero sombre : hors
+     du hero, la marque et les liens devenaient du gris sur crème (contraste
+     mesuré 1,4:1). La barre est maintenant en papier, avec un filet.
+   · six éléments de remplissage retirés : bandeau de chiffres (24 h, 100 %,
+     6 concepts), marquee ambre, « défilé » et ses chips, les deux onglets de
+     niche du hero, le `background` en dégradé radial. Chacun était un signe
+     de site généré, et aucun ne vendait quoi que ce soit.
+   · Outfit est servi depuis `site/fonts/` : la requête Google Fonts échouait
+     en réseau fermé et laissait une P1 « console » à chaque audit.
+
+   Ce qui ne change pas : la palette, la police, la voix, les prix publics,
+   les quatre refus, les mentions du client réel, les ancres (#work, #pricing,
+   #faq, #audit) et le bilingue par `data-en` / `data-fr`.
+   ========================================================================== */
+
+/* 0 · la police, en local ------------------------------------------------- */
+@font-face{font-family:'Outfit';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/outfit-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/outfit-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/outfit-latin-600-normal.woff2') format('woff2')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/outfit-latin-700-normal.woff2') format('woff2')}
+@font-face{font-family:'Outfit';font-style:normal;font-weight:800;font-display:swap;src:url('fonts/outfit-latin-800-normal.woff2') format('woff2')}
+
+/* 1 · les jetons de la passe --------------------------------------------- */
+:root{
+  --paper:#F7F6F2; --paper-2:#FFFFFF; --rule:#E5E1D7; --rule-2:#D8D3C6;
+  --ink2:#0F172A; --ink-soft:#4A5568; --ink-mute:#5F6B7C;
+  --brand:#0F172A; --brand-2:#1B2A44; --amber:#F59E0B; --amber-deep:#B45309;
+  --amber-text:#8A4B06; --amber-tint:#FDF3E2; --on-amber:#0F172A;
+  --r:16px; --r-lg:22px; --r-pill:999px;
+  --sh:0 1px 2px rgba(15,23,42,.05),0 10px 30px rgba(15,23,42,.06);
+}
+body{background:var(--paper-2);color:var(--ink2);-webkit-font-smoothing:antialiased;overflow-x:clip}
+html{overflow-x:clip;scroll-padding-top:88px}
+img{max-width:100%;display:block}
+
+/* 2 · en-tête : papier, filet, une seule action --------------------------- */
+header#hdr{position:sticky;top:0;background:rgba(247,246,242,.94);backdrop-filter:saturate(1.4) blur(10px);
+  -webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--rule);padding:0;transition:box-shadow .2s ease;z-index:140}
+header#hdr.scrolled{background:rgba(247,246,242,.985);box-shadow:0 1px 0 var(--rule),0 8px 24px rgba(15,23,42,.06);padding:0}
+header#hdr .h-in{gap:30px;min-height:76px}
+header#hdr .brand{display:flex;align-items:center;gap:11px;flex:none}
+header#hdr .brand svg{width:34px;height:34px;border-radius:9px;flex:none}
+header#hdr span.t{color:var(--ink2);font-weight:800;font-size:20px;letter-spacing:-.01em;line-height:1.05;display:block}
+header#hdr small{display:block;color:var(--ink-mute);font-size:9.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;margin-top:2px}
+header#hdr nav.main{display:flex;gap:28px;margin-left:auto;align-items:center}
+header#hdr nav.main a{color:var(--ink-soft);font-size:15px;font-weight:600;padding:6px 0;border-bottom:2px solid transparent;transition:color .15s ease,border-color .15s ease}
+header#hdr nav.main a:hover{color:var(--ink2);border-bottom-color:var(--amber)}
+header#hdr .lang-sw{display:flex;border:1px solid var(--rule-2);border-radius:var(--r-pill);overflow:hidden;flex:none}
+header#hdr .lang-sw button,header#hdr .lang-sw .lang-a{background:none;border:none;color:var(--ink-mute);font-weight:700;font-size:13px;padding:7px 13px;cursor:pointer;text-decoration:none;line-height:1.4}
+header#hdr .lang-sw button.on,header#hdr .lang-sw .lang-a.on{background:var(--amber);color:var(--on-amber)}
+header#hdr .lang-sw button[aria-pressed="true"]{background:var(--amber);color:var(--on-amber)}
+header#hdr a.btn-amber,header#hdr a.btn-amber span{color:var(--on-amber)}
+header#hdr .h-cta{padding:11px 20px;font-size:14.5px;border-radius:var(--r-pill);flex:none}
+header#hdr .h-cta-s{display:none}
+header#hdr #m-btn{display:none;background:none;border:1px solid var(--rule-2);border-radius:11px;cursor:pointer;width:44px;height:44px;padding:0;flex:none}
+header#hdr #m-btn span{display:block;width:20px;height:2px;background:var(--ink2);margin:3px auto;border-radius:2px}
+.m-nav{background:rgba(15,23,42,.985);backdrop-filter:blur(6px)}
+
+/* 3 · boutons ------------------------------------------------------------- */
+.btn{border-radius:var(--r-pill);padding:14px 26px;font-weight:700;font-size:15.5px;transition:background-color .16s ease,color .16s ease,border-color .16s ease}
+.btn-amber{background:var(--amber);color:var(--on-amber)}
+.btn:hover{transform:none}
+.btn-amber:hover{background:#FFB020;box-shadow:none;transform:none}
+.btn-ghost{color:#fff;border:1.5px solid rgba(255,255,255,.34)}
+.btn-ghost:hover{border-color:#fff;color:#fff}
+.btn-hero,.btn-hero-quiet{padding:15px 28px;font-size:16px;box-shadow:0 10px 26px rgba(15,23,42,.22)}
+.btn-hero{background:var(--amber);color:var(--on-amber)}
+.btn-hero:hover{background:#FFB020}
+.btn-hero:active{transform:scale(.985)}
+.btn-hero .ar{flex:none}
+.btn-hero-quiet{color:#FFFFFF;border:1.5px solid rgba(255,255,255,.42);background:rgba(15,23,42,.28);box-shadow:none}
+.btn-hero-quiet:hover{border-color:#fff;background:rgba(15,23,42,.45);color:#fff}
+
+/* 4 · le premier écran ---------------------------------------------------- */
+.hero2{position:relative;isolation:isolate;color:#fff;overflow:hidden;background:#0B1120;
+  padding:clamp(72px,9vw,120px) 0 clamp(64px,8vw,104px)}
+.hero2-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:52% 62%;z-index:-2}
+.hero2-scrim{position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(96deg,rgba(8,14,26,.965) 0%,rgba(8,14,26,.93) 38%,rgba(8,14,26,.72) 62%,rgba(8,14,26,.46) 100%)}
+.hero2-in{max-width:1160px}
+.hero2 > .wrap{position:relative;z-index:1}
+.hero2-kick{margin:0 0 20px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#FBBF24;
+  display:flex;align-items:center;gap:12px}
+.hero2-kick::before{content:"";width:26px;height:2px;background:#F59E0B;flex:none;border-radius:2px}
+.hero2-h1{font-size:clamp(36px,4.9vw,62px);line-height:1.04;letter-spacing:-.03em;font-weight:800;
+  max-width:23ch;margin:0 0 22px;color:#FFFFFF;text-wrap:balance}
+.hero2-h1 .hl{color:#FBBF24}
+.hero2-sub{font-size:clamp(16px,1.35vw,18px);line-height:1.62;color:#D5DCE7;max-width:52ch;margin:0 0 34px}
+.hero2-act{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:26px}
+.hero2-proof{font-size:13.5px;color:#A9B5C6;margin:0;letter-spacing:.005em}
+
+/* 5 · la rangée de quatre preuves, sous le hero (grammaire de la référence) */
+.band4{background:var(--paper);border-bottom:1px solid var(--rule)}
+.band4-in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.b4{padding:38px 26px 40px;text-align:center;border-left:1px solid var(--rule)}
+.b4:first-child{border-left:0}
+.b4 svg{width:26px;height:26px;margin:0 auto 14px;fill:none;stroke:var(--amber-deep);stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round}
+.b4 b{display:block;font-size:15.5px;font-weight:700;letter-spacing:-.005em;color:var(--ink2)}
+.b4 span{display:block;margin-top:6px;font-size:13.5px;line-height:1.5;color:var(--ink-mute)}
+
+/* 6 · le corps de page : rythme, papier, filets -------------------------- */
+section{padding:clamp(64px,7vw,96px) 0}
+h2{font-size:clamp(26px,3.4vw,40px);letter-spacing:-.028em;line-height:1.14;font-weight:800;color:var(--ink2)}
+/* les sections sombres gardent leur titre en clair : la couleur du h2 se pose par section, jamais
+   en global, sinon .process et #refus affichent une encre #0F172A sur #0B1120 (1,06:1). */
+.process h2,.refus h2,.audit h2,.dark h2,footer h2{color:#FFFFFF}
+.process .sub,.refus .sub,.audit .sub{color:#C3CCDA}
+.audit h3{color:#fff}
+.sub{color:var(--ink-soft);font-size:16.5px;line-height:1.62}
+.dark .sub,.dark p.sub{color:#C3CCDA}
+.kicker{color:var(--amber-text);background:var(--amber-tint);border:1px solid #F0DCBB;border-radius:var(--r-pill);
+  font-weight:600;letter-spacing:.15em;font-size:11px;padding:6px 13px}
+.dark .kicker,.refus .kicker{color:#FBBF24;background:rgba(245,158,11,.10);border-color:rgba(245,158,11,.3)}
+#problem,#work,#pricing,#faq{background:var(--paper-2)}
+#services{background:var(--paper)}
+#creation-site-web{background:var(--paper-2)}
+.process,.refus,.audit{background:#0B1120}
+.pcard,.svc,.pr,.wcard,.case,.qa details{background:var(--paper-2);border:1px solid var(--rule);border-radius:var(--r);box-shadow:none}
+.pcard:hover,.svc:hover,.wcard:hover{transform:none;box-shadow:var(--sh);border-color:var(--rule-2)}
+.pcard p,.svc p,.wcard p{color:var(--ink-soft)}
+.pcard h3,.svc h3,.wcard h3{color:var(--ink2)}
+.pcard .ico,.svc .ico{background:var(--amber-tint);border-radius:11px}
+.step,.steps .step{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.12);border-radius:var(--r)}
+.step:hover{transform:none;border-color:rgba(245,158,11,.55)}
+.step .n{background:var(--amber);color:var(--on-amber)}
+.row-label{color:var(--ink2);letter-spacing:.12em}
+.row-label .dot{width:8px;height:8px}
+.tag{color:var(--amber-text);letter-spacing:.12em}
+.loc{color:var(--ink-mute)}
+.cmp{border:1px solid var(--rule)}
+.cmp-head{background:var(--ink2);color:#fff}
+.cmp-cell.old{background:var(--paper);color:var(--ink-soft)}
+.cmp-cell.new{background:var(--amber-tint);color:var(--ink2)}
+.old .mk{color:#B91C1C}
+.new .mk{color:#166534}
+.midcta{background:var(--amber)}
+.pay b{color:var(--amber-text)}
+.pr.feat{border:2px solid var(--ink2);box-shadow:none}
+.rib{background:var(--ink2);color:#fff}
+.price{color:var(--ink2)}
+header#hdr a{color:var(--ink-soft)}
+footer{background:#0B1120;color:#C3CCDA}
+footer .f-bottom{color:#93A0B1}
+
+/* 7 · le chevron de défilement et les étiquettes flottantes : retirés ------ */
+.scroll-cue{display:none}
+
+/* 8 · petits écrans ------------------------------------------------------- */
+@media (max-width:1000px){
+  header#hdr nav.main{gap:18px}
+  header#hdr nav.main a{font-size:14px}
+}
+@media (max-width:860px){
+  header#hdr nav.main,header#hdr .lang-sw,header#hdr .h-cta{display:none}
+  header#hdr .h-cta-s{display:inline-flex;margin-left:auto;background:var(--amber);color:var(--on-amber);
+    border-radius:var(--r-pill);padding:10px 18px;font-size:14px;font-weight:700}
+  header#hdr #m-btn{display:block}
+  .band4-in{grid-template-columns:1fr 1fr}
+  .b4{border-left:0;border-top:1px solid var(--rule);padding:30px 18px 32px}
+  .b4:nth-child(1),.b4:nth-child(2){border-top:0}
+  .b4:nth-child(2n){border-left:1px solid var(--rule)}
+  .hero2{padding:56px 0 64px}
+  .hero2-scrim{background:linear-gradient(180deg,rgba(8,14,26,.93) 0%,rgba(8,14,26,.88) 55%,rgba(8,14,26,.82) 100%)}
+  .hero2-bg{object-position:60% 70%}
+  .hero2-h1{max-width:none}
+  .hero2-act{gap:12px}
+  .btn-hero,.btn-hero-quiet{padding:14px 22px;font-size:15px}
+}
+@media (max-width:420px){
+  .band4-in{grid-template-columns:1fr}
+  .b4{border-left:0!important;border-top:1px solid var(--rule)}
+  .b4:first-child{border-top:0}
+  .btn-hero,.btn-hero-quiet{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  header#hdr,.btn{transition:none}
+}
+
+/* 9 · les flèches et les marques sont dessinées : Outfit ne porte pas ↗ ✕ ✓ ＋,
+   et un carré vide au bout d'un bouton fait plus de dégâts qu'une flèche en moins. */
+.xl{display:inline-block;vertical-align:-1px;margin-left:5px;flex:none}
+.ar{display:inline-block;vertical-align:middle;margin-left:2px;flex:none}
+.mk{display:inline-flex;align-items:center;flex:none}
+.mk .mk-i{display:block}
+.wcard.ghost .plus svg{color:var(--ink-mute)}
+.f-type{gap:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:2px}
+
+/* 10 · le `.hero` d'avant, neutralisé --------------------------------------
+   La section porte `hero` (les portiques la reconnaissent) ET `hero2` (le
+   nouveau dessin). Tout ce que l'ancienne feuille posait sur `.hero` est donc
+   remis à zéro ici, sinon le dégradé radial, la grille à deux colonnes et les
+   traits décoratifs reviennent par-derrière. */
+.hero.hero2{display:block;padding:clamp(72px,9vw,120px) 0 clamp(64px,8vw,104px);overflow:hidden}
+.hero.hero2 .wrap{display:block;gap:0;align-items:initial;max-width:1160px}
+.hero.hero2::before,.hero.hero2::after{content:none;display:none}
+.hero.hero2 .sub,.hero.hero2 p.sub{color:#D5DCE7}
+@media (max-width:860px){
+  .hero.hero2{padding:56px 0 64px}
+}
+
+/* 11 · la bande d'appel à l'action du milieu ------------------------------
+   Elle était ambre du bord à l'autre : mesurée sur la capture du 29/10, l'accent
+   y prenait 29 % de l'écran, contre 0,7 à 15 % admis (`audit_palette.py`). Un
+   accent qui tapisse n'accentue plus rien. Elle passe en encre, et c'est le
+   bouton qui reste ambre : la règle 60-30-10 est respectée sans rien perdre. */
+.midcta{background:var(--ink2)}
+.midcta h3{color:#FFFFFF}
+.midcta .btn{background:var(--amber);color:var(--on-amber)}
+.midcta .btn:hover{background:#FFB020;color:var(--on-amber)}
