@@ -7847,3 +7847,45 @@ si ça dérape : photos, puis lieux, puis mains, et **jamais** les sept phrases,
 checklist est encore ouverte, même visite, même appareil, zéro déplacement de plus).
 
 **Portes** : `audit_claims` ✓ sur le message, l'autorisation et le dossier de tournage.
+
+---
+
+## 234 · 29/10/2026 (nuit) · le solde de 75 000 : la facture et le reçu, prêts à imprimer
+
+**La question laissée ouverte est close** : le rendez-vous du 31/10, c'est **le solde de 75 000**, pas une
+autre tranche. La vidéo est partie chez M. Domche dans la journée ; on attend sa réponse et on ne le
+relance pas. En attendant, la pièce qui manquait à cette visite existe maintenant sur papier.
+
+**Ce que l'outil disait déjà, et ce que ça change.** `AMK-2026-001` porte **150 000 facturés, 75 000 reçus,
+reste 75 000**. Samedi n'est donc pas une nouvelle facture : c'est **un encaissement**, le deuxième. Une
+facture émise pour 75 000 de plus aurait dit au client qu'il doit 225 000. Le seul document qui manquait,
+c'est celui qu'on signe en recevant l'argent.
+
+**Deux pièces, pas une.** `FACTURE-SOLDE-AMK-2026-001.pdf` : la facture entière, les deux encaissements au
+journal, reste 0, tampon PAYÉ. Elle archive les 150 000 d'un coup, au lieu de ne garder que le solde du
+jour. `RECU-SOLDE-AMK-2026-001-R2.pdf` : **deux reçus identiques sur une feuille**, un pour lui, un pour
+nous, séparés par un trait de coupe, avec la somme en lettres, parce que c'est la phrase en lettres qui
+tient devant un tribunal et pas un chiffre. Trois blancs restent à remplir à la main : le mode de
+paiement, le tampon, la signature. La date, elle, est imprimée.
+
+**Comment c'est fabriqué, et pourquoi pas autrement.** L'outil est une PWA dont les données vivent dans le
+`localStorage` du téléphone : il ne se pilote pas à distance, et ce dépôt n'a pas de navigateur pour
+l'imprimer. `tools/facture/make_solde_dm.py` reprend donc les données et la mise en page de l'outil
+(mêmes chiffres, mêmes blocs, même palette) et sort un A4 à 300 dpi. La saisie dans l'outil reste à faire
+par King, en cinq gestes, décrits dans `clients/dm-optic/launch/FACTURE-SOLDE-2026-10-31.md` §4 :
+l'écran doit afficher « Payée » et 0 FCFA, sinon c'est la saisie qui est fausse, pas le papier.
+
+**Trois mentions absentes, exprès.** Le **RCCM** (toujours manquant, l'outil imprime par défaut « Non
+applicable, personne physique sous NIU », affirmation que rien ne prouve), la **TVA** (le régime n'est pas
+tranché) et le **NIU du client** (vide dans l'outil, il ne s'invente pas). Aucune n'empêche d'encaisser et
+de signer ; toutes rendent la pièce contestable par l'administration. Elles s'ajouteront en une ligne le
+jour où l'information arrive.
+
+**Un point relevé au passage, hors facture** : le dépôt `AKWOKING/AMK` est **public** et
+`ops/amk-factures-pwa/index.html` y contient le **NIU d'AMK en clair**, alors que
+`ops/ADMIN-FISCAL-AMK-2026-10-22.md` §4 interdit de le mettre dans un dépôt public. Rien n'a été changé
+côté PWA (elle tourne en production) : deux sorties sont décrites dans le document de la visite.
+
+**Portes** : `audit_claims` ✓ sur le nouveau document ; `clients/dm-optic/launch` reste **BLOQUÉ sur 3
+affirmations préexistantes** (`LISTE-40-MONTURES-WHATSAPP.txt:1`, `SETUP-GOOGLE-BUSINESS.md:70` et `:81`, toutes antérieures à ce
+tour), pas sur les pièces du solde. `audit_files` a tourné : 1 962 fichiers, 173,9 Mo.
