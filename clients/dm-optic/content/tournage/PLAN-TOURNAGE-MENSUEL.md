@@ -6,6 +6,9 @@ tournage d'une demi-journée par mois ».
 Ce que ça ferme : aucun abonnement d'avatar IA (HeyGen/Arcads/Creatify), aucune clé Veo achetée.
 Ce que ça ouvre : 4 heures par mois avec une caméra et des gens vrais, montées par tools/ugc.
 Statut : PLAN PRÊT — date et personnes à valider par King.
+29/10 : **le premier film est écrit** — script (`DOMCHE-01-SCRIPT.py`, quatre pièces), déroulé
+(`VIDEO-DOMCHE-2026-10-29.md`), message de demande (`launch/MESSAGE-VIDEO-DOMCHE-2026-10-29.md`),
+autorisation signable (`launch/AUTORISATION-IMAGE-2026-10-29.pdf`). Il ne manque que son accord.
 ```
 
 ---
@@ -137,7 +140,7 @@ Fait à ……………………, le ………/………/………      Signatur
 
 | Quand | Quoi | Qui |
 |---|---|---|
-| **avant le 30/10** | valider la date, la personne à l'image, signer l'autorisation, acheter le micro | **King** |
+| **avant le 30/10** | envoyer le message à M. Domche, valider la date, faire signer l'autorisation, acheter le micro | **King** |
 | **1ʳᵉ séance : 1ʳᵉ semaine de novembre** (samedi après-midi proposé) | les 4 heures du §3 | King + AMK au montage |
 | **J+2** | les 4 premiers posts montés et livrés | AMK |
 | **chaque mois** | même séance, mêmes blocs, nouveaux gestes | King |

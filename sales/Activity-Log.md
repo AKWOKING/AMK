@@ -7778,3 +7778,46 @@ aucun patient au Cameroun. On la note, on n'y va pas.
 **Ce que ces captures ne prouvent pas** : que le site soit indexé. Sitemap lu et URL découvertes ne
 veulent pas dire URL dans l'index. Le seul chiffre qui le dit est le rapport « Pages », qui date du
 23/10 (4 pages sur 106). Prochaine mesure : 05/11.
+
+---
+
+## 232 · 29/10/2026 · le film de M. Domche : le script, les coupes, et le message qui demande son accord
+
+**La commande** : un script et un message pour lui demander s'il accepte d'être filmé. Le dépôt avait
+déjà l'autorisation d'un visage, mais dans une seule phrase : `content-plan-month1` §9,
+« test conditionné à l'accord du client : 2 clips de M. Domche (service/processus, 20–34 s) ». Ce tour
+transforme cette phrase en pièces exécutables.
+
+**L'angle retenu, après six propositions dont trois mortes.** « L'examen en quatre étapes » gagne parce que
+c'est **sa** parole (`REPONSES-CLIENT`, 15/10 16:54 : anamnèse, bilan, acuités, réfraction) et parce que le
+seul chiffre prononçable est « quatre » : il ne dit rien de la santé de personne, là où un nombre de
+montures casse un verrou et un taux serait une promesse. Rejetés : le parcours et les diplômes (deux des
+trois titres ne sont pas prouvés par une pièce, et une auto-présentation en ouverture), « le secret d'une
+monture qui va bien » (promesse), le tour du cabinet (aucun axe).
+
+**Quatre pièces, un tournage** (`content/tournage/DOMCHE-01-SCRIPT.py`) : le film de **67,5 s** pour le site
+et Facebook, et trois coupes, TikTok 18,9 s, Facebook 29 s, Reels 30 s. Toutes passent la porte du récit et
+la porte de l'accroche (4 mots de puissance sur 4, niveau 2 déclaré).
+
+**Une correction que la porte a imposée, et qui valait le détour.** La première accroche était « Avant de
+vous montrer une monture, je fais quatre choses. » `audit_hook` l'a refusée : ni action, ni objectif, ni
+contraste, parce que « fais » n'est pas un verbe opposable. Réécrite : « Je mesure avant de vous montrer une
+monture. On ne repart pas avec le premier venu. » Le verbe passe au début, l'objectif devient un état de
+sortie, et le contraste arrive tout seul. Un spectateur entendait un programme ; il entend maintenant un
+enjeu.
+
+**Le message** (`launch/MESSAGE-VIDEO-DOMCHE-2026-10-29.md`) : deux phrases de relation, puis trois
+questions numérotées, ce qui est l'exception prévue aux règles de messagerie du 08/10. Il dit le coût en
+premier (« une heure un après-midi »), il offre l'option sans visage **avant** qu'il la demande, et il finit
+par « si une phrase ne vous plaît pas, elle sort ».
+
+**L'autorisation** (`launch/AUTORISATION-IMAGE-2026-10-29.pdf`, générée par `tools/ops/make_autorisation.py`) :
+sept points, dont le retrait en un message écrit, le délai de sept jours pour décrocher les contenus, et
+« aucune contrepartie » écrit noir sur blanc. Le §7 dit exactement ce qui sera filmé, parce qu'un client qui
+signe doit lire ce qu'il signe.
+
+**Portes** : `audit_story` ✓ sur les quatre pièces · `audit_hook` ✓ (avertissement `sans-intrigue` assumé) ·
+`audit_claims` ✓ sur les nouveaux fichiers.
+
+**Ce qui reste** : son accord, sa signature, un après-midi, et un micro-cravate. Puis le montage, et sa
+relecture avant toute publication.
