@@ -238,3 +238,43 @@ La porte a accusé deux fois sa propre correction, et les deux fois le défaut �
   (masquer la barre de défilement de la rangée) se lisait comme « la nav est cachée ».
 
 Leçon commune : **un texte de contrôle qui lit du CSS doit distinguer le code du propos sur le code.**
+
+---
+
+## 8 · Le paquet de déploiement
+
+`python3 hosting/build_site_zip.py` → **`amk-site.zip`, 42 fichiers, 5,2 Mo** (7,05 Mo décompressés).
+
+Ce n'est plus une liste écrite à la main. Le script lit chaque page, chaque feuille qu'elle charge, et
+chaque `srcset`, puis emporte ce qu'elles référencent. Trois conséquences vérifiables :
+
+| Ce qui manquait au zip du 08/10 | Pourquoi c'était grave |
+|---|---|
+| `accueil-2026-10-29.css` | un accueil sans feuille de style |
+| `fonts/*.woff2` (5 fichiers) | une page en police système |
+| `img/hero-douala-dusk-1600.webp` | un héros vide |
+| `site/vercel.json` | ni HSTS, ni cache des assets |
+
+Le contrôle, fait **sur le zip décompressé**, pas sur `site/` :
+
+- **42 / 42** fichiers servis en HTTP 200 par un serveur local ;
+- **176** références locales (liens, images, `srcset`, `og:image`, `url()` des feuilles) résolues,
+  **0 manquante** ;
+- accueil, `/en/`, `clinic-bonaberi.html` et `en/mitoc.html` rendus à 390 et 1440 : **Outfit chargée
+  depuis le paquet** (4 graisses), `h1` à 62 px puis 36 px, **0 réponse 4xx, 0 erreur console,
+  0 débordement**.
+
+### Une dépendance de moins
+
+Cinq pages de démonstration (`clinic-bonaberi`, `mitoc`, `sample-secondary` et leurs jumelles
+anglaises) tiraient **Outfit depuis `fonts.googleapis.com`** alors que la police est dans le paquet
+depuis cette passe. Elles portent maintenant les mêmes `@font-face` que l'accueil. Sur les six pages
+mesurées, plus une seule requête vers un CDN de polices : c'est une panne tierce en moins, et la même
+graisse de marque partout.
+
+Restent trois concepts à typefaces propres (Nunito, Montserrat, Archivo + Inter) qui chargent encore
+depuis Google Fonts : ce sont des maquettes, elles changent de police **exprès**, et les rapatrier
+coûterait 15 fichiers et ~250 Ko. À faire le jour où King les montre dans un réseau qui filtre Google.
+
+**Écart assumé** : le zip ne contient ni `DEPLOY.md`, ni les notes de recherche, ni `mockup-hero.html`
+(gabarit à jetons, `noindex`, sans lien entrant) — il contient ce qui doit être servi, rien d'autre.
