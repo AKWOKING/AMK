@@ -7671,3 +7671,39 @@ espacements hors échelle de 4 px (le site tient un rythme de 2 px).
 lu le CSS et le HTML, pas la page peinte. L'œil reste `shot.py`, vert sur l'accueil après correction, et
 les portes maison sont toutes repassées : portique SEO local 0/0, livraison 0 P1 et 0 P2, lois 0/0,
 AEO 0/0, `test_dmoptic_page` 71 verts.
+
+## 29 octobre 2026 · tour 229 — la checklist Google, et les trois chantiers qu'elle sépare
+
+**Le constat de départ.** « Ça fait presque une semaine et le site n'apparaît pas » mélange trois
+choses : être dans l'index (Search Console), être sur la carte (fiche Google), mériter d'être cité (le
+site). Trois délais, trois propriétaires. Tant qu'on les traite ensemble, on attend au lieu d'agir.
+
+**Ce qui est livré.** `clients/dm-optic/seo/CHECKLIST-GOOGLE-2026-10-29.md`, avec pour chaque ligne
+**comment on vérifie** et **à quoi ressemble « c'est fait »**. Rien n'y est promis : ni position, ni
+délai.
+
+**Ce que la pré-vol a évité de refaire.** Le `RUNBOOK-403` du 26/10 dit que les trois gestes ont été
+faits (Always Use HTTPS, validation du 403, propriété Domaine adoptée). La checklist part de là et ne
+rouvre pas les cinq contrôles WAF déjà faits. Le seul geste restant côté King est de **soumettre le
+sitemap dans la propriété Domaine**, et le runbook prévoyait 16 URL : il y en a 22 depuis le 28/10,
+la cible du 16/11 est donc recalculée (≥ 15 sur 22, cible interne).
+
+**Une contradiction trouvée dans nos propres documents.** `SETUP-GOOGLE-BUSINESS` (21/10) retient
+**« Opticien »** en catégorie principale et dit de ne pas la changer ; les relevés 2026 recommandent
+**« Optometrist »**. La checklist ne tranche pas à la place du client : elle dit ce qui départage, à
+savoir ouvrir le sélecteur de catégories de la fiche et regarder ce que Google propose pour le
+Cameroun. Si les deux existent, Optometrist en principale et Optician en secondaire.
+
+**Ce que le site peut encore faire, et qui n'est pas fait.** Le lien « laisser un avis » est **absent**
+du site (vérifié : `writereview` n'apparaît nulle part). C'est le seul levier site vers fiche, il est
+à 20 minutes de travail, et il est proposé en D1/D2 avec un QR pour le comptoir. Prochain tour.
+
+**Ce qui est mesuré aujourd'hui, pas rappelé** : 22 URL indexables, 80 fiches en `noindex,follow`,
+`robots.txt` en ligne ouvert à tous les robots (assistants compris), portique SEO local 0 faute,
+livraison 0 P1 et 0 P2. Le HTML n'a plus rien à corriger ; ce qui reste se passe dans deux tableaux
+de bord.
+
+**Un incident de session, à savoir.** Le bac a redémarré : graphify avait disparu (`/tmp` ne persiste
+pas) et la branche locale pointait encore sur `main` alors que le distant portait déjà le commit du
+tour 228. Réparé par `tools/graphify/install.sh` puis un recalage sur `origin`. La carte est repartie
+de 14 296 à 14 311 nœuds, CI verte.
