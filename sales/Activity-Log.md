@@ -7821,3 +7821,29 @@ signe doit lire ce qu'il signe.
 
 **Ce qui reste** : son accord, sa signature, un après-midi, et un micro-cravate. Puis le montage, et sa
 relecture avant toute publication.
+
+---
+
+## 233 · 29/10/2026 (soir) · samedi 31/10 : l'acompte d'abord, la caméra ensuite
+
+**Ce que King a corrigé.** Le rendez-vous du **samedi 31 octobre** existe déjà : c'est le règlement de
+l'acompte. Aucune heure n'est fixée, et il compte tourner le film de M. Domche **en allant**, si le client
+est d'accord. La v1 du message, qui demandait « quel après-midi vous arrange », était donc à côté : elle
+aurait fait croire qu'on cherche un rendez-vous qui existe.
+
+**Le message est réécrit (v2)**, cinq phrases courtes, sans liste. Il annonce l'objet de la visite dans
+l'ordre où il se présente (l'acompte, qui est **son** annonce du 24/10, pas notre demande), propose 14h
+parce que le cabinet examine le matin, et pose la question sur **la caméra** , pas sur « une vidéo » : un non
+à la caméra laisse la relation intacte. L'option sans visage arrive avant qu'il la demande. La v1 est
+archivée dans le même fichier, marquée « jamais envoyée ».
+
+**Le déroulé de la visite** (`content/tournage/SAMEDI-31-10-DEROULE.md`) tient en 70 minutes, dont **30 de
+prise de vue**. Trois règles : l'argent avant la caméra (aucun appareil sorti avant le reçu signé en deux
+exemplaires), la question posée une fois et un non est un non, et un patient entre, la caméra descend. Quatre
+replis sont décidés d'avance : refus, cabinet plein, dix minutes seulement, lumière tombée. L'ordre de coupe
+si ça dérape : photos, puis lieux, puis mains, et **jamais** les sept phrases, qui sont le film.
+
+**Ce qui a été ajouté au passage** : cinq à dix photos du cabinet pour la fiche Google (la case C7 de la
+checklist est encore ouverte, même visite, même appareil, zéro déplacement de plus).
+
+**Portes** : `audit_claims` ✓ sur le message, l'autorisation et le dossier de tournage.
