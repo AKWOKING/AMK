@@ -2,14 +2,14 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-29
-Source : graphify-out/graph.json (14354 nœuds, 18931 arêtes)
+Source : graphify-out/graph.json (14355 nœuds, 18932 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **14354 nœuds** — dont 878 documents, 213 scripts, 33 modules, 146 pages HTML, 491 images, 10 vidéos, 40 audios, 52 fichiers de données, 12 PDF.
+- **14355 nœuds** — dont 878 documents, 213 scripts, 33 modules, 146 pages HTML, 491 images, 10 vidéos, 40 audios, 52 fichiers de données, 12 PDF.
 - **4035 citations entre documents** (3242 en chemin exact, 793 par nom unique)
 - **164 arêtes de remplacement** · **3 documents marqués périmés**
 - **429 documents que personne ne cite** (atteignables par aucun chemin de lecture)
@@ -89,7 +89,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 
 | Rang | Document | Cité par | Titres |
 |---|---|---|---|
-| 1 | `sales/Activity-Log.md` | **207** | 318 |
+| 1 | `sales/Activity-Log.md` | **207** | 319 |
 | 2 | `AMK-DESIGN-SKILLS.md` | **47** | 188 |
 | 3 | `PRE-FLIGHT.md` | **39** | 41 |
 | 4 | `research/YouTube-Lessons.md` | **31** | 202 |
@@ -233,7 +233,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 2 | `dmopticsarl-2026-10-21.zip`, `dr-ophtalmo-site-2026-10-27.zip` |
 | style | 1 | `hosting/previews/dr-ophtalmo/css/styles.css` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 12401 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 12402 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
