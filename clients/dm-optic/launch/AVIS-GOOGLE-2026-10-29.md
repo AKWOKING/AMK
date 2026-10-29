@@ -32,6 +32,15 @@ Aucune étoile. Aucune incitation. Aucune condition de satisfaction. La phrase d
 **une bonne note**. Un « laissez-nous 5 étoiles et vous aurez une remise » serait une violation des
 règles Google **et** de la règle maison du 21/10.
 
+### Ce que la fiche dit le 29/10, capture à l'appui
+
+**7 avis, 4,9 étoiles**, contre 4 avis à 5,0 le 23/10 : trois avis de plus en six jours. Le passage à
+4,9 n'est pas un incident, c'est l'arithmétique d'une fiche qui reçoit (sur 7 avis, un 4 étoiles suffit
+à faire bouger la moyenne). Ce qu'on ne fait pas pour revenir à 5,0 : relancer, demander une note,
+trier qui on sollicite.
+
+Preuve et lecture complète : `seo/RELEVE-FICHE-2026-10-29.md`, captures dans `seo/preuves-2026-10-29/`.
+
 ## 2 · La carte du comptoir, prête à imprimer
 
 | Fichier | Ce que c'est | Usage |

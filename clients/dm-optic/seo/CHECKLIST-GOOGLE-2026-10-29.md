@@ -26,12 +26,12 @@ propriétaire. Tant qu'on les traite ensemble, on attend un miracle au lieu de f
 | **Est-il sur la carte ?** | Fiche Google : catégorie, adresse, horaires, photos, avis | King + client | immédiat à visible, mais dépend de la fiche |
 | **Mérite-t-il d'être cité ?** | Les pages, leur contenu, leurs réponses | nous (fait) | au rythme des mises à jour |
 
-Aujourd'hui, le chantier 3 est fait, le chantier 1 est à moitié fait, et le chantier 2 est le vrai
-inconnu dans ce dépôt **avant le 23/10**. Depuis, `launch/MESSAGE-AVIS-GOOGLE-2026-10.md` porte la
-mesure du 23/10 : **4 avis, note 5,0, fiche « Complete info »**, dont 3 non lus. Ce qui reste inconnu,
-c'est **ce qu'elle vaut aujourd'hui** (C1) et **la catégorie principale réellement sélectionnée** (C6) :
-une note de 5,0 sur 4 avis ne se relit pas comme un stock, et la vélocité sur 90 jours compte plus que
-le total.
+Aujourd'hui, le chantier 3 est fait, le chantier 1 est à moitié fait, et le chantier 2 n'est plus un
+inconnu. **État de la fiche au 29/10** (captures dans `preuves-2026-10-29/`) : revendiquée et gérée
+(« You manage this Business Profile »), profil « Complete info », nom, adresse et téléphone identiques
+au site, catégorie « Opticien » rendue en français, **7 avis à 4,9** (4 avis à 5,0 le 23/10). Un seul
+écart : la fiche ferme à 17h00, le site dit 17h30. C1, C2, C3, C4, C6 et C8 passent au vert ; C5 attend
+un arbitrage du cabinet.
 
 ## 1 · Ce que Google a dans les mains, mesuré
 
@@ -83,16 +83,18 @@ Aucun ne demande de code. Tous se font dans l'interface, avec le compte du cabin
 
 | # | Geste | Où, exactement | C'est fait quand |
 |---|---|---|---|
-| B1 | **La propriété suivie est « Domaine »**, pas `www` | Search Console → sélecteur de propriété → `dmoptiquesarl.com` (type Domaine) | la propriété Domaine existe et affiche des données |
-| B2 | **Soumettre le sitemap** dans cette propriété | Indexation → Sitemaps → ajouter `sitemap.xml` | état « Réussite », 22 URL détectées |
+| B1 | **La propriété suivie est « Domaine »**, pas `www` | Search Console → sélecteur de propriété → `dmoptiquesarl.com` (type Domaine) | ✅ **fait** : les deux hôtes dans un même panneau Sitemaps ne peuvent exister que là |
+| B2 | **Soumettre le sitemap** dans cette propriété | Indexation → Sitemaps → ajouter `sitemap.xml` | ✅ **fait** : soumis le 26/10, lu le 29/10, **Success, 22 pages** |
 | B3 | **Valider le correctif du 403** | Indexation → Pages → « Blocked due to access forbidden (403) » → Valider le correctif | l'état passe de « En attente » à « Réussi » (peut prendre des semaines) |
 | B4 | **Valider le correctif « Redirect error »** | même écran, motif « Redirect error » | idem |
 | B5 | **Inspecter l'URL d'accueil et `/questions/`** | barre de recherche en haut → coller l'URL → « Demander l'indexation » | « URL dans l'index de Google » ou demande enregistrée |
-| B6 | **Ne pas toucher à l'ancienne propriété `www`** | la laisser en lecture | elle sert de témoin, pas de cible |
+| B6 | **Retirer le sitemap `www` en double** (le 29/10, deux lignes au tableau) | Sitemaps → les 3 points au bout de la ligne www → **Remove sitemap** | une seule ligne reste, celle de l'apex |
 
 **Ce qui ne sert à rien, et qu'il faut s'épargner** : redemander l'indexation tous les jours (Google
 limite le nombre de demandes), rouvrir les cinq contrôles WAF du 26/10 (faits, rien trouvé), et
-soumettre le sitemap depuis deux propriétés à la fois.
+soumettre le sitemap depuis deux propriétés à la fois. Le doublon `www` constaté le 29/10 est un reste
+du 21/10, quand les deux hôtes servaient encore le site : `www` redirige en 301 vers l'apex depuis le
+22/10, vérifié en ligne le 29/10. Retirer la ligne ne retire aucune URL de l'index.
 
 ## 4 · Côté fiche Google : le vrai levier du pack local
 
@@ -102,29 +104,36 @@ fiche (≈ 32 %) et avis (16 à 20 %). **On ne contrôle que les deux derniers.*
 
 | # | Point | Comment on vérifie | C'est fait quand |
 |---|---|---|---|
-| C1 | **La fiche existe et elle est revendiquée** | Maps → `place_id` `ChIJjdfYfQwXYRARAdi9mPLHGjY` → « Revendiquer cette fiche » | le tableau de bord montre « Propriétaire vérifié » |
+| C1 | **La fiche existe et elle est revendiquée** | Maps → `place_id` `ChIJjdfYfQwXYRARAdi9mPLHGjY` → « Revendiquer cette fiche » | ✅ **fait** le 29/10 : « You manage this Business Profile », profil « Complete info » |
 | C2 | **Nom identique partout** : `DM OPTIQUE SARL` | comparer fiche, site, Facebook, TikTok | quatre fois le même nom, à la lettre |
 | C3 | **Adresse identique** : Ndobo Mayor, immeuble West Hotel, 1er étage, dernière porte à droite | comparer à `/contact/` | même rue, même étage, même repère |
 | C4 | **Téléphone identique** : 656 122 239 | comparer | un seul numéro, partout |
-| C5 | **Horaires exacts** : lun. au sam., examen 8h30 à 13h00, autres besoins 8h30 à 17h30 | comparer à `/contact/` | mêmes heures, mêmes jours, y compris les jours fériés signalés |
-| C6 | **Catégories** | Modifier le profil → Catégorie | voir l'arbitrage ci-dessous, à trancher à l'écran |
+| C5 | **Horaires exacts** : lun. au sam., examen 8h30 à 13h00, autres besoins 8h30 à 17h30 | comparer à `/contact/` | ⚠️ **écart trouvé le 29/10** : la fiche dit « Closes 5pm » (17h00), le site dit 17h30. À trancher par le cabinet, voir `RELEVE-FICHE-2026-10-29.md` §4 |
+| C6 | **Catégories** | Modifier le profil → Catégorie | ✅ **tranché par l'écran le 29/10** : « Opticien » est en place et Google la rend en français. On la garde. Seule question restante, bonus : une secondaire d'optométrie, si le sélecteur la propose |
 | C7 | **Photos réelles, 2 à 4 par mois** | ajouter des photos du cabinet | au moins 10 photos au départ, puis un ajout mensuel |
-| C8 | **Avis : demander, sans trier ni inciter** | lien `writereview` + QR au comptoir | des avis **récents** qui arrivent, pas un stock ancien |
+| C8 | **Avis : demander, sans trier ni inciter** | lien `writereview` + QR au comptoir | ✅ **ça marche** : 4 avis à 5,0 le 23/10 → **7 avis à 4,9 le 29/10** (+3 en six jours). Le lien est en ligne sur `/contact/`, la carte A6 est prête |
 
-### C6 · L'arbitrage de catégorie, et pourquoi il n'est pas tranché ici
+### C6 · L'arbitrage de catégorie, tranché par l'écran le 29/10
 
-Deux positions existent dans nos documents, et elles ne disent pas la même chose :
+**Réponse, 29/10** : la fiche affiche « **Opticien** in Bonabéri », rendue en français sur une recherche
+francophone au Cameroun. La catégorie est en place, elle correspond au titre légal du cabinet, et on
+n'y touche pas. Le débat ci-dessous reste écrit parce qu'il explique la décision, pas parce qu'il est
+encore ouvert.
+
+Deux positions existaient dans nos documents, et elles ne disaient pas la même chose :
 
 - `launch/SETUP-GOOGLE-BUSINESS.md` (21/10) : **catégorie principale « Opticien »**, au motif que la
   catégorie existe au Cameroun, et « ne pas la changer » ;
 - les relevés externes 2026 recommandent **« Optometrist »** en principale, la catégorie large diluant
   l'intention.
 
-**Ce qui départage, et c'est à l'écran** : ouvrir le sélecteur de catégories de la fiche et regarder
-laquelle des deux Google propose réellement pour le Cameroun. Si les deux existent, prendre
-« Optometrist » en principale et « Optician » en secondaire, parce que le cabinet fait les deux et que
-le titre légal est « opticien optométriste ». Si une seule existe, elle gagne, et on ne force rien.
-**Je ne tranche pas à la place du client sur un champ qu'il verra dans son propre tableau de bord.**
+**Ce qui départageait, et c'était bien à l'écran** : ouvrir le sélecteur et regarder ce que Google
+propose réellement pour le Cameroun. L'écran a répondu avant le sélecteur, puisque la catégorie
+principale est visible sur la fiche publique. **« Opticien » gagne, et on ne force rien.**
+
+Il reste une seule question, et c'est un bonus, pas une correction : **si** le sélecteur propose une
+catégorie secondaire d'optométrie ou d'examen de la vue, l'ajouter en secondaire est cohérent avec
+« opticien optométriste ». À regarder une fois, sans changer la principale.
 
 ## 5 · Ce que le site peut faire en plus, et que je peux livrer
 
@@ -171,11 +180,14 @@ ne soit enfreinte.
 
 | Fait, et vérifié | Reste à faire | Qui |
 |---|---|---|
-| HTML irréprochable, 22 URL, canonical, hreflang, robots, sitemap, questions | soumettre le sitemap dans la propriété Domaine (B2) | **King** |
-| `http` et `www` corrigés, validation du 403 lancée | suivre la validation (B3, B4) | **King** |
-| Aucune page orpheline, aucun titre en double | écrire l'état réel de la fiche : revendiquée ? combien d'avis ? (C1) | **King + client** |
-| rien de notre côté | catégorie principale à trancher à l'écran (C6) | **King**, avec le client |
-| rien de notre côté | lien + QR « laisser un avis » (D1, D2) | **nous**, prochain tour |
+| HTML irréprochable, 22 URL, canonical, hreflang, robots, questions | suivre la validation du 403 et du redirect (B3, B4) | **King** |
+| sitemap soumis dans la propriété Domaine, lu le 29/10, 22 pages (B2) | retirer le sitemap `www` en double (B6) | **King**, 2 minutes |
+| fiche revendiquée, « Complete info », nom, adresse et téléphone identiques (C1 à C4) | trancher les horaires : la fiche dit 17h00, le site dit 17h30 (C5) | **King + cabinet** |
+| catégorie « Opticien » en place, rendue en français (C6) | une secondaire d'optométrie, si le sélecteur la propose | **King**, à l'occasion |
+| 7 avis à 4,9, dont 3 de plus en six jours (C8) | coller la capture « Pages » de Search Console au 05/11 | **King** |
+| lien et QR « laisser un avis » livrés (D1, D2) | imprimer la carte A6 et la poser au comptoir | **King** |
+
+Détail des captures, y compris ce qu'elles ne prouvent pas : `seo/RELEVE-FICHE-2026-10-29.md`.
 
 **La phrase à retenir.** Le site n'est pas en retard : il est propre, et il attend deux gestes qui ne
 sont pas dans le dépôt. Une semaine sans résultat n'est pas un signal, c'est la durée normale d'un
