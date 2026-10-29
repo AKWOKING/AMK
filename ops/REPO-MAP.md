@@ -2,17 +2,17 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-29
-Source : graphify-out/graph.json (14391 nœuds, 18986 arêtes)
+Source : graphify-out/graph.json (14394 nœuds, 18987 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **14391 nœuds** — dont 881 documents, 215 scripts, 33 modules, 146 pages HTML, 492 images, 10 vidéos, 40 audios, 52 fichiers de données, 13 PDF.
-- **4055 citations entre documents** (3249 en chemin exact, 806 par nom unique)
+- **14394 nœuds** — dont 881 documents, 215 scripts, 33 modules, 146 pages HTML, 492 images, 10 vidéos, 40 audios, 52 fichiers de données, 13 PDF.
+- **4053 citations entre documents** (3248 en chemin exact, 805 par nom unique)
 - **164 arêtes de remplacement** · **3 documents marqués périmés**
-- **429 documents que personne ne cite** (atteignables par aucun chemin de lecture)
+- **430 documents que personne ne cite** (atteignables par aucun chemin de lecture)
 - **Couverture : 1960 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
 ### Les dossiers du dépôt, par poids — et ce que chacun porte
@@ -89,7 +89,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 
 | Rang | Document | Cité par | Titres |
 |---|---|---|---|
-| 1 | `sales/Activity-Log.md` | **208** | 319 |
+| 1 | `sales/Activity-Log.md` | **208** | 320 |
 | 2 | `AMK-DESIGN-SKILLS.md` | **47** | 188 |
 | 3 | `PRE-FLIGHT.md` | **39** | 41 |
 | 4 | `research/YouTube-Lessons.md` | **31** | 202 |
@@ -97,7 +97,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 | 6 | `knowledge/PRIX-2026-10-24.md` | **23** | 11 |
 | 7 | `sales/RESEARCH-STANDARD.md` | **23** | 15 |
 | 8 | `clients/dm-optic/build-notes.md` | **22** | 107 |
-| 9 | `sales/CLIENT-MESSAGING-RULES.md` | **22** | 25 |
+| 9 | `sales/CLIENT-MESSAGING-RULES.md` | **21** | 25 |
 | 10 | `sales/MESSAGES-2026-09-23-PERSUASION.md` | **20** | 14 |
 | 11 | `clients/_uniqueness-registry.md` | **19** | 1 |
 | 12 | `content/lessons/CONTENT-LESSONS.md` | **19** | 44 |
@@ -122,12 +122,12 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 ## 3 bis · Ce que personne ne cite — à relire ou à archiver
 
-429 documents n'ont aucune citation entrante. Un orphelin n'est pas inutile : il est **inatteignable**. Soit il faut le citer là où il sert, soit il faut l'archiver.
+430 documents n'ont aucune citation entrante. Un orphelin n'est pas inutile : il est **inatteignable**. Soit il faut le citer là où il sert, soit il faut l'archiver.
 
-- **123 à traiter** · 164 dans `design/vendor/` (imports tiers, normal) · 142 dans `leads/records/` (reliés par le CRM, pas par citation)
+- **124 à traiter** · 164 dans `design/vendor/` (imports tiers, normal) · 142 dans `leads/records/` (reliés par le CRM, pas par citation)
 
 - **`tools/`** — 49 : `tools/claude-seo/README.md`, `tools/content/README.md`, `tools/docs/README.md`, `tools/geo-seo-claude/README.md`, `tools/humanizer/README.md`, `tools/marketingskills/README.md` … (+43)
-- **`clients/`** — 21 : `clients/dm-optic/brag/MEDIA.md`, `clients/dm-optic/brag/brag-plan.md`, `clients/dm-optic/content/month1/c1-render/README.md`, `clients/dm-optic/content/month1/w2/etapes-01-validation-client.md`, `clients/dm-optic/content/month1/w2/etapes-01.md`, `clients/dm-optic/content/month1/w2/facebook-post-enfants.md` … (+15)
+- **`clients/`** — 22 : `clients/dm-optic/brag/MEDIA.md`, `clients/dm-optic/brag/brag-plan.md`, `clients/dm-optic/content/month1/c1-render/README.md`, `clients/dm-optic/content/month1/w2/etapes-01-validation-client.md`, `clients/dm-optic/content/month1/w2/etapes-01.md`, `clients/dm-optic/content/month1/w2/facebook-post-enfants.md` … (+16)
 - **`content/`** — 20 : `content/Avatar/_composites/busts-694/MEDIA.md`, `content/README.md`, `content/assets/ASSETS.md`, `content/assets/fonts/MEDIA.md`, `content/pipeline/post01/SENTENCE-TIMING-v5d.md`, `content/pipeline/post01/layers/MEDIA.md` … (+14)
 - **`ops/`** — 12 : `ops/BRAINSTORM-INDEXATION-DMOPTIC-2026-10-26.md`, `ops/BRAINSTORM-LOT-1-V2-2026-10-26.md`, `ops/BRAINSTORM-LOT-2026-10-27.md`, `ops/CHANGELOG-VENDREDI.md`, `ops/CHECKPOINT-MARDI-06-10-20H.md`, `ops/OVERVIEW-GRAPHE-2026-10-29.md` … (+6)
 - **`hosting/`** — 6 : `hosting/previews/dmoptic/montures/MEDIA.md`, `hosting/previews/dr-ophtalmo/README.md`, `hosting/previews/dr-ophtalmo/assets/src/MEDIA.md`, `hosting/samples/DEPLOY.md`, `hosting/samples/design-research.md`, `hosting/samples/img/MEDIA.md`
@@ -144,11 +144,11 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 *Le pivot d'une communauté est le document que **les autres membres du groupe** citent le plus (degré interne) — pas le document le plus cité du dépôt, qui l'est partout.*
 
-**629 documents sur 881 sont dans un sujet.** Les 214 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
+**628 documents sur 881 sont dans un sujet.** Les 215 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
 
 | # | Docs | Les 3 pivots internes | Ce que le groupe a en propre |
 |---|---|---|---|
-| 0 | 586 | `Activity-Log.md` · `AMK-DESIGN-SKILLS.md` · `PRE-FLIGHT.md` | `leads/` (26 % du groupe) |
+| 0 | 585 | `Activity-Log.md` · `AMK-DESIGN-SKILLS.md` · `PRE-FLIGHT.md` | `leads/` (26 % du groupe) |
 | 1 | 20 | `analyst-common.md` · `context-safety.md` · `report.md` | `tools/` (100 % du groupe) |
 | 2 | 5 | `claude-code-tools.md` · `codex-tools.md` · `pi-tools.md` | `tools/` (100 % du groupe) |
 | 3 | 4 | `PHOTOSHOOT-FICHE-1PAGE-2026-10.md` · `DEMO-SCRIPT-2026-10-07.md` · `VISIT-RUNSHEET-2026-10-07.md` | `clients/` (100 % du groupe) |
@@ -158,7 +158,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | 7 | 2 | `etapes-01-PUBLICATION.md` | `clients/` (100 % du groupe) |
 | 8 | 2 | `DESIGN.md` | `design/` (100 % du groupe) |
 
-### Communauté 0 — 586 documents
+### Communauté 0 — 585 documents
 
 - `sales/Activity-Log.md` — cité 205× dans le groupe, 208× au total
 - `AMK-DESIGN-SKILLS.md` — cité 45× dans le groupe, 47× au total
@@ -233,7 +233,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 2 | `dmopticsarl-2026-10-21.zip`, `dr-ophtalmo-site-2026-10-27.zip` |
 | style | 1 | `hosting/previews/dr-ophtalmo/css/styles.css` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 12431 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 12434 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 

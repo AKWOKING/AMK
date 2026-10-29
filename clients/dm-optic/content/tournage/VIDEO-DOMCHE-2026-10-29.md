@@ -203,11 +203,16 @@ programme, pas un enjeu.
 
 ## 8 · Ce qui manque pour tourner, et qui n'est pas à nous
 
+**Mise à jour du 29/10 (soir).** La séance n'est plus à organiser : King a déjà rendez-vous au cabinet
+**samedi 31 octobre** pour le règlement de l'acompte, sans heure fixée. La caméra se décide donc sur place.
+Le déroulé de la visite, les replis et la phrase exacte pour demander l'accord sont écrits dans
+`SAMEDI-31-10-DEROULE.md`, et le message a été réécrit en conséquence (v2, sans proposition de date).
+
 | # | Ce qu'il faut | Qui |
 |---|---|---|
-| 1 | **son accord** : le message est écrit : `launch/MESSAGE-VIDEO-DOMCHE-2026-10-29.md` | King l'envoie |
-| 2 | **l'autorisation signée** : `launch/AUTORISATION-IMAGE-2026-10-29.md`, une page, retirable | lui, avant de filmer |
-| 3 | **un après-midi**, après 13h00 quand les examens sont finis | lui, avec King |
+| 1 | **son accord**, demandé sur place : la phrase est au §5 de `SAMEDI-31-10-DEROULE.md`, et le message du 29/10 le prévient | King, le 31/10 |
+| 2 | **l'autorisation signée** : `launch/AUTORISATION-IMAGE-2026-10-29.pdf`, imprimée en deux exemplaires | lui, sur place, avant la première prise |
+| 3 | **trente minutes après 13h00**, quand les examens sont finis | lui, avec King, le 31/10 |
 | 4 | **un micro-cravate** (15 000 à 40 000 F) : le seul achat qui change tout : un plan mal éclairé se rattrape, un son de pièce vide non | King |
 
 **Ce qui n'est pas promis, ni dans le film ni dans le message** : plus de patients, une place sur Google,

@@ -8,7 +8,8 @@ Ce que ça ouvre : 4 heures par mois avec une caméra et des gens vrais, montée
 Statut : PLAN PRÊT — date et personnes à valider par King.
 29/10 : **le premier film est écrit** — script (`DOMCHE-01-SCRIPT.py`, quatre pièces), déroulé
 (`VIDEO-DOMCHE-2026-10-29.md`), message de demande (`launch/MESSAGE-VIDEO-DOMCHE-2026-10-29.md`),
-autorisation signable (`launch/AUTORISATION-IMAGE-2026-10-29.pdf`). Il ne manque que son accord.
+autorisation signable (`launch/AUTORISATION-IMAGE-2026-10-29.pdf`). Il ne manque que son accord, et il se demande **samedi 31/10**, le jour de l'acompte (déroulé :
+`SAMEDI-31-10-DEROULE.md`).
 ```
 
 ---
@@ -141,7 +142,7 @@ Fait à ……………………, le ………/………/………      Signatur
 | Quand | Quoi | Qui |
 |---|---|---|
 | **avant le 30/10** | envoyer le message à M. Domche, valider la date, faire signer l'autorisation, acheter le micro | **King** |
-| **1ʳᵉ séance : 1ʳᵉ semaine de novembre** (samedi après-midi proposé) | les 4 heures du §3 | King + AMK au montage |
+| **1ʳᵉ séance : samedi 31/10, après 13h00** (30 min de prise de vue, pas 4 h) | le bloc A du film de M. Domche, puis les mains et les lieux | King, puis AMK au montage |
 | **J+2** | les 4 premiers posts montés et livrés | AMK |
 | **chaque mois** | même séance, mêmes blocs, nouveaux gestes | King |
 
